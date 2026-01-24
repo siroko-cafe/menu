@@ -71,16 +71,23 @@
     }
     .categories { display: flex; gap: 8px; overflow-x: auto; padding: 0 1.5rem; scrollbar-width: none; }
     .categories::-webkit-scrollbar { display: none; }
+    
     .categories button {
         white-space: nowrap; background: transparent; color: #666; border: 1px solid #ddd;
         padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+        transition: all 0.2s;
+    }
+    /* Estilo especial para el botón TOP */
+    .categories button.btn-top {
+        border-color: var(--dark);
+        color: var(--dark);
+        font-weight: 800;
     }
     .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-    /* --- PRODUCTS (CONFIGURACIÓN DE LA GRILLA) --- */
+    /* --- PRODUCTS (GRILLA MÓVIL) --- */
     .products {
         display: grid;
-        /* Móvil: Mínimo 160px (2 columnas en móviles modernos) */
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1rem; 
         padding: 1.5rem;
@@ -116,7 +123,7 @@
         display: flex; justify-content: space-between; align-items: center;
         margin-top: auto; padding-top: 8px; border-top: 1px solid #f9f9f9;
     }
-    .product-card .price { font-size: 1rem; font-weight: 800; color: var(--primary); }
+    .product-card .price { font-size: 1rem; font-weight: 800; color: var(--dark); }
 
     /* ICONS */
     .allergens-container { display: flex; gap: 4px; justify-content: flex-end; flex-wrap: wrap; }
@@ -140,24 +147,19 @@
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
-    /* --- VERSIÓN DE ESCRITORIO (Pantallas grandes) --- */
+    /* --- VERSIÓN DE ESCRITORIO (3 COLUMNAS) --- */
     @media (min-width: 900px) {
-        /* Centrar el contenido y limitar ancho máximo */
         header, .hero-section, .categories-wrapper, footer {
-            padding-left: calc(50% - 500px);
-            padding-right: calc(50% - 500px);
+            padding-left: calc(50% - 475px);
+            padding-right: calc(50% - 475px);
         }
-        
         .products {
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
-            /* Tarjetas MUCHO más grandes: Mínimo 300px */
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem; /* Más espacio entre tarjetas */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
-
-        .product-card h3 { font-size: 1.2rem; } /* Título más grande */
-        .product-card .price { font-size: 1.2rem; } /* Precio más grande */
+        .product-card h3 { font-size: 1.1rem; } 
     }
 
 </style>
@@ -207,7 +209,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const API_URL = "https://script.google.com/macros/s/AKfycbzjG-9Eob6R_SW30ayy09pRghpZajfNSklAhseeaPqb8kTB7766lGczguUat_glGtl4sg/exec";
     const DEFAULT_IMG = "https://placehold.co/600x400/eee/8bba8b?text=Siroko";
 
-    const CATEGORY_ORDER = ["cafes", "bolleria", "bebidas calientes", "bebidas frias", "tostas", "bocadillos"];
+    // --- AQUÍ EL NUEVO ORDEN ---
+    // NOTA: He puesto "tostadas" y "tostas" por si acaso en el Excel está escrito de una u otra forma.
+    const CATEGORY_ORDER = [
+        "cafes", 
+        "bolleria", 
+        "promos", 
+        "bebidas calientes", 
+        "bebidas frias", 
+        "tostadas", 
+        "tostas", 
+        "bocadillos"
+    ];
 
     const ICONS = {
         "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
@@ -221,7 +234,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let menuData = {};
     let currentLang = "es";
-    let currentCategory = "";
+    // INICIAR CON TOP POR DEFECTO
+    let currentCategory = "TOP";
 
     const container = document.getElementById("products-container");
     const catContainer = document.getElementById("category-buttons");
@@ -249,14 +263,20 @@ document.addEventListener("DOMContentLoaded", function() {
     function renderCategories() {
         catContainer.innerHTML = "";
         
-        const allBtn = document.createElement("button");
-        allBtn.textContent = currentLang === 'en' ? "All" : "Todos";
-        if(currentCategory === "") allBtn.classList.add("active");
-        allBtn.onclick = () => filterCategory("");
-        catContainer.appendChild(allBtn);
+        // --- BOTÓN TOP (Reemplaza a "Todos") ---
+        const topBtn = document.createElement("button");
+        topBtn.textContent = "★ TOP";
+        topBtn.className = "btn-top"; 
+        // Si la categoría actual es TOP, lo activamos
+        if(currentCategory === "TOP") topBtn.classList.add("active");
+        
+        topBtn.onclick = () => filterCategory("TOP");
+        catContainer.appendChild(topBtn);
 
+        // --- RESTO DE CATEGORÍAS ---
         let cats = Object.keys(menuData[currentLang] || {});
         
+        // Ordenar según tu lista
         cats.sort((a, b) => {
             let idxA = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(a));
             let idxB = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(b));
@@ -287,24 +307,38 @@ document.addEventListener("DOMContentLoaded", function() {
         if(!menuData[currentLang]) return;
 
         let items = [];
-        if(currentCategory) {
-            items = (menuData[currentLang][currentCategory] && menuData[currentLang][currentCategory].items) || [];
-        } else {
+        
+        // --- LÓGICA DE FILTRADO ---
+        if(currentCategory === "TOP") {
+            // Recoger TODOS los productos de TODAS las categorías
             Object.keys(menuData[currentLang]).forEach(k => {
                 if(menuData[currentLang][k].items) items = items.concat(menuData[currentLang][k].items);
             });
+            // FILTRAR SOLO LOS RECOMENDADOS
+            items = items.filter(item => item.recommended === true);
+
+        } else if(currentCategory) {
+            // Categoría normal
+            items = (menuData[currentLang][currentCategory] && menuData[currentLang][currentCategory].items) || [];
         }
 
+        // BÚSQUEDA (Si hay texto, busca en TODO, ignorando categoría)
         const term = searchInput.value.toLowerCase();
         if(term) {
-            items = items.filter(i => 
+             // Si el usuario busca, reseteamos la lista para buscar en todo el catálogo
+             let allItems = [];
+             Object.keys(menuData[currentLang]).forEach(k => {
+                if(menuData[currentLang][k].items) allItems = allItems.concat(menuData[currentLang][k].items);
+             });
+             items = allItems.filter(i => 
                 (i.name && i.name.toLowerCase().includes(term)) || 
                 (i.description && i.description.toLowerCase().includes(term))
             );
         }
 
         if(items.length === 0) {
-            container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:20px;">No hay productos aquí.</div>`;
+            let msg = currentCategory === "TOP" ? "No hay productos TOP destacados por ahora." : "No hay productos aquí.";
+            container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:20px;">${msg}</div>`;
             return;
         }
 
@@ -369,7 +403,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll(".lang-select button").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             currentLang = btn.dataset.lang;
-            currentCategory = "";
+            // Al cambiar idioma, volvemos a TOP
+            currentCategory = "TOP";
             renderCategories();
             renderProducts();
         });
