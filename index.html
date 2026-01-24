@@ -12,7 +12,7 @@
 <style>
     /* --- VARIABLES & RESET --- */
     :root {
-        --primary: #8bba8b;
+        --primary: #8bba8b;        /* Verde Siroko */
         --dark: #1a1a1a;
         --light: #f4f4f4;
         --white: #ffffff;
@@ -82,11 +82,11 @@
     }
     .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-    /* --- ESTILO MASONRY (SIN HUECOS) --- */
+    /* --- ESTILO MASONRY (1 COLUMNA EN MÓVIL) --- */
     .products {
         padding: 1.5rem;
-        column-count: 2; /* 2 columnas en móvil */
-        column-gap: 1rem;
+        column-count: 1; /* POR DEFECTO: 1 COLUMNA */
+        column-gap: 1.5rem;
         display: block;
     }
 
@@ -96,7 +96,7 @@
         
         display: inline-block; 
         width: 100%;
-        margin-bottom: 1rem; 
+        margin-bottom: 1.5rem; 
         break-inside: avoid; 
         
         position: relative;
@@ -128,21 +128,23 @@
         flex-direction: column;
     }
     
-    .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; color: var(--dark); line-height: 1.2; }
+    .product-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--dark); line-height: 1.2; }
     .product-card .description {
-        font-size: 0.8rem; color: #777; margin-bottom: 12px; 
+        font-size: 0.9rem; color: #777; margin-bottom: 12px; 
         line-height: 1.4;
     }
     .card-footer {
         display: flex; justify-content: space-between; align-items: center;
         margin-top: auto; padding-top: 8px; border-top: 1px solid #f9f9f9;
     }
-    .product-card .price { font-size: 1rem; font-weight: 800; color: var(--primary); }
+    
+    /* CAMBIO DE COLOR PRECIO */
+    .product-card .price { font-size: 1.1rem; font-weight: 800; color: var(--primary); }
 
-    /* ICONS */
-    .allergens-container { display: flex; gap: 4px; justify-content: flex-end; flex-wrap: wrap; }
-    .allergen-icon { width: 16px; height: 16px; fill: #bbb; }
-    .allergen-text { font-size: 11px; border: 1px solid #eee; color: #999; padding: 1px 3px; border-radius: 3px; text-transform: uppercase; }
+    /* ICONS - AUMENTO DE TAMAÑO */
+    .allergens-container { display: flex; gap: 6px; justify-content: flex-end; flex-wrap: wrap; }
+    .allergen-icon { width: 22px; height: 22px; fill: #bbb; }
+    .allergen-text { font-size: 9px; border: 1px solid #eee; color: #999; padding: 1px 3px; border-radius: 3px; text-transform: uppercase; }
 
     /* UTILS */
     #loading-spinner { text-align: center; padding: 40px; color: #999; }
@@ -161,7 +163,7 @@
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
-    /* --- MASONRY DESKTOP --- */
+    /* --- MASONRY DESKTOP (PC) --- */
     @media (min-width: 900px) {
         header, .hero-section, .categories-wrapper, footer {
             padding-left: calc(50% - 475px);
@@ -170,14 +172,13 @@
         .products {
             max-width: 950px;
             margin: 0 auto;
-            /* 3 Columnas Masonry en Web */
+            /* AQUÍ SE ACTIVAN LAS 3 COLUMNAS SOLO PARA PC */
             column-count: 3;
             column-gap: 1.5rem;
         }
         .product-card {
             margin-bottom: 1.5rem;
         }
-        .product-card h3 { font-size: 1.1rem; } 
     }
 
 </style>
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const API_URL = "https://script.google.com/macros/s/AKfycbzjG-9Eob6R_SW30ayy09pRghpZajfNSklAhseeaPqb8kTB7766lGczguUat_glGtl4sg/exec";
     const DEFAULT_IMG = "https://placehold.co/600x400/eee/8bba8b?text=Siroko";
 
-    // --- ORDEN DE CATEGORÍAS ACTUALIZADO ---
+    // ORDEN DEFINITIVO
     const CATEGORY_ORDER = [
         "promos",
         "cafes", 
