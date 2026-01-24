@@ -3,152 +3,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Siroko Café - Menú Digital</title>
+<title>Siroko Café - Menú</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* --- VARIABLES & RESET --- */
-:root {
-    --primary: #8bba8b;        /* Verde Siroko */
-    --primary-dark: #6da06d;
-    --dark: #1a1a1a;           
-    --light: #f4f4f4;          
-    --white: #ffffff;
-    --gray: #666;
-    --shadow: 0 4px 20px rgba(0,0,0,0.05);
-    --radius: 16px;            
-}
+    /* --- VARIABLES & RESET --- */
+    :root {
+        --primary: #8bba8b;
+        --dark: #1a1a1a;
+        --light: #f4f4f4;
+        --white: #ffffff;
+        --gray: #666;
+        --shadow: 0 4px 15px rgba(0,0,0,0.05);
+        --radius: 12px;
+    }
 
-* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-body { 
-    font-family: 'Inter', sans-serif;
-    background-color: var(--light); 
-    color: var(--dark); 
-    padding-bottom: 80px; 
-    letter-spacing: -0.01em;
-}
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        padding-bottom: 80px;
+    }
 
-h1, h2, h3, h4 { 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 700;
-}
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-/* --- HEADER --- */
-header { 
-    background: var(--white); 
-    padding: 0.8rem 1.5rem; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+    /* HEADER */
+    header {
+        background: var(--white);
+        padding: 0.8rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px; 
-}
+    .logo-wrapper { display: flex; align-items: center; gap: 10px; }
+    .logo-wrapper img { height: 40px; width: auto; object-fit: contain; }
+    .logo-wrapper h1 { font-size: 1.2rem; margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: -0.5px; }
 
-/* LOGO: Asegúrate de que logo.png esté en la carpeta */
-.logo-wrapper img { 
-    height: 42px; 
-    width: auto;
-    object-fit: contain; 
-}
+    .lang-select { display: flex; gap: 5px; }
+    .lang-select button {
+        background: #eee; border: none; padding: 6px 10px; border-radius: 6px;
+        font-size: 0.7rem; font-weight: 700; cursor: pointer;
+    }
+    .lang-select button.active { background: var(--dark); color: var(--white); }
 
-.logo-wrapper h1 {
-    font-size: 1.2rem; 
-    color: var(--dark);
-    margin: 0;
-    font-weight: 800;
-    line-height: 1;
-    text-transform: uppercase;
-}
+    /* HERO & SEARCH */
+    .hero-section { padding: 1rem 1.5rem 0.5rem 1.5rem; background: var(--white); }
+    #search-bar {
+        width: 100%; padding: 12px 15px; background: #f0f0f0; border: none;
+        border-radius: 10px; font-size: 1rem; outline: none; font-family: 'Inter', sans-serif;
+    }
+    #search-bar:focus { background: #fff; box-shadow: 0 0 0 2px var(--primary); }
 
-.lang-select { display: flex; gap: 4px; }
-.lang-select button { 
-    background: #f0f0f0; 
-    border: none; 
-    padding: 8px 12px; 
-    border-radius: 8px; 
-    font-size: 0.7rem; 
-    font-weight: 700; 
-    cursor: pointer; 
-    transition: all 0.2s ease;
-    font-family: 'Inter', sans-serif;
-}
-.lang-select button.active { 
-    background: var(--dark); 
-    color: var(--white); 
-}
+    /* CATEGORIES */
+    .categories-wrapper {
+        position: sticky; top: 60px; background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(5px); z-index: 900; padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .categories { display: flex; gap: 8px; overflow-x: auto; padding: 0 1.5rem; scrollbar-width: none; }
+    .categories::-webkit-scrollbar { display: none; }
+    .categories button {
+        white-space: nowrap; background: transparent; color: #666; border: 1px solid #ddd;
+        padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+    .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-/* --- SEARCH --- */
-.hero-section {
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    background: var(--white);
-}
+    /* PRODUCTS */
+    .products {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem; padding: 1.5rem;
+    }
 
-#search-bar { 
-    width: 100%; 
-    padding: 14px 20px; 
-    background: #f0f0f0;
-    border: none; 
-    border-radius: 12px; 
-    font-size: 0.95rem;
-    outline: none;
-    transition: all 0.2s;
-    font-family: 'Inter', sans-serif;
-}
-#search-bar:focus { 
-    background: #fff;
-    box-shadow: 0 0 0 2px var(--primary); 
-}
+    .product-card {
+        background: var(--white); border-radius: var(--radius); overflow: hidden;
+        box-shadow: var(--shadow); border: 1px solid #eee;
+        display: flex; flex-direction: column; position: relative;
+    }
 
-/* --- CATEGORIES --- */
-.categories-wrapper {
-    position: sticky;
-    top: 65px; 
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 900;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+    .card-image-container {
+        width: 100%; height: 0; padding-bottom: 75%; /* 4:3 Ratio */
+        position: relative; background: #f0f0f0; overflow: hidden;
+    }
+    .product-card img {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    
+    .badge-rec {
+        position: absolute; top: 8px; left: 8px; background: #fff; color: #000;
+        font-size: 0.6rem; padding: 3px 6px; border-radius: 4px; font-weight: 800;
+        text-transform: uppercase; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-.categories { 
-    display: flex; 
-    gap: 8px; 
-    overflow-x: auto; 
-    padding: 0 1.5rem;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-}
-.categories::-webkit-scrollbar { display: none; }
+    .card-content { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
+    .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; color: var(--dark); line-height: 1.2; }
+    .product-card .description {
+        font-size: 0.8rem; color: #777; margin-bottom: 10px; flex-grow: 1;
+        display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-footer {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-top: auto; padding-top: 8px; border-top: 1px solid #f9f9f9;
+    }
+    .product-card .price { font-size: 1rem; font-weight: 800; color: var(--dark); }
 
-.categories button { 
-    white-space: nowrap;
-    background: transparent; 
-    color: var(--gray); 
-    border: 1px solid #e0e0e0; 
-    padding: 8px 16px; 
-    border-radius: 50px; 
-    font-size: 0.85rem; 
-    cursor: pointer; 
-    transition: all 0.2s;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-}
-.categories button.active { 
-    background: var(--dark); 
-    color: var(--white); 
-    border-color: var(--dark);
-}
+    /* ICONS */
+    .allergens-container { display: flex; gap: 4px; justify-content: flex-end; flex-wrap: wrap; }
+    .allergen-icon { width: 16px; height: 16px; fill: #bbb; }
+    .allergen-text { font-size: 9px; border: 1px solid #eee; color: #999; padding: 1px 3px; border-radius: 3px; text-transform: uppercase; }
 
-/* --- PRODUCTS
+    /* UTILS */
+    #loading-spinner { text-align: center; padding: 40px; color: #999; }
+    .spinner {
+        width: 30px; height: 30px; border: 3px solid #eee; border-top-color: var(--dark);
+        border-radius: 50%; margin: 0 auto 10px; animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    #error-box { 
+        display: none; background: #ffebee; color: #c62828; padding: 20px; 
+        margin: 20px; border-radius: 8px; text-align: center; border: 1px solid #ef9a9a;
+    }
+
+    footer { background: var(--dark); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8rem; }
+    footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
+    footer a { color: #fff; text-decoration: none; opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-wrapper">
+        <img src="logo.png" alt="Logo" onerror="this.style.display='none'"> 
+        <h1>Siroko Café</h1>
+    </div>
+    <div class="lang-select">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="ca">CA</button>
+        <button data-lang="en">EN</button>
+    </div>
+</header>
+
+<div class="hero-section">
+    <input type="text" id="search-bar" placeholder="Buscar productos...">
+</div>
+
+<div class="categories-wrapper">
+    <div class="categories" id="category-buttons"></div>
+</div>
+
+<div id="loading-spinner">
+    <div class="spinner"></div>
+    <p>Cargando menú...</p>
+</div>
+
+<div id="error-box"></div>
+
+<div class="products" id="products-container"></div>
+
+<footer>
+    <h4>Siroko Café</h4>
+    <p>Carrer de Girona 94, Barcelona</p>
+    <p style="margin-top:10px">
+        <a href="https://instagram.com/siroko.cafe">Instagram</a> • <a href="mailto:info@sirokocafe.com">Email</a>
+    </p>
+</footer>
+
+<script>
+// --- SCRIPT SEGURO ---
+document.addEventListener("DOMContentLoaded", function() {
+
+    const API_URL = "https://script.google.com/macros/s/AKfycbzjG-9Eob6R_SW30ayy09pRghpZajfNSklAhseeaPqb8kTB7766lGczguUat_glGtl4sg/exec";
+    const DEFAULT_IMG = "https://placehold.co/600x400/eee/8bba8b?text=Siroko";
+
+    const CATEGORY_ORDER = ["cafes", "bolleria", "bebidas calientes", "bebidas frias", "tostas", "bocadillos"];
+
+    // Iconos SVG simplificados
+    const ICONS = {
+        "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
+        "lactosa": '<svg viewBox="0 0 24 24"><path d="M17,4V2H7V4H2V6H4V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18V6H22V4H17M18,18H6V6H18V18M13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5A1.5,1.5 0 0,1 13.5,12Z"/></svg>',
+        "huevo": '<svg viewBox="0 0 24 24"><path d="M12,2C8.5,2 5.5,5.5 5.5,9.5C5.5,14.5 8.5,18.5 12,22C15.5,18.5 18.5,14.5 18.5,9.5C18.5,5.5 15.5,2 12,2M12,19C9.5,16.5 7.5,13.5 7.5,9.5C7.5,6.5 9.5,4 12,4C14.5,4 16.5,6.5 16.5,9.5C16.5,13.5 14.5,16.5 12,19Z"/></svg>',
+        "frutos secos": '<svg viewBox="0 0 24 24"><path d="M16.33,16.89C16.03,17.2 15.05,17.61 13.62,17.26C12.18,16.91 11.53,16 11.23,15.69C11.66,16.88 12.39,18.44 14.47,18.95C16.55,19.46 17.68,18.23 17.68,18.23L16.33,16.89M17.37,5.59C13.5,5.1 8,6.88 5.75,10.88C4.5,13.06 4.3,16 6.38,18.06C8.44,20.13 11.38,19.94 13.56,18.69C17.56,16.44 19.38,10.94 18.88,7.06C18.84,6.76 18.66,6.5 18.39,6.33C18.11,6.16 17.78,6.13 17.47,6.23L12.5,7.89L16.5,11.89L17.37,5.59Z"/></svg>',
+        "vegano": '<svg viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>',
+        "picante": '<svg viewBox="0 0 24 24"><path d="M17.66,10.38L16.71,11.33C17.66,12.28 17.66,13.82 16.71,14.77L14.07,17.41C13.12,18.36 11.58,18.36 10.63,17.41L5.86,12.64C4.91,11.69 4.91,10.15 5.86,9.2L12.06,3H15.06L9.65,8.41L11.77,10.53L17.66,10.38M11.69,19.53L12.75,18.47L14.87,20.59C15.82,21.54 17.36,21.54 18.31,20.59L19.59,19.31C20.54,18.36 20.54,16.82 19.59,15.87L18.53,14.81L11.69,19.53Z"/></svg>',
+        "soja": '<svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>'
+    };
+
+    let menuData = {};
+    let currentLang = "es";
+    let currentCategory = "";
+
+    const container = document.getElementById("products-container");
+    const catContainer = document.getElementById("category-buttons");
+    const loader = document.getElementById("loading-spinner");
+    const errorBox = document.getElementById("error-box");
+    const searchInput = document.getElementById("search-bar");
+
+    const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
+    // FIX DRIVE URLS
+    function fixImgUrl(url) {
+        if (!url) return DEFAULT_IMG;
+        try {
+            if (url.includes("drive.google.com") && url.includes("/view")) {
+                return url.replace("/file/d/", "/uc?export=view&id=").replace("/view", "").replace("?usp=sharing", "");
+            }
+        } catch(e) {}
+        return url;
+    }
+
+    // Normalizador de texto
+    function normalize(str) {
+        if (!str) return "";
+        return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    }
+
+    // Render Categorías
+    function renderCategories() {
+        catContainer.innerHTML = "";
+        
+        // Botón Todos
+        const allBtn = document.createElement("button");
+        allBtn.textContent = currentLang === 'en' ? "All" : "Todos";
+        if(currentCategory === "") allBtn.classList.add("active");
+        allBtn.onclick = () => filterCategory("");
+        catContainer.appendChild(allBtn);
+
+        // Obtener categorías
+        let cats = Object.keys(menuData[currentLang] || {});
+        
+        // Ordenar
+        cats.sort((a, b) => {
+            let idxA = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(a));
+            let idxB = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(b));
+            if (idxA === -1) idxA = 999;
+            if (idxB === -1) idxB = 999;
+            return idxA - idxB;
+        });
+
+        cats.forEach(cat => {
+            const btn = document.createElement("button");
+            btn.textContent = menuData[currentLang][cat].name;
+            if(currentCategory === cat) btn.classList.add("active");
+            btn.onclick = () => filterCategory(cat);
+            catContainer.appendChild(btn);
+        });
+    }
+
+    function filterCategory(cat) {
+        currentCategory = cat;
+        renderCategories();
+        renderProducts();
+        if(window.scrollY > 100) window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    // Render Productos
+    function renderProducts() {
+        container.innerHTML = "";
+        
+        if(!menuData[currentLang]) return;
+
+        let items = [];
+        if(currentCategory) {
+            items = (menuData[currentLang][currentCategory] && menuData[currentLang][currentCategory].items) || [];
+        } else {
+            // Recolectar de todas las categorías
+            Object.keys(menuData[currentLang]).forEach(k => {
+                if(menuData[currentLang][k].items) items = items.concat(menuData[currentLang][k].items);
+            });
+        }
+
+        const term = searchInput.value.toLowerCase();
+        if(term) {
+            items = items.filter(i => 
+                (i.name && i.name.toLowerCase().includes(term)) || 
+                (i.description && i.description.toLowerCase().includes(term))
+            );
+        }
+
+        if(items.length === 0) {
+            container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:20px;">No hay productos aquí.</div>`;
+            return;
+        }
+
+        items.forEach(item => {
+            const img = fixImgUrl(item.image);
+            const price = item.price && item.price.base ? currencyFormatter.format(item.price.base) : "";
+            
+            // Iconos
+            let iconsHtml = "";
+            if(item.allergens && Array.isArray(item.allergens)) {
+                item.allergens.forEach(alg => {
+                    const key = normalize(alg);
+                    if(ICONS[key] || ICONS[alg.toLowerCase()]) {
+                        iconsHtml += `<div class="allergen-icon" title="${alg}">${ICONS[key] || ICONS[alg.toLowerCase()]}</div>`;
+                    } else {
+                        iconsHtml += `<span class="allergen-text">${alg}</span>`;
+                    }
+                });
+            }
+
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+                <div class="card-image-container">
+                    ${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}
+                    <img src="${img}" onerror="this.src='${DEFAULT_IMG}'" alt="${item.name}">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p class="description">${item.description || ''}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price">${price}</div>
+                        <div class="allergens-container">${iconsHtml}</div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // Inicializar
+    fetch(API_URL)
+        .then(res => {
+            if(!res.ok) throw new Error("Error de conexión");
+            return res.json();
+        })
+        .then(data => {
+            menuData = data;
+            loader.style.display = 'none';
+            renderCategories();
+            renderProducts();
+        })
+        .catch(err => {
+            loader.style.display = 'none';
+            errorBox.style.display = 'block';
+            errorBox.textContent = "Error cargando menú: " + err.message;
+            console.error(err);
+        });
+
+    // Eventos
+    document.querySelectorAll(".lang-select button").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".lang-select button").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentLang = btn.dataset.lang;
+            currentCategory = "";
+            renderCategories();
+            renderProducts();
+        });
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+
+});
+</script>
+
+</body>
+</html>
