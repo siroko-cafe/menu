@@ -82,28 +82,30 @@
     }
     .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-    /* --- PRODUCTS --- */
+    /* --- ESTILO MASONRY (SIN HUECOS) --- */
     .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 1rem; 
         padding: 1.5rem;
-        align-items: start; /* Alinea las tarjetas al inicio para que no se estiren si tienen distinta altura */
+        column-count: 2; /* 2 columnas en móvil */
+        column-gap: 1rem;
+        display: block;
     }
 
     .product-card {
         background: var(--white); border-radius: var(--radius); overflow: hidden;
         box-shadow: var(--shadow); border: 1px solid #eee;
-        display: flex; flex-direction: column; position: relative;
+        
+        display: inline-block; 
+        width: 100%;
+        margin-bottom: 1rem; 
+        break-inside: avoid; 
+        
+        position: relative;
     }
 
-    /* ESTILO PARA TARJETAS SIN IMAGEN */
-    .product-card.no-image {
-        border-top: 5px solid var(--primary); /* Línea verde decorativa */
-    }
+    .product-card.no-image { border-top: 5px solid var(--primary); }
 
     .card-image-container {
-        width: 100%; height: 0; padding-bottom: 75%; /* 4:3 Ratio */
+        width: 100%; height: 0; padding-bottom: 75%; 
         position: relative; background: #f0f0f0; overflow: hidden;
     }
     .product-card img {
@@ -115,17 +117,21 @@
         font-size: 0.6rem; padding: 3px 6px; border-radius: 4px; font-weight: 800;
         text-transform: uppercase; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    /* Si no hay imagen, el badge top se pone relativo dentro del contenido */
     .no-image .badge-rec {
         position: static; display: inline-block; margin-bottom: 5px; 
         background: var(--dark); color: #fff; box-shadow: none;
     }
 
-    .card-content { padding: 14px; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-content { 
+        padding: 14px; 
+        display: flex; 
+        flex-direction: column;
+    }
+    
     .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; color: var(--dark); line-height: 1.2; }
     .product-card .description {
-        font-size: 0.8rem; color: #777; margin-bottom: 10px; flex-grow: 1;
-        display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        font-size: 0.8rem; color: #777; margin-bottom: 12px; 
+        line-height: 1.4;
     }
     .card-footer {
         display: flex; justify-content: space-between; align-items: center;
@@ -155,7 +161,7 @@
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
-    /* DESKTOP (3 COLUMNAS) */
+    /* --- MASONRY DESKTOP --- */
     @media (min-width: 900px) {
         header, .hero-section, .categories-wrapper, footer {
             padding-left: calc(50% - 475px);
@@ -164,8 +170,12 @@
         .products {
             max-width: 950px;
             margin: 0 auto;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            /* 3 Columnas Masonry en Web */
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        .product-card {
+            margin-bottom: 1.5rem;
         }
         .product-card h3 { font-size: 1.1rem; } 
     }
@@ -215,10 +225,18 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const API_URL = "https://script.google.com/macros/s/AKfycbzjG-9Eob6R_SW30ayy09pRghpZajfNSklAhseeaPqb8kTB7766lGczguUat_glGtl4sg/exec";
-    // IMAGEN POR DEFECTO: Solo se usa si la URL falla al cargar (404), no si la celda está vacía.
     const DEFAULT_IMG = "https://placehold.co/600x400/eee/8bba8b?text=Siroko";
 
-    const CATEGORY_ORDER = ["cafes", "bolleria", "promos", "bebidas calientes", "bebidas frias", "tostadas", "tostas", "bocadillos"];
+    // --- ORDEN DE CATEGORÍAS ACTUALIZADO ---
+    const CATEGORY_ORDER = [
+        "promos",
+        "cafes", 
+        "bolleria y dulces", 
+        "bebidas calientes", 
+        "tostas y bocadillos",
+        "bebidas frias", 
+        "bar"
+    ];
 
     const ICONS = {
         "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
@@ -243,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
     function fixImgUrl(url) {
-        if (!url) return null; // Si no hay URL, retornamos null explícitamente
+        if (!url) return null;
         try {
             if (url.includes("drive.google.com") && url.includes("/view")) {
                 return url.replace("/file/d/", "/uc?export=view&id=").replace("/view", "").replace("?usp=sharing", "");
@@ -328,7 +346,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         items.forEach(item => {
-            // VERIFICACIÓN CLAVE: Si la celda de imagen está vacía, hasImage es false.
             const rawImg = item.image ? item.image.trim() : "";
             const hasImage = rawImg !== "";
             const imgUrl = hasImage ? fixImgUrl(rawImg) : "";
@@ -348,7 +365,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             const card = document.createElement("div");
-            // Agregamos la clase 'no-image' si no hay foto para activar el borde verde
             card.className = `product-card ${!hasImage ? 'no-image' : ''}`;
             
             card.innerHTML = `
