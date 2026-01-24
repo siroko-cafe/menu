@@ -77,26 +77,29 @@
         padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
         transition: all 0.2s;
     }
-    /* Estilo especial para el botón TOP */
     .categories button.btn-top {
-        border-color: var(--dark);
-        color: var(--dark);
-        font-weight: 800;
+        border-color: var(--dark); color: var(--dark); font-weight: 800;
     }
     .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-    /* --- PRODUCTS (GRILLA MÓVIL) --- */
+    /* --- PRODUCTS --- */
     .products {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1rem; 
         padding: 1.5rem;
+        align-items: start; /* Alinea las tarjetas al inicio para que no se estiren si tienen distinta altura */
     }
 
     .product-card {
         background: var(--white); border-radius: var(--radius); overflow: hidden;
         box-shadow: var(--shadow); border: 1px solid #eee;
         display: flex; flex-direction: column; position: relative;
+    }
+
+    /* ESTILO PARA TARJETAS SIN IMAGEN */
+    .product-card.no-image {
+        border-top: 5px solid var(--primary); /* Línea verde decorativa */
     }
 
     .card-image-container {
@@ -112,8 +115,13 @@
         font-size: 0.6rem; padding: 3px 6px; border-radius: 4px; font-weight: 800;
         text-transform: uppercase; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+    /* Si no hay imagen, el badge top se pone relativo dentro del contenido */
+    .no-image .badge-rec {
+        position: static; display: inline-block; margin-bottom: 5px; 
+        background: var(--dark); color: #fff; box-shadow: none;
+    }
 
-    .card-content { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-content { padding: 14px; flex-grow: 1; display: flex; flex-direction: column; }
     .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; color: var(--dark); line-height: 1.2; }
     .product-card .description {
         font-size: 0.8rem; color: #777; margin-bottom: 10px; flex-grow: 1;
@@ -123,7 +131,7 @@
         display: flex; justify-content: space-between; align-items: center;
         margin-top: auto; padding-top: 8px; border-top: 1px solid #f9f9f9;
     }
-    .product-card .price { font-size: 1rem; font-weight: 800; color: var(--primary); }
+    .product-card .price { font-size: 1rem; font-weight: 800; color: var(--dark); }
 
     /* ICONS */
     .allergens-container { display: flex; gap: 4px; justify-content: flex-end; flex-wrap: wrap; }
@@ -147,7 +155,7 @@
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
-    /* --- VERSIÓN DE ESCRITORIO (3 COLUMNAS) --- */
+    /* DESKTOP (3 COLUMNAS) */
     @media (min-width: 900px) {
         header, .hero-section, .categories-wrapper, footer {
             padding-left: calc(50% - 475px);
@@ -207,18 +215,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const API_URL = "https://script.google.com/macros/s/AKfycbzjG-9Eob6R_SW30ayy09pRghpZajfNSklAhseeaPqb8kTB7766lGczguUat_glGtl4sg/exec";
+    // IMAGEN POR DEFECTO: Solo se usa si la URL falla al cargar (404), no si la celda está vacía.
     const DEFAULT_IMG = "https://placehold.co/600x400/eee/8bba8b?text=Siroko";
 
-    // --- AQUÍ EL NUEVO ORDEN ---
-    // NOTA: He puesto "tostadas" y "tostas" por si acaso en el Excel está escrito de una u otra forma.
-    const CATEGORY_ORDER = [
-        "cafes", 
-        "bolleria y dulces", 
-        "promo", 
-        "bebidas calientes", 
-        "bebidas frias", 
-        "tostadas y bocadillos", 
-    ];
+    const CATEGORY_ORDER = ["cafes", "bolleria", "promos", "bebidas calientes", "bebidas frias", "tostadas", "tostas", "bocadillos"];
 
     const ICONS = {
         "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
@@ -232,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let menuData = {};
     let currentLang = "es";
-    // INICIAR CON TOP POR DEFECTO
     let currentCategory = "TOP";
 
     const container = document.getElementById("products-container");
@@ -244,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
     function fixImgUrl(url) {
-        if (!url) return DEFAULT_IMG;
+        if (!url) return null; // Si no hay URL, retornamos null explícitamente
         try {
             if (url.includes("drive.google.com") && url.includes("/view")) {
                 return url.replace("/file/d/", "/uc?export=view&id=").replace("/view", "").replace("?usp=sharing", "");
@@ -261,20 +260,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function renderCategories() {
         catContainer.innerHTML = "";
         
-        // --- BOTÓN TOP (Reemplaza a "Todos") ---
         const topBtn = document.createElement("button");
         topBtn.textContent = "★ TOP";
         topBtn.className = "btn-top"; 
-        // Si la categoría actual es TOP, lo activamos
         if(currentCategory === "TOP") topBtn.classList.add("active");
-        
         topBtn.onclick = () => filterCategory("TOP");
         catContainer.appendChild(topBtn);
 
-        // --- RESTO DE CATEGORÍAS ---
         let cats = Object.keys(menuData[currentLang] || {});
         
-        // Ordenar según tu lista
         cats.sort((a, b) => {
             let idxA = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(a));
             let idxB = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(b));
@@ -306,24 +300,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let items = [];
         
-        // --- LÓGICA DE FILTRADO ---
         if(currentCategory === "TOP") {
-            // Recoger TODOS los productos de TODAS las categorías
             Object.keys(menuData[currentLang]).forEach(k => {
                 if(menuData[currentLang][k].items) items = items.concat(menuData[currentLang][k].items);
             });
-            // FILTRAR SOLO LOS RECOMENDADOS
             items = items.filter(item => item.recommended === true);
-
         } else if(currentCategory) {
-            // Categoría normal
             items = (menuData[currentLang][currentCategory] && menuData[currentLang][currentCategory].items) || [];
         }
 
-        // BÚSQUEDA (Si hay texto, busca en TODO, ignorando categoría)
         const term = searchInput.value.toLowerCase();
         if(term) {
-             // Si el usuario busca, reseteamos la lista para buscar en todo el catálogo
              let allItems = [];
              Object.keys(menuData[currentLang]).forEach(k => {
                 if(menuData[currentLang][k].items) allItems = allItems.concat(menuData[currentLang][k].items);
@@ -335,13 +322,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if(items.length === 0) {
-            let msg = currentCategory === "TOP" ? "No hay productos TOP destacados por ahora." : "No hay productos aquí.";
+            let msg = currentCategory === "TOP" ? "No hay productos destacados por ahora." : "No hay productos aquí.";
             container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:20px;">${msg}</div>`;
             return;
         }
 
         items.forEach(item => {
-            const img = fixImgUrl(item.image);
+            // VERIFICACIÓN CLAVE: Si la celda de imagen está vacía, hasImage es false.
+            const rawImg = item.image ? item.image.trim() : "";
+            const hasImage = rawImg !== "";
+            const imgUrl = hasImage ? fixImgUrl(rawImg) : "";
+
             const price = item.price && item.price.base ? currencyFormatter.format(item.price.base) : "";
             
             let iconsHtml = "";
@@ -357,13 +348,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             const card = document.createElement("div");
-            card.className = "product-card";
+            // Agregamos la clase 'no-image' si no hay foto para activar el borde verde
+            card.className = `product-card ${!hasImage ? 'no-image' : ''}`;
+            
             card.innerHTML = `
+                ${hasImage ? `
                 <div class="card-image-container">
                     ${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}
-                    <img src="${img}" onerror="this.src='${DEFAULT_IMG}'" alt="${item.name}">
-                </div>
+                    <img src="${imgUrl}" onerror="this.src='${DEFAULT_IMG}'" alt="${item.name}">
+                </div>` : ''}
+                
                 <div class="card-content">
+                    ${(!hasImage && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
+                    
                     <div>
                         <h3>${item.name}</h3>
                         <p class="description">${item.description || ''}</p>
@@ -401,7 +398,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll(".lang-select button").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             currentLang = btn.dataset.lang;
-            // Al cambiar idioma, volvemos a TOP
             currentCategory = "TOP";
             renderCategories();
             renderProducts();
