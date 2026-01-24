@@ -16,7 +16,6 @@
         --dark: #1a1a1a;
         --light: #f4f4f4;
         --white: #ffffff;
-        --gray: #666;
         --shadow: 0 4px 15px rgba(0,0,0,0.05);
         --radius: 12px;
     }
@@ -78,10 +77,13 @@
     }
     .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-    /* PRODUCTS */
+    /* --- PRODUCTS (CONFIGURACIÓN DE LA GRILLA) --- */
     .products {
-        display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 1rem; padding: 1.5rem;
+        display: grid;
+        /* Móvil: Mínimo 160px (2 columnas en móviles modernos) */
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem; 
+        padding: 1.5rem;
     }
 
     .product-card {
@@ -137,6 +139,27 @@
     footer { background: var(--dark); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8rem; }
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
+
+    /* --- VERSIÓN DE ESCRITORIO (Pantallas grandes) --- */
+    @media (min-width: 900px) {
+        /* Centrar el contenido y limitar ancho máximo */
+        header, .hero-section, .categories-wrapper, footer {
+            padding-left: calc(50% - 500px);
+            padding-right: calc(50% - 500px);
+        }
+        
+        .products {
+            max-width: 1000px;
+            margin: 0 auto;
+            /* Tarjetas MUCHO más grandes: Mínimo 300px */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem; /* Más espacio entre tarjetas */
+        }
+
+        .product-card h3 { font-size: 1.2rem; } /* Título más grande */
+        .product-card .price { font-size: 1.2rem; } /* Precio más grande */
+    }
+
 </style>
 </head>
 <body>
@@ -179,7 +202,6 @@
 </footer>
 
 <script>
-// --- SCRIPT SEGURO ---
 document.addEventListener("DOMContentLoaded", function() {
 
     const API_URL = "https://script.google.com/macros/s/AKfycbzjG-9Eob6R_SW30ayy09pRghpZajfNSklAhseeaPqb8kTB7766lGczguUat_glGtl4sg/exec";
@@ -187,7 +209,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const CATEGORY_ORDER = ["cafes", "bolleria", "bebidas calientes", "bebidas frias", "tostas", "bocadillos"];
 
-    // Iconos SVG simplificados
     const ICONS = {
         "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
         "lactosa": '<svg viewBox="0 0 24 24"><path d="M17,4V2H7V4H2V6H4V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18V6H22V4H17M18,18H6V6H18V18M13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5A1.5,1.5 0 0,1 13.5,12Z"/></svg>',
@@ -210,7 +231,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
-    // FIX DRIVE URLS
     function fixImgUrl(url) {
         if (!url) return DEFAULT_IMG;
         try {
@@ -221,27 +241,22 @@ document.addEventListener("DOMContentLoaded", function() {
         return url;
     }
 
-    // Normalizador de texto
     function normalize(str) {
         if (!str) return "";
         return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
     }
 
-    // Render Categorías
     function renderCategories() {
         catContainer.innerHTML = "";
         
-        // Botón Todos
         const allBtn = document.createElement("button");
         allBtn.textContent = currentLang === 'en' ? "All" : "Todos";
         if(currentCategory === "") allBtn.classList.add("active");
         allBtn.onclick = () => filterCategory("");
         catContainer.appendChild(allBtn);
 
-        // Obtener categorías
         let cats = Object.keys(menuData[currentLang] || {});
         
-        // Ordenar
         cats.sort((a, b) => {
             let idxA = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(a));
             let idxB = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(b));
@@ -266,7 +281,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if(window.scrollY > 100) window.scrollTo({ top: 120, behavior: 'smooth' });
     }
 
-    // Render Productos
     function renderProducts() {
         container.innerHTML = "";
         
@@ -276,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if(currentCategory) {
             items = (menuData[currentLang][currentCategory] && menuData[currentLang][currentCategory].items) || [];
         } else {
-            // Recolectar de todas las categorías
             Object.keys(menuData[currentLang]).forEach(k => {
                 if(menuData[currentLang][k].items) items = items.concat(menuData[currentLang][k].items);
             });
@@ -299,7 +312,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = fixImgUrl(item.image);
             const price = item.price && item.price.base ? currencyFormatter.format(item.price.base) : "";
             
-            // Iconos
             let iconsHtml = "";
             if(item.allergens && Array.isArray(item.allergens)) {
                 item.allergens.forEach(alg => {
@@ -334,7 +346,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Inicializar
     fetch(API_URL)
         .then(res => {
             if(!res.ok) throw new Error("Error de conexión");
@@ -353,7 +364,6 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error(err);
         });
 
-    // Eventos
     document.querySelectorAll(".lang-select button").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".lang-select button").forEach(b => b.classList.remove("active"));
