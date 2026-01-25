@@ -186,6 +186,68 @@
     color: inherit; /* Opcional: mantiene el color original del h1 */
 }
 
+    @media print {
+    /* 1. Ocultar elementos innecesarios (Botones, Buscador, Header) */
+    header, .categories-wrapper, .hero-section, footer, .btn-home, .lang-select {
+        display: none !important;
+    }
+
+    /* 2. Reset del cuerpo para aprovechar el papel */
+    body {
+        background-color: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Forzar el diseño de columnas (No Masonry para evitar cortes) */
+    .products {
+        display: block !important;
+        column-count: 2 !important; /* 2 columnas en el papel queda muy pro */
+        column-gap: 20px;
+        padding: 1cm !important;
+    }
+
+    /* 4. Ajustar tarjetas de producto */
+    .product-card {
+        break-inside: avoid; /* Evita que un plato se corte a la mitad entre páginas */
+        box-shadow: none !important;
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* 5. Ocultar imágenes para ahorrar tinta (Opcional pero recomendado) */
+    .card-image-container {
+        display: none !important;
+    }
+
+    /* 6. Tipografía para impresión */
+    .product-card h3 {
+        font-size: 12pt !important;
+        color: black !important;
+    }
+    .product-card .description {
+        font-size: 10pt !important;
+        color: #555 !important;
+    }
+    .product-card .price {
+        color: black !important;
+        font-weight: bold !important;
+    }
+
+    /* 7. Añadir un título de "Menú Siroko" que solo aparezca al imprimir */
+    .products::before {
+        content: "SIROKO CAFÉ - MENÚ";
+        display: block;
+        text-align: center;
+        font-size: 20pt;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-bottom: 2px solid black;
+    }
+}
+
 </style>
 </head>
 <body>
