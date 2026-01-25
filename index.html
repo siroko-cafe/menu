@@ -24,9 +24,8 @@
 
     body {
         font-family: 'Inter', sans-serif;
-        background-color: var(--light);
+        background-color: var(--light); /* Fondo negro para que el final de la página sea uniforme */
         color: var(--dark);
-        padding-bottom: 80px;
     }
 
     h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 600; }
@@ -47,6 +46,7 @@
     .logo-wrapper { display: flex; align-items: center; gap: 10px; }
     .logo-wrapper img { height: 40px; width: auto; object-fit: contain; }
     .logo-wrapper h1 { font-size: 1.2rem; margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: -0.5px; }
+    h1 a { text-decoration: none; color: inherit; }
 
     .lang-select { display: flex; gap: 5px; }
     .lang-select button {
@@ -55,8 +55,24 @@
     }
     .lang-select button.active { background: var(--dark); color: var(--white); }
 
+    /* BANNER PROMO */
+    .promo-banner {
+        background-color: var(--light);
+        color: var(--primary);
+        text-align: center;
+        padding: 10px 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        animation: pulse-banner 3s infinite ease-in-out;
+    }
+    @keyframes pulse-banner { 0%, 100% { opacity: 0.95; } 50% { opacity: 1; } }
+
     /* HERO & SEARCH */
-    .hero-section { padding: 1rem 1.5rem 0.5rem 1.5rem; background: var(--white); }
+    .hero-section { padding: 1.5rem 1.5rem 0.5rem 1.5rem; background: var(--white); }
     #search-bar {
         width: 100%; padding: 12px 15px; background: #f0f0f0; border: none;
         border-radius: 10px; font-size: 1rem; outline: none; font-family: 'Inter', sans-serif;
@@ -71,37 +87,31 @@
     }
     .categories { display: flex; gap: 8px; overflow-x: auto; padding: 0 1.5rem; scrollbar-width: none; }
     .categories::-webkit-scrollbar { display: none; }
-    
     .categories button {
         white-space: nowrap; background: transparent; color: #666; border: 1px solid #ddd;
         padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
         transition: all 0.2s;
     }
-    .categories button.btn-top {
-        border-color: var(--dark); color: var(--dark); font-weight: 800;
-    }
+    .categories button.btn-top { border-color: var(--dark); color: var(--dark); font-weight: 800; }
     .categories button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
 
-    /* --- ESTILO MASONRY (1 COLUMNA EN MÓVIL) --- */
-    .products {
+    /* PRODUCTS CONTAINER */
+    #products-container {
+        background-color: var(--light);
         padding: 1.5rem;
-        column-count: 1; /* POR DEFECTO: 1 COLUMNA */
+        column-count: 1;
         column-gap: 1.5rem;
-        display: block;
+        min-height: 400px;
     }
 
     .product-card {
         background: var(--white); border-radius: var(--radius); overflow: hidden;
         box-shadow: var(--shadow); border: 1px solid #eee;
-        
-        display: inline-block; 
-        width: 100%;
-        margin-bottom: 1.5rem; 
-        break-inside: avoid; 
-        
+        display: inline-block; width: 100%; margin-bottom: 1.5rem; break-inside: avoid;
         position: relative;
     }
 
+    /* Estilo para productos sin imagen o con imagen rota */
     .product-card.no-image { border-top: 5px solid var(--primary); }
 
     .card-image-container {
@@ -110,6 +120,7 @@
     }
     .product-card img {
         position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+        transition: opacity 0.3s ease;
     }
     
     .badge-rec {
@@ -118,109 +129,34 @@
         text-transform: uppercase; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .no-image .badge-rec {
-        position: static; display: inline-block; margin-bottom: 5px; 
+        position: static; display: inline-block; margin-bottom: 8px; 
         background: var(--dark); color: #fff; box-shadow: none;
     }
 
-    .card-content { 
-        padding: 14px; 
-        display: flex; 
-        flex-direction: column;
-    }
-    
+    .card-content { padding: 14px; display: flex; flex-direction: column; }
     .product-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--dark); line-height: 1.2; }
-    .product-card .description {
-        font-size: 0.9rem; color: #777; margin-bottom: 12px; 
-        line-height: 1.4;
-    }
-    .card-footer {
-        display: flex; justify-content: space-between; align-items: center;
-        margin-top: auto; padding-top: 8px; border-top: 1px solid #f9f9f9;
-    }
-    
-    #products-container {
-    background-color: var(--light); /* Mantiene el gris claro en la zona de productos */
-    padding-bottom: 50px;
-    }
-    
-    /* CAMBIO DE COLOR PRECIO */
+    .product-card .description { font-size: 0.9rem; color: #777; margin-bottom: 12px; line-height: 1.4; }
+    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 8px; border-top: 1px solid #f9f9f9; }
     .product-card .price { font-size: 1.1rem; font-weight: 800; color: var(--primary); }
 
-    /* ICONS - AUMENTO DE TAMAÑO */
     .allergens-container { display: flex; gap: 6px; justify-content: flex-end; flex-wrap: wrap; }
     .allergen-icon { width: 22px; height: 22px; fill: #bbb; }
     .allergen-text { font-size: 9px; border: 1px solid #eee; color: #999; padding: 1px 3px; border-radius: 3px; text-transform: uppercase; }
 
     /* UTILS */
-    #loading-spinner { text-align: center; padding: 40px; color: #999; }
-    .spinner {
-        width: 30px; height: 30px; border: 3px solid #eee; border-top-color: var(--dark);
-        border-radius: 50%; margin: 0 auto 10px; animation: spin 1s linear infinite;
-    }
+    #loading-spinner { text-align: center; padding: 60px; color: #999; background: var(--light); }
+    .spinner { width: 30px; height: 30px; border: 3px solid #eee; border-top-color: var(--dark); border-radius: 50%; margin: 0 auto 10px; animation: spin 1s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    
-    #error-box { 
-        display: none; background: #ffebee; color: #c62828; padding: 20px; 
-        margin: 20px; border-radius: 8px; text-align: center; border: 1px solid #ef9a9a;
-    }
+    #error-box { display: none; background: #ffebee; color: #c62828; padding: 20px; margin: 20px; border-radius: 8px; text-align: center; }
 
-    footer { background: var(--dark); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8rem; box-shadow: 0 50vh 0 50vh var(--dark); }
+    footer { background: var(--dark); color: #888; padding: 40px 20px; text-align: center; font-size: 0.8rem; box-shadow: 0 50vh 0 50vh var(--dark); }
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
-
-    /* --- MASONRY DESKTOP (PC) --- */
     @media (min-width: 900px) {
-        header, .hero-section, .categories-wrapper, footer {
-            padding-left: calc(50% - 475px);
-            padding-right: calc(50% - 475px);
-        }
-        .products {
-            max-width: 950px;
-            margin: 0 auto;
-            /* AQUÍ SE ACTIVAN LAS 3 COLUMNAS SOLO PARA PC */
-            column-count: 3;
-            column-gap: 1.5rem;
-        }
-        .product-card {
-            margin-bottom: 1.5rem;
-        }
+        header, .hero-section, .categories-wrapper, footer, .promo-banner { padding-left: calc(50% - 475px); padding-right: calc(50% - 475px); }
+        #products-container { max-width: 950px; margin: 0 auto; column-count: 3; }
     }
-    h1 a {
-    text-decoration: none;
-    color: inherit; /* Opcional: mantiene el color original del h1 */
-}
-/* BANNER ESTILO SIROKO */
-.promo-banner {
-    background-color: var(--light);
-    color: var(--primary);
-    text-align: center;
-    padding: 10px 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-/* Animación sutil para que no pase desapercibido */
-@keyframes pulse-banner {
-    0% { opacity: 0.95; }
-    50% { opacity: 1; }
-    100% { opacity: 0.95; }
-}
-
-.promo-banner {
-    animation: pulse-banner 3s infinite ease-in-out;
-}
-
-/* Evitar que el banner se pegue al buscador en móvil */
-.hero-section {
-    padding-top: 1.5rem;
-}
-    
 </style>
 </head>
 <body>
@@ -230,7 +166,6 @@
         <img src="logo.png" alt="Logo" onerror="this.style.display='none'"> 
         <h1><a href="https://www.sirokocafe.com">Siroko Café</a></h1>
     </div>
-    
     <div class="lang-select">
         <button data-lang="es" class="active">ES</button>
         <button data-lang="ca">CA</button>
@@ -271,43 +206,14 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const API_URL = "https://script.google.com/macros/s/AKfycbwXOjNXQs-0j0eenVgJcv_jkTuKJ7LTVf1C9XlmX4DaplqD52wAPxjTf36c7adNgPqWvg/exec";
-    const DEFAULT_IMG = "https://placehold.co/600x400/eee/8bba8b?text=Siroko";
-
-    // --- TRADUCCIONES ESTÁTICAS (BANNER Y BUSCADOR) ---
+    
     const uiTranslations = {
-        "es": {
-            "promo": "10% adicional si se consume en terraza",
-            "search": "Buscar productos...",
-            "loading": "Cargando menú...",
-            "no_top": "No hay productos destacados por ahora.",
-            "no_products": "No hay productos aquí."
-        },
-        "ca": {
-            "promo": "10% addicional si es consumeix a la terrassa",
-            "search": "Cercar productes...",
-            "loading": "Carregant menú...",
-            "no_top": "No hi ha productes destacats ara mateix.",
-            "no_products": "No hi ha productes aquí."
-        },
-        "en": {
-            "promo": "10% additional fee for terrace service",
-            "search": "Search products...",
-            "loading": "Loading menu...",
-            "no_top": "No featured products for now.",
-            "no_products": "No products found here."
-        }
+        "es": { "promo": "10% adicional si se consume en terraza", "search": "Buscar productos...", "loading": "Cargando menú...", "no_top": "No hay productos destacados.", "no_products": "No hay productos aquí." },
+        "ca": { "promo": "10% addicional si es consumeix a la terrassa", "search": "Cercar productes...", "loading": "Carregant menú...", "no_top": "No hi ha productes destacats.", "no_products": "No hi ha productes aquí." },
+        "en": { "promo": "10% additional fee for terrace service", "search": "Search products...", "loading": "Loading menu...", "no_top": "No featured products.", "no_products": "No products found." }
     };
 
-    // ORDEN DEFINITIVO DE CATEGORÍAS
-    const CATEGORY_ORDER = [
-        "promos",
-        "cafes", 
-        "bolleria y dulces", 
-        "bebidas calientes", 
-        "tostas y bocadillos",
-        "bebidas frias", 
-        "bar"
-    ];
+    const CATEGORY_ORDER = ["promos", "cafes", "bolleria y dulces", "bebidas calientes", "tostas y bocadillos", "bebidas frias", "bar"];
 
     const ICONS = {
         "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
@@ -332,22 +238,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
-    function fixImgUrl(url) {
-        if (!url) return null;
-        try {
-            if (url.includes("drive.google.com") && url.includes("/view")) {
-                return url.replace("/file/d/", "/uc?export=view&id=").replace("/view", "").replace("?usp=sharing", "");
-            }
-        } catch(e) {}
-        return url;
-    }
-
     function normalize(str) {
-        if (!str) return "";
-        return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+        return str ? str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
     }
 
-    // ACTUALIZA TEXTOS DE LA INTERFAZ
     function updateUILanguage(lang) {
         if (promoText) promoText.textContent = uiTranslations[lang].promo;
         if (searchInput) searchInput.placeholder = uiTranslations[lang].search;
@@ -356,38 +250,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function renderCategories() {
         catContainer.innerHTML = "";
-        
         const topBtn = document.createElement("button");
         topBtn.textContent = "★ TOP";
-        topBtn.className = "btn-top"; 
-        if(currentCategory === "TOP") topBtn.classList.add("active");
-        topBtn.onclick = () => filterCategory("TOP");
+        topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
+        topBtn.onclick = () => { currentCategory = "TOP"; renderCategories(); renderProducts(); };
         catContainer.appendChild(topBtn);
 
-        let cats = Object.keys(menuData[currentLang] || {});
-        
-        cats.sort((a, b) => {
-            let idxA = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(a));
-            let idxB = CATEGORY_ORDER.findIndex(o => normalize(o) === normalize(b));
-            if (idxA === -1) idxA = 999;
-            if (idxB === -1) idxB = 999;
-            return idxA - idxB;
+        let cats = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
+            let idxA = CATEGORY_ORDER.indexOf(normalize(a)), idxB = CATEGORY_ORDER.indexOf(normalize(b));
+            return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
         });
 
         cats.forEach(cat => {
             const btn = document.createElement("button");
             btn.textContent = menuData[currentLang][cat].name;
             if(currentCategory === cat) btn.classList.add("active");
-            btn.onclick = () => filterCategory(cat);
+            btn.onclick = () => { currentCategory = cat; renderCategories(); renderProducts(); };
             catContainer.appendChild(btn);
         });
-    }
-
-    function filterCategory(cat) {
-        currentCategory = cat;
-        renderCategories();
-        renderProducts();
-        if(window.scrollY > 100) window.scrollTo({ top: 120, behavior: 'smooth' });
     }
 
     function renderProducts() {
@@ -395,68 +275,52 @@ document.addEventListener("DOMContentLoaded", function() {
         if(!menuData[currentLang]) return;
 
         let items = [];
-        
         if(currentCategory === "TOP") {
-            Object.keys(menuData[currentLang]).forEach(k => {
-                if(menuData[currentLang][k].items) items = items.concat(menuData[currentLang][k].items);
-            });
-            items = items.filter(item => item.recommended === true);
-        } else if(currentCategory) {
-            items = (menuData[currentLang][currentCategory] && menuData[currentLang][currentCategory].items) || [];
+            Object.values(menuData[currentLang]).forEach(c => items = items.concat(c.items.filter(i => i.recommended)));
+        } else {
+            items = menuData[currentLang][currentCategory]?.items || [];
         }
 
         const term = searchInput.value.toLowerCase();
         if(term) {
-             let allItems = [];
-             Object.keys(menuData[currentLang]).forEach(k => {
-                if(menuData[currentLang][k].items) allItems = allItems.concat(menuData[currentLang][k].items);
-             });
-             items = allItems.filter(i => 
-                (i.name && i.name.toLowerCase().includes(term)) || 
-                (i.description && i.description.toLowerCase().includes(term))
-            );
+            let all = [];
+            Object.values(menuData[currentLang]).forEach(c => all = all.concat(c.items));
+            items = all.filter(i => i.name.toLowerCase().includes(term) || i.description?.toLowerCase().includes(term));
         }
 
-        if(items.length === 0) {
-            let msg = currentCategory === "TOP" ? uiTranslations[currentLang].no_top : uiTranslations[currentLang].no_products;
-            container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:20px;">${msg}</div>`;
+        if(!items.length) {
+            container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:40px;">${currentCategory === "TOP" ? uiTranslations[currentLang].no_top : uiTranslations[currentLang].no_products}</div>`;
             return;
         }
 
-        items.forEach(item => {
-            const rawImg = item.image ? item.image.trim() : "";
-            const hasImage = rawImg !== "";
-            const imgUrl = hasImage ? fixImgUrl(rawImg) : "";
-            const price = item.price && item.price.base ? currencyFormatter.format(item.price.base) : "";
+        items.forEach((item, index) => {
+            const imgUrl = item.image?.trim() || "";
+            const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
+            const cardId = `card-${currentLang}-${index}`;
             
             let iconsHtml = "";
-            if(item.allergens && Array.isArray(item.allergens)) {
-                item.allergens.forEach(alg => {
-                    const key = normalize(alg);
-                    if(ICONS[key] || ICONS[alg.toLowerCase()]) {
-                        iconsHtml += `<div class="allergen-icon" title="${alg}">${ICONS[key] || ICONS[alg.toLowerCase()]}</div>`;
-                    } else {
-                        iconsHtml += `<span class="allergen-text">${alg}</span>`;
-                    }
-                });
-            }
+            (item.allergens || []).forEach(alg => {
+                const icon = ICONS[normalize(alg)];
+                iconsHtml += icon ? `<div class="allergen-icon">${icon}</div>` : `<span class="allergen-text">${alg}</span>`;
+            });
 
             const card = document.createElement("div");
-            card.className = `product-card ${!hasImage ? 'no-image' : ''}`;
+            card.className = `product-card ${!imgUrl ? 'no-image' : ''}`;
+            card.id = cardId;
             
+            // Lógica: Si hay URL de imagen, intentamos cargarla. Si falla (onerror), ocultamos el contenedor y añadimos clase no-image.
             card.innerHTML = `
-                ${hasImage ? `
-                <div class="card-image-container">
+                ${imgUrl ? `
+                <div class="card-image-container" id="img-cont-${cardId}">
                     ${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}
-                    <img src="${imgUrl}" onerror="this.src='${DEFAULT_IMG}'" alt="${item.name}">
+                    <img src="${imgUrl}" alt="${item.name}" 
+                         onerror="document.getElementById('img-cont-${cardId}').style.display='none'; 
+                                  document.getElementById('${cardId}').classList.add('no-image');">
                 </div>` : ''}
-                
                 <div class="card-content">
-                    ${(!hasImage && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
-                    <div>
-                        <h3>${item.name}</h3>
-                        <p class="description">${item.description || ''}</p>
-                    </div>
+                    ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
+                    <h3>${item.name}</h3>
+                    <p class="description">${item.description || ''}</p>
                     <div class="card-footer">
                         <div class="price">${price}</div>
                         <div class="allergens-container">${iconsHtml}</div>
@@ -467,42 +331,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // CARGA INICIAL
-    fetch(API_URL)
-        .then(res => {
-            if(!res.ok) throw new Error("Error de conexión");
-            return res.json();
-        })
-        .then(data => {
-            menuData = data;
-            loader.style.display = 'none';
-            updateUILanguage(currentLang);
-            renderCategories();
-            renderProducts();
-        })
-        .catch(err => {
-            loader.style.display = 'none';
-            errorBox.style.display = 'block';
-            errorBox.textContent = "Error cargando menú: " + err.message;
-            console.error(err);
-        });
+    fetch(API_URL).then(res => res.json()).then(data => {
+        menuData = data;
+        loader.style.display = 'none';
+        updateUILanguage(currentLang);
+        renderCategories();
+        renderProducts();
+    }).catch(err => {
+        loader.style.display = 'none';
+        errorBox.style.display = 'block';
+        errorBox.textContent = "Error: " + err.message;
+    });
 
-    // SELECTOR DE IDIOMA
     document.querySelectorAll(".lang-select button").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".lang-select button").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             currentLang = btn.dataset.lang;
-            
-            updateUILanguage(currentLang); // Actualizar banner y buscador
             currentCategory = "TOP";
+            updateUILanguage(currentLang);
             renderCategories();
             renderProducts();
         });
     });
 
     searchInput.addEventListener("input", renderProducts);
-
 });
 </script>
 
