@@ -163,6 +163,34 @@
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
+    .btn-home {
+  text-decoration: none;
+  color: #4e342e; /* El marrón que usamos antes */
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  border: 1px solid #4e342e;
+  border-radius: 20px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-home:hover {
+  background-color: #4e342e;
+  color: white;
+}
+
+/* Para asegurar que todo esté alineado en la misma fila */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Para que en móviles no se amontone */
+  padding: 10px 20px;
+}
+
     /* --- MASONRY DESKTOP (PC) --- */
     @media (min-width: 900px) {
         header, .hero-section, .categories-wrapper, footer {
@@ -190,6 +218,13 @@
         <img src="logo.png" alt="Logo" onerror="this.style.display='none'"> 
         <h1>Siroko Café</h1>
     </div>
+    
+    <div class="nav-main">
+      <a href="https://www.sirokocafe.com" class="btn-home">
+        <i class="fas fa-home"></i> HOME
+      </a>
+    </div>
+    
     <div class="lang-select">
         <button data-lang="es" class="active">ES</button>
         <button data-lang="ca">CA</button>
