@@ -320,15 +320,30 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 // Asegúrate de tener esta función auxiliar para el scroll que pediste
-function handleCategoryChange() {
+function handleCategoryChange(clickedElement) {
     renderCategories();
     renderProducts();
     
-    // Scroll suave hacia la zona de categorías/productos
+    // 1. SCROLL HORIZONTAL: Centrar el botón activo
+    if (clickedElement) {
+        clickedElement.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center', // Esto lo centra horizontalmente
+            block: 'nearest'
+        });
+    }
+    
+    // 2. SCROLL VERTICAL: Subir a la parte superior de los productos
     const scrollTarget = document.querySelector('.categories-wrapper');
     if (scrollTarget) {
+        const offset = 65; // Ajuste para que el header no tape el título
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = scrollTarget.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
         window.scrollTo({
-            top: scrollTarget.offsetTop - 10,
+            top: offsetPosition,
             behavior: 'smooth'
         });
     }
