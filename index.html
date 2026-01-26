@@ -335,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             const card = document.createElement("div");
+            // Si no hay imagen, aplicamos una clase especial para el margen superior
             card.className = "product-card" + (imgUrl ? "" : " no-image");
             card.id = cardId;
             
@@ -345,10 +346,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     <img src="${imgUrl}" alt="${item.name}" 
                          onload="this.classList.add('loaded'); this.parentElement.classList.add('has-image');"
                          onerror="this.parentElement.style.display='none'; document.getElementById('${cardId}').classList.add('no-image');">
-                </div>` : `
-                    <div class="card-content">${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}</div>
-                `}
-                <div class="card-content" style="padding-top:0">
+                </div>` : ''}
+                
+                <div class="card-content" style="${imgUrl ? '' : 'padding-top: 20px;'}">
+                    ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
                     <h3>${item.name}</h3>
                     <p class="description">${item.description || ''}</p>
                     <div class="card-footer">
