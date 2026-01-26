@@ -12,7 +12,7 @@
 <style>
     /* --- VARIABLES & RESET --- */
     :root {
-        --primary: #8bba8b;        /* Verde Siroko */
+        --primary: #8bba8b;
         --dark: #1a1a1a;
         --light: #f4f4f4;
         --white: #ffffff;
@@ -24,7 +24,7 @@
 
     body {
         font-family: 'Inter', sans-serif;
-        background-color: var(--light); /* Fondo negro para que el final de la página sea uniforme */
+        background-color: var(--light);
         color: var(--dark);
     }
 
@@ -111,19 +111,28 @@
         position: relative;
     }
 
-    /* Estilo para productos sin imagen o con imagen rota */
+    /* Estilo para productos sin imagen */
     .product-card.no-image { border-top: 5px solid var(--primary); }
 
+    /* --- MEJORA DE CARGA DE IMAGEN --- */
     .card-image-container {
-        width: 100%; height: 0; padding-bottom: 75%; 
+        width: 100%; height: 0; padding-bottom: 0; /* Empieza en cero */
         position: relative; background: #f0f0f0; overflow: hidden;
-    }
-    .product-card img {
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-        transition: opacity 0.3s ease-in; opacity: 0;
+        transition: padding-bottom 0.4s ease-out; /* Transición suave cuando aparece */
     }
 
-    .product-card img[src] {
+    /* Se activa por JS cuando la imagen carga */
+    .card-image-container.has-image {
+        padding-bottom: 75%;
+    }
+
+    .product-card img {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+        opacity: 0; transition: opacity 0.5s ease-in;
+    }
+
+    /* Se activa por JS cuando la imagen está lista */
+    .product-card img.loaded {
         opacity: 1;
     }
     
@@ -309,18 +318,20 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             const card = document.createElement("div");
-            card.className = `product-card ${!imgUrl ? 'no-image' : ''}`;
+            card.className = "product-card"; // Quitamos no-image inicial
             card.id = cardId;
             
-            // Lógica: Si hay URL de imagen, intentamos cargarla. Si falla (onerror), ocultamos el contenedor y añadimos clase no-image.
             card.innerHTML = `
                 ${imgUrl ? `
                 <div class="card-image-container" id="img-cont-${cardId}">
                     ${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}
                     <img src="${imgUrl}" alt="${item.name}" 
-                         onerror="document.getElementById('img-cont-${cardId}').style.display='none'; 
-                                  document.getElementById('${cardId}').classList.add('no-image');">
-                </div>` : ''}
+                         onload="this.classList.add('loaded'); this.parentElement.classList.add('has-image');"
+                         onerror="this.parentElement.style.display='none'; document.getElementById('${cardId}').classList.add('no-image');">
+                </div>` : `
+                <div class="no-image-placeholder" style="display:none;"></div>
+                <script>document.getElementById('${cardId}').classList.add('no-image');<\/script>
+                `}
                 <div class="card-content">
                     ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
                     <h3>${item.name}</h3>
@@ -331,6 +342,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
             `;
+
+            // Si no tiene URL directamente, añadimos la clase no-image manualmente
+            if(!imgUrl) card.classList.add('no-image');
+
             container.appendChild(card);
         });
     }
