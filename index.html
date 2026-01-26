@@ -262,26 +262,70 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function renderCategories() {
-        catContainer.innerHTML = "";
-        const topBtn = document.createElement("button");
-        topBtn.textContent = "★ TOP";
-        topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
-        topBtn.onclick = () => { currentCategory = "TOP"; renderCategories(); renderProducts(); };
-        catContainer.appendChild(topBtn);
+    catContainer.innerHTML = "";
+    
+    // 1. Botón TOP siempre primero
+    const topBtn = document.createElement("button");
+    topBtn.textContent = "★ TOP";
+    topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
+    topBtn.onclick = () => { 
+        currentCategory = "TOP"; 
+        handleCategoryChange(); 
+    };
+    catContainer.appendChild(topBtn);
 
-        let cats = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
-            let idxA = CATEGORY_ORDER.indexOf(normalize(a)), idxB = CATEGORY_ORDER.indexOf(normalize(b));
-            return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
-        });
+    // 2. Obtener las categorías que vienen de la API
+    let cats = Object.keys(menuData[currentLang] || {});
 
-        cats.forEach(cat => {
-            const btn = document.createElement("button");
-            btn.textContent = menuData[currentLang][cat].name;
-            if(currentCategory === cat) btn.classList.add("active");
-            btn.onclick = () => { currentCategory = cat; renderCategories(); renderProducts(); };
-            catContainer.appendChild(btn);
+    // 3. Ordenarlas usando el CATEGORY_ORDER
+    cats.sort((a, b) => {
+        // Normalizamos ambos lados para que la comparación sea justa
+        let normA = normalize(a);
+        let normB = normalize(b);
+        
+        // Buscamos la posición en tu array preferido (también normalizado)
+        let idxA = CATEGORY_ORDER.map(c => normalize(c)).indexOf(normA);
+        let idxB = CATEGORY_ORDER.map(c => normalize(c)).indexOf(normB);
+
+        // Si una categoría no está en la lista, le damos un índice alto (999)
+        let posA = (idxA === -1) ? 999 : idxA;
+        let posB = (idxB === -1) ? 999 : idxB;
+
+        // Si ambas son 999 (no están en la lista), las ordenamos alfabéticamente entre ellas
+        if (posA === 999 && posB === 999) {
+            return normA.localeCompare(normB);
+        }
+
+        return posA - posB;
+    });
+
+    // 4. Crear los botones ya ordenados
+    cats.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = menuData[currentLang][cat].name;
+        if(currentCategory === cat) btn.classList.add("active");
+        btn.onclick = () => { 
+            currentCategory = cat; 
+            handleCategoryChange(); 
+        };
+        catContainer.appendChild(btn);
+    });
+}
+
+// Asegúrate de tener esta función auxiliar para el scroll que pediste
+function handleCategoryChange() {
+    renderCategories();
+    renderProducts();
+    
+    // Scroll suave hacia la zona de categorías/productos
+    const scrollTarget = document.querySelector('.categories-wrapper');
+    if (scrollTarget) {
+        window.scrollTo({
+            top: scrollTarget.offsetTop - 10,
+            behavior: 'smooth'
         });
     }
+}
 
     function renderProducts() {
         container.innerHTML = "";
