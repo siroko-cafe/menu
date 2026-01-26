@@ -311,33 +311,82 @@
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+// 1. VARIABLES GLOBALES (Fuera para que imprimir pueda verlas)
+const API_URL = "https://script.google.com/macros/s/AKfycbwXOjNXQs-0j0eenVgJcv_jkTuKJ7LTVf1C9XlmX4DaplqD52wAPxjTf36c7adNgPqWvg/exec";
+const CATEGORY_ORDER = ["promos", "cafes", "bolleria y dulces", "bebidas calientes", "tostas y bocadillos", "bebidas frias", "bar"];
 
-    const API_URL = "https://script.google.com/macros/s/AKfycbwXOjNXQs-0j0eenVgJcv_jkTuKJ7LTVf1C9XlmX4DaplqD52wAPxjTf36c7adNgPqWvg/exec";
+let menuData = {};
+let currentLang = "es";
+let currentCategory = "TOP";
+
+const uiTranslations = {
+    "es": { "promo": "10% adicional si se consume en terraza", "search": "Buscar productos...", "loading": "Cargando menú...", "no_top": "No hay productos destacados.", "no_products": "No hay productos aquí." },
+    "ca": { "promo": "10% addicional si es consumeix a la terrassa", "search": "Cercar productes...", "loading": "Carregant menú...", "no_top": "No hi ha productes destacats.", "no_products": "No hi ha productes aquí." },
+    "en": { "promo": "10% additional fee for terrace service", "search": "Search products...", "loading": "Loading menu...", "no_top": "No featured products.", "no_products": "No products found." }
+};
+
+const ICONS = {
+    "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
+    "lactosa": '<svg viewBox="0 0 24 24"><path d="M17,4V2H7V4H2V6H4V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18V6H22V4H17M18,18H6V6H18V18M13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5A1.5,1.5 0 0,1 13.5,12Z"/></svg>',
+    "huevo": '<svg viewBox="0 0 24 24"><path d="M12,2C8.5,2 5.5,5.5 5.5,9.5C5.5,14.5 8.5,18.5 12,22C15.5,18.5 18.5,14.5 18.5,9.5C18.5,5.5 15.5,2 12,2M12,19C9.5,16.5 7.5,13.5 7.5,9.5C7.5,6.5 9.5,4 12,4C14.5,4 16.5,6.5 16.5,9.5C16.5,13.5 14.5,16.5 12,19Z"/></svg>',
+    "frutos secos": '<svg viewBox="0 0 24 24"><path d="M16.33,16.89C16.03,17.2 15.05,17.61 13.62,17.26C12.18,16.91 11.53,16 11.23,15.69C11.66,16.88 12.39,18.44 14.47,18.95C16.55,19.46 17.68,18.23 17.68,18.23L16.33,16.89M17.37,5.59C13.5,5.1 8,6.88 5.75,10.88C4.5,13.06 4.3,16 6.38,18.06C8.44,20.13 11.38,19.94 13.56,18.69C17.56,16.44 19.38,10.94 18.88,7.06C18.84,6.76 18.66,6.5 18.39,6.33C18.11,6.16 17.78,6.13 17.47,6.23L12.5,7.89L16.5,11.89L17.37,5.59Z"/></svg>',
+    "vegano": '<svg viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>',
+    "picante": '<svg viewBox="0 0 24 24"><path d="M17.66,10.38L16.71,11.33C17.66,12.28 17.66,13.82 16.71,14.77L14.07,17.41C13.12,18.36 11.58,18.36 10.63,17.41L5.86,12.64C4.91,11.69 4.91,10.15 5.86,9.2L12.06,3H15.06L9.65,8.41L11.77,10.53L17.66,10.38M11.69,19.53L12.75,18.47L14.87,20.59C15.82,21.54 17.36,21.54 18.31,20.59L19.59,19.31C20.54,18.36 20.54,16.82 19.59,15.87L18.53,14.81L11.69,19.53Z"/></svg>',
+    "soja": '<svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>'
+};
+
+const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
+function normalize(str) {
+    return str ? str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
+}
+
+// 2. FUNCIÓN DE IMPRESIÓN (AHORA GLOBAL)
+function prepareAndPrint() {
+    const printContainer = document.getElementById("print-menu-container");
+    if (!printContainer || !menuData[currentLang]) return;
     
-    const uiTranslations = {
-        "es": { "promo": "10% adicional si se consume en terraza", "search": "Buscar productos...", "loading": "Cargando menú...", "no_top": "No hay productos destacados.", "no_products": "No hay productos aquí." },
-        "ca": { "promo": "10% addicional si es consumeix a la terrassa", "search": "Cercar productes...", "loading": "Carregant menú...", "no_top": "No hi ha productes destacats.", "no_products": "No hi ha productes aquí." },
-        "en": { "promo": "10% additional fee for terrace service", "search": "Search products...", "loading": "Loading menu...", "no_top": "No featured products.", "no_products": "No products found." }
-    };
+    printContainer.innerHTML = ""; 
 
-    // ORDEN DETERMINADO POR NOMBRE
-    const CATEGORY_ORDER = ["promos", "cafes", "bolleria y dulces", "bebidas calientes", "tostas y bocadillos", "bebidas frias", "bar"];
+    const sortedCategories = Object.keys(menuData[currentLang]).sort((a, b) => {
+        let nameA = menuData[currentLang][a].name;
+        let nameB = menuData[currentLang][b].name;
+        let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
+        let idxB = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameB));
+        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+    });
 
-    const ICONS = {
-        "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
-        "lactosa": '<svg viewBox="0 0 24 24"><path d="M17,4V2H7V4H2V6H4V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18V6H22V4H17M18,18H6V6H18V18M13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5A1.5,1.5 0 0,1 13.5,12Z"/></svg>',
-        "huevo": '<svg viewBox="0 0 24 24"><path d="M12,2C8.5,2 5.5,5.5 5.5,9.5C5.5,14.5 8.5,18.5 12,22C15.5,18.5 18.5,14.5 18.5,9.5C18.5,5.5 15.5,2 12,2M12,19C9.5,16.5 7.5,13.5 7.5,9.5C7.5,6.5 9.5,4 12,4C14.5,4 16.5,6.5 16.5,9.5C16.5,13.5 14.5,16.5 12,19Z"/></svg>',
-        "frutos secos": '<svg viewBox="0 0 24 24"><path d="M16.33,16.89C16.03,17.2 15.05,17.61 13.62,17.26C12.18,16.91 11.53,16 11.23,15.69C11.66,16.88 12.39,18.44 14.47,18.95C16.55,19.46 17.68,18.23 17.68,18.23L16.33,16.89M17.37,5.59C13.5,5.1 8,6.88 5.75,10.88C4.5,13.06 4.3,16 6.38,18.06C8.44,20.13 11.38,19.94 13.56,18.69C17.56,16.44 19.38,10.94 18.88,7.06C18.84,6.76 18.66,6.5 18.39,6.33C18.11,6.16 17.78,6.13 17.47,6.23L12.5,7.89L16.5,11.89L17.37,5.59Z"/></svg>',
-        "vegano": '<svg viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>',
-        "picante": '<svg viewBox="0 0 24 24"><path d="M17.66,10.38L16.71,11.33C17.66,12.28 17.66,13.82 16.71,14.77L14.07,17.41C13.12,18.36 11.58,18.36 10.63,17.41L5.86,12.64C4.91,11.69 4.91,10.15 5.86,9.2L12.06,3H15.06L9.65,8.41L11.77,10.53L17.66,10.38M11.69,19.53L12.75,18.47L14.87,20.59C15.82,21.54 17.36,21.54 18.31,20.59L19.59,19.31C20.54,18.36 20.54,16.82 19.59,15.87L18.53,14.81L11.69,19.53Z"/></svg>',
-        "soja": '<svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>'
-    };
+    sortedCategories.forEach(catKey => {
+        const category = menuData[currentLang][catKey];
+        const section = document.createElement("div");
+        section.className = "print-section";
+        
+        let itemsHtml = "";
+        category.items.forEach(item => {
+            const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
+            itemsHtml += `
+                <div class="print-item">
+                    <div class="print-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.description || ''}</p>
+                    </div>
+                    <div class="print-price">${price}</div>
+                </div>`;
+        });
 
-    let menuData = {};
-    let currentLang = "es";
-    let currentCategory = "TOP";
+        section.innerHTML = `
+            <h2 class="print-category-title">${category.name}</h2>
+            <div class="print-grid">${itemsHtml}</div>
+        `;
+        printContainer.appendChild(section);
+    });
 
+    // Pequeño delay para que el navegador "dibuje" el texto antes de abrir el PDF
+    setTimeout(() => { window.print(); }, 300);
+}
+
+// 3. LÓGICA DE CARGA DE LA WEB
+document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById("products-container");
     const catContainer = document.getElementById("category-buttons");
     const loader = document.getElementById("loading-spinner");
@@ -345,45 +394,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search-bar");
     const promoText = document.getElementById("promo-text");
 
-    const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
-
-    function normalize(str) {
-        return str ? str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
-    }
-
     function updateUILanguage(lang) {
         if (promoText) promoText.textContent = uiTranslations[lang].promo;
         if (searchInput) searchInput.placeholder = uiTranslations[lang].search;
         if (loader) loader.querySelector("p").textContent = uiTranslations[lang].loading;
     }
 
-    function handleCategoryChange(btnElement) {
+    window.handleCategoryChange = function(btnElement) {
         renderCategories();
         renderProducts();
-        
-        // Centrar botón activo
-        if (btnElement) {
-            btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        }
-
-        // Reset scroll vertical
-        const target = document.querySelector('.categories-wrapper');
-        if (target) {
-            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-        }
-    }
+        if (btnElement) btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    };
 
     function renderCategories() {
         catContainer.innerHTML = "";
-        
-        // Botón TOP
         const topBtn = document.createElement("button");
         topBtn.textContent = "★ TOP";
         topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
         topBtn.onclick = function() { currentCategory = "TOP"; handleCategoryChange(this); };
         catContainer.appendChild(topBtn);
 
-        // Obtener claves y ordenar por el nombre visible
         let keys = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
             let nameA = menuData[currentLang][a].name;
             let nameB = menuData[currentLang][b].name;
@@ -419,16 +449,10 @@ document.addEventListener("DOMContentLoaded", function() {
             items = all.filter(i => i.name.toLowerCase().includes(term) || i.description?.toLowerCase().includes(term));
         }
 
-        if(!items.length) {
-            container.innerHTML = `<div style="text-align:center; color:#999; padding:40px; width:100%">${currentCategory === "TOP" ? uiTranslations[currentLang].no_top : uiTranslations[currentLang].no_products}</div>`;
-            return;
-        }
-
         items.forEach((item, index) => {
             const imgUrl = item.image?.trim() || "";
             const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
             const cardId = `card-${currentLang}-${index}`;
-            
             let iconsHtml = "";
             (item.allergens || []).forEach(alg => {
                 const icon = ICONS[normalize(alg)];
@@ -436,29 +460,14 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             const card = document.createElement("div");
-            // Si no hay imagen, aplicamos una clase especial para el margen superior
             card.className = "product-card" + (imgUrl ? "" : " no-image");
-            card.id = cardId;
-            
             card.innerHTML = `
-                ${imgUrl ? `
-                <div class="card-image-container" id="img-cont-${cardId}">
-                    ${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}
-                    <img src="${imgUrl}" alt="${item.name}" 
-                         onload="this.classList.add('loaded'); this.parentElement.classList.add('has-image');"
-                         onerror="this.parentElement.style.display='none'; document.getElementById('${cardId}').classList.add('no-image');">
-                </div>` : ''}
-                
+                ${imgUrl ? `<div class="card-image-container has-image"><img src="${imgUrl}" class="loaded"></div>` : ''}
                 <div class="card-content" style="${imgUrl ? '' : 'padding-top: 20px;'}">
-                    ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
                     <h3>${item.name}</h3>
                     <p class="description">${item.description || ''}</p>
-                    <div class="card-footer">
-                        <div class="price">${price}</div>
-                        <div class="allergens-container">${iconsHtml}</div>
-                    </div>
-                </div>
-            `;
+                    <div class="card-footer"><div class="price">${price}</div><div class="allergens-container">${iconsHtml}</div></div>
+                </div>`;
             container.appendChild(card);
         });
     }
@@ -487,49 +496,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-function prepareAndPrint() {
-    const printContainer = document.getElementById("print-menu-container");
-    printContainer.innerHTML = ""; // Limpiar previo
-
-    // Usamos el orden de categorías que definiste
-    const sortedCategories = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
-        let nameA = menuData[currentLang][a].name;
-        let nameB = menuData[currentLang][b].name;
-        let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
-        let idxB = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameB));
-        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
-    });
-
-    sortedCategories.forEach(catKey => {
-        const category = menuData[currentLang][catKey];
-        const section = document.createElement("div");
-        section.className = "print-section";
-        
-        let itemsHtml = "";
-        category.items.forEach(item => {
-            const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
-            itemsHtml += `
-                <div class="print-item">
-                    <div class="print-item-info">
-                        <h4>${item.name}</h4>
-                        <p>${item.description || ''}</p>
-                    </div>
-                    <div class="print-price">${price}</div>
-                </div>
-            `;
-        });
-
-        section.innerHTML = `
-            <h2 class="print-category-title">${category.name}</h2>
-            <div class="print-grid">${itemsHtml}</div>
-        `;
-        printContainer.appendChild(section);
-    });
-
-    // Abrir diálogo de impresión
-    window.print();
-}
-    
     searchInput.addEventListener("input", renderProducts);
 });
 </script>
