@@ -166,15 +166,13 @@
     }
 
 @media print {
-    /* Ocultamos todo lo digital */
     header, .lang-select, .promo-banner, .hero-section, 
-    .categories-wrapper, footer, #loading-spinner, #search-bar {
+    .categories-wrapper, footer, #loading-spinner, #search-bar, .print-btn-float {
         display: none !important;
     }
 
     body { background: white !important; padding: 20px; }
 
-    /* Título principal del establecimiento */
     #print-menu-container::before {
         content: "SIROKO CAFÉ";
         display: block;
@@ -194,21 +192,10 @@
         color: #555;
     }
 
-    /* Contenedor del menú impreso */
-    #print-menu-container {
-        display: block !important;
-    }
+    #print-menu-container { display: block !important; }
+    #products-container, #category-buttons { display: none !important; }
 
-    /* Ocultamos el contenedor normal de la web */
-    #products-container, #category-buttons {
-        display: none !important;
-    }
-
-    .print-section {
-        break-inside: avoid;
-        margin-bottom: 30px;
-    }
-
+    .print-section { break-inside: avoid; margin-bottom: 30px; }
     .print-category-title {
         font-family: 'Montserrat', sans-serif;
         font-size: 18px;
@@ -220,7 +207,7 @@
 
     .print-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
 
@@ -238,10 +225,8 @@
     .print-price { font-weight: bold; font-size: 14px; }
 }
 
-/* Ocultar el contenedor de impresión en la pantalla normal */
 #print-menu-container { display: none; }
 
-/* Estilo para el botón de imprimir */
 .print-btn-float {
     position: fixed;
     bottom: 20px;
@@ -297,7 +282,8 @@
 
 <div class="products" id="products-container"></div>
 
-    <div id="print-menu-container"></div>
+<div id="print-menu-container"></div>
+
 <button class="print-btn-float" onclick="prepareAndPrint()">
     <span>🖨️</span> Generar PDF
 </button>
@@ -311,7 +297,7 @@
 </footer>
 
 <script>
-// 1. VARIABLES GLOBALES (Fuera para que imprimir pueda verlas)
+// 1. VARIABLES GLOBALES
 const API_URL = "https://script.google.com/macros/s/AKfycbwXOjNXQs-0j0eenVgJcv_jkTuKJ7LTVf1C9XlmX4DaplqD52wAPxjTf36c7adNgPqWvg/exec";
 const CATEGORY_ORDER = ["promos", "cafes", "bolleria y dulces", "bebidas calientes", "tostas y bocadillos", "bebidas frias", "bar"];
 
@@ -341,7 +327,18 @@ function normalize(str) {
     return str ? str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
 }
 
-// 2. FUNCIÓN DE IMPRESIÓN (AHORA GLOBAL)
+// 2. FUNCIÓN PARA GESTIONAR IMÁGENES ROTAS
+window.handleImageError = function(cardId) {
+    const card = document.getElementById(cardId);
+    const imgCont = document.getElementById(`img-cont-${cardId}`);
+    const content = document.getElementById(`content-${cardId}`);
+    
+    if (imgCont) imgCont.remove(); 
+    if (card) card.classList.add("no-image"); 
+    if (content) content.style.paddingTop = "20px";
+};
+
+// 3. FUNCIÓN DE IMPRESIÓN (GLOBAL)
 function prepareAndPrint() {
     const printContainer = document.getElementById("print-menu-container");
     if (!printContainer || !menuData[currentLang]) return;
@@ -381,11 +378,10 @@ function prepareAndPrint() {
         printContainer.appendChild(section);
     });
 
-    // Pequeño delay para que el navegador "dibuje" el texto antes de abrir el PDF
-    setTimeout(() => { window.print(); }, 300);
+    setTimeout(() => { window.print(); }, 400);
 }
 
-// 3. LÓGICA DE CARGA DE LA WEB
+// 4. LÓGICA DE CARGA DE LA WEB
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById("products-container");
     const catContainer = document.getElementById("category-buttons");
@@ -452,7 +448,8 @@ document.addEventListener("DOMContentLoaded", function() {
         items.forEach((item, index) => {
             const imgUrl = item.image?.trim() || "";
             const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
-            const cardId = `card-${currentLang}-${index}`;
+            const cardId = `card-prod-${index}`; 
+            
             let iconsHtml = "";
             (item.allergens || []).forEach(alg => {
                 const icon = ICONS[normalize(alg)];
@@ -461,13 +458,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const card = document.createElement("div");
             card.className = "product-card" + (imgUrl ? "" : " no-image");
+            card.id = cardId;
+            
             card.innerHTML = `
-                ${imgUrl ? `<div class="card-image-container has-image"><img src="${imgUrl}" class="loaded"></div>` : ''}
-                <div class="card-content" style="${imgUrl ? '' : 'padding-top: 20px;'}">
+                ${imgUrl ? `
+                <div class="card-image-container" id="img-cont-${cardId}">
+                    ${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}
+                    <img src="${imgUrl}" alt="${item.name}" 
+                         onload="this.classList.add('loaded'); this.parentElement.classList.add('has-image');"
+                         onerror="handleImageError('${cardId}')">
+                </div>` : ''}
+                
+                <div class="card-content" id="content-${cardId}" style="${imgUrl ? '' : 'padding-top: 20px;'}">
+                    ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
                     <h3>${item.name}</h3>
                     <p class="description">${item.description || ''}</p>
-                    <div class="card-footer"><div class="price">${price}</div><div class="allergens-container">${iconsHtml}</div></div>
-                </div>`;
+                    <div class="card-footer">
+                        <div class="price">${price}</div>
+                        <div class="allergens-container">${iconsHtml}</div>
+                    </div>
+                </div>
+            `;
             container.appendChild(card);
         });
     }
