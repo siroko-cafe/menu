@@ -18,7 +18,7 @@
         --white: #ffffff;
         --shadow: 0 4px 15px rgba(0,0,0,0.05);
         --radius: 12px;
-        --bg-print: #F2F1E8; /* Color para el PDF */
+        --bg-print: #F2F1E8;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -161,7 +161,7 @@
     footer h4 { color: #fff; margin-bottom: 5px; text-transform: uppercase; }
     footer a { color: #fff; text-decoration: none; opacity: 0.8; }
 
-    /* --- ESTILOS DE IMPRESIÓN / PDF --- */
+    /* --- ESTILOS DE IMPRESIÓN --- */
     @media print {
         header, .promo-banner, .hero-section, .categories-wrapper, footer, .print-btn-float, #products-container, #loading-spinner, #error-box {
             display: none !important;
@@ -174,17 +174,23 @@
         .print-cat-title { grid-column: 1 / -1; font-family: 'Montserrat'; border-bottom: 2px solid #000; margin: 25px 0 10px; text-transform: uppercase; font-size: 1.2rem; }
         .print-item { display: flex; justify-content: space-between; border-bottom: 1px dotted #ccc; padding: 5px 0; font-size: 13px; break-inside: avoid; }
     }
+
     #print-menu-container { display: none; }
+
+    /* BOTÓN FLOTANTE: Oculto en móviles (< 900px) */
     .print-btn-float {
+        display: none; 
         position: fixed; bottom: 25px; right: 25px; background: var(--dark);
         color: white; border: none; width: 55px; height: 55px; border-radius: 50%;
         cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; font-size: 22px;
-        display: flex; align-items: center; justify-content: center;
+        align-items: center; justify-content: center;
     }
 
     @media (min-width: 900px) {
         header, .hero-section, .categories-wrapper, footer, .promo-banner { padding-left: calc(50% - 475px); padding-right: calc(50% - 475px); }
         #products-container { max-width: 950px; margin: 0 auto; column-count: 3; }
+        /* Solo se muestra en desktop */
+        .print-btn-float { display: flex; }
     }
 </style>
 </head>
@@ -222,7 +228,6 @@
 <div id="error-box"></div>
 
 <div class="products" id="products-container"></div>
-
 <div id="print-menu-container"></div>
 
 <button class="print-btn-float" id="print-btn">🖨️</button>
@@ -282,23 +287,26 @@ document.addEventListener("DOMContentLoaded", function() {
         if (loader) loader.querySelector("p").textContent = uiTranslations[lang].loading;
     }
 
-    // --- FUNCIÓN MEJORADA: CENTRADO Y SCROLL ---
+    // --- CENTRADO Y SCROLL CORREGIDO ---
     function handleCategoryChange(btnElement) {
         renderCategories();
         renderProducts();
         
-        // 1. Centrar botón activo en el scroll horizontal
+        // El secreto está en inline: 'center' y un pequeño delay
         if (btnElement) {
-            btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            setTimeout(() => {
+                btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }, 50);
         }
 
-        // 2. Reset scroll vertical hacia el principio del menú
-        const target = document.getElementById("search-bar");
-        if (target) {
-            const yOffset = -80; // Margen para que no quede pegado al header
-            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
+        // Subir al buscador
+        setTimeout(() => {
+            const target = document.getElementById("search-bar");
+            if (target) {
+                const y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        }, 150);
     }
 
     function renderCategories() {
@@ -388,46 +396,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // --- LÓGICA DE IMPRESIÓN ---
     window.prepareAndPrint = function() {
         const printContainer = document.getElementById("print-menu-container");
-        let html = `
-            <div class="print-header">
-                <img src="logo.png" onerror="this.style.display='none'">
-                <h1>Siroko Café</h1>
-                <p>Carrer de Girona 94, Barcelona</p>
-            </div>
-            <div class="print-grid">`;
-
+        let html = `<div class="print-header"><img src="logo.png" onerror="this.style.display='none'"><h1>Siroko Café</h1></div><div class="print-grid">`;
         Object.keys(menuData[currentLang]).forEach(key => {
             const cat = menuData[currentLang][key];
             html += `<h2 class="print-cat-title">${cat.name}</h2>`;
             cat.items.forEach(item => {
-                const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
-                html += `
-                    <div class="print-item">
-                        <span>${item.name}</span>
-                        <b>${price}</b>
-                    </div>`;
+                html += `<div class="print-item"><span>${item.name}</span><b>${item.price?.base ? currencyFormatter.format(item.price.base) : ""}</b></div>`;
             });
         });
-
         printContainer.innerHTML = html + `</div>`;
-        
-        // Pequeño delay para asegurar que el DOM se actualice antes de abrir el diálogo
-        setTimeout(() => {
-            window.print();
-        }, 300);
+        setTimeout(() => { window.print(); }, 500);
     };
 
     printBtn.addEventListener("click", prepareAndPrint);
-
-    // SOPORTE PARA CTRL + P
-    window.onbeforeprint = () => {
-        if(!document.getElementById("print-menu-container").innerHTML) {
-            window.prepareAndPrint();
-        }
-    };
 
     fetch(API_URL).then(res => res.json()).then(data => {
         menuData = data;
