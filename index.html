@@ -85,7 +85,10 @@
         backdrop-filter: blur(5px); z-index: 900; padding: 10px 0;
         border-bottom: 1px solid #eee;
     }
-    .categories { display: flex; gap: 8px; overflow-x: auto; padding: 0 1.5rem; scrollbar-width: none; }
+    .categories { 
+        display: flex; gap: 8px; overflow-x: auto; padding: 0 1.5rem; 
+        scrollbar-width: none; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+    }
     .categories::-webkit-scrollbar { display: none; }
     .categories button {
         white-space: nowrap; background: transparent; color: #666; border: 1px solid #ddd;
@@ -111,30 +114,22 @@
         position: relative;
     }
 
-    /* Estilo para productos sin imagen */
     .product-card.no-image { border-top: 5px solid var(--primary); }
 
-    /* --- MEJORA DE CARGA DE IMAGEN --- */
     .card-image-container {
-        width: 100%; height: 0; padding-bottom: 0; /* Empieza en cero */
+        width: 100%; height: 0; padding-bottom: 0;
         position: relative; background: #f0f0f0; overflow: hidden;
-        transition: padding-bottom 0.4s ease-out; /* Transición suave cuando aparece */
+        transition: padding-bottom 0.4s ease-out;
     }
 
-    /* Se activa por JS cuando la imagen carga */
-    .card-image-container.has-image {
-        padding-bottom: 75%;
-    }
+    .card-image-container.has-image { padding-bottom: 75%; }
 
     .product-card img {
         position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
         opacity: 0; transition: opacity 0.5s ease-in;
     }
 
-    /* Se activa por JS cuando la imagen está lista */
-    .product-card img.loaded {
-        opacity: 1;
-    }
+    .product-card img.loaded { opacity: 1; }
     
     .badge-rec {
         position: absolute; top: 8px; left: 8px; background: #fff; color: #000;
@@ -156,7 +151,6 @@
     .allergen-icon { width: 22px; height: 22px; fill: #bbb; }
     .allergen-text { font-size: 9px; border: 1px solid #eee; color: #999; padding: 1px 3px; border-radius: 3px; text-transform: uppercase; }
 
-    /* UTILS */
     #loading-spinner { text-align: center; padding: 60px; color: #999; background: var(--light); }
     .spinner { width: 30px; height: 30px; border: 3px solid #eee; border-top-color: var(--dark); border-radius: 50%; margin: 0 auto 10px; animation: spin 1s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -226,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "en": { "promo": "10% additional fee for terrace service", "search": "Search products...", "loading": "Loading menu...", "no_top": "No featured products.", "no_products": "No products found." }
     };
 
+    // ORDEN DETERMINADO POR NOMBRE
     const CATEGORY_ORDER = ["promos", "cafes", "bolleria y dulces", "bebidas calientes", "tostas y bocadillos", "bebidas frias", "bar"];
 
     const ICONS = {
@@ -261,93 +256,49 @@ document.addEventListener("DOMContentLoaded", function() {
         if (loader) loader.querySelector("p").textContent = uiTranslations[lang].loading;
     }
 
-    function renderCategories() {
-    catContainer.innerHTML = "";
-    
-    // Botón TOP
-    const topBtn = document.createElement("button");
-    topBtn.textContent = "★ TOP";
-    topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
-    topBtn.onclick = (e) => { 
-        currentCategory = "TOP"; 
-        handleCategoryChange(e.currentTarget); 
-    };
-    catContainer.appendChild(topBtn);
-
-    // Obtener las claves de las categorías
-    let catKeys = Object.keys(menuData[currentLang] || {});
-
-    // ORDENACIÓN ROBUSTA
-    catKeys.sort((a, b) => {
-        // Obtenemos el nombre visible de cada categoría (ej: "Bollería y Dulces")
-        let nameA = menuData[currentLang][a].name;
-        let nameB = menuData[currentLang][b].name;
+    function handleCategoryChange(btnElement) {
+        renderCategories();
+        renderProducts();
         
-        // Buscamos la posición del nombre visible en tu lista CATEGORY_ORDER
-        // Usamos normalize para ignorar tildes y mayúsculas en la comparación
-        let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
-        let idxB = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameB));
+        // Centrar botón activo
+        if (btnElement) {
+            btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
 
-        let posA = (idxA === -1) ? 999 : idxA;
-        let posB = (idxB === -1) ? 999 : idxB;
+        // Reset scroll vertical
+        const target = document.querySelector('.categories-wrapper');
+        if (target) {
+            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+        }
+    }
 
-        return posA - posB;
-    });
+    function renderCategories() {
+        catContainer.innerHTML = "";
+        
+        // Botón TOP
+        const topBtn = document.createElement("button");
+        topBtn.textContent = "★ TOP";
+        topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
+        topBtn.onclick = function() { currentCategory = "TOP"; handleCategoryChange(this); };
+        catContainer.appendChild(topBtn);
 
-    catKeys.forEach(key => {
-        const btn = document.createElement("button");
-        btn.textContent = menuData[currentLang][key].name;
-        if(currentCategory === key) btn.classList.add("active");
-        btn.onclick = (e) => { 
-            currentCategory = key; 
-            handleCategoryChange(e.currentTarget); 
-        };
-        catContainer.appendChild(btn);
-    });
-}
+        // Obtener claves y ordenar por el nombre visible
+        let keys = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
+            let nameA = menuData[currentLang][a].name;
+            let nameB = menuData[currentLang][b].name;
+            let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
+            let idxB = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameB));
+            return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+        });
 
-    // 4. Crear los botones ya ordenados
-    cats.forEach(cat => {
-        const btn = document.createElement("button");
-        btn.textContent = menuData[currentLang][cat].name;
-        if(currentCategory === cat) btn.classList.add("active");
-        btn.onclick = () => { 
-            currentCategory = cat; 
-            handleCategoryChange(); 
-        };
-        catContainer.appendChild(btn);
-    });
-}
-
-// Asegúrate de tener esta función auxiliar para el scroll que pediste
-function handleCategoryChange(clickedElement) {
-    renderCategories();
-    renderProducts();
-    
-    // 1. SCROLL HORIZONTAL: Centrar el botón activo
-    if (clickedElement) {
-        clickedElement.scrollIntoView({
-            behavior: 'smooth',
-            inline: 'center', // Esto lo centra horizontalmente
-            block: 'nearest'
+        keys.forEach(key => {
+            const btn = document.createElement("button");
+            btn.textContent = menuData[currentLang][key].name;
+            if(currentCategory === key) btn.classList.add("active");
+            btn.onclick = function() { currentCategory = key; handleCategoryChange(this); };
+            catContainer.appendChild(btn);
         });
     }
-    
-    // 2. SCROLL VERTICAL: Subir a la parte superior de los productos
-    const scrollTarget = document.querySelector('.categories-wrapper');
-    if (scrollTarget) {
-        const offset = 65; // Ajuste para que el header no tape el título
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = scrollTarget.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    }
-}
 
     function renderProducts() {
         container.innerHTML = "";
@@ -368,7 +319,7 @@ function handleCategoryChange(clickedElement) {
         }
 
         if(!items.length) {
-            container.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:40px;">${currentCategory === "TOP" ? uiTranslations[currentLang].no_top : uiTranslations[currentLang].no_products}</div>`;
+            container.innerHTML = `<div style="text-align:center; color:#999; padding:40px; width:100%">${currentCategory === "TOP" ? uiTranslations[currentLang].no_top : uiTranslations[currentLang].no_products}</div>`;
             return;
         }
 
@@ -384,7 +335,7 @@ function handleCategoryChange(clickedElement) {
             });
 
             const card = document.createElement("div");
-            card.className = "product-card"; // Quitamos no-image inicial
+            card.className = "product-card" + (imgUrl ? "" : " no-image");
             card.id = cardId;
             
             card.innerHTML = `
@@ -395,11 +346,9 @@ function handleCategoryChange(clickedElement) {
                          onload="this.classList.add('loaded'); this.parentElement.classList.add('has-image');"
                          onerror="this.parentElement.style.display='none'; document.getElementById('${cardId}').classList.add('no-image');">
                 </div>` : `
-                <div class="no-image-placeholder" style="display:none;"></div>
-                <script>document.getElementById('${cardId}').classList.add('no-image');<\/script>
+                    <div class="card-content">${item.recommended ? '<div class="badge-rec">★ Top</div>' : ''}</div>
                 `}
-                <div class="card-content">
-                    ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
+                <div class="card-content" style="padding-top:0">
                     <h3>${item.name}</h3>
                     <p class="description">${item.description || ''}</p>
                     <div class="card-footer">
@@ -408,10 +357,6 @@ function handleCategoryChange(clickedElement) {
                     </div>
                 </div>
             `;
-
-            // Si no tiene URL directamente, añadimos la clase no-image manualmente
-            if(!imgUrl) card.classList.add('no-image');
-
             container.appendChild(card);
         });
     }
