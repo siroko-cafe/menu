@@ -164,6 +164,102 @@
         header, .hero-section, .categories-wrapper, footer, .promo-banner { padding-left: calc(50% - 475px); padding-right: calc(50% - 475px); }
         #products-container { max-width: 950px; margin: 0 auto; column-count: 3; }
     }
+
+@media print {
+    /* Ocultamos todo lo digital */
+    header, .lang-select, .promo-banner, .hero-section, 
+    .categories-wrapper, footer, #loading-spinner, #search-bar {
+        display: none !important;
+    }
+
+    body { background: white !important; padding: 20px; }
+
+    /* Título principal del establecimiento */
+    #print-menu-container::before {
+        content: "SIROKO CAFÉ";
+        display: block;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 5px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    #print-menu-container::after {
+        content: "Carrer de Girona 94, Barcelona • www.sirokocafe.com";
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 30px;
+        color: #555;
+    }
+
+    /* Contenedor del menú impreso */
+    #print-menu-container {
+        display: block !important;
+    }
+
+    /* Ocultamos el contenedor normal de la web */
+    #products-container, #category-buttons {
+        display: none !important;
+    }
+
+    .print-section {
+        break-inside: avoid;
+        margin-bottom: 30px;
+    }
+
+    .print-category-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #000;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+
+    .print-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 20px;
+    }
+
+    .print-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+    }
+
+    .print-item-info { width: 80%; }
+    .print-item-info h4 { font-size: 14px; margin: 0; }
+    .print-item-info p { font-size: 11px; color: #444; margin: 2px 0; }
+    .print-price { font-weight: bold; font-size: 14px; }
+}
+
+/* Ocultar el contenedor de impresión en la pantalla normal */
+#print-menu-container { display: none; }
+
+/* Estilo para el botón de imprimir */
+.print-btn-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+    
 </style>
 </head>
 <body>
@@ -386,6 +482,49 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+function prepareAndPrint() {
+    const printContainer = document.getElementById("print-menu-container");
+    printContainer.innerHTML = ""; // Limpiar previo
+
+    // Usamos el orden de categorías que definiste
+    const sortedCategories = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
+        let nameA = menuData[currentLang][a].name;
+        let nameB = menuData[currentLang][b].name;
+        let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
+        let idxB = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameB));
+        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+    });
+
+    sortedCategories.forEach(catKey => {
+        const category = menuData[currentLang][catKey];
+        const section = document.createElement("div");
+        section.className = "print-section";
+        
+        let itemsHtml = "";
+        category.items.forEach(item => {
+            const price = item.price?.base ? currencyFormatter.format(item.price.base) : "";
+            itemsHtml += `
+                <div class="print-item">
+                    <div class="print-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.description || ''}</p>
+                    </div>
+                    <div class="print-price">${price}</div>
+                </div>
+            `;
+        });
+
+        section.innerHTML = `
+            <h2 class="print-category-title">${category.name}</h2>
+            <div class="print-grid">${itemsHtml}</div>
+        `;
+        printContainer.appendChild(section);
+    });
+
+    // Abrir diálogo de impresión
+    window.print();
+}
+    
     searchInput.addEventListener("input", renderProducts);
 });
 </script>
