@@ -264,40 +264,47 @@ document.addEventListener("DOMContentLoaded", function() {
     function renderCategories() {
     catContainer.innerHTML = "";
     
-    // 1. Botón TOP siempre primero
+    // Botón TOP
     const topBtn = document.createElement("button");
     topBtn.textContent = "★ TOP";
     topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
-    topBtn.onclick = () => { 
+    topBtn.onclick = (e) => { 
         currentCategory = "TOP"; 
-        handleCategoryChange(); 
+        handleCategoryChange(e.currentTarget); 
     };
     catContainer.appendChild(topBtn);
 
-    // 2. Obtener las categorías que vienen de la API
-    let cats = Object.keys(menuData[currentLang] || {});
+    // Obtener las claves de las categorías
+    let catKeys = Object.keys(menuData[currentLang] || {});
 
-    // 3. Ordenarlas usando el CATEGORY_ORDER
-    cats.sort((a, b) => {
-        // Normalizamos ambos lados para que la comparación sea justa
-        let normA = normalize(a);
-        let normB = normalize(b);
+    // ORDENACIÓN ROBUSTA
+    catKeys.sort((a, b) => {
+        // Obtenemos el nombre visible de cada categoría (ej: "Bollería y Dulces")
+        let nameA = menuData[currentLang][a].name;
+        let nameB = menuData[currentLang][b].name;
         
-        // Buscamos la posición en tu array preferido (también normalizado)
-        let idxA = CATEGORY_ORDER.map(c => normalize(c)).indexOf(normA);
-        let idxB = CATEGORY_ORDER.map(c => normalize(c)).indexOf(normB);
+        // Buscamos la posición del nombre visible en tu lista CATEGORY_ORDER
+        // Usamos normalize para ignorar tildes y mayúsculas en la comparación
+        let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
+        let idxB = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameB));
 
-        // Si una categoría no está en la lista, le damos un índice alto (999)
         let posA = (idxA === -1) ? 999 : idxA;
         let posB = (idxB === -1) ? 999 : idxB;
 
-        // Si ambas son 999 (no están en la lista), las ordenamos alfabéticamente entre ellas
-        if (posA === 999 && posB === 999) {
-            return normA.localeCompare(normB);
-        }
-
         return posA - posB;
     });
+
+    catKeys.forEach(key => {
+        const btn = document.createElement("button");
+        btn.textContent = menuData[currentLang][key].name;
+        if(currentCategory === key) btn.classList.add("active");
+        btn.onclick = (e) => { 
+            currentCategory = key; 
+            handleCategoryChange(e.currentTarget); 
+        };
+        catContainer.appendChild(btn);
+    });
+}
 
     // 4. Crear los botones ya ordenados
     cats.forEach(cat => {
