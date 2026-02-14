@@ -210,7 +210,7 @@
 
     <script>
         // Función para renderizar los eventos
-        function renderEventos(eventos) {
+    function renderEventos(eventos) {
     const seccion = document.getElementById('seccion-eventos');
     const contenedor = document.getElementById('eventos-container');
     
@@ -223,17 +223,20 @@
     contenedor.innerHTML = ""; 
 
     eventos.forEach(ev => {
-        // --- LIMPIEZA DE FECHA ---
+        // --- FORMATEO DE FECHA CON DÍA DE LA SEMANA ---
         let fechaMostrada;
         try {
             const fechaObj = new Date(ev.fecha);
-            // Formato: "1 de febrero"
-            fechaMostrada = fechaObj.toLocaleDateString('es-ES', { 
+            // Formato: "domingo, 1 de febrero"
+            let fechaTexto = fechaObj.toLocaleDateString('es-ES', { 
+                weekday: 'long',
                 day: 'numeric', 
                 month: 'long' 
             });
+            // Ponemos la primera letra en mayúscula (ej: "Domingo...")
+            fechaMostrada = fechaTexto.charAt(0).toUpperCase() + fechaTexto.slice(1);
         } catch (e) {
-            fechaMostrada = ev.fecha; // Por si acaso falla, deja lo que hay
+            fechaMostrada = ev.fecha;
         }
 
         const imgPath = ev.imagen || 'https://via.placeholder.com/350x200?text=Siroko+Cafe';
