@@ -211,19 +211,16 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-
-    const API_URL = "https://script.google.com/macros/s/AKfycbwXOjNXQs-0j0eenVgJcv_jkTuKJ7LTVf1C9XlmX4DaplqD52wAPxjTf36c7adNgPqWvg/exec";
-    
+    // --- CONFIGURACIÓN Y VARIABLES ---
+    const API_URL = "menu_data.json?v=" + Date.now();
     const uiTranslations = {
         "es": { "promo": "10% adicional si se consume en terraza", "search": "Buscar productos...", "loading": "Cargando menú...", "no_top": "No hay productos destacados.", "no_products": "No hay productos aquí." },
         "ca": { "promo": "10% addicional si es consumeix a la terrassa", "search": "Cercar productes...", "loading": "Carregant menú...", "no_top": "No hi ha productes destacats.", "no_products": "No hi ha productes aquí." },
         "en": { "promo": "10% additional fee for terrace service", "search": "Search products...", "loading": "Loading menu...", "no_top": "No featured products.", "no_products": "No products found." }
     };
 
-    // ORDEN DETERMINADO POR NOMBRE
     const CATEGORY_ORDER = ["promos", "cafes", "bolleria y dulces", "bebidas calientes", "tostas y bocadillos", "bebidas frias", "bar"];
-
-    const ICONS = {
+    const ICONS = { /* ... tus iconos se mantienen igual ... */
         "gluten": '<svg viewBox="0 0 24 24"><path d="M10,2C10,2 10,12 11,12C11.5,12 12,11.5 12,11C12,11 12,2 12,2C12,2 13,11 13,11C13,11.5 13.5,12 14,12C15,12 15,2 15,2H16C16,2 15,13 13,15C13,17 14,20 14,22H11C11,20 12,17 12,15C10,13 9,2 9,2H10Z"/></svg>',
         "lactosa": '<svg viewBox="0 0 24 24"><path d="M17,4V2H7V4H2V6H4V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18V6H22V4H17M18,18H6V6H18V18M13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5A1.5,1.5 0 0,1 13.5,12Z"/></svg>',
         "huevo": '<svg viewBox="0 0 24 24"><path d="M12,2C8.5,2 5.5,5.5 5.5,9.5C5.5,14.5 8.5,18.5 12,22C15.5,18.5 18.5,14.5 18.5,9.5C18.5,5.5 15.5,2 12,2M12,19C9.5,16.5 7.5,13.5 7.5,9.5C7.5,6.5 9.5,4 12,4C14.5,4 16.5,6.5 16.5,9.5C16.5,13.5 14.5,16.5 12,19Z"/></svg>',
@@ -243,47 +240,37 @@ document.addEventListener("DOMContentLoaded", function() {
     const errorBox = document.getElementById("error-box");
     const searchInput = document.getElementById("search-bar");
     const promoText = document.getElementById("promo-text");
+    const langButtons = document.querySelectorAll(".lang-select button");
 
     const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
+    // --- FUNCIONES ---
     function normalize(str) {
         return str ? str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
     }
 
     function updateUILanguage(lang) {
+        currentLang = lang;
         if (promoText) promoText.textContent = uiTranslations[lang].promo;
         if (searchInput) searchInput.placeholder = uiTranslations[lang].search;
         if (loader) loader.querySelector("p").textContent = uiTranslations[lang].loading;
-    }
-
-    function handleCategoryChange(btnElement) {
-        renderCategories();
-        renderProducts();
         
-        // Centrar botón activo
-        if (btnElement) {
-            btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        }
-
-        // Reset scroll vertical
-        const target = document.querySelector('.categories-wrapper');
-        if (target) {
-            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-        }
+        langButtons.forEach(btn => {
+            btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+        });
     }
 
     function renderCategories() {
         catContainer.innerHTML = "";
-        
-        // Botón TOP
         const topBtn = document.createElement("button");
         topBtn.textContent = "★ TOP";
         topBtn.className = "btn-top" + (currentCategory === "TOP" ? " active" : "");
-        topBtn.onclick = function() { currentCategory = "TOP"; handleCategoryChange(this); };
+        topBtn.onclick = function() { currentCategory = "TOP"; finalizeCategoryChange(this); };
         catContainer.appendChild(topBtn);
 
-        // Obtener claves y ordenar por el nombre visible
-        let keys = Object.keys(menuData[currentLang] || {}).sort((a, b) => {
+        if (!menuData[currentLang]) return;
+
+        let keys = Object.keys(menuData[currentLang]).sort((a, b) => {
             let nameA = menuData[currentLang][a].name;
             let nameB = menuData[currentLang][b].name;
             let idxA = CATEGORY_ORDER.findIndex(c => normalize(c) === normalize(nameA));
@@ -295,9 +282,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const btn = document.createElement("button");
             btn.textContent = menuData[currentLang][key].name;
             if(currentCategory === key) btn.classList.add("active");
-            btn.onclick = function() { currentCategory = key; handleCategoryChange(this); };
+            btn.onclick = function() { currentCategory = key; finalizeCategoryChange(this); };
             catContainer.appendChild(btn);
         });
+    }
+
+    function finalizeCategoryChange(btnElement) {
+        renderCategories();
+        renderProducts();
+        if (btnElement) btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
 
     function renderProducts() {
@@ -315,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(term) {
             let all = [];
             Object.values(menuData[currentLang]).forEach(c => all = all.concat(c.items));
-            items = all.filter(i => i.name.toLowerCase().includes(term) || i.description?.toLowerCase().includes(term));
+            items = all.filter(i => i.name.toLowerCase().includes(term) || (i.description && i.description.toLowerCase().includes(term)));
         }
 
         if(!items.length) {
@@ -335,10 +328,8 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             const card = document.createElement("div");
-            // Si no hay imagen, aplicamos una clase especial para el margen superior
             card.className = "product-card" + (imgUrl ? "" : " no-image");
             card.id = cardId;
-            
             card.innerHTML = `
                 ${imgUrl ? `
                 <div class="card-image-container" id="img-cont-${cardId}">
@@ -347,7 +338,6 @@ document.addEventListener("DOMContentLoaded", function() {
                          onload="this.classList.add('loaded'); this.parentElement.classList.add('has-image');"
                          onerror="this.parentElement.style.display='none'; document.getElementById('${cardId}').classList.add('no-image');">
                 </div>` : ''}
-                
                 <div class="card-content" style="${imgUrl ? '' : 'padding-top: 20px;'}">
                     ${(!imgUrl && item.recommended) ? '<div class="badge-rec">★ Top</div>' : ''}
                     <h3>${item.name}</h3>
@@ -362,46 +352,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-// --- CARGA DE DATOS ---
-    fetch("menu_data.json")
-        .then(res => {
-            if (!res.ok) throw new Error("Archivo no encontrado");
-            return res.json();
-        })
-        .then(data => {
-            // Extraemos solo la parte del menú para que el resto del script no sufra
-            menuData = data.menu; 
-            
-            // Ocultamos el cargador
-            if (loader) loader.style.display = 'none';
-            
-            // Inicializamos la vista
-            updateUILanguage(currentLang);
-            renderCategories();
-            renderProducts();
-        })
-        .catch(err => {
-            if (loader) loader.style.display = 'none';
-            errorBox.style.display = 'block';
-            errorBox.textContent = "Error al cargar el menú: " + err.message;
-            console.error(err);
-        });
+    // --- EVENTOS ---
+    searchInput.addEventListener("input", renderProducts);
 
-    // --- EVENTOS DE INTERFAZ ---
-    document.querySelectorAll(".lang-select button").forEach(btn => {
+    langButtons.forEach(btn => {
         btn.addEventListener("click", () => {
-            document.querySelectorAll(".lang-select button").forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            currentLang = btn.dataset.lang;
-            currentCategory = "TOP";
-            updateUILanguage(currentLang);
+            const lang = btn.getAttribute("data-lang");
+            updateUILanguage(lang);
             renderCategories();
             renderProducts();
         });
     });
 
-    searchInput.addEventListener("input", renderProducts);
-}); // Aquí cierra el DOMContentLoaded
+    // --- CARGA DE DATOS ---
+    fetch(API_URL)
+        .then(res => {
+            if (!res.ok) throw new Error("No se pudo cargar el menú");
+            return res.json();
+        })
+        .then(data => {
+            menuData = data.menu || data; 
+            loader.style.display = 'none';
+            updateUILanguage(currentLang);
+            renderCategories();
+            renderProducts();
+        })
+        .catch(err => {
+            loader.style.display = 'none';
+            errorBox.style.display = 'block';
+            errorBox.textContent = "Error al cargar el menú: " + err.message;
+        });
+});
 </script>
 
 </body>
