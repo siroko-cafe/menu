@@ -211,34 +211,47 @@
     <script>
         // Función para renderizar los eventos
         function renderEventos(eventos) {
-            const seccion = document.getElementById('seccion-eventos');
-            const contenedor = document.getElementById('eventos-container');
-            
-            if (!eventos || eventos.length === 0) {
-                seccion.style.display = 'none';
-                return;
-            }
+    const seccion = document.getElementById('seccion-eventos');
+    const contenedor = document.getElementById('eventos-container');
+    
+    if (!eventos || eventos.length === 0) {
+        seccion.style.display = 'none';
+        return;
+    }
 
-            seccion.style.display = 'block';
-            contenedor.innerHTML = ""; 
+    seccion.style.display = 'block';
+    contenedor.innerHTML = ""; 
 
-            eventos.forEach(ev => {
-                const imgPath = ev.imagen || 'https://via.placeholder.com/350x200?text=Siroko+Cafe';
-                
-                contenedor.innerHTML += `
-                    <div class="evento-card">
-                        <img src="${imgPath}" alt="${ev.titulo}" onerror="this.src='https://via.placeholder.com/350x200?text=Evento+Siroko'">
-                        <div class="evento-info">
-                            <div class="meta">
-                                <span>📅 ${ev.fecha}</span>
-                                <span>🕒 ${ev.hora}</span>
-                            </div>
-                            <h3>${ev.titulo}</h3>
-                            <p>${ev.descripcion}</p>
-                        </div>
-                    </div>`;
+    eventos.forEach(ev => {
+        // --- MEJORA: Formatear la fecha para que sea legible ---
+        let fechaLegible = ev.fecha;
+        try {
+            const fechaObj = new Date(ev.fecha);
+            // Esto lo convierte a: "1 de febrero" (o el idioma del navegador)
+            fechaLegible = fechaObj.toLocaleDateString('es-ES', { 
+                day: 'numeric', 
+                month: 'long' 
             });
+        } catch (e) {
+            fechaLegible = ev.fecha; // Si falla, muestra el texto original
         }
+
+        const imgPath = ev.imagen || 'https://via.placeholder.com/350x200?text=Siroko+Cafe';
+        
+        contenedor.innerHTML += `
+            <div class="evento-card">
+                <img src="${imgPath}" alt="${ev.titulo}" onerror="this.src='https://via.placeholder.com/350x200?text=Siroko+Evento'">
+                <div class="evento-info">
+                    <div class="meta">
+                        <span>📅 ${fechaLegible}</span>
+                        <span>🕒 ${ev.hora}</span>
+                    </div>
+                    <h3>${ev.titulo}</h3>
+                    <p>${ev.descripcion}</p>
+                </div>
+            </div>`;
+    });
+}
 
         // Carga de datos desde el JSON
         // Agregamos un timestamp para evitar problemas de caché del navegador
