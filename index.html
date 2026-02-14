@@ -223,17 +223,17 @@
     contenedor.innerHTML = ""; 
 
     eventos.forEach(ev => {
-        // --- MEJORA: Formatear la fecha para que sea legible ---
-        let fechaLegible = ev.fecha;
+        // --- LIMPIEZA DE FECHA ---
+        let fechaMostrada;
         try {
             const fechaObj = new Date(ev.fecha);
-            // Esto lo convierte a: "1 de febrero" (o el idioma del navegador)
-            fechaLegible = fechaObj.toLocaleDateString('es-ES', { 
+            // Formato: "1 de febrero"
+            fechaMostrada = fechaObj.toLocaleDateString('es-ES', { 
                 day: 'numeric', 
                 month: 'long' 
             });
         } catch (e) {
-            fechaLegible = ev.fecha; // Si falla, muestra el texto original
+            fechaMostrada = ev.fecha; // Por si acaso falla, deja lo que hay
         }
 
         const imgPath = ev.imagen || 'https://via.placeholder.com/350x200?text=Siroko+Cafe';
@@ -243,7 +243,7 @@
                 <img src="${imgPath}" alt="${ev.titulo}" onerror="this.src='https://via.placeholder.com/350x200?text=Siroko+Evento'">
                 <div class="evento-info">
                     <div class="meta">
-                        <span>📅 ${fechaLegible}</span>
+                        <span>📅 ${fechaMostrada}</span>
                         <span>🕒 ${ev.hora}</span>
                     </div>
                     <h3>${ev.titulo}</h3>
@@ -252,7 +252,6 @@
             </div>`;
     });
 }
-
         // Carga de datos desde el JSON
         // Agregamos un timestamp para evitar problemas de caché del navegador
         fetch("menu_data.json?v=" + Date.now())
