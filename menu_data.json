@@ -2958,6 +2958,14 @@
   },
   "eventos": [
     {
+      "id": "E001",
+      "fecha": "2026-02-01T03:00:00.000Z",
+      "titulo": "Taller Arteterapia",
+      "descripcion": "Mirada Mirodi. Por María Camelli. Incluye Taller + Brunch de Siroko!",
+      "hora": "12 a 15 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E001.webp"
+    },
+    {
       "id": "E103",
       "fecha": "2026-02-25T03:00:00.000Z",
       "titulo": "Taller de prueba",
