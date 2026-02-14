@@ -12,7 +12,9 @@
               "base": 1.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P001.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -23,7 +25,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P002.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -34,7 +38,9 @@
               "base": 2.1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P003.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -45,7 +51,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P004.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -56,7 +64,9 @@
               "base": 2.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P005.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -67,7 +77,9 @@
               "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P006.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -78,7 +90,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P007.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -89,7 +103,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P008.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -152,7 +168,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P013.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -176,7 +194,9 @@
               "base": 2.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P015.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -187,7 +207,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P016.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -198,7 +220,9 @@
               "base": 0.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P017.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -209,7 +233,9 @@
               "base": 0.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -225,7 +251,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P019.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -236,7 +264,9 @@
               "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -260,7 +290,9 @@
               "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -271,7 +303,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P047.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -282,7 +316,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -293,7 +329,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P049.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -304,7 +342,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P050.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -315,7 +355,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -326,7 +368,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -342,7 +386,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P022.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -353,7 +399,9 @@
               "base": 5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P023.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -364,7 +412,9 @@
               "base": 5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P024.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -375,7 +425,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P025.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -386,7 +438,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P026.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -397,7 +451,9 @@
               "base": 1.9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P027.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -408,7 +464,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P028.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -419,7 +477,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P029.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -430,7 +490,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P030.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -441,7 +503,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P057.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -452,7 +516,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P058.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -470,7 +536,7 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P031.webp",
             "allergens": [
               "GL",
-              "HU"
+              " HU"
             ],
             "recommended": false
           },
@@ -482,7 +548,9 @@
               "base": 4.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P032.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": true
           },
           {
@@ -493,7 +561,9 @@
               "base": 4.85
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P033.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -504,7 +574,9 @@
               "base": 4.9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P034.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -515,7 +587,9 @@
               "base": 3.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P035.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -526,7 +600,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -537,7 +613,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P037.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -548,7 +626,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P038.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -559,7 +639,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P039.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -570,7 +652,9 @@
               "base": 3.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P040.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -581,7 +665,9 @@
               "base": 3.2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P041.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -592,7 +678,9 @@
               "base": 3.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P042.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -635,7 +723,9 @@
               "base": 8.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P043.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -646,7 +736,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P044.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -657,7 +749,9 @@
               "base": 7.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P045.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -720,7 +814,9 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -731,7 +827,9 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P066.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -742,7 +840,9 @@
               "base": 1.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P067.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -753,7 +853,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P072.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -764,7 +866,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P073.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -775,7 +879,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P074.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": true
           }
         ]
@@ -819,7 +925,9 @@
               "base": 2.85
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P065.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -830,7 +938,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P068.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -841,7 +951,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P069.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -852,7 +964,9 @@
               "base": 6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P070.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -863,7 +977,9 @@
               "base": 3.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -881,7 +997,9 @@
               "base": 1.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P001.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -892,7 +1010,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P002.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -903,7 +1023,9 @@
               "base": 2.1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P003.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -914,7 +1036,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P004.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -925,7 +1049,9 @@
               "base": 2.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P005.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -936,7 +1062,9 @@
               "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P006.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -947,7 +1075,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P007.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -958,7 +1088,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P008.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1021,7 +1153,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P013.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1045,7 +1179,9 @@
               "base": 2.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P015.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1056,7 +1192,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P016.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1067,7 +1205,9 @@
               "base": 0.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P017.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1078,7 +1218,9 @@
               "base": 0.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -1094,7 +1236,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P019.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1105,7 +1249,9 @@
               "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1129,7 +1275,9 @@
               "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1140,7 +1288,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P047.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1151,7 +1301,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1162,7 +1314,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P049.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1173,7 +1327,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P050.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1184,7 +1340,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1195,7 +1353,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -1211,7 +1371,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P022.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1222,7 +1384,9 @@
               "base": 5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P023.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1233,7 +1397,9 @@
               "base": 5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P024.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1244,7 +1410,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P025.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1255,7 +1423,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P026.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1266,7 +1436,9 @@
               "base": 1.9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P027.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1277,7 +1449,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P028.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1288,7 +1462,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P029.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1299,7 +1475,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P030.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1310,7 +1488,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P057.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1321,7 +1501,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P058.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -1339,7 +1521,7 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P031.webp",
             "allergens": [
               "GL",
-              "HU"
+              " HU"
             ],
             "recommended": false
           },
@@ -1351,7 +1533,9 @@
               "base": 4.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P032.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": true
           },
           {
@@ -1362,7 +1546,9 @@
               "base": 4.85
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P033.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1373,7 +1559,9 @@
               "base": 4.9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P034.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1384,7 +1572,9 @@
               "base": 3.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P035.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1395,7 +1585,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1406,7 +1598,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P037.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1417,7 +1611,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P038.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1428,7 +1624,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P039.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1439,7 +1637,9 @@
               "base": 3.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P040.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1450,7 +1650,9 @@
               "base": 3.2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P041.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1461,7 +1663,9 @@
               "base": 3.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P042.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1504,7 +1708,9 @@
               "base": 8.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P043.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1515,7 +1721,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P044.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1526,7 +1734,9 @@
               "base": 7.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P045.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1589,7 +1799,9 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1600,7 +1812,9 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P066.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1611,7 +1825,9 @@
               "base": 1.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P067.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1622,7 +1838,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P072.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1633,7 +1851,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P073.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1644,7 +1864,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P074.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": true
           }
         ]
@@ -1688,7 +1910,9 @@
               "base": 2.85
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P065.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1699,7 +1923,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P068.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1710,7 +1936,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P069.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1721,7 +1949,9 @@
               "base": 6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P070.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1732,7 +1962,9 @@
               "base": 3.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -1750,7 +1982,9 @@
               "base": 1.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P001.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1761,7 +1995,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P002.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1772,7 +2008,9 @@
               "base": 2.1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P003.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1783,7 +2021,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P004.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1794,7 +2034,9 @@
               "base": 2.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P005.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1805,7 +2047,9 @@
               "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P006.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1816,7 +2060,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P007.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1827,7 +2073,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P008.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1890,7 +2138,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P013.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1914,7 +2164,9 @@
               "base": 2.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P015.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1925,7 +2177,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P016.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1936,7 +2190,9 @@
               "base": 0.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P017.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1947,7 +2203,9 @@
               "base": 0.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -1963,7 +2221,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P019.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1974,7 +2234,9 @@
               "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -1998,7 +2260,9 @@
               "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2009,7 +2273,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P047.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2020,7 +2286,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2031,7 +2299,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P049.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2042,7 +2312,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P050.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2053,7 +2325,9 @@
               "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2064,7 +2338,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -2080,7 +2356,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P022.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2091,7 +2369,9 @@
               "base": 5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P023.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2102,7 +2382,9 @@
               "base": 5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P024.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2113,7 +2395,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P025.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2124,7 +2408,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P026.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2135,7 +2421,9 @@
               "base": 1.9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P027.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2146,7 +2434,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P028.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2157,7 +2447,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P029.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2168,7 +2460,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P030.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2179,7 +2473,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P057.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2190,7 +2486,9 @@
               "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P058.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -2208,7 +2506,7 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P031.webp",
             "allergens": [
               "GL",
-              "HU"
+              " HU"
             ],
             "recommended": false
           },
@@ -2220,7 +2518,9 @@
               "base": 4.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P032.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": true
           },
           {
@@ -2231,7 +2531,9 @@
               "base": 4.85
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P033.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2242,7 +2544,9 @@
               "base": 4.9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P034.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2253,7 +2557,9 @@
               "base": 3.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P035.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2264,7 +2570,9 @@
               "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2275,7 +2583,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P037.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2286,7 +2596,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P038.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2297,7 +2609,9 @@
               "base": 4.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P039.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2308,7 +2622,9 @@
               "base": 3.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P040.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2319,7 +2635,9 @@
               "base": 3.2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P041.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2330,7 +2648,9 @@
               "base": 3.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P042.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2373,7 +2693,9 @@
               "base": 8.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P043.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2384,7 +2706,9 @@
               "base": 4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P044.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2395,7 +2719,9 @@
               "base": 7.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P045.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2458,7 +2784,9 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2469,7 +2797,9 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P066.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2480,7 +2810,9 @@
               "base": 1.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P067.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2491,7 +2823,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P072.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2502,7 +2836,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P073.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2513,7 +2849,9 @@
               "base": 9
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P074.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": true
           }
         ]
@@ -2557,7 +2895,9 @@
               "base": 2.85
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P065.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2568,7 +2908,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P068.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2579,7 +2921,9 @@
               "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P069.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2590,7 +2934,9 @@
               "base": 6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P070.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           },
           {
@@ -2601,7 +2947,9 @@
               "base": 3.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
-            "allergens": [],
+            "allergens": [
+              ""
+            ],
             "recommended": false
           }
         ]
@@ -2610,12 +2958,12 @@
   },
   "eventos": [
     {
-      "id": "E001",
-      "fecha": "2026-02-01T03:00:00.000Z",
-      "titulo": "Taller Arteterapia",
-      "descripcion": "Mirada Mirodi. Por María Camelli. Incluye Taller + Brunch de Siroko!",
-      "hora": "12 a 15 hs",
-      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E001.webp"
+      "id": "E103",
+      "fecha": "2026-02-25T03:00:00.000Z",
+      "titulo": "Taller de prueba",
+      "descripcion": "Descripción de taller de prueba",
+      "hora": "13 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E103.webp"
     }
   ]
 }
