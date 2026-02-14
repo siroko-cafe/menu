@@ -365,22 +365,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // Cambiamos API_URL por el nombre del archivo local que crearemos
 fetch("menu_data.json")
     .then(res => {
-        if (!res.ok) throw new Error("Archivo de menú no encontrado");
+        if (!res.ok) throw new Error("Archivo no encontrado");
         return res.json();
     })
     .then(data => {
-        // --- EL CAMBIO ESTÁ AQUÍ ---
-        menuData = data.menu; // Ahora entramos en la propiedad 'menu' del JSON
-        const eventosData = data.eventos; // Guardamos los eventos en una variable por si quieres usarlos
+        // --- ESTA ES LA LÍNEA CLAVE ---
+        // Extraemos solo la parte del menú para que el resto del script no sufra
+        menuData = data.menu; 
         
         loader.style.display = 'none';
+        
+        // Ahora estas funciones ya recibirán el formato que conocen (es, ca, en)
         updateUILanguage(currentLang);
         renderCategories();
         renderProducts();
-
-        // Opcional: Si ya tienes una función para pintar los eventos, la llamas aquí
-        // renderEventos(eventosData); 
-
+    })
+    .catch(err => {
+        console.error(err);
+        document.getElementById('error-box').style.display = 'block';
+    });
+    
     }).catch(err => {
         loader.style.display = 'none';
         errorBox.style.display = 'block';
