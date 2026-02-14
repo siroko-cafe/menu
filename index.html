@@ -14,14 +14,12 @@
 
         body { font-family: 'Inter', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; }
 
-        /* HERO SECTION */
+        /* HERO SECTION CON PARALAJE */
         .hero {
-            height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
-    
-    /* Esta es la línea clave: combina el degradado oscuro con tu imagen */
+            height: 80vh;
+            /* Se añade 'fixed' para el efecto paralaje */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('assets/2.webp') center/cover no-repeat;
-    
+                        url('assets/2.webp') center/cover no-repeat fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -33,6 +31,18 @@
 
         .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 10px; }
 
+        /* SECCIÓN DEL LOGO (NUEVA) */
+        .logo-section {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            background: var(--white);
+        }
+
+        .logo-section img {
+            max-width: 150px; /* Ajusta el tamaño a tu gusto */
+            height: auto;
+        }
+
         .btn-menu {
             background: var(--primary);
             color: white;
@@ -42,6 +52,8 @@
             font-weight: bold;
             font-size: 1.2rem;
             transition: transform 0.3s;
+            display: inline-block; /* Para que el margen funcione bien */
+            margin-top: 20px;
         }
 
         .btn-menu:hover { transform: scale(1.05); }
@@ -59,13 +71,22 @@
         }
 
         footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+
+        /* Ajuste para móviles: el paralaje fixed suele fallar en iOS, lo desactivamos en pantallas pequeñas */
+        @media (max-width: 768px) {
+            .hero { background-attachment: scroll; }
+        }
     </style>
 </head>
 <body>
 
     <section class="hero">
         <h1>SIROKO CAFÉ</h1>
-        <p>Café de especialidad y bollería artesana.</p>
+        <p>Café de especialidad y bollería artesanal.</p>
+    </section>
+
+    <section class="logo-section">
+        <img src="assets/logo2.png" alt="Logo Siroko Café">
         <br>
         <a href="menu.html" class="btn-menu">Consultar Menú</a>
     </section>
