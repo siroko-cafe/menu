@@ -362,7 +362,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    fetch(API_URL).then(res => res.json()).then(data => {
+    // Cambiamos API_URL por el nombre del archivo local que crearemos
+fetch("menu_data.json") 
+    .then(res => {
+        if (!res.ok) throw new Error("Archivo de menú no encontrado");
+        return res.json();
+    })
+    .then(data => {
         menuData = data;
         loader.style.display = 'none';
         updateUILanguage(currentLang);
@@ -371,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }).catch(err => {
         loader.style.display = 'none';
         errorBox.style.display = 'block';
-        errorBox.textContent = "Error: " + err.message;
+        errorBox.textContent = "Error al cargar el menú: " + err.message;
     });
 
     document.querySelectorAll(".lang-select button").forEach(btn => {
