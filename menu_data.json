@@ -1,1 +1,2609 @@
-{}
+{
+  "es": {
+    "cafés": {
+      "name": "Cafés",
+      "items": [
+        {
+          "id": "P001",
+          "name": "ESPRESSO",
+          "description": "Extracción intensa y equilibrada de café de especialidad.",
+          "price": {
+            "base": 1.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P001.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P002",
+          "name": "ESPRESSO DOBLE",
+          "description": "Doble carga de energía con cuerpo y aroma persistente.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P002.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P003",
+          "name": "ESPRESSO MACCHIATO",
+          "description": "Espresso clásico con una nube de leche cremosa.",
+          "price": {
+            "base": 2.1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P003.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P004",
+          "name": "AMERICANO 1 SHOT",
+          "description": "Espresso suavizado con agua caliente, ligero y aromático.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P004.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P005",
+          "name": "AMERICANO 2 SHOTS",
+          "description": "Doble espresso con agua caliente para un sabor más prolongado.",
+          "price": {
+            "base": 2.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P005.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P006",
+          "name": "BATCH BREW",
+          "description": "Café de filtro del día, suave y lleno de matices.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P006.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P007",
+          "name": "COLD BREW",
+          "description": "Café infusionado en frío durante 24h, dulce y refrescante.",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P007.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P008",
+          "name": "LATTE",
+          "description": "Doble shot de espresso con abundante leche vaporizada.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P008.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P009",
+          "name": "LATTE MACCHIATO",
+          "description": "Capas de leche cremosa marcadas por un toque de espresso.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P009.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P010",
+          "name": "FLAT WHITE",
+          "description": "Doble espresso con una fina capa de leche aterciopelada.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P010.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P011",
+          "name": "CAPPUCCINO",
+          "description": "El equilibrio clásico entre espresso, leche y espuma.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P011.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P012",
+          "name": "SUBMARINO",
+          "description": "Bebida típica argentina: leche caliente con una barra de chocolate para fundir.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": true
+        },
+        {
+          "id": "P013",
+          "name": "CAFÉ CON HIELO",
+          "description": "Tu espresso servido sobre hielo, ideal para refrescarse.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P013.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P014",
+          "name": "LATTE CON HIELO",
+          "description": "Combinación suave de café y leche servida muy fría.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P014.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P015",
+          "name": "ESPRESSO BOMBÓN",
+          "description": "Deliciosa mezcla de espresso y leche condensada.",
+          "price": {
+            "base": 2.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P015.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P016",
+          "name": "ESPRESSO TONIC",
+          "description": "Refrescante combinación de espresso, tónica y cítricos.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P016.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P017",
+          "name": "EXTRA LECHE VEGETAL",
+          "description": "Opción de leche vegetal para personalizar tu bebida.",
+          "price": {
+            "base": 0.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P017.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P018",
+          "name": "EXTRA SHOT CAFÉ",
+          "description": "Una carga adicional de nuestro mejor café de especialidad.",
+          "price": {
+            "base": 0.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "bebidas-calientes": {
+      "name": "Bebidas calientes",
+      "items": [
+        {
+          "id": "P019",
+          "name": "INFUSIÓN MANZANILLA",
+          "description": "Infusión natural relajante y digestiva.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P019.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P020",
+          "name": "TÉ CHAI",
+          "description": "Té negro con especias tradicionales y leche cremosa.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P021",
+          "name": "MATCHA LATTE",
+          "description": "Té verde matcha ceremonial batido con leche.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": true
+        },
+        {
+          "id": "P046",
+          "name": "TÉ NEGRO/ROJO/VERDE",
+          "description": "Selección de tés premium de origen seleccionado.",
+          "price": {
+            "base": 2
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P047",
+          "name": "TÉ EARL GREY",
+          "description": "Té negro aromatizado con aceite de bergamota.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P047.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P048",
+          "name": "TÉ ENGLISH BREAKFAST",
+          "description": "Mezcla de tés negros con sabor robusto y tradicional.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P049",
+          "name": "POLEO MENTA",
+          "description": "Infusión refrescante de menta y poleo natural.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P049.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P050",
+          "name": "ROOIBOS",
+          "description": "Infusión sin teína, dulce y llena de antioxidantes.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P050.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P051",
+          "name": "TE VERMELL PU ERH",
+          "description": "Té rojo fermentado con notas terrosas y digestivas.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P052",
+          "name": "MATE",
+          "description": "Infusión tradicional servida de forma clásica.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "bebidas-frías": {
+      "name": "Bebidas frías",
+      "items": [
+        {
+          "id": "P022",
+          "name": "ZUMO DE NARANJA",
+          "description": "100% natural exprimido",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P022.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P023",
+          "name": "SMOOTHIE MANGO",
+          "description": "Mango, Fresa y Naranja",
+          "price": {
+            "base": 5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P023.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P024",
+          "name": "SMOOTHIE BANANA",
+          "description": "Banana, fresa y naranja",
+          "price": {
+            "base": 5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P024.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P025",
+          "name": "ZUMO SIROKO VERDE",
+          "description": "Combinado detox de frutas y verduras frescas.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P025.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P026",
+          "name": "ZUMO SIROKO VITAMINA",
+          "description": "Mix cítrico y vital para empezar bien el día.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P026.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P027",
+          "name": "AGUA MINERAL",
+          "description": "Agua mineral natural servida fría.",
+          "price": {
+            "base": 1.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P027.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P028",
+          "name": "AGUA CON GAS",
+          "description": "Agua con gas refrescante y cristalina.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P028.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P029",
+          "name": "COCA-COLA",
+          "description": "Refresco clásico servido con hielo y limón.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P029.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P030",
+          "name": "COCA-COLA ZERO",
+          "description": "El sabor original de Coca-Cola sin azúcar.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P030.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P057",
+          "name": "AGUA TÓNICA",
+          "description": "Refrescante y equilibrada, con el toque amargo perfecto y burbuja fina.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P057.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P058",
+          "name": "LIMONADA",
+          "description": "Natural y refrescante",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P058.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "bollería-y-dulces": {
+      "name": "Bollería y dulces",
+      "items": [
+        {
+          "id": "P031",
+          "name": "CROISSANT GRANDE",
+          "description": "Hojaldre artesano crujiente por fuera y tierno por dentro.",
+          "price": {
+            "base": 1.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P031.webp",
+          "allergens": [
+            "GL",
+            "HU"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P032",
+          "name": "ROLL DE CANELA VEGANO",
+          "description": "Bollo tierno de canela y especias, 100% vegetal.",
+          "price": {
+            "base": 4.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P032.webp",
+          "allergens": [],
+          "recommended": true
+        },
+        {
+          "id": "P033",
+          "name": "ROLL DE NUTELLA VEGANO",
+          "description": "Delicioso roll con crema de cacao y avellanas vegana.",
+          "price": {
+            "base": 4.85
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P033.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P034",
+          "name": "ROLL DE PISTACHO VEGANO",
+          "description": "Nuestra especialidad artesana con crema de pistacho.",
+          "price": {
+            "base": 4.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P034.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P035",
+          "name": "COOKIES VEGANAS",
+          "description": "Galletas caseras con generosas pepitas de chocolate.",
+          "price": {
+            "base": 3.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P035.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P036",
+          "name": "TOSTADAS",
+          "description": "Pan artesano tostado con aceite de oliva o mermelada.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P037",
+          "name": "BANANA BREAD CHOCOLATE",
+          "description": "Bizcocho casero de plátano con chocolate fundido.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P037.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P038",
+          "name": "BROWNIE DE CHOCOLATE",
+          "description": "Bizcocho húmedo e intenso de puro chocolate.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P038.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P039",
+          "name": "TARTA DE MANZANA",
+          "description": "Receta clásica con láminas de manzana seleccionada.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P039.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P040",
+          "name": "TARTA DE LIMÓN",
+          "description": "Crema cítrica refrescante sobre base de masa quebrada.",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P040.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P041",
+          "name": "ALFAJOR DE DULCE DE LECHE",
+          "description": "Masa suave rellena de auténtico dulce de leche.",
+          "price": {
+            "base": 3.2
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P041.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P042",
+          "name": "TARTA DE LIMÓN",
+          "description": "Base de masa quebrada con un relleno cremoso de limón y merengue",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P042.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P053",
+          "name": "PASTAFROLA MEMBRILLO",
+          "description": "Tarta artesanal rellena de dulce de membrillo.",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P053.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P076",
+          "name": "COOKIE SIROKO",
+          "description": "Cookies de chocolate caseras",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P076.webp",
+          "allergens": [
+            "gl",
+            "hu"
+          ],
+          "recommended": false
+        }
+      ]
+    },
+    "tostas-y-bocadillos": {
+      "name": "Tostas y bocadillos",
+      "items": [
+        {
+          "id": "P043",
+          "name": "BAGEL SALMÓN",
+          "description": "Aguacate, queso Filadelfia y Salmón",
+          "price": {
+            "base": 8.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P043.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P044",
+          "name": "BAGEL JAMÓN Y QUESO",
+          "description": "Jamón y queso.",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P044.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P045",
+          "name": "BAGEL HUMMUS Y AGUACATE",
+          "description": "Combinación saludable de hummus y aguacate fresco.",
+          "price": {
+            "base": 7.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P045.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P054",
+          "name": "BOCADILLO VEGANO",
+          "description": "Pan cristal, salsa de Tahini, tomate, berenjena, calabacín escalibados y espinacas",
+          "price": {
+            "base": 8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P054.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P055",
+          "name": "BOCADILLO VEGETARIANO",
+          "description": "Pan cristal, queso crema, mango, rúcula, aguacate y toque de tabasco",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P055.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P056",
+          "name": "BOCADILLO ATÚN",
+          "description": "Pan cristal, mayonesa, atún, pepinillo, queso crema, pimineto, cilantro",
+          "price": {
+            "base": 8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P056.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P060",
+          "name": "YOGURT GRIEGO Y GRANOLA",
+          "description": "Yogurt griego con granola casera y semillas chía",
+          "price": {
+            "base": 5.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P060.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P061",
+          "name": "YOGURT TOPPING",
+          "description": "Agregale tus toppins preferidos: fresa, banana, arándanos, chocolate, mango",
+          "price": {
+            "base": 1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P066",
+          "name": "OLIVAS",
+          "description": "",
+          "price": {
+            "base": 1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P066.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P067",
+          "name": "BOLSA DE CHIPS",
+          "description": "Patatas fritas de paquete",
+          "price": {
+            "base": 1.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P067.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P072",
+          "name": "TOSTADA VEGANA",
+          "description": "Hummus remolacha, rúcula, aguacate, pistachos troceados, pan de cereales masa madre.",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P072.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P073",
+          "name": "TOSTADA VEGETARIANA",
+          "description": "Aguacate, tomate, rúcula, queso de cabra, semillas, pan de cereales masa madre",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P073.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P074",
+          "name": "TOSTADA SALMÓN",
+          "description": "Queso crema con limón y menta, salmón ahumado, aguacate, queso mozzarella, rabanitos y semillas",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P074.webp",
+          "allergens": [],
+          "recommended": true
+        }
+      ]
+    },
+    "bar": {
+      "name": "Bar",
+      "items": [
+        {
+          "id": "P062",
+          "name": "CERVEZA ALHAMBRA",
+          "description": "Intensa, con cuerpo y un equilibrio entre amargor y dulzor.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P062.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P064",
+          "name": "CERVEZA CON LIMÓN ÁMBAR",
+          "description": "Refrescante: cerveza de calidad con el toque cítrico y natural del limón.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P064.webp",
+          "allergens": [
+            "gl",
+            "la",
+            "pe"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P065",
+          "name": "CERVEZA SIN ALCOHOL TOSTADA",
+          "description": "Todo el carácter y sabor de las maltas tostadas, pero con 0,0% alcohol.",
+          "price": {
+            "base": 2.85
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P065.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P068",
+          "name": "COPA VINO TINTO",
+          "description": "Selección de la casa ideal para acompañar nuestras tostas.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P068.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P069",
+          "name": "COPA VINO BLANCO",
+          "description": "Fresco, ideal para un mediodía ligero en nuestra terraza.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P069.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P070",
+          "name": "APEROL SPRITZ",
+          "description": "El clásico aperitivo italiano: burbujeante, cítrico y con ese color naranja brillante.",
+          "price": {
+            "base": 6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P070.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P071",
+          "name": "VERMUT",
+          "description": "Servido con hielo y su toque de cítrico; el equilibrio perfecto entre hierbas aromáticas y especias.",
+          "price": {
+            "base": 3.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    }
+  },
+  "ca": {
+    "cafès": {
+      "name": "Cafès",
+      "items": [
+        {
+          "id": "P001",
+          "name": "#REF!",
+          "description": "Extracció intensa i equilibrada de cafè especialitzat.",
+          "price": {
+            "base": 1.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P001.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P002",
+          "name": "ESPRESS",
+          "description": "Doble càrrega denergia amb cos i aroma persistent.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P002.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P003",
+          "name": "ESPRESSO DOBLE",
+          "description": "Espresso clàssic amb un núvol de llet cremosa.",
+          "price": {
+            "base": 2.1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P003.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P004",
+          "name": "ESPRESSO MATXIAT",
+          "description": "Esprés suavitzat amb aigua calenta, lleuger i aromàtic.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P004.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P005",
+          "name": "AMERICÀ 1 SHOT",
+          "description": "Doble espresso amb aigua calenta per a un sabor més perllongat.",
+          "price": {
+            "base": 2.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P005.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P006",
+          "name": "AMERICÀ 2 SHOTS",
+          "description": "Cafè de filtre del dia, suau i ple de matisos.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P006.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P007",
+          "name": "BATCH BREW",
+          "description": "Cafè infusionat en fred durant 24h, dolç i refrescant.",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P007.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P008",
+          "name": "COLD BREW",
+          "description": "Doble shot d´espresso amb abundant llet vaporitzada.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P008.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P009",
+          "name": "LATTE",
+          "description": "Capes de llet cremosa marcades per un toc d'espresso.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P009.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P010",
+          "name": "LATTE MACCHIATO",
+          "description": "Doble espresso amb una fina capa de llet vellutada.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P010.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P011",
+          "name": "FLAT WHITE",
+          "description": "L'equilibri clàssic entre espresso, llet i escuma.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P011.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P012",
+          "name": "CAPPUCCÍ",
+          "description": "Beguda típica argentina: llet calenta amb una barra de xocolata per fondre.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": true
+        },
+        {
+          "id": "P013",
+          "name": "SUBMARÍ",
+          "description": "El teu espresso servit sobre gel, ideal per refrescar-se.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P013.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P014",
+          "name": "CAFÈ AMB GEL",
+          "description": "Combinació suau de cafè i llet servida molt freda.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P014.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P015",
+          "name": "LATTE AMB GEL",
+          "description": "Deliciosa barreja d´espresso i llet condensada.",
+          "price": {
+            "base": 2.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P015.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P016",
+          "name": "ESPRESSO BOMBÓ",
+          "description": "Refrescant combinació d´espresso, tònica i cítrics.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P016.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P017",
+          "name": "ESPRESSO TONIC",
+          "description": "Opció de llet vegetal per personalitzar la teva beguda.",
+          "price": {
+            "base": 0.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P017.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P018",
+          "name": "EXTRA LLET VEGETAL",
+          "description": "Una càrrega addicional del nostre millor cafè especialitzat.",
+          "price": {
+            "base": 0.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "begudes-calentes": {
+      "name": "Begudes calentes",
+      "items": [
+        {
+          "id": "P019",
+          "name": "EXTRA SHOT CAFÈ",
+          "description": "Infusió natural relaxant i digestiva.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P019.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P020",
+          "name": "INFUSIÓ CAMAMILLA",
+          "description": "Te negre amb espècies tradicionals i llet cremosa.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P021",
+          "name": "TE CHAI",
+          "description": "Te verd matxa cerimonial batut amb llet.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": true
+        },
+        {
+          "id": "P046",
+          "name": "CAFÈ + CROISSANT GRAN",
+          "description": "Te negre aromatitzat amb oli de bergamota.",
+          "price": {
+            "base": 2
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P047",
+          "name": "TE NEGRE/VERMELL/VERD",
+          "description": "Barreja de tes negres amb sabor robust i tradicional.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P047.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P048",
+          "name": "TE EARL GREY",
+          "description": "Infusió refrescant de menta i poliol natural.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P049",
+          "name": "TE ENGLISH BREAKFAST",
+          "description": "Infusió sense teïna, dolça i plena d'antioxidants.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P049.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P050",
+          "name": "POLIAMENT MENTA",
+          "description": "Te vermell fermentat amb notes terroses i digestives.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P050.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P051",
+          "name": "ROOIBOS",
+          "description": "Infusió tradicional servida de manera clàssica.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P052",
+          "name": "ET VERMELL PU ERH",
+          "description": "Pastís artesanal farcit de codonyat.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "begudes-fredes": {
+      "name": "Begudes fredes",
+      "items": [
+        {
+          "id": "P022",
+          "name": "MATXA LATTE",
+          "description": "100% natural espremut",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P022.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P023",
+          "name": "SUC DE TARONJA",
+          "description": "Mango, Maduixa i Taronja",
+          "price": {
+            "base": 5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P023.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P024",
+          "name": "SMOOTHIE MANGO",
+          "description": "Banana, maduixa i taronja",
+          "price": {
+            "base": 5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P024.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P025",
+          "name": "SMOOTHIE BANANA",
+          "description": "Combinat detox de fruites i verdures fresques.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P025.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P026",
+          "name": "SUC SIROKO VERD",
+          "description": "Mix cítric i vital per començar bé el dia.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P026.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P027",
+          "name": "SUC SIROKO VITAMINA",
+          "description": "Aigua mineral natural servida freda.",
+          "price": {
+            "base": 1.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P027.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P028",
+          "name": "AIGUA MINERAL",
+          "description": "Aigua amb gas refrescant i cristal·lina.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P028.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P029",
+          "name": "AIGUA AMB GAS",
+          "description": "Refresc clàssic servit amb gel i llimona.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P029.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P030",
+          "name": "COCA-COLA",
+          "description": "El sabor original de Coca-Cola sense sucre.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P030.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P057",
+          "name": "entrepà tonyina",
+          "description": "Refrescant i equilibrada, amb el toc amarg perfecte i bombolla fina.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P057.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P058",
+          "name": "AIGUA TÒNICA",
+          "description": "Natural i refrescant",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P058.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "brioixeria-i-dolços": {
+      "name": "Brioixeria i dolços",
+      "items": [
+        {
+          "id": "P031",
+          "name": "COCA-COLA ZERO",
+          "description": "Pasta de full artesana cruixent per fora i tendre per dins.",
+          "price": {
+            "base": 1.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P031.webp",
+          "allergens": [
+            "GL",
+            "HU"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P032",
+          "name": "CROISSANT GRAN",
+          "description": "brioix tendre de canyella i espècies, 100% vegetal.",
+          "price": {
+            "base": 4.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P032.webp",
+          "allergens": [],
+          "recommended": true
+        },
+        {
+          "id": "P033",
+          "name": "ROLL DE CANELA VEGÀ",
+          "description": "Deliciós roll amb crema de cacau i avellanes vegana.",
+          "price": {
+            "base": 4.85
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P033.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P034",
+          "name": "ROLL DE NUTELLA VEGANO",
+          "description": "La nostra especialitat artesana amb crema de pistatxo.",
+          "price": {
+            "base": 4.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P034.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P035",
+          "name": "ROLL DE PISTATXO VEGÀ",
+          "description": "Galetes casolanes amb generoses llavors de xocolata.",
+          "price": {
+            "base": 3.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P035.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P036",
+          "name": "COOKIES VEGANES",
+          "description": "Pa artesà torrat amb oli d'oliva o melmelada.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P037",
+          "name": "TORRADES",
+          "description": "Pa de pessic casolà de plàtan amb xocolata fosa.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P037.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P038",
+          "name": "BANANA BREAD XOCOLATA",
+          "description": "Pa de pessic humit i intens de pura xocolata.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P038.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P039",
+          "name": "BROWNIE DE XOCOLATA",
+          "description": "Recepta clàssica amb làmines de poma seleccionada.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P039.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P040",
+          "name": "PASTÍS DE POMA",
+          "description": "Crema cítrica refrescant sobre base de massa fallta.",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P040.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P041",
+          "name": "PASTÍS DE LLIMONA",
+          "description": "Massa suau farcida d'autèntic dolç de llet.",
+          "price": {
+            "base": 3.2
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P041.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P042",
+          "name": "ALFAJOR DE DOLÇ DE LLET",
+          "description": "Alvocat, formatge Filadèlfia i Salmó",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P042.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P053",
+          "name": "MATEIX",
+          "description": "Pa vidre, salsa de Tahini, tomàquet, albergínia, carbassó escalivats i espinacs",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P053.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P076",
+          "name": "COOKIE SIROKO",
+          "description": "Galetes de xocolata casolanes",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P076.webp",
+          "allergens": [
+            "gl",
+            "hu"
+          ],
+          "recommended": false
+        }
+      ]
+    },
+    "torrades-i-entrepans": {
+      "name": "Torrades i entrepans",
+      "items": [
+        {
+          "id": "P043",
+          "name": "PASTÍS DE LLIMONA",
+          "description": "Pernil i formatge.",
+          "price": {
+            "base": 8.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P043.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P044",
+          "name": "BAGEL SALMÓ",
+          "description": "Combinació saludable d'hummus i alvocat fresc.",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P044.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P045",
+          "name": "BAGEL PERNIL I FORMATGE",
+          "description": "L'esmorzar clàssic ideal per gaudir a Siroko.",
+          "price": {
+            "base": 7.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P045.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P054",
+          "name": "PASTAFROLA CODONY",
+          "description": "Pa vidre, salsa de Tahini, tomàquet, albergínia, carbassó escalivats i espinacs",
+          "price": {
+            "base": 8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P054.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P055",
+          "name": "BOCADILLO VEGANO",
+          "description": "Pa vidre, formatge crema, mango, ruca, alvocat i toc de tabasco",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P055.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P056",
+          "name": "BOCADILLO VEGETARIÀ",
+          "description": "Pa vidre, maionesa, tonyina, cogombret, formatge crema, piminet, coriandre",
+          "price": {
+            "base": 8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P056.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P060",
+          "name": "IOGURT AMB GRANOLA NOI",
+          "description": "Iogurt grec amb granola casolana i llavors chía",
+          "price": {
+            "base": 5.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P060.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P061",
+          "name": "IOGURT GREC I GRANOLA",
+          "description": "Afegeix els teus toppins preferits: maduixa, banana, nabius, xocolata, mango",
+          "price": {
+            "base": 1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P066",
+          "name": "CERVESA SENSE ALCOHOL TORRADA",
+          "description": "",
+          "price": {
+            "base": 1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P066.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P067",
+          "name": "OLIVES",
+          "description": "Patates fregides de paquet",
+          "price": {
+            "base": 1.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P067.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P072",
+          "name": "VERMUT",
+          "description": "Hummus remolatxa, ruca, alvocat, festucs trossejats, pa de cereals massa mare.",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P072.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P073",
+          "name": "TORRADA VEGANA",
+          "description": "Alvocat, tomàquet, ruca, formatge de cabra, llavors, pa de cereals massa mare",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P073.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P074",
+          "name": "TORRADA VEGETARIANA",
+          "description": "Formatge crema amb llimona i menta, salmó fumat, alvocat, formatge mozzarella, raves i llavors",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P074.webp",
+          "allergens": [],
+          "recommended": true
+        }
+      ]
+    },
+    "bar": {
+      "name": "Bar",
+      "items": [
+        {
+          "id": "P062",
+          "name": "IOGURT TOPPING",
+          "description": "Intensa, amb cos i un equilibri entre amargor i dolçor.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P062.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P064",
+          "name": "COPA SANT MIQUEL MAGNA",
+          "description": "Refrescant: cervesa de qualitat amb el toc cítric i natural de la llimona.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P064.webp",
+          "allergens": [
+            "gl",
+            "la",
+            "pe"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P065",
+          "name": "CERVESA AMB LLIMONA ÀMBAR",
+          "description": "Tot el caràcter i sabor de les maltes torrades, però amb 0,0% alcohol.",
+          "price": {
+            "base": 2.85
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P065.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P068",
+          "name": "BORSA DE XIPS",
+          "description": "Selecció de la casa ideal per acompanyar les nostres torrades.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P068.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P069",
+          "name": "COPA VI NEGRE",
+          "description": "Fresc, ideal per a un migdia lleuger a la nostra terrassa.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P069.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P070",
+          "name": "COPA VI BLANC",
+          "description": "El clàssic aperitiu italià: bombolles, cítric i amb aquest color taronja brillant.",
+          "price": {
+            "base": 6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P070.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P071",
+          "name": "APEROL SPRITZ",
+          "description": "Servit amb gel i el toc de cítric; l'equilibri perfecte entre les herbes aromàtiques i les espècies.",
+          "price": {
+            "base": 3.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    }
+  },
+  "en": {
+    "coffee": {
+      "name": "Coffee",
+      "items": [
+        {
+          "id": "P001",
+          "name": "#REF!",
+          "description": "Intense and balanced extraction of specialty coffee.",
+          "price": {
+            "base": 1.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P001.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P002",
+          "name": "ESPRESSO",
+          "description": "Double energy boost with body and lingering aroma.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P002.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P003",
+          "name": "DOUBLE ESPRESSO",
+          "description": "Classic espresso with a cloud of creamy milk.",
+          "price": {
+            "base": 2.1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P003.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P004",
+          "name": "ESPRESSO MACCHIATO",
+          "description": "Espresso softened with hot water, light and aromatic.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P004.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P005",
+          "name": "AMERICAN 1 SHOT",
+          "description": "Double espresso with hot water for a longer-lasting flavor.",
+          "price": {
+            "base": 2.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P005.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P006",
+          "name": "AMERICANO 2 SHOTS",
+          "description": "Filter coffee of the day, smooth and full of nuances.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P006.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P007",
+          "name": "BATCH BREW",
+          "description": "Cold brewed coffee for 24 hours, sweet and refreshing.",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P007.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P008",
+          "name": "COLD BREW",
+          "description": "Double shot of espresso with plenty of steamed milk.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P008.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P009",
+          "name": "LATTE",
+          "description": "Layers of creamy milk marked by a touch of espresso.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P009.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P010",
+          "name": "LATTE MACCHIATO",
+          "description": "Double espresso with a thin layer of velvety milk.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P010.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P011",
+          "name": "FLAT WHITE",
+          "description": "The classic balance between espresso, milk and foam.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P011.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P012",
+          "name": "CAPPUCCINO",
+          "description": "Typical Argentine drink: hot milk with a bar of chocolate to melt.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": true
+        },
+        {
+          "id": "P013",
+          "name": "SUBMARINE",
+          "description": "Your espresso served over ice, ideal for cooling down.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P013.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P014",
+          "name": "ICED COFFEE",
+          "description": "Smooth combination of coffee and milk served very cold.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P014.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P015",
+          "name": "ICED LATTE",
+          "description": "Delicious blend of espresso and condensed milk.",
+          "price": {
+            "base": 2.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P015.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P016",
+          "name": "ESPRESSO BOMBÓN",
+          "description": "Refreshing combination of espresso, tonic and citrus.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P016.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P017",
+          "name": "ESPRESSO TONIC",
+          "description": "Plant-based milk option to personalize your drink.",
+          "price": {
+            "base": 0.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P017.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P018",
+          "name": "EXTRA PLANT-BASED MILK",
+          "description": "An extra load of our best specialty coffee.",
+          "price": {
+            "base": 0.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "hot-drinks": {
+      "name": "Hot drinks",
+      "items": [
+        {
+          "id": "P019",
+          "name": "EXTRA SHOT COFFEE",
+          "description": "Relaxing and digestive natural infusion.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P019.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P020",
+          "name": "Chamomile Infusion",
+          "description": "Black tea with traditional spices and creamy milk.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P021",
+          "name": "CHAI TEA",
+          "description": "Ceremonial matcha green tea blended with milk.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": true
+        },
+        {
+          "id": "P046",
+          "name": "COFFEE + LARGE CROISSANT",
+          "description": "Black tea flavored with bergamot oil.",
+          "price": {
+            "base": 2
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P047",
+          "name": "BLACK/RED/GREEN TEA",
+          "description": "Blend of black teas with a robust and traditional flavor.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P047.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P048",
+          "name": "EARL GREY TEA",
+          "description": "Refreshing infusion of mint and natural pennyroyal.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P049",
+          "name": "ENGLISH BREAKFAST",
+          "description": "Caffeine-free infusion, sweet and full of antioxidants.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P049.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P050",
+          "name": "PENNYROYAL MINT",
+          "description": "Fermented red tea with earthy and digestive notes.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P050.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P051",
+          "name": "ROOIBOS",
+          "description": "Traditional infusion served in the classic way.",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P052",
+          "name": "TE VERMELL PU ERH",
+          "description": "Homemade cake filled with quince paste.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "cold-drinks": {
+      "name": "Cold drinks",
+      "items": [
+        {
+          "id": "P022",
+          "name": "MATCHA LATTE",
+          "description": "100% natural squeezed",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P022.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P023",
+          "name": "ORANGE JUICE",
+          "description": "Mango, Strawberry and Orange",
+          "price": {
+            "base": 5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P023.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P024",
+          "name": "MANGO SMOOTHIE",
+          "description": "Banana, strawberry and orange",
+          "price": {
+            "base": 5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P024.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P025",
+          "name": "BANANA SMOOTHIE",
+          "description": "Detox combination of fresh fruits and vegetables.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P025.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P026",
+          "name": "SIROKO GREEN JUICE",
+          "description": "A citrusy and vital mix to start the day off right.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P026.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P027",
+          "name": "SIROKO VITAMIN JUICE",
+          "description": "Natural mineral water served cold.",
+          "price": {
+            "base": 1.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P027.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P028",
+          "name": "MINERAL WATER",
+          "description": "Refreshing and crystal clear sparkling water.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P028.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P029",
+          "name": "Sparkling Water",
+          "description": "Classic soft drink served with ice and lemon.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P029.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P030",
+          "name": "COCA-COLA",
+          "description": "The original taste of Coca-Cola without sugar.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P030.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P057",
+          "name": "TUNA SANDWICH",
+          "description": "Refreshing and balanced, with the perfect bitter touch and fine bubbles.",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P057.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P058",
+          "name": "TONIC WATER",
+          "description": "Natural and refreshing",
+          "price": {
+            "base": 2.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P058.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    },
+    "pastries-and-sweets": {
+      "name": "Pastries and sweets",
+      "items": [
+        {
+          "id": "P031",
+          "name": "COCA-COLA ZERO",
+          "description": "Artisan puff pastry, crispy on the outside and tender on the inside.",
+          "price": {
+            "base": 1.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P031.webp",
+          "allergens": [
+            "GL",
+            "HU"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P032",
+          "name": "LARGE CROISSANT",
+          "description": "Soft cinnamon and spice bun, 100% plant-based.",
+          "price": {
+            "base": 4.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P032.webp",
+          "allergens": [],
+          "recommended": true
+        },
+        {
+          "id": "P033",
+          "name": "VEGAN CINNAMON ROLL",
+          "description": "Delicious roll with vegan cocoa and hazelnut cream.",
+          "price": {
+            "base": 4.85
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P033.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P034",
+          "name": "VEGAN NUTELLA ROLL",
+          "description": "Our artisan specialty with pistachio cream.",
+          "price": {
+            "base": 4.9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P034.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P035",
+          "name": "VEGAN PISTACHIO ROLL",
+          "description": "Homemade cookies with generous chocolate chips.",
+          "price": {
+            "base": 3.7
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P035.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P036",
+          "name": "VEGAN COOKIES",
+          "description": "Toasted artisan bread with olive oil or jam.",
+          "price": {
+            "base": 2.4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P037",
+          "name": "TOAST",
+          "description": "Homemade banana cake with melted chocolate.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P037.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P038",
+          "name": "Banana Bread Chocolate",
+          "description": "Moist and intense cake made with pure chocolate.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P038.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P039",
+          "name": "CHOCOLATE BROWNIE",
+          "description": "Classic recipe with selected apple slices.",
+          "price": {
+            "base": 4.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P039.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P040",
+          "name": "APPLE CAKE",
+          "description": "Refreshing citrus cream on a shortcrust pastry base.",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P040.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P041",
+          "name": "LEMON TART",
+          "description": "Soft pastry filled with authentic dulce de leche.",
+          "price": {
+            "base": 3.2
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P041.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P042",
+          "name": "Dulce de Leche Alfajor",
+          "description": "Avocado, Philadelphia cheese and salmon",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P042.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P053",
+          "name": "MATE",
+          "description": "Crystal bread, tahini sauce, tomato, roasted eggplant and zucchini, and spinach",
+          "price": {
+            "base": 3.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P053.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P076",
+          "name": "COOKIE SIROKO",
+          "description": "Homemade chocolate cookies",
+          "price": {
+            "base": 2.3
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P076.webp",
+          "allergens": [
+            "gl",
+            "hu"
+          ],
+          "recommended": false
+        }
+      ]
+    },
+    "toasts-and-sandwiches": {
+      "name": "Toasts and sandwiches",
+      "items": [
+        {
+          "id": "P043",
+          "name": "LEMON TART",
+          "description": "Ham and cheese.",
+          "price": {
+            "base": 8.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P043.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P044",
+          "name": "SALMON BAGEL",
+          "description": "Healthy combination of hummus and fresh avocado.",
+          "price": {
+            "base": 4
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P044.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P045",
+          "name": "Ham and Cheese Bagel",
+          "description": "The perfect classic breakfast to enjoy at Siroko.",
+          "price": {
+            "base": 7.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P045.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P054",
+          "name": "QUINCE PASTAFROLA",
+          "description": "Crystal bread, tahini sauce, tomato, roasted eggplant and zucchini, and spinach",
+          "price": {
+            "base": 8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P054.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P055",
+          "name": "VEGAN SANDWICH",
+          "description": "Crystal bread, cream cheese, mango, arugula, avocado and a touch of Tabasco",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P055.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P056",
+          "name": "VEGETARIAN SANDWICH",
+          "description": "Crystal bread, mayonnaise, tuna, pickle, cream cheese, bell pepper, cilantro",
+          "price": {
+            "base": 8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P056.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P060",
+          "name": "SMALL YOGURT WITH GRANOLA",
+          "description": "Greek yogurt with homemade granola and chia seeds",
+          "price": {
+            "base": 5.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P060.webp",
+          "allergens": [
+            "LA"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P061",
+          "name": "GREEK YOGURT AND GRANOLA",
+          "description": "Add your favorite toppings: strawberry, banana, blueberries, chocolate, mango",
+          "price": {
+            "base": 1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P066",
+          "name": "TOASTED NON-ALCOHOLIC BEER",
+          "description": "",
+          "price": {
+            "base": 1
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P066.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P067",
+          "name": "OLIVES",
+          "description": "Packaged potato chips",
+          "price": {
+            "base": 1.75
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P067.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P072",
+          "name": "VERMOUTH",
+          "description": "Beetroot hummus, arugula, avocado, chopped pistachios, sourdough cereal bread.",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P072.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P073",
+          "name": "VEGAN TOAST",
+          "description": "Avocado, tomato, arugula, goat cheese, seeds, sourdough multigrain bread",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P073.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P074",
+          "name": "VEGETARIAN TOAST",
+          "description": "Cream cheese with lemon and mint, smoked salmon, avocado, mozzarella cheese, radishes and seeds",
+          "price": {
+            "base": 9
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P074.webp",
+          "allergens": [],
+          "recommended": true
+        }
+      ]
+    },
+    "bar": {
+      "name": "Bar",
+      "items": [
+        {
+          "id": "P062",
+          "name": "YOGURT TOPPING",
+          "description": "Intense, full-bodied, and with a balance between bitterness and sweetness.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P062.webp",
+          "allergens": [
+            "gl"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P064",
+          "name": "SAN MIGUEL MAGNA CUP",
+          "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
+          "price": {
+            "base": 2.8
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P064.webp",
+          "allergens": [
+            "gl",
+            "la",
+            "pe"
+          ],
+          "recommended": false
+        },
+        {
+          "id": "P065",
+          "name": "AMBER LEMON BEER",
+          "description": "All the character and flavor of roasted malts, but with 0.0% alcohol.",
+          "price": {
+            "base": 2.85
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P065.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P068",
+          "name": "BAG OF CHIPS",
+          "description": "House selection ideal to accompany our toasts.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P068.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P069",
+          "name": "RED WINE GLASS",
+          "description": "Fresh, ideal for a light midday on our terrace.",
+          "price": {
+            "base": 3.5
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P069.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P070",
+          "name": "WHITE WINE GLASS",
+          "description": "The classic Italian aperitif: bubbly, citrusy and with that bright orange color.",
+          "price": {
+            "base": 6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P070.webp",
+          "allergens": [],
+          "recommended": false
+        },
+        {
+          "id": "P071",
+          "name": "APEROL SPRITZ",
+          "description": "Served with ice and a touch of citrus; the perfect balance between aromatic herbs and spices.",
+          "price": {
+            "base": 3.6
+          },
+          "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
+          "allergens": [],
+          "recommended": false
+        }
+      ]
+    }
+  }
+}
