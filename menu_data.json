@@ -875,7 +875,7 @@
         "items": [
           {
             "id": "P001",
-            "name": "#REF!",
+            "name": "ESPRESS",
             "description": "Extracció intensa i equilibrada de cafè especialitzat.",
             "price": {
               "base": 1.75
@@ -886,7 +886,7 @@
           },
           {
             "id": "P002",
-            "name": "ESPRESS",
+            "name": "ESPRESSO DOBLE",
             "description": "Doble càrrega denergia amb cos i aroma persistent.",
             "price": {
               "base": 2.4
@@ -897,7 +897,7 @@
           },
           {
             "id": "P003",
-            "name": "ESPRESSO DOBLE",
+            "name": "ESPRESSO MATXIAT",
             "description": "Espresso clàssic amb un núvol de llet cremosa.",
             "price": {
               "base": 2.1
@@ -908,7 +908,7 @@
           },
           {
             "id": "P004",
-            "name": "ESPRESSO MATXIAT",
+            "name": "AMERICÀ 1 SHOT",
             "description": "Esprés suavitzat amb aigua calenta, lleuger i aromàtic.",
             "price": {
               "base": 2.3
@@ -919,7 +919,7 @@
           },
           {
             "id": "P005",
-            "name": "AMERICÀ 1 SHOT",
+            "name": "AMERICÀ 2 SHOTS",
             "description": "Doble espresso amb aigua calenta per a un sabor més perllongat.",
             "price": {
               "base": 2.6
@@ -930,7 +930,7 @@
           },
           {
             "id": "P006",
-            "name": "AMERICÀ 2 SHOTS",
+            "name": "BATCH BREW",
             "description": "Cafè de filtre del dia, suau i ple de matisos.",
             "price": {
               "base": 2.8
@@ -941,7 +941,7 @@
           },
           {
             "id": "P007",
-            "name": "BATCH BREW",
+            "name": "COLD BREW",
             "description": "Cafè infusionat en fred durant 24h, dolç i refrescant.",
             "price": {
               "base": 4
@@ -952,7 +952,7 @@
           },
           {
             "id": "P008",
-            "name": "COLD BREW",
+            "name": "LATTE",
             "description": "Doble shot d´espresso amb abundant llet vaporitzada.",
             "price": {
               "base": 2.4
@@ -963,7 +963,7 @@
           },
           {
             "id": "P009",
-            "name": "LATTE",
+            "name": "LATTE MACCHIATO",
             "description": "Capes de llet cremosa marcades per un toc d'espresso.",
             "price": {
               "base": 2.8
@@ -976,7 +976,7 @@
           },
           {
             "id": "P010",
-            "name": "LATTE MACCHIATO",
+            "name": "FLAT WHITE",
             "description": "Doble espresso amb una fina capa de llet vellutada.",
             "price": {
               "base": 2.8
@@ -989,7 +989,7 @@
           },
           {
             "id": "P011",
-            "name": "FLAT WHITE",
+            "name": "CAPPUCCÍ",
             "description": "L'equilibri clàssic entre espresso, llet i escuma.",
             "price": {
               "base": 2.5
@@ -1002,7 +1002,7 @@
           },
           {
             "id": "P012",
-            "name": "CAPPUCCÍ",
+            "name": "SUBMARÍ",
             "description": "Beguda típica argentina: llet calenta amb una barra de xocolata per fondre.",
             "price": {
               "base": 2.8
@@ -1015,7 +1015,7 @@
           },
           {
             "id": "P013",
-            "name": "SUBMARÍ",
+            "name": "CAFÈ AMB GEL",
             "description": "El teu espresso servit sobre gel, ideal per refrescar-se.",
             "price": {
               "base": 2.4
@@ -1026,7 +1026,7 @@
           },
           {
             "id": "P014",
-            "name": "CAFÈ AMB GEL",
+            "name": "LATTE AMB GEL",
             "description": "Combinació suau de cafè i llet servida molt freda.",
             "price": {
               "base": 3.5
@@ -1039,7 +1039,7 @@
           },
           {
             "id": "P015",
-            "name": "LATTE AMB GEL",
+            "name": "ESPRESSO BOMBÓ",
             "description": "Deliciosa barreja d´espresso i llet condensada.",
             "price": {
               "base": 2.7
@@ -1050,7 +1050,7 @@
           },
           {
             "id": "P016",
-            "name": "ESPRESSO BOMBÓ",
+            "name": "ESPRESSO TONIC",
             "description": "Refrescant combinació d´espresso, tònica i cítrics.",
             "price": {
               "base": 3.5
@@ -1061,7 +1061,7 @@
           },
           {
             "id": "P017",
-            "name": "ESPRESSO TONIC",
+            "name": "EXTRA LLET VEGETAL",
             "description": "Opció de llet vegetal per personalitzar la teva beguda.",
             "price": {
               "base": 0.3
@@ -1072,7 +1072,7 @@
           },
           {
             "id": "P018",
-            "name": "EXTRA LLET VEGETAL",
+            "name": "EXTRA SHOT CAFÈ",
             "description": "Una càrrega addicional del nostre millor cafè especialitzat.",
             "price": {
               "base": 0.7
@@ -1088,7 +1088,7 @@
         "items": [
           {
             "id": "P019",
-            "name": "EXTRA SHOT CAFÈ",
+            "name": "INFUSIÓ CAMAMILLA",
             "description": "Infusió natural relaxant i digestiva.",
             "price": {
               "base": 2.3
@@ -1099,7 +1099,7 @@
           },
           {
             "id": "P020",
-            "name": "INFUSIÓ CAMAMILLA",
+            "name": "TE CHAI",
             "description": "Te negre amb espècies tradicionals i llet cremosa.",
             "price": {
               "base": 2.8
@@ -1110,7 +1110,7 @@
           },
           {
             "id": "P021",
-            "name": "TE CHAI",
+            "name": "MATXA LATTE",
             "description": "Te verd matxa cerimonial batut amb llet.",
             "price": {
               "base": 3.5
@@ -1123,7 +1123,7 @@
           },
           {
             "id": "P046",
-            "name": "CAFÈ + CROISSANT GRAN",
+            "name": "TE NEGRE/VERMELL/VERD",
             "description": "Te negre aromatitzat amb oli de bergamota.",
             "price": {
               "base": 2
@@ -1134,7 +1134,7 @@
           },
           {
             "id": "P047",
-            "name": "TE NEGRE/VERMELL/VERD",
+            "name": "TE EARL GREY",
             "description": "Barreja de tes negres amb sabor robust i tradicional.",
             "price": {
               "base": 2.3
@@ -1145,7 +1145,7 @@
           },
           {
             "id": "P048",
-            "name": "TE EARL GREY",
+            "name": "TE ENGLISH BREAKFAST",
             "description": "Infusió refrescant de menta i poliol natural.",
             "price": {
               "base": 2.3
@@ -1156,7 +1156,7 @@
           },
           {
             "id": "P049",
-            "name": "TE ENGLISH BREAKFAST",
+            "name": "POLIAMENT MENTA",
             "description": "Infusió sense teïna, dolça i plena d'antioxidants.",
             "price": {
               "base": 2.3
@@ -1167,7 +1167,7 @@
           },
           {
             "id": "P050",
-            "name": "POLIAMENT MENTA",
+            "name": "ROOIBOS",
             "description": "Te vermell fermentat amb notes terroses i digestives.",
             "price": {
               "base": 2.3
@@ -1178,7 +1178,7 @@
           },
           {
             "id": "P051",
-            "name": "ROOIBOS",
+            "name": "ET VERMELL PU ERH",
             "description": "Infusió tradicional servida de manera clàssica.",
             "price": {
               "base": 2.3
@@ -1189,7 +1189,7 @@
           },
           {
             "id": "P052",
-            "name": "ET VERMELL PU ERH",
+            "name": "MATEIX",
             "description": "Pastís artesanal farcit de codonyat.",
             "price": {
               "base": 3.5
@@ -1205,7 +1205,7 @@
         "items": [
           {
             "id": "P022",
-            "name": "MATXA LATTE",
+            "name": "SUC DE TARONJA",
             "description": "100% natural espremut",
             "price": {
               "base": 4
@@ -1216,7 +1216,7 @@
           },
           {
             "id": "P023",
-            "name": "SUC DE TARONJA",
+            "name": "SMOOTHIE MANGO",
             "description": "Mango, Maduixa i Taronja",
             "price": {
               "base": 5
@@ -1227,7 +1227,7 @@
           },
           {
             "id": "P024",
-            "name": "SMOOTHIE MANGO",
+            "name": "SMOOTHIE BANANA",
             "description": "Banana, maduixa i taronja",
             "price": {
               "base": 5
@@ -1238,7 +1238,7 @@
           },
           {
             "id": "P025",
-            "name": "SMOOTHIE BANANA",
+            "name": "SUC SIROKO VERD",
             "description": "Combinat detox de fruites i verdures fresques.",
             "price": {
               "base": 4.5
@@ -1249,7 +1249,7 @@
           },
           {
             "id": "P026",
-            "name": "SUC SIROKO VERD",
+            "name": "SUC SIROKO VITAMINA",
             "description": "Mix cítric i vital per començar bé el dia.",
             "price": {
               "base": 4.5
@@ -1260,7 +1260,7 @@
           },
           {
             "id": "P027",
-            "name": "SUC SIROKO VITAMINA",
+            "name": "AIGUA MINERAL",
             "description": "Aigua mineral natural servida freda.",
             "price": {
               "base": 1.9
@@ -1271,7 +1271,7 @@
           },
           {
             "id": "P028",
-            "name": "AIGUA MINERAL",
+            "name": "AIGUA AMB GAS",
             "description": "Aigua amb gas refrescant i cristal·lina.",
             "price": {
               "base": 2.5
@@ -1282,7 +1282,7 @@
           },
           {
             "id": "P029",
-            "name": "AIGUA AMB GAS",
+            "name": "COCA-COLA",
             "description": "Refresc clàssic servit amb gel i llimona.",
             "price": {
               "base": 2.5
@@ -1293,7 +1293,7 @@
           },
           {
             "id": "P030",
-            "name": "COCA-COLA",
+            "name": "COCA-COLA ZERO",
             "description": "El sabor original de Coca-Cola sense sucre.",
             "price": {
               "base": 2.5
@@ -1304,7 +1304,7 @@
           },
           {
             "id": "P057",
-            "name": "entrepà tonyina",
+            "name": "AIGUA TÒNICA",
             "description": "Refrescant i equilibrada, amb el toc amarg perfecte i bombolla fina.",
             "price": {
               "base": 2.5
@@ -1315,7 +1315,7 @@
           },
           {
             "id": "P058",
-            "name": "AIGUA TÒNICA",
+            "name": "LLIMONADA",
             "description": "Natural i refrescant",
             "price": {
               "base": 2.5
@@ -1331,7 +1331,7 @@
         "items": [
           {
             "id": "P031",
-            "name": "COCA-COLA ZERO",
+            "name": "CROISSANT GRAN",
             "description": "Pasta de full artesana cruixent per fora i tendre per dins.",
             "price": {
               "base": 1.9
@@ -1345,7 +1345,7 @@
           },
           {
             "id": "P032",
-            "name": "CROISSANT GRAN",
+            "name": "ROLL DE CANELA VEGÀ",
             "description": "brioix tendre de canyella i espècies, 100% vegetal.",
             "price": {
               "base": 4.6
@@ -1356,7 +1356,7 @@
           },
           {
             "id": "P033",
-            "name": "ROLL DE CANELA VEGÀ",
+            "name": "ROLL DE NUTELLA VEGANO",
             "description": "Deliciós roll amb crema de cacau i avellanes vegana.",
             "price": {
               "base": 4.85
@@ -1367,7 +1367,7 @@
           },
           {
             "id": "P034",
-            "name": "ROLL DE NUTELLA VEGANO",
+            "name": "ROLL DE PISTATXO VEGÀ",
             "description": "La nostra especialitat artesana amb crema de pistatxo.",
             "price": {
               "base": 4.9
@@ -1378,7 +1378,7 @@
           },
           {
             "id": "P035",
-            "name": "ROLL DE PISTATXO VEGÀ",
+            "name": "COOKIES VEGANES",
             "description": "Galetes casolanes amb generoses llavors de xocolata.",
             "price": {
               "base": 3.7
@@ -1389,7 +1389,7 @@
           },
           {
             "id": "P036",
-            "name": "COOKIES VEGANES",
+            "name": "TORRADES",
             "description": "Pa artesà torrat amb oli d'oliva o melmelada.",
             "price": {
               "base": 2.4
@@ -1400,7 +1400,7 @@
           },
           {
             "id": "P037",
-            "name": "TORRADES",
+            "name": "BANANA BREAD XOCOLATA",
             "description": "Pa de pessic casolà de plàtan amb xocolata fosa.",
             "price": {
               "base": 4.5
@@ -1411,7 +1411,7 @@
           },
           {
             "id": "P038",
-            "name": "BANANA BREAD XOCOLATA",
+            "name": "BROWNIE DE XOCOLATA",
             "description": "Pa de pessic humit i intens de pura xocolata.",
             "price": {
               "base": 4.5
@@ -1422,7 +1422,7 @@
           },
           {
             "id": "P039",
-            "name": "BROWNIE DE XOCOLATA",
+            "name": "PASTÍS DE POMA",
             "description": "Recepta clàssica amb làmines de poma seleccionada.",
             "price": {
               "base": 4.5
@@ -1433,7 +1433,7 @@
           },
           {
             "id": "P040",
-            "name": "PASTÍS DE POMA",
+            "name": "PASTÍS DE LLIMONA",
             "description": "Crema cítrica refrescant sobre base de massa fallta.",
             "price": {
               "base": 3.8
@@ -1444,7 +1444,7 @@
           },
           {
             "id": "P041",
-            "name": "PASTÍS DE LLIMONA",
+            "name": "ALFAJOR DE DOLÇ DE LLET",
             "description": "Massa suau farcida d'autèntic dolç de llet.",
             "price": {
               "base": 3.2
@@ -1455,7 +1455,7 @@
           },
           {
             "id": "P042",
-            "name": "ALFAJOR DE DOLÇ DE LLET",
+            "name": "PASTÍS DE LLIMONA",
             "description": "Alvocat, formatge Filadèlfia i Salmó",
             "price": {
               "base": 3.8
@@ -1466,7 +1466,7 @@
           },
           {
             "id": "P053",
-            "name": "MATEIX",
+            "name": "PASTAFROLA CODONY",
             "description": "Pa vidre, salsa de Tahini, tomàquet, albergínia, carbassó escalivats i espinacs",
             "price": {
               "base": 3.8
@@ -1498,7 +1498,7 @@
         "items": [
           {
             "id": "P043",
-            "name": "PASTÍS DE LLIMONA",
+            "name": "BAGEL SALMÓ",
             "description": "Pernil i formatge.",
             "price": {
               "base": 8.5
@@ -1509,7 +1509,7 @@
           },
           {
             "id": "P044",
-            "name": "BAGEL SALMÓ",
+            "name": "BAGEL PERNIL I FORMATGE",
             "description": "Combinació saludable d'hummus i alvocat fresc.",
             "price": {
               "base": 4
@@ -1520,7 +1520,7 @@
           },
           {
             "id": "P045",
-            "name": "BAGEL PERNIL I FORMATGE",
+            "name": "BAGEL HUMMUS I AGUACATE",
             "description": "L'esmorzar clàssic ideal per gaudir a Siroko.",
             "price": {
               "base": 7.5
@@ -1531,7 +1531,7 @@
           },
           {
             "id": "P054",
-            "name": "PASTAFROLA CODONY",
+            "name": "BOCADILLO VEGANO",
             "description": "Pa vidre, salsa de Tahini, tomàquet, albergínia, carbassó escalivats i espinacs",
             "price": {
               "base": 8
@@ -1544,7 +1544,7 @@
           },
           {
             "id": "P055",
-            "name": "BOCADILLO VEGANO",
+            "name": "BOCADILLO VEGETARIÀ",
             "description": "Pa vidre, formatge crema, mango, ruca, alvocat i toc de tabasco",
             "price": {
               "base": 9
@@ -1557,7 +1557,7 @@
           },
           {
             "id": "P056",
-            "name": "BOCADILLO VEGETARIÀ",
+            "name": "entrepà tonyina",
             "description": "Pa vidre, maionesa, tonyina, cogombret, formatge crema, piminet, coriandre",
             "price": {
               "base": 8
@@ -1570,7 +1570,7 @@
           },
           {
             "id": "P060",
-            "name": "IOGURT AMB GRANOLA NOI",
+            "name": "IOGURT GREC I GRANOLA",
             "description": "Iogurt grec amb granola casolana i llavors chía",
             "price": {
               "base": 5.75
@@ -1583,7 +1583,7 @@
           },
           {
             "id": "P061",
-            "name": "IOGURT GREC I GRANOLA",
+            "name": "IOGURT TOPPING",
             "description": "Afegeix els teus toppins preferits: maduixa, banana, nabius, xocolata, mango",
             "price": {
               "base": 1
@@ -1594,7 +1594,7 @@
           },
           {
             "id": "P066",
-            "name": "CERVESA SENSE ALCOHOL TORRADA",
+            "name": "OLIVES",
             "description": "",
             "price": {
               "base": 1
@@ -1605,7 +1605,7 @@
           },
           {
             "id": "P067",
-            "name": "OLIVES",
+            "name": "BORSA DE XIPS",
             "description": "Patates fregides de paquet",
             "price": {
               "base": 1.75
@@ -1616,7 +1616,7 @@
           },
           {
             "id": "P072",
-            "name": "VERMUT",
+            "name": "TORRADA VEGANA",
             "description": "Hummus remolatxa, ruca, alvocat, festucs trossejats, pa de cereals massa mare.",
             "price": {
               "base": 9
@@ -1627,7 +1627,7 @@
           },
           {
             "id": "P073",
-            "name": "TORRADA VEGANA",
+            "name": "TORRADA VEGETARIANA",
             "description": "Alvocat, tomàquet, ruca, formatge de cabra, llavors, pa de cereals massa mare",
             "price": {
               "base": 9
@@ -1638,7 +1638,7 @@
           },
           {
             "id": "P074",
-            "name": "TORRADA VEGETARIANA",
+            "name": "TORRADA SALMÓ",
             "description": "Formatge crema amb llimona i menta, salmó fumat, alvocat, formatge mozzarella, raves i llavors",
             "price": {
               "base": 9
@@ -1654,7 +1654,7 @@
         "items": [
           {
             "id": "P062",
-            "name": "IOGURT TOPPING",
+            "name": "CERVESA ALFAMBRA",
             "description": "Intensa, amb cos i un equilibri entre amargor i dolçor.",
             "price": {
               "base": 2.8
@@ -1667,7 +1667,7 @@
           },
           {
             "id": "P064",
-            "name": "COPA SANT MIQUEL MAGNA",
+            "name": "CERVESA AMB LLIMONA ÀMBAR",
             "description": "Refrescant: cervesa de qualitat amb el toc cítric i natural de la llimona.",
             "price": {
               "base": 2.8
@@ -1682,7 +1682,7 @@
           },
           {
             "id": "P065",
-            "name": "CERVESA AMB LLIMONA ÀMBAR",
+            "name": "CERVESA SENSE ALCOHOL TORRADA",
             "description": "Tot el caràcter i sabor de les maltes torrades, però amb 0,0% alcohol.",
             "price": {
               "base": 2.85
@@ -1693,7 +1693,7 @@
           },
           {
             "id": "P068",
-            "name": "BORSA DE XIPS",
+            "name": "COPA VI NEGRE",
             "description": "Selecció de la casa ideal per acompanyar les nostres torrades.",
             "price": {
               "base": 3.5
@@ -1704,7 +1704,7 @@
           },
           {
             "id": "P069",
-            "name": "COPA VI NEGRE",
+            "name": "COPA VI BLANC",
             "description": "Fresc, ideal per a un migdia lleuger a la nostra terrassa.",
             "price": {
               "base": 3.5
@@ -1715,7 +1715,7 @@
           },
           {
             "id": "P070",
-            "name": "COPA VI BLANC",
+            "name": "APEROL SPRITZ",
             "description": "El clàssic aperitiu italià: bombolles, cítric i amb aquest color taronja brillant.",
             "price": {
               "base": 6
@@ -1726,7 +1726,7 @@
           },
           {
             "id": "P071",
-            "name": "APEROL SPRITZ",
+            "name": "VERMUT",
             "description": "Servit amb gel i el toc de cítric; l'equilibri perfecte entre les herbes aromàtiques i les espècies.",
             "price": {
               "base": 3.6
@@ -1744,7 +1744,7 @@
         "items": [
           {
             "id": "P001",
-            "name": "#REF!",
+            "name": "ESPRESSO",
             "description": "Intense and balanced extraction of specialty coffee.",
             "price": {
               "base": 1.75
@@ -1755,7 +1755,7 @@
           },
           {
             "id": "P002",
-            "name": "ESPRESSO",
+            "name": "DOUBLE ESPRESSO",
             "description": "Double energy boost with body and lingering aroma.",
             "price": {
               "base": 2.4
@@ -1766,7 +1766,7 @@
           },
           {
             "id": "P003",
-            "name": "DOUBLE ESPRESSO",
+            "name": "ESPRESSO MACCHIATO",
             "description": "Classic espresso with a cloud of creamy milk.",
             "price": {
               "base": 2.1
@@ -1777,7 +1777,7 @@
           },
           {
             "id": "P004",
-            "name": "ESPRESSO MACCHIATO",
+            "name": "AMERICAN 1 SHOT",
             "description": "Espresso softened with hot water, light and aromatic.",
             "price": {
               "base": 2.3
@@ -1788,7 +1788,7 @@
           },
           {
             "id": "P005",
-            "name": "AMERICAN 1 SHOT",
+            "name": "AMERICANO 2 SHOTS",
             "description": "Double espresso with hot water for a longer-lasting flavor.",
             "price": {
               "base": 2.6
@@ -1799,7 +1799,7 @@
           },
           {
             "id": "P006",
-            "name": "AMERICANO 2 SHOTS",
+            "name": "BATCH BREW",
             "description": "Filter coffee of the day, smooth and full of nuances.",
             "price": {
               "base": 2.8
@@ -1810,7 +1810,7 @@
           },
           {
             "id": "P007",
-            "name": "BATCH BREW",
+            "name": "COLD BREW",
             "description": "Cold brewed coffee for 24 hours, sweet and refreshing.",
             "price": {
               "base": 4
@@ -1821,7 +1821,7 @@
           },
           {
             "id": "P008",
-            "name": "COLD BREW",
+            "name": "LATTE",
             "description": "Double shot of espresso with plenty of steamed milk.",
             "price": {
               "base": 2.4
@@ -1832,7 +1832,7 @@
           },
           {
             "id": "P009",
-            "name": "LATTE",
+            "name": "LATTE MACCHIATO",
             "description": "Layers of creamy milk marked by a touch of espresso.",
             "price": {
               "base": 2.8
@@ -1845,7 +1845,7 @@
           },
           {
             "id": "P010",
-            "name": "LATTE MACCHIATO",
+            "name": "FLAT WHITE",
             "description": "Double espresso with a thin layer of velvety milk.",
             "price": {
               "base": 2.8
@@ -1858,7 +1858,7 @@
           },
           {
             "id": "P011",
-            "name": "FLAT WHITE",
+            "name": "CAPPUCCINO",
             "description": "The classic balance between espresso, milk and foam.",
             "price": {
               "base": 2.5
@@ -1871,7 +1871,7 @@
           },
           {
             "id": "P012",
-            "name": "CAPPUCCINO",
+            "name": "SUBMARINE",
             "description": "Typical Argentine drink: hot milk with a bar of chocolate to melt.",
             "price": {
               "base": 2.8
@@ -1884,7 +1884,7 @@
           },
           {
             "id": "P013",
-            "name": "SUBMARINE",
+            "name": "ICED COFFEE",
             "description": "Your espresso served over ice, ideal for cooling down.",
             "price": {
               "base": 2.4
@@ -1895,7 +1895,7 @@
           },
           {
             "id": "P014",
-            "name": "ICED COFFEE",
+            "name": "ICED LATTE",
             "description": "Smooth combination of coffee and milk served very cold.",
             "price": {
               "base": 3.5
@@ -1908,7 +1908,7 @@
           },
           {
             "id": "P015",
-            "name": "ICED LATTE",
+            "name": "ESPRESSO BOMBÓN",
             "description": "Delicious blend of espresso and condensed milk.",
             "price": {
               "base": 2.7
@@ -1919,7 +1919,7 @@
           },
           {
             "id": "P016",
-            "name": "ESPRESSO BOMBÓN",
+            "name": "ESPRESSO TONIC",
             "description": "Refreshing combination of espresso, tonic and citrus.",
             "price": {
               "base": 3.5
@@ -1930,7 +1930,7 @@
           },
           {
             "id": "P017",
-            "name": "ESPRESSO TONIC",
+            "name": "EXTRA PLANT-BASED MILK",
             "description": "Plant-based milk option to personalize your drink.",
             "price": {
               "base": 0.3
@@ -1941,7 +1941,7 @@
           },
           {
             "id": "P018",
-            "name": "EXTRA PLANT-BASED MILK",
+            "name": "EXTRA SHOT COFFEE",
             "description": "An extra load of our best specialty coffee.",
             "price": {
               "base": 0.7
@@ -1957,7 +1957,7 @@
         "items": [
           {
             "id": "P019",
-            "name": "EXTRA SHOT COFFEE",
+            "name": "Chamomile Infusion",
             "description": "Relaxing and digestive natural infusion.",
             "price": {
               "base": 2.3
@@ -1968,7 +1968,7 @@
           },
           {
             "id": "P020",
-            "name": "Chamomile Infusion",
+            "name": "CHAI TEA",
             "description": "Black tea with traditional spices and creamy milk.",
             "price": {
               "base": 2.8
@@ -1979,7 +1979,7 @@
           },
           {
             "id": "P021",
-            "name": "CHAI TEA",
+            "name": "MATCHA LATTE",
             "description": "Ceremonial matcha green tea blended with milk.",
             "price": {
               "base": 3.5
@@ -1992,7 +1992,7 @@
           },
           {
             "id": "P046",
-            "name": "COFFEE + LARGE CROISSANT",
+            "name": "BLACK/RED/GREEN TEA",
             "description": "Black tea flavored with bergamot oil.",
             "price": {
               "base": 2
@@ -2003,7 +2003,7 @@
           },
           {
             "id": "P047",
-            "name": "BLACK/RED/GREEN TEA",
+            "name": "EARL GREY TEA",
             "description": "Blend of black teas with a robust and traditional flavor.",
             "price": {
               "base": 2.3
@@ -2014,7 +2014,7 @@
           },
           {
             "id": "P048",
-            "name": "EARL GREY TEA",
+            "name": "ENGLISH BREAKFAST",
             "description": "Refreshing infusion of mint and natural pennyroyal.",
             "price": {
               "base": 2.3
@@ -2025,7 +2025,7 @@
           },
           {
             "id": "P049",
-            "name": "ENGLISH BREAKFAST",
+            "name": "PENNYROYAL MINT",
             "description": "Caffeine-free infusion, sweet and full of antioxidants.",
             "price": {
               "base": 2.3
@@ -2036,7 +2036,7 @@
           },
           {
             "id": "P050",
-            "name": "PENNYROYAL MINT",
+            "name": "ROOIBOS",
             "description": "Fermented red tea with earthy and digestive notes.",
             "price": {
               "base": 2.3
@@ -2047,7 +2047,7 @@
           },
           {
             "id": "P051",
-            "name": "ROOIBOS",
+            "name": "TE VERMELL PU ERH",
             "description": "Traditional infusion served in the classic way.",
             "price": {
               "base": 2.3
@@ -2058,7 +2058,7 @@
           },
           {
             "id": "P052",
-            "name": "TE VERMELL PU ERH",
+            "name": "MATE",
             "description": "Homemade cake filled with quince paste.",
             "price": {
               "base": 3.5
@@ -2074,7 +2074,7 @@
         "items": [
           {
             "id": "P022",
-            "name": "MATCHA LATTE",
+            "name": "ORANGE JUICE",
             "description": "100% natural squeezed",
             "price": {
               "base": 4
@@ -2085,7 +2085,7 @@
           },
           {
             "id": "P023",
-            "name": "ORANGE JUICE",
+            "name": "MANGO SMOOTHIE",
             "description": "Mango, Strawberry and Orange",
             "price": {
               "base": 5
@@ -2096,7 +2096,7 @@
           },
           {
             "id": "P024",
-            "name": "MANGO SMOOTHIE",
+            "name": "BANANA SMOOTHIE",
             "description": "Banana, strawberry and orange",
             "price": {
               "base": 5
@@ -2107,7 +2107,7 @@
           },
           {
             "id": "P025",
-            "name": "BANANA SMOOTHIE",
+            "name": "SIROKO GREEN JUICE",
             "description": "Detox combination of fresh fruits and vegetables.",
             "price": {
               "base": 4.5
@@ -2118,7 +2118,7 @@
           },
           {
             "id": "P026",
-            "name": "SIROKO GREEN JUICE",
+            "name": "SIROKO VITAMIN JUICE",
             "description": "A citrusy and vital mix to start the day off right.",
             "price": {
               "base": 4.5
@@ -2129,7 +2129,7 @@
           },
           {
             "id": "P027",
-            "name": "SIROKO VITAMIN JUICE",
+            "name": "MINERAL WATER",
             "description": "Natural mineral water served cold.",
             "price": {
               "base": 1.9
@@ -2140,7 +2140,7 @@
           },
           {
             "id": "P028",
-            "name": "MINERAL WATER",
+            "name": "Sparkling Water",
             "description": "Refreshing and crystal clear sparkling water.",
             "price": {
               "base": 2.5
@@ -2151,7 +2151,7 @@
           },
           {
             "id": "P029",
-            "name": "Sparkling Water",
+            "name": "COCA-COLA",
             "description": "Classic soft drink served with ice and lemon.",
             "price": {
               "base": 2.5
@@ -2162,7 +2162,7 @@
           },
           {
             "id": "P030",
-            "name": "COCA-COLA",
+            "name": "COCA-COLA ZERO",
             "description": "The original taste of Coca-Cola without sugar.",
             "price": {
               "base": 2.5
@@ -2173,7 +2173,7 @@
           },
           {
             "id": "P057",
-            "name": "TUNA SANDWICH",
+            "name": "TONIC WATER",
             "description": "Refreshing and balanced, with the perfect bitter touch and fine bubbles.",
             "price": {
               "base": 2.5
@@ -2184,7 +2184,7 @@
           },
           {
             "id": "P058",
-            "name": "TONIC WATER",
+            "name": "LEMONADE",
             "description": "Natural and refreshing",
             "price": {
               "base": 2.5
@@ -2200,7 +2200,7 @@
         "items": [
           {
             "id": "P031",
-            "name": "COCA-COLA ZERO",
+            "name": "LARGE CROISSANT",
             "description": "Artisan puff pastry, crispy on the outside and tender on the inside.",
             "price": {
               "base": 1.9
@@ -2214,7 +2214,7 @@
           },
           {
             "id": "P032",
-            "name": "LARGE CROISSANT",
+            "name": "VEGAN CINNAMON ROLL",
             "description": "Soft cinnamon and spice bun, 100% plant-based.",
             "price": {
               "base": 4.6
@@ -2225,7 +2225,7 @@
           },
           {
             "id": "P033",
-            "name": "VEGAN CINNAMON ROLL",
+            "name": "VEGAN NUTELLA ROLL",
             "description": "Delicious roll with vegan cocoa and hazelnut cream.",
             "price": {
               "base": 4.85
@@ -2236,7 +2236,7 @@
           },
           {
             "id": "P034",
-            "name": "VEGAN NUTELLA ROLL",
+            "name": "VEGAN PISTACHIO ROLL",
             "description": "Our artisan specialty with pistachio cream.",
             "price": {
               "base": 4.9
@@ -2247,7 +2247,7 @@
           },
           {
             "id": "P035",
-            "name": "VEGAN PISTACHIO ROLL",
+            "name": "VEGAN COOKIES",
             "description": "Homemade cookies with generous chocolate chips.",
             "price": {
               "base": 3.7
@@ -2258,7 +2258,7 @@
           },
           {
             "id": "P036",
-            "name": "VEGAN COOKIES",
+            "name": "TOAST",
             "description": "Toasted artisan bread with olive oil or jam.",
             "price": {
               "base": 2.4
@@ -2269,7 +2269,7 @@
           },
           {
             "id": "P037",
-            "name": "TOAST",
+            "name": "Banana Bread Chocolate",
             "description": "Homemade banana cake with melted chocolate.",
             "price": {
               "base": 4.5
@@ -2280,7 +2280,7 @@
           },
           {
             "id": "P038",
-            "name": "Banana Bread Chocolate",
+            "name": "CHOCOLATE BROWNIE",
             "description": "Moist and intense cake made with pure chocolate.",
             "price": {
               "base": 4.5
@@ -2291,7 +2291,7 @@
           },
           {
             "id": "P039",
-            "name": "CHOCOLATE BROWNIE",
+            "name": "APPLE CAKE",
             "description": "Classic recipe with selected apple slices.",
             "price": {
               "base": 4.5
@@ -2302,7 +2302,7 @@
           },
           {
             "id": "P040",
-            "name": "APPLE CAKE",
+            "name": "LEMON TART",
             "description": "Refreshing citrus cream on a shortcrust pastry base.",
             "price": {
               "base": 3.8
@@ -2313,7 +2313,7 @@
           },
           {
             "id": "P041",
-            "name": "LEMON TART",
+            "name": "Dulce de Leche Alfajor",
             "description": "Soft pastry filled with authentic dulce de leche.",
             "price": {
               "base": 3.2
@@ -2324,7 +2324,7 @@
           },
           {
             "id": "P042",
-            "name": "Dulce de Leche Alfajor",
+            "name": "LEMON TART",
             "description": "Avocado, Philadelphia cheese and salmon",
             "price": {
               "base": 3.8
@@ -2335,7 +2335,7 @@
           },
           {
             "id": "P053",
-            "name": "MATE",
+            "name": "QUINCE PASTAFROLA",
             "description": "Crystal bread, tahini sauce, tomato, roasted eggplant and zucchini, and spinach",
             "price": {
               "base": 3.8
@@ -2367,7 +2367,7 @@
         "items": [
           {
             "id": "P043",
-            "name": "LEMON TART",
+            "name": "SALMON BAGEL",
             "description": "Ham and cheese.",
             "price": {
               "base": 8.5
@@ -2378,7 +2378,7 @@
           },
           {
             "id": "P044",
-            "name": "SALMON BAGEL",
+            "name": "Ham and Cheese Bagel",
             "description": "Healthy combination of hummus and fresh avocado.",
             "price": {
               "base": 4
@@ -2389,7 +2389,7 @@
           },
           {
             "id": "P045",
-            "name": "Ham and Cheese Bagel",
+            "name": "BAGEL, HUMMUS AND AVOCADO",
             "description": "The perfect classic breakfast to enjoy at Siroko.",
             "price": {
               "base": 7.5
@@ -2400,7 +2400,7 @@
           },
           {
             "id": "P054",
-            "name": "QUINCE PASTAFROLA",
+            "name": "VEGAN SANDWICH",
             "description": "Crystal bread, tahini sauce, tomato, roasted eggplant and zucchini, and spinach",
             "price": {
               "base": 8
@@ -2413,7 +2413,7 @@
           },
           {
             "id": "P055",
-            "name": "VEGAN SANDWICH",
+            "name": "VEGETARIAN SANDWICH",
             "description": "Crystal bread, cream cheese, mango, arugula, avocado and a touch of Tabasco",
             "price": {
               "base": 9
@@ -2426,7 +2426,7 @@
           },
           {
             "id": "P056",
-            "name": "VEGETARIAN SANDWICH",
+            "name": "TUNA SANDWICH",
             "description": "Crystal bread, mayonnaise, tuna, pickle, cream cheese, bell pepper, cilantro",
             "price": {
               "base": 8
@@ -2439,7 +2439,7 @@
           },
           {
             "id": "P060",
-            "name": "SMALL YOGURT WITH GRANOLA",
+            "name": "GREEK YOGURT AND GRANOLA",
             "description": "Greek yogurt with homemade granola and chia seeds",
             "price": {
               "base": 5.75
@@ -2452,7 +2452,7 @@
           },
           {
             "id": "P061",
-            "name": "GREEK YOGURT AND GRANOLA",
+            "name": "YOGURT TOPPING",
             "description": "Add your favorite toppings: strawberry, banana, blueberries, chocolate, mango",
             "price": {
               "base": 1
@@ -2463,7 +2463,7 @@
           },
           {
             "id": "P066",
-            "name": "TOASTED NON-ALCOHOLIC BEER",
+            "name": "OLIVES",
             "description": "",
             "price": {
               "base": 1
@@ -2474,7 +2474,7 @@
           },
           {
             "id": "P067",
-            "name": "OLIVES",
+            "name": "BAG OF CHIPS",
             "description": "Packaged potato chips",
             "price": {
               "base": 1.75
@@ -2485,7 +2485,7 @@
           },
           {
             "id": "P072",
-            "name": "VERMOUTH",
+            "name": "VEGAN TOAST",
             "description": "Beetroot hummus, arugula, avocado, chopped pistachios, sourdough cereal bread.",
             "price": {
               "base": 9
@@ -2496,7 +2496,7 @@
           },
           {
             "id": "P073",
-            "name": "VEGAN TOAST",
+            "name": "VEGETARIAN TOAST",
             "description": "Avocado, tomato, arugula, goat cheese, seeds, sourdough multigrain bread",
             "price": {
               "base": 9
@@ -2507,7 +2507,7 @@
           },
           {
             "id": "P074",
-            "name": "VEGETARIAN TOAST",
+            "name": "SALMON TOAST",
             "description": "Cream cheese with lemon and mint, smoked salmon, avocado, mozzarella cheese, radishes and seeds",
             "price": {
               "base": 9
@@ -2523,7 +2523,7 @@
         "items": [
           {
             "id": "P062",
-            "name": "YOGURT TOPPING",
+            "name": "ALHAMBRA BEER",
             "description": "Intense, full-bodied, and with a balance between bitterness and sweetness.",
             "price": {
               "base": 2.8
@@ -2536,7 +2536,7 @@
           },
           {
             "id": "P064",
-            "name": "SAN MIGUEL MAGNA CUP",
+            "name": "AMBER LEMON BEER",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
@@ -2551,7 +2551,7 @@
           },
           {
             "id": "P065",
-            "name": "AMBER LEMON BEER",
+            "name": "TOASTED NON-ALCOHOLIC BEER",
             "description": "All the character and flavor of roasted malts, but with 0.0% alcohol.",
             "price": {
               "base": 2.85
@@ -2562,7 +2562,7 @@
           },
           {
             "id": "P068",
-            "name": "BAG OF CHIPS",
+            "name": "RED WINE GLASS",
             "description": "House selection ideal to accompany our toasts.",
             "price": {
               "base": 3.5
@@ -2573,7 +2573,7 @@
           },
           {
             "id": "P069",
-            "name": "RED WINE GLASS",
+            "name": "WHITE WINE GLASS",
             "description": "Fresh, ideal for a light midday on our terrace.",
             "price": {
               "base": 3.5
@@ -2584,7 +2584,7 @@
           },
           {
             "id": "P070",
-            "name": "WHITE WINE GLASS",
+            "name": "APEROL SPRITZ",
             "description": "The classic Italian aperitif: bubbly, citrusy and with that bright orange color.",
             "price": {
               "base": 6
@@ -2595,7 +2595,7 @@
           },
           {
             "id": "P071",
-            "name": "APEROL SPRITZ",
+            "name": "VERMOUTH",
             "description": "Served with ice and a touch of citrus; the perfect balance between aromatic herbs and spices.",
             "price": {
               "base": 3.6
