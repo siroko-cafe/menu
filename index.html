@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siroko Café | Especialidad en Barcelona</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8bba8b; /* Tu verde Siroko */
+            --dark: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; }
+
+        /* HERO SECTION */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('local.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 10px; }
+
+        .btn-menu {
+            background: var(--primary);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-menu:hover { transform: scale(1.05); }
+
+        /* CONTENIDO */
+        .section { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+        
+        .section h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>SIROKO CAFÉ</h1>
+        <p>Café de especialidad, bollería artesana y buen rollo.</p>
+        <br>
+        <a href="menu.html" class="btn-menu">Consultar Menú</a>
+    </section>
+
+    <section class="section">
+        <h2>Quiénes Somos</h2>
+        <p>En el corazón de la calle Girona, Siroko Café nace de la pasión por el café bien hecho. Seleccionamos nuestros granos para ofrecerte una experiencia única en cada taza, acompañada de nuestra repostería vegana y opciones saludables.</p>
+    </section>
+
+    <section class="section" style="background: #f9f9f9; max-width: 100%;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2>Encuéntranos</h2>
+            <div class="info-grid">
+                <div>
+                    <h3>Horario</h3>
+                    <p>Lun - Vie: 08:30 - 19:00<br>Sáb - Dom: 09:00 - 19:30</p>
+                </div>
+                <div>
+                    <h3>Dirección</h3>
+                    <p>Carrer de Girona 94, Barcelona</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Siroko Café - Síguenos en <a href="https://instagram.com/siroko.cafe" style="color:white">Instagram</a></p>
+    </footer>
+
+</body>
+</html>
