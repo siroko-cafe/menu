@@ -78,6 +78,40 @@
             .logo-container { margin-top: -60px; }
             .logo-container img { width: 120px; }
         }
+
+        .grid-eventos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .evento-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .evento-card:hover { transform: translateY(-5px); }
+
+        .evento-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .evento-info { padding: 15px; }
+        .evento-info h3 { margin: 0 0 10px 0; color: #4e342e; }
+        .evento-info .meta { 
+            font-size: 0.85rem; 
+            color: #8bba8b; 
+            font-weight: bold; 
+            margin-bottom: 8px;
+        }
+        .evento-info p { font-size: 0.9rem; color: #666; line-height: 1.4; }
+        
     </style>
 </head>
 <body>
@@ -95,6 +129,11 @@
         <p>En el corazón de Barcelona, Siroko Café nace de la pasión por el café bien hecho y la cálidad atención a quien se acerca a disfrutar un buen momento. Seleccionamos nuestro roester para ofrecerte una experiencia única en cada taza, acompañada de nuestra repostería casera, con opciones saludables.</p>
     </section>
 
+    <section id="seccion-eventos" style="display: none;"> <h2 class="titulo-seccion">Próximos Eventos</h2>
+        <div id="eventos-container" class="grid-eventos">
+    </div>
+    </section>
+    
     <section class="section" style="background: #f9f9f9; max-width: 100%;">
         <div style="max-width: 800px; margin: 0 auto;">
             <h2>Encuéntranos</h2>
@@ -115,5 +154,43 @@
         <p>© 2026 Siroko Café - Síguenos en <a href="https://instagram.com/siroko.cafe" style="color:white">Instagram</a></p>
     </footer>
 
+<script>
+        let menuData = {}; // Variable global
+
+        // 1. La función que "dibuja" los eventos
+        function renderEventos(eventos) {
+            const seccion = document.getElementById('seccion-eventos');
+            const contenedor = document.getElementById('eventos-container');
+            if (!eventos || eventos.length === 0) return;
+
+            seccion.style.display = 'block';
+            contenedor.innerHTML = ""; 
+            eventos.forEach(ev => {
+                contenedor.innerHTML += `
+                  <div class="evento-card">
+                    <img src="${ev.imagen}" onerror="this.src='https://via.placeholder.com/300x180'">
+                    <div class="evento-info">
+                      <div class="meta">📅 ${ev.fecha} — 🕒 ${ev.hora}</div>
+                      <h3>${ev.titulo}</h3>
+                      <p>${ev.descripcion}</p>
+                    </div>
+                  </div>`;
+            });
+        }
+
+        // 2. El FETCH que trae todo
+        fetch("menu_data.json")
+          .then(res => res.json())
+          .then(data => {
+              // Aquí repartimos la información:
+              menuData = data.menu; 
+              renderEventos(data.eventos); // <--- Aquí activamos los eventos
+              
+              // Si tienes funciones de menú, las llamas aquí también
+              // updateUILanguage('es'); 
+          });
+    </script>
+
+    
 </body>
 </html>
