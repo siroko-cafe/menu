@@ -21,8 +21,9 @@
             color: var(--dark); 
             line-height: 1.6;
             background-color: var(--white);
-            /* FONDO DE VIENTO MÁS VISIBLE */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,200 Q250,100 500,200 T1000,200' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M0,500 Q250,400 500,500 T1000,500' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E");
+            /* FONDO DE VIENTO MEJORADO */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q250,50 500,100 T1000,100' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.2'/%3E%3Cpath d='M0,400 Q250,350 500,400 T1000,400' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.1'/%3E%3Cpath d='M0,700 Q250,650 500,700 T1000,700' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.15'/%3E%3C/svg%3E");
+            background-size: cover;
             background-attachment: fixed;
         }
 
@@ -175,6 +176,15 @@
         .evento-info { padding: 25px; }
         .evento-info h3 { margin: 0 0 10px 0; font-family: 'Montserrat', sans-serif; font-size: 1.3rem; }
 
+        /* Aseguramos que las reviews se vean bien en móvil */
+        .reviews-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 10px;
+            -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
+        }
+
         footer { 
             background: var(--dark); 
             color: white; 
@@ -207,12 +217,12 @@
         <p>En el corazón de Barcelona, Siroko Café nace de la pasión por el café bien hecho y la cálida atención. Seleccionamos cuidadosamente nuestro café de especialidad para ofrecerte una experiencia única en cada taza, acompañada de repostería artesanal y opciones saludables.</p>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section visible" style="padding-top: 0;">
         <div class="info-grid">
             <div class="info-item">
                 <h3>📍 Ubicación</h3>
                 <p>Carrer de Girona, 94<br>08009 Barcelona</p>
-                <a href="https://maps.google.com" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px;">Cómo llegar</a>
+                <a href="https://maps.app.goo.gl/9R6K9z8FpXf5Y7Z6" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px;">Cómo llegar</a>
             </div>
             <div class="info-item">
                 <h3>🕒 Horarios</h3>
@@ -224,7 +234,10 @@
             </div>
         </div>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.123!2d2.1743!3d41.3941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzM4LjgiTiAywrAxMCcyNy41IkU!5e0!3m2!1ses!2ses!4v1620000000000!5m2!1ses!2ses" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1818167389024!2d2.1714521!3d41.3918512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f1c84d7971%3A0xc3f8e4e9f73f8a0a!2sC%2F%20de%20Girona%2C%2094%2C%20L'Eixample%2C%2008009%20Barcelona!5e0!3m2!1ses!2ses!4v1715600000000!5m2!1ses!2ses" 
+                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
@@ -233,8 +246,8 @@
         <div class="reviews-container">
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p>"El ambiente es tan ligero y agradable como su nombre. El café de especialidad es, sin duda, de los mejores de Barcelona."</p>
-                <span class="author">— CARLA M.</span>
+                <p>"Un precioso oasis en Barcelona, donde la atención cercana y humana, así como el café especialidad y la comida, hacen que el tiempo pare y se respire bienestar. Salud en todos los sentidos. Gracias por encontrarte.."</p>
+                <span class="author">— ANDER F.</span>
             </div>
             <div class="review-card">
                 <div class="stars">★★★★★</div>
