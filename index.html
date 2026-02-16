@@ -155,6 +155,62 @@
             font-size: 0.9rem;
         }
 
+/* ESTILOS PARA LA SECCIÓN DE INSTAGRAM */
+/*.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 3-4 columnas en escritorio, 2 en móvil */
+    gap: 15px; /* Espacio entre las fotos */
+    max-width: 900px; /* Ancho máximo para que no se estire demasiado */
+    margin: 0 auto; /* Centrar la cuadrícula */
+}
+
+.instagram-item {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene las fotos cuadradas */
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados sutiles */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-item:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que llene el cuadrado */
+    display: block;
+}
+
+/* Ajuste del botón de Instagram */
+.btn-menu[style*="background-color: rgb(225, 48, 108)"] {
+    padding: 14px 30px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(225, 48, 108, 0.3);
+}
+.btn-menu[style*="background-color: rgb(225, 48, 108)"]:hover {
+    background-color: #c92a60 !important;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE para la cuadrícula de Instagram */
+@media (max-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Dos columnas en móvil */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-grid {
+        grid-template-columns: 1fr; /* Una columna en teléfonos muy pequeños */
+    }
+}
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero { height: 50vh; background-attachment: scroll; }
@@ -187,21 +243,52 @@
             </div>
     </section>
 
-    <section class="section" style="background: var(--light-bg); max-width: 100%;">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2>Encuéntranos</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Horario</h3>
-                    <p>Lun - Vie: 08:30 - 19:00<br>Sáb - Dom: 09:00 - 19:30</p>
-                </div>
-                <div class="info-item">
-                    <h3>Dirección</h3>
-                    <p>Carrer de Girona 94, Barcelona</p>
-                </div>
+<section class="section" style="background: var(--light-bg);">
+    <div style="max-width: 900px; margin: 0 auto; padding: 20px 0;">
+        <h2>Nuestro día a día en Siroko</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #555;">
+            Descubre los momentos, las novedades y el ambiente único de Siroko Café. ¡Síguenos en Instagram!
+        </p>
+        
+        <div id="instagram-feed-container" class="instagram-grid">
             </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://instagram.com/siroko.cafe" target="_blank" class="btn-menu" style="background-color: #E1306C; /* Color de Instagram */">
+                Visitar nuestro Instagram
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+
+<footer>
+    </footer>
+
+<section class="section" style="background: var(--light-bg);">
+    <div style="max-width: 900px; margin: 0 auto; padding: 20px 0;">
+        <h2>Nuestro día a día en Siroko</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #555;">
+            Descubre los momentos, las novedades y el ambiente único de Siroko Café. ¡Síguenos en Instagram!
+        </p>
+        
+        <div id="instagram-feed-container">
+            <behold-widget feed-id="uuaEZ9QFojO8FajOmZBs"></behold-widget>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://instagram.com/siroko.cafe" target="_blank" class="btn-menu" style="background-color: #E1306C;">
+                Visitar nuestro Instagram
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+  (() => {
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";d.head.append(s);
+  })();
+</script>
 
     <footer>
         <p>© 2026 Siroko Café - <a href="https://instagram.com/siroko.cafe" style="color:var(--primary); text-decoration: none; font-weight: bold;">@siroko.cafe</a></p>
