@@ -194,12 +194,46 @@
 
         footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; font-size: 0.85rem; }
 
+        /* --- RESPONSIVE ADAPTADO (BENTO + EXPLORA) --- */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+                grid-template-rows: auto;
+            }
+            .image-card-wide, .image-card-tall {
+                grid-column: span 2; /* Ocupan todo el ancho en tablet */
+                height: 300px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero { height: 50vh; }
-            .logo-container img { width: 220px; }
-            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .image-card-wide, .image-card-tall { grid-column: span 1; height: 250px; }
-            .nav-btn { display: none; }
+            .logo-container img { width: 240px; }
+            .logo-container { margin-top: -80px; }
+
+            /* Bento en 1 sola columna para móvil */
+            .bento-grid {
+                grid-template-columns: 1fr; 
+                grid-template-rows: auto;
+                gap: 15px;
+            }
+
+            .bento-item {
+                grid-column: span 1 !important; /* Forzamos a que todas ocupen 1 columna */
+                grid-row: auto !important;
+                height: 250px;
+                padding: 20px;
+            }
+
+            .image-card-wide, .image-card-tall {
+                height: 280px; /* Fotos un poco más altas en móvil */
+            }
+
+            .stats-card .number { font-size: 2.8rem; }
+            
+            .nav-btn { display: none; } /* Ocultamos flechas de reviews en móvil */
+            
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -223,11 +257,11 @@
         <div class="menu-gallery">
             <a href="menu.html#cafes" class="gallery-item">
                 <img src="assets/productos/matcha.webp?v=1" alt="Nuestro Café">
-                <div class="gallery-overlay"><span>Nuestro Café</span></div>
+                <div class="gallery-overlay"><span>Café</span></div>
             </a>
             <a href="menu.html#reposteria" class="gallery-item">
                 <img src="assets/productos/bread.webp?v=1" alt="Repostería">
-                <div class="gallery-overlay"><span>Repostería</span></div>
+                <div class="gallery-overlay"><span>Bollería</span></div>
             </a>
             <a href="menu.html#brunch" class="gallery-item">
                 <img src="assets/productos/tost1.webp?v=1" alt="Brunch">
@@ -237,21 +271,21 @@
     </section>
 
     <section class="section">
-        <h2>El Refugio</h2>
+        <h2>Nuestro roasters</h2>
         <div class="bento-grid">
             <div class="bento-item dark-card">
-                <h3>Vibra</h3>
-                <p>Música suave y aroma a café recién molido.</p>
+                <h3>TORNADO Coffee Roasters</h3>
+                <p>Unna forma rtesanal de tostar, que aporta flexibilidad a la hora de tostar pudiendo utilizar varios perfile.</p>
             </div>
             <div class="bento-item light-card">
-                <h3>Slow Life</h3>
-                <p>Tu rincón de paz en Barcelona.</p>
+                <h3>Umuyaga Ruanda</h3>
+                <p>Proveniente de Ruanda, con  notas de cacao, frutos secos, manzana roja, naranja y chocolate con leche. Cuerpo fino de gran dulzor.</p>
             </div>
             <div class="bento-item image-card-wide" style="background-image: url('assets/productos/flat.webp');"></div>
             <div class="bento-item image-card-tall" style="background-image: url('assets/productos/mesa.webp');"></div>
             <div class="bento-item stats-card">
-                <span class="number">100%</span>
-                <p>Pet Friendly</p>
+                <span class="number">Sirocco Kenia</span>
+                <p>Origen keniano, con notas a melocotón y bayas frescas. Acidez cítrica que recuerda a la naranja y una sensación en boca ligera y refinada, similar a la de un té.</p>
             </div>
             <div class="bento-item green-card">
                 <h3>Visítanos</h3>
