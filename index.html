@@ -232,6 +232,62 @@
             .logo-container img { width: 200px; }
             .section { padding: 50px 20px; }
         }
+
+        /* GALERÍA DE MENÚ */
+.menu-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5; /* Formato vertical elegante */
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    padding: 30px 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.gallery-overlay span {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Efecto HOVER (El viento) */
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
     </style>
 </head>
 <body>
@@ -249,6 +305,33 @@
         <p>En el corazón de Barcelona, Siroko Café nace de la pasión por el café bien hecho y la cálida atención. Seleccionamos cuidadosamente nuestro café de especialidad para ofrecerte una experiencia única en cada taza, acompañada de repostería artesanal y opciones saludables.</p>
     </section>
 
+    <section class="section visible">
+        <h2>Explora nuestros sabores</h2>
+        <div class="menu-gallery">
+            <a href="menu.html#cafes" class="gallery-item">
+                 <img src="assets/gal/matcha.webp" alt="Café de especialidad">
+                <div class="gallery-overlay">
+                    <span>Cafés de Origen</span>
+                </div>
+            </a>
+        
+            <a href="menu.html#reposteria" class="gallery-item">
+                <img src="assets/gal/bread.webp" alt="Repostería artesanal">
+                <div class="gallery-overlay">
+                    <span>Repostería</span>
+                </div>
+            </a>
+        
+            <a href="menu.html#brunch" class="gallery-item">
+                <img src="assets/gal/mesa.webp" alt="Opciones de Brunch">
+                <div class="gallery-overlay">
+                    <span>Brunch & Bowls</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    
     <section class="section visible" style="padding-top: 0;">
         <div class="info-grid">
             <div class="info-item">
