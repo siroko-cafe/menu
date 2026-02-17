@@ -24,12 +24,26 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q250,50 500,100 T1000,100' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.2'/%3E%3Cpath d='M0,400 Q250,350 500,400 T1000,400' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.1'/%3E%3Cpath d='M0,700 Q250,650 500,700 T1000,700' fill='none' stroke='%238bba8b' stroke-width='1' opacity='0.15'/%3E%3C/svg%3E");
             background-size: cover;
             background-attachment: fixed;
+            overflow-x: hidden;
         }
 
-        /* HERO SECTION */
+        /* --- SECCIONES AMPLIADAS --- */
+        .section { 
+            padding: 80px 20px; 
+            max-width: 1200px; /* ANCHO AMPLIADO */
+            margin: 0 auto; 
+            text-align: center;
+            opacity: 0; 
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- HERO SECTION --- */
         .hero {
             height: 80vh;
-            background: url('assets/8.webp') center/cover no-repeat fixed;
+            background: url('assets/8.webp?v=1') center/cover no-repeat fixed;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,48 +79,29 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .btn-menu:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(139, 186, 139, 0.4);
-        }
+        .btn-menu:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(139, 186, 139, 0.4); }
 
-        .section { 
-            padding: 80px 20px; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            text-align: center;
-            opacity: 0; 
-            transform: translateY(20px);
-            transition: all 0.8s ease-out;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         .section h2 { 
             font-family: 'Montserrat', sans-serif; 
             color: var(--primary); 
-            font-size: 2rem; 
+            font-size: 2.2rem; 
             margin-bottom: 25px; 
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 300;
         }
 
-        /* GALERÍA DE MENÚ VISUAL */
+        /* --- GALERÍA AMPLIADA --- */
         .menu-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             margin-top: 30px;
         }
 
         .gallery-item {
             position: relative;
-            /* Bordes asimétricos estilo Siroko */
-            border-radius: 60px 15px 60px 15px;
+            border-radius: 40px 10px 40px 10px;
             overflow: hidden;
             aspect-ratio: 4 / 5;
             text-decoration: none;
@@ -115,229 +110,64 @@
             transition: transform 0.5s ease;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
         .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            position: absolute; bottom: 0; left: 0; right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            padding: 30px 20px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            padding: 30px 20px; display: flex; align-items: flex-end; justify-content: center;
         }
-
-        .gallery-overlay span {
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
+        .gallery-overlay span { color: white; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; }
         .gallery-item:hover { transform: translateY(-10px); }
         .gallery-item:hover img { transform: scale(1.1); }
 
-        /* INFO GRID */
+        /* --- INFO GRID AMPLIADO --- */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
             margin-top: 20px;
             border-top: 1px solid #eee;
             padding-top: 40px;
         }
 
-        .info-item h3 { 
-            font-family: 'Montserrat', sans-serif; 
-            margin-bottom: 10px; 
-            color: var(--primary);
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-
-        .info-item p { margin: 0; color: #666; font-size: 0.95rem; }
+        .info-item h3 { font-family: 'Montserrat', sans-serif; color: var(--primary); font-size: 1.2rem; letter-spacing: 1px; }
+        .info-item p { margin: 0; color: #666; font-size: 1rem; }
 
         .map-container {
-            margin-top: 40px;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            line-height: 0;
+            margin-top: 40px; width: 100%; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); line-height: 0;
         }
 
-        .map-container iframe { filter: grayscale(30%) contrast(90%); }
-
-        /* REVIEWS */
+        /* --- REVIEWS --- */
         .reviews-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px 10px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-            scroll-behavior: smooth;
+            display: flex; overflow-x: auto; gap: 20px; padding: 20px 10px;
+            scroll-snap-type: x mandatory; scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
         }
         .reviews-container::-webkit-scrollbar { display: none; }
-
         .review-card {
-            min-width: 300px;
-            background: var(--light-bg);
-            padding: 40px;
-            border-radius: 25px;
-            scroll-snap-align: center;
-            text-align: left;
+            min-width: 350px; background: var(--light-bg); padding: 40px;
+            border-radius: 25px; scroll-snap-align: center; text-align: left;
             border: 1px solid rgba(139, 186, 139, 0.15);
         }
-        .stars { color: #fbbc04; margin-bottom: 15px; font-size: 0.9rem; }
-        .review-card p { font-style: italic; color: #444; font-size: 0.95rem; }
-        .author { display: block; margin-top: 15px; font-weight: bold; color: var(--primary); font-size: 0.8rem; letter-spacing: 1px; }
+        .stars { color: #fbbc04; margin-bottom: 15px; }
+        .author { display: block; margin-top: 15px; font-weight: bold; color: var(--primary); font-size: 0.8rem; }
 
         .nav-btn {
-            background: var(--white);
-            border: 1px solid #eee;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            cursor: pointer;
-            position: absolute;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            color: var(--primary);
-            transition: all 0.3s ease;
+            background: var(--white); border: 1px solid #eee; border-radius: 50%;
+            width: 45px; height: 45px; cursor: pointer; position: absolute; z-index: 10;
+            display: flex; align-items: center; justify-content: center; color: var(--primary);
         }
-        .nav-btn:hover { background: var(--primary); color: white; }
-        .prev { left: -15px; }
-        .next { right: -15px; }
+        .prev { left: -10px; } .next { right: -10px; }
 
-        /* EVENTOS */
-        .grid-eventos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .evento-card {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            width: 100%;
-            max-width: 350px;
-            text-align: left;
-        }
-        .evento-card:hover { transform: translateY(-10px); }
-        .evento-card img { width: 100%; height: 220px; object-fit: cover; }
-        .evento-info { padding: 25px; }
-
-        footer { 
-            background: var(--dark); 
-            color: white; 
-            padding: 60px 20px; 
-            text-align: center; 
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
+        footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; font-size: 0.85rem; letter-spacing: 1px; }
 
         @media (max-width: 768px) {
             .hero { height: 50vh; }
-            .logo-container { margin-top: -70px; }
             .logo-container img { width: 200px; }
             .section { padding: 50px 20px; }
             .nav-btn { display: none; }
         }
-        /* ESTRUCTURA BENTO GRID */
-        /* Contenedor que rompe el margen del padre */
-        .section-full {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            padding: 40px 0;
-            overflow: hidden;
-        }
-        
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 300px); /* Aumentamos altura para impacto visual */
-            gap: 15px;
-            width: 100%;
-            padding: 0 15px; /* Un pequeño margen para que no toque el borde físico del cristal */
-        }
-        
-        .bento-item {
-            border-radius: 20px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Texto abajo para que no tape la foto */
-            background-size: cover;
-            background-position: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        /* Colores y posiciones */
-        .dark-card { background-color: #1a1a1a; color: white; grid-column: 1 / 2; }
-        .light-card { background-color: #f4f4f4; grid-column: 2 / 3; }
-        .image-card { grid-column: 3 / 5; }
-        .image-card-large { grid-column: 1 / 3; }
-        .stats-card { background-color: #f4f4f4; justify-content: center; align-items: center; }
-        .green-card { background-color: var(--primary); color: white; justify-content: center; align-items: center; }
-        
-        /* Tipografía */
-        .bento-item h3 { font-family: 'Montserrat', sans-serif; font-size: 2rem; margin: 0; font-weight: 700; }
-        .bento-item p { font-size: 1rem; margin-top: 5px; }
-        .stats-card .number { font-size: 4rem; font-weight: bold; color: var(--primary); }
-        
-        /* Hover effect */
-        .bento-item:hover {
-            transform: scale(0.98); /* Efecto de hundimiento muy elegante */
-            filter: brightness(0.9);
-        }
-        
-        /* Móvil: Una sola columna */
-        @media (max-width: 768px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            .bento-item {
-                grid-column: 1 / -1 !important;
-                height: 250px;
-            }
-        }
-
-/* Adaptación para Móvil */
-@media (max-width: 768px) {
-    .bento-grid {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-        grid-template-rows: auto;
-    }
-    .dark-card, .light-card, .image-card, .image-card-large, .stats-card, .green-card {
-        grid-column: 1 / -1;
-        grid-row: auto;
-        height: 200px;
-    }
-}
     </style>
 </head>
 <body>
@@ -352,58 +182,28 @@
 
     <section class="section">
         <h2>Quiénes Somos</h2>
-        <p>En el corazón de Barcelona, Siroko Café nace de la pasión por el café bien hecho y la cálida atención. Seleccionamos cuidadosamente nuestro café de especialidad para ofrecerte una experiencia única en cada taza.</p>
-    </section>
-
-    <section class="section-full">
-        <div class="bento-grid">
-            <div class="bento-item dark-card">
-                <h3>Calidad</h3>
-                <p>Cómo creamos nuestras recetas</p>
-            </div>
-    
-            <div class="bento-item light-card">
-                <h3>Enfocar</h3>
-                <p>Creando momentos especiales</p>
-            </div>
-    
-            <div class="bento-item image-card" style="background-image: url('assets/productos/matcha.webp?v=1');">
-            </div>
-    
-            <div class="bento-item image-card-large" style="background-image: url('assets/productos/mesa.webp?v=1');">
-            </div>
-    
-            <div class="bento-item stats-card">
-                <span class="number">22%</span>
-                <p>Experimentando nuevos sabores</p>
-            </div>
-    
-            <div class="bento-item green-card">
-                <h3>Más de 12</h3>
-                <p>Haz la diferencia</p>
-            </div>
-        </div>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">En el corazón de Barcelona, Siroko Café nace de la pasión por el café bien hecho y la cálida atención. Seleccionamos cuidadosamente nuestro café de especialidad para ofrecerte una experiencia única en cada taza.</p>
     </section>
 
     <section class="section">
         <h2>Explora Siroko</h2>
         <div class="menu-gallery">
             <a href="menu.html#cafes" class="gallery-item">
-                <img src="assets/productos/matcha.webp" alt="Café de especialidad">
+                <img src="assets/productos/matcha.webp?v=1" alt="Nuestro Café">
                 <div class="gallery-overlay"><span>Nuestro Café</span></div>
             </a>
             <a href="menu.html#reposteria" class="gallery-item">
-                <img src="assets/productos/bread.webp" alt="Repostería">
+                <img src="assets/productos/bread.webp?v=1" alt="Repostería">
                 <div class="gallery-overlay"><span>Repostería</span></div>
             </a>
             <a href="menu.html#brunch" class="gallery-item">
-                <img src="assets/productos/mesa.webp" alt="Brunch">
+                <img src="assets/productos/mesa.webp?v=1" alt="Brunch">
                 <div class="gallery-overlay"><span>Brunch</span></div>
             </a>
         </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
         <div class="info-grid">
             <div class="info-item">
                 <h3>📍 Ubicación</h3>
@@ -420,7 +220,7 @@
             </div>
         </div>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.18123456789!2d2.185!3d41.39!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzI0LjAiTiAywrAxMScwNi4wIkU!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses2" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.125712123543!2d2.1718!3d41.3932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f96e!2sCarrer%20de%20Girona%2C%2094%2C%2008009%20Barcelona!5e0!3m2!1ses!2ses!4v1625000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -441,7 +241,7 @@
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Siroko es paz. Los talleres de fin de semana son una maravilla, muy recomendados."</p>
+                    <p>"Siroko es paz. Los dulces son de otro planeta, sobre todo el roll de canela."</p>
                     <span class="author">— ELENA S.</span>
                 </div>
             </div>
@@ -449,17 +249,10 @@
         </div>
     </section>
 
-    <section id="seccion-eventos" style="display: none;"> 
-        <div class="section" style="padding-bottom: 0;"><h2>Próximos Eventos</h2></div>
-        <div id="eventos-container" class="grid-eventos"></div>
-    </section>
-
     <section class="section" style="background: var(--light-bg); max-width: 100%;">
-        <div style="max-width: 900px; margin: 0 auto;">
+        <div style="max-width: 1200px; margin: 0 auto;">
             <h2>Nuestro día a día</h2>
-            <div id="instagram-feed-container">
-                <behold-widget feed-id="uuaEZ9QFojO8FajOmZBs"></behold-widget>
-            </div>
+            <behold-widget feed-id="uuaEZ9QFojO8FajOmZBs"></behold-widget>
             <div style="margin-top: 40px;">
                 <a href="https://instagram.com/siroko.cafe" target="_blank" class="btn-menu" style="background-color: #E1306C; font-size: 0.9rem;">@siroko.cafe</a>
             </div>
@@ -469,54 +262,25 @@
     <footer><p>© 2026 SIROKO CAFÉ — CULTURA DE CAFÉ & VIENTO</p></footer>
 
     <script>
-      // 1. Behold
+      // Behold Widget
       (() => {
         const d=document,s=d.createElement("script");s.type="module";
         s.src="https://w.behold.so/widget.js";d.head.append(s);
       })();
 
-      // 2. Scroll Reviews
+      // Scroll Reviews
       function scrollReviews(direction) {
         const slider = document.getElementById('reviews-slider');
-        slider.scrollBy({ left: direction * 330, behavior: 'smooth' });
+        slider.scrollBy({ left: direction * 370, behavior: 'smooth' });
       }
 
-      // 3. Animación Scroll
+      // Animación de entrada
       const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
               if (entry.isIntersecting) entry.target.classList.add('visible');
           });
       }, { threshold: 0.1 });
       document.querySelectorAll('.section').forEach(section => observer.observe(section));
-
-      // 4. Eventos
-      function renderEventos(eventos) {
-        const seccion = document.getElementById('seccion-eventos');
-        const contenedor = document.getElementById('eventos-container');
-        if (!eventos || eventos.length === 0) return;
-        seccion.style.display = 'block';
-        contenedor.innerHTML = ""; 
-        eventos.forEach(ev => {
-            const fechaObj = new Date(ev.fecha);
-            const fechaTexto = fechaObj.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
-            contenedor.innerHTML += `
-                <div class="evento-card">
-                    <img src="${ev.imagen || 'https://via.placeholder.com/350x220'}" alt="${ev.titulo}">
-                    <div class="evento-info">
-                        <div style="color:var(--primary); font-size:0.8rem; font-weight:bold; margin-bottom:10px;">
-                           📅 ${fechaTexto.toUpperCase()} | 🕒 ${ev.hora}
-                        </div>
-                        <h3>${ev.titulo}</h3>
-                        <p>${ev.descripcion}</p>
-                    </div>
-                </div>`;
-        });
-      }
-
-      fetch("menu_data.json?v=" + Date.now())
-        .then(res => res.json())
-        .then(data => { if (data.eventos) renderEventos(data.eventos); })
-        .catch(err => console.error("Error:", err));
     </script>
 </body>
 </html>
