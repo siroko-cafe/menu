@@ -43,9 +43,7 @@
         .hero {
             height: 80vh;
             background: url('assets/8.webp?v=1') center/cover no-repeat fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
         }
         .logo-container { text-align: center; margin-top: -130px; position: relative; z-index: 10; }
         .logo-container img { width: 320px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1)); }
@@ -62,25 +60,31 @@
             font-size: 2.2rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 300;
         }
 
-        /* --- PRODUCTOS --- */
+        /* --- GALERÍA EXPLORA (PRODUCTOS) --- */
         .menu-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px; margin-top: 30px;
         }
         .gallery-item {
             position: relative; border-radius: 40px 10px 40px 10px;
             overflow: hidden; aspect-ratio: 4 / 5; transition: 0.5s;
+            text-decoration: none;
         }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
         .gallery-overlay {
-            position: absolute; bottom: 0; width: 100%; height: 40%;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px;
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: 0.4s;
         }
-        .gallery-overlay span { color: white; text-transform: uppercase; letter-spacing: 2px; }
+        .gallery-overlay span { 
+            color: white; text-transform: uppercase; letter-spacing: 2px; 
+            font-family: 'Montserrat'; font-weight: bold; border: 1px solid white; padding: 10px 20px;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-item:hover img { transform: scale(1.1); }
 
-        /* --- BENTO LOCAL + HOVER --- */
+        /* --- BENTO LOCAL --- */
         .bento-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 280px); gap: 20px; margin-top: 30px;
@@ -92,14 +96,12 @@
             transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative; text-align: left; text-decoration: none;
         }
-        .bento-item:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
-        /* Capa oscura para legibilidad en bento */
         .bento-item::before {
             content: ''; position: absolute; inset: 0;
             background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5));
             opacity: 0.7; transition: 0.4s; z-index: 1;
         }
+        .bento-item:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .bento-item:hover::before { opacity: 0.9; }
 
         .dark-card { background-color: var(--dark); color: white; }
@@ -112,7 +114,17 @@
         .bento-item h3, .bento-item p, .bento-item .number { z-index: 2; position: relative; }
         .number { font-size: 3.5rem; font-weight: bold; color: var(--primary); font-family: 'Montserrat'; }
 
-        /* --- REVIEWS SLIDER --- */
+        /* --- INFO & MAPA --- */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px; }
+        .map-container { margin-top: 40px; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        /* --- EVENTOS --- */
+        .grid-eventos { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 20px; }
+        .evento-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 100%; max-width: 350px; text-align: left; }
+        .evento-card img { width: 100%; height: 220px; object-fit: cover; }
+        .evento-info { padding: 25px; }
+
+        /* --- REVIEWS --- */
         .reviews-container {
             display: flex; overflow-x: auto; gap: 20px; padding: 20px 10px;
             scroll-snap-type: x mandatory; scrollbar-width: none;
@@ -130,16 +142,6 @@
             display: flex; align-items: center; justify-content: center; color: var(--primary);
         }
         .prev { left: -15px; } .next { right: -15px; }
-
-        /* --- INFO & MAPA --- */
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px; }
-        .map-container { margin-top: 40px; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
-        /* --- EVENTOS --- */
-        .grid-eventos { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 20px; }
-        .evento-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 100%; max-width: 350px; text-align: left; }
-        .evento-card img { width: 100%; height: 220px; object-fit: cover; }
-        .evento-info { padding: 25px; }
 
         footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; font-size: 0.85rem; }
 
@@ -209,6 +211,41 @@
         </div>
     </section>
 
+    <section class="section">
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>📍 Ubicación</h3>
+                <p>Carrer de Girona, 94<br>08009 Barcelona</p>
+            </div>
+            <div class="info-item">
+                <h3>🕒 Horarios</h3>
+                <p>Lun-Vie: 08:30 - 19:30<br>Sáb: 09:00 - 14:00</p>
+            </div>
+            <div class="info-item">
+                <h3>📞 Contacto</h3>
+                <p>hola@sirokocafe.com<br>+34 931 234 567</p>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.12345!2d2.170!3d41.394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f2!2sCarrer+de+Girona%2C+94%2C+08009+Barcelona!5e0!3m2!1ses!2ses!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="seccion-eventos" style="display: none;">
+        <div class="section"><h2>Próximos Eventos</h2></div>
+        <div id="eventos-container" class="grid-eventos"></div>
+    </section>
+
+    <section class="section" style="background: var(--light-bg); max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Nuestro día a día</h2>
+            <behold-widget feed-id="uuaEZ9QFojO8FajOmZBs"></behold-widget>
+            <div style="margin-top: 40px;">
+                <a href="https://instagram.com/siroko.cafe" target="_blank" class="btn-menu" style="background-color: #E1306C; font-size: 0.9rem;">@siroko.cafe</a>
+            </div>
+        </div>
+    </section>
+
     <section class="section" style="position: relative;">
         <h2>Voces del Viento</h2>
         <div style="position: relative; display: flex; align-items: center;">
@@ -234,41 +271,6 @@
         </div>
     </section>
 
-    <section class="section" style="background: var(--light-bg); max-width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2>Nuestro día a día</h2>
-            <behold-widget feed-id="uuaEZ9QFojO8FajOmZBs"></behold-widget>
-            <div style="margin-top: 40px;">
-                <a href="https://instagram.com/siroko.cafe" target="_blank" class="btn-menu" style="background-color: #E1306C; font-size: 0.9rem;">@siroko.cafe</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="info-grid">
-            <div class="info-item">
-                <h3>📍 Ubicación</h3>
-                <p>Carrer de Girona, 94<br>08009 Barcelona</p>
-            </div>
-            <div class="info-item">
-                <h3>🕒 Horarios</h3>
-                <p>Lun-Vie: 08:30 - 19:30<br>Sáb: 09:00 - 14:00</p>
-            </div>
-            <div class="info-item">
-                <h3>📞 Contacto</h3>
-                <p>hola@sirokocafe.com<br>+34 931 234 567</p>
-            </div>
-        </div>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.189736858348!2d2.171221776556534!3d41.39167389569769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2e260902f51%3A0x77038753232821a8!2sCarrer%20de%20Girona%2C%2094%2C%2008009%20Barcelona!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <section id="seccion-eventos" style="display: none;">
-        <div class="section"><h2>Próximos Eventos</h2></div>
-        <div id="eventos-container" class="grid-eventos"></div>
-    </section>
-
     <footer><p>© 2026 SIROKO CAFÉ — CULTURA DE CAFÉ & VIENTO</p></footer>
 
     <script>
@@ -292,7 +294,7 @@
       }, { threshold: 0.1 });
       document.querySelectorAll('.section').forEach(section => observer.observe(section));
 
-      // 4. Carga de Eventos desde JSON
+      // 4. Carga de Eventos
       function renderEventos(eventos) {
         const seccion = document.getElementById('seccion-eventos');
         const contenedor = document.getElementById('eventos-container');
@@ -314,7 +316,7 @@
       fetch("menu_data.json?v=" + Date.now())
         .then(res => res.json())
         .then(data => { if (data.eventos) renderEventos(data.eventos); })
-        .catch(err => console.log("No hay eventos hoy."));
+        .catch(err => console.log("No hay eventos."));
     </script>
 </body>
 </html>
