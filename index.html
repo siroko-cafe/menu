@@ -96,37 +96,74 @@
             margin-top: 30px;
         }
 
-        /* Ajuste de posiciones para calcar tu imagen */
-        .dark-card { grid-column: 1 / 2; grid-row: 1 / 2; }
-        .light-card { grid-column: 2 / 3; grid-row: 1 / 2; }
-        
-        /* Foto de la mano (Derecha superior) */
-        .image-card-hand { grid-column: 3 / 5; grid-row: 1 / 3; } 
-        
-        /* Foto del local (Izquierda inferior) */
-        .image-card-local { grid-column: 1 / 3; grid-row: 2 / 4; }
-
-        .stats-card { grid-column: 3 / 4; grid-row: 3 / 4; }
-        .green-card { grid-column: 4 / 5; grid-row: 3 / 4; }
-
-        /* Estilo de los items */
-        .bento-item {
-            border-radius: 20px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Texto arriba como en la foto */
-            background-size: cover;
-            background-position: center;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
+        /* --- BENTO GRID LIMPIO (SIN COLORES Y ALINEADO) --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 120px 400px 120px; /* Alturas asimétricas */
+            gap: 30px; /* Más espacio para que respire el diseño sin cuadros */
+            margin-top: 40px;
+            max-width: 1200px; /* COINCIDE CON EL RESTO DE SECCIONES */
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Tipografía específica del Bento para que se parezca a la foto */
-        .bento-item h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 1.8rem; margin: 0; }
-        .bento-item p { font-size: 0.9rem; margin-top: 5px; opacity: 0.9; }
+        .bento-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            text-decoration: none;
+            color: var(--dark);
+            transition: transform 0.4s ease;
+        }
+
+        /* Solo las imágenes tienen border-radius y fondo */
+        .bento-image {
+            border-radius: 30px;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        /* Hover solo en las imágenes */
+        .bento-item:hover .bento-image {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* POSICIONES ASIMÉTRICAS (CALCO DE TU FOTO) */
+        .item-calidad { grid-column: 1 / 2; grid-row: 1 / 2; }
+        .item-enfocar { grid-column: 2 / 3; grid-row: 1 / 2; }
+        
+        /* Foto derecha superior (La mano/grano) */
+        .item-foto-r { grid-column: 3 / 5; grid-row: 1 / 3; } 
+        
+        /* Foto izquierda inferior (Taza de café) */
+        .item-foto-l { grid-column: 1 / 3; grid-row: 2 / 4; }
+
+        .item-stats { grid-column: 3 / 4; grid-row: 3 / 4; padding-top: 20px; }
+        .item-mas { grid-column: 4 / 5; grid-row: 3 / 4; padding-top: 20px; }
+
+        /* Estilo de los textos sin cuadros */
+        .bento-item h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 1.8rem; margin: 0; color: #1a1a1a; }
+        .bento-item p { font-size: 0.95rem; margin-top: 5px; color: #666; }
+        .bento-item .number { font-size: 3rem; font-weight: 800; color: var(--dark); }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 40px;
+            }
+            .bento-item { grid-column: span 1 !important; grid-row: auto !important; }
+            .bento-image { height: 350px; }
+        }
 
         /* --- INFO & MAPA --- */
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px; }
@@ -289,35 +326,38 @@
         </div>
     </section>
 
-    <div class="bento-grid">
-        <div class="bento-item dark-card">
-            <h3>Calidad</h3>
-            <p>Cómo creamos nuestras recetas</p>
-        </div>
+  <section class="section">
+        <h2>El Refugio</h2>
+        <div class="bento-grid">
+            <div class="bento-item item-calidad">
+                <h3>Calidad</h3>
+                <p>Cómo creamos nuestras recetas</p>
+            </div>
 
-        <div class="bento-item light-card">
-            <h3>Enfocar</h3>
-            <p>Creando momentos especiales</p>
-        </div>
+            <div class="bento-item item-enfocar">
+                <h3>Enfocar</h3>
+                <p>Creando momentos especiales</p>
+            </div>
 
-        <div class="bento-item image-card-hand" style="background-image: url('assets/espacio/bentor1.webp');">
-            <div class="bento-hover-text">Nuestra Cosecha</div>
-        </div>
+            <div class="bento-item item-foto-r">
+                <div class="bento-image" style="background-image: url('assets/productos/grano.webp');"></div>
+            </div>
 
-        <div class="bento-item image-card-local" style="background-image: url('assets/espacio/bentor2.webp');">
-            <div class="bento-hover-text">El Rincón Siroko</div>
-        </div>
+            <div class="bento-item item-foto-l">
+                <div class="bento-image" style="background-image: url('assets/8.webp');"></div>
+            </div>
 
-        <div class="bento-item stats-card">
-            <h3 style="font-size: 3rem; color: var(--dark);">22 %</h3>
-            <p>Experimentando nuevos sabores</p>
-        </div>
+            <div class="bento-item item-stats">
+                <span class="number">22 %</span>
+                <p>Experimentando nuevos sabores</p>
+            </div>
 
-        <div class="bento-item green-card">
-            <h3>Más de 12</h3>
-            <p>Haz la diferencia</p>
+            <div class="bento-item item-mas">
+                <h3>Más de 12</h3>
+                <p>Haz la diferencia</p>
+            </div>
         </div>
-    </div>
+    </section>
     
 
     <section class="section">
