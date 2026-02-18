@@ -85,34 +85,48 @@
         .gallery-item:hover img { transform: scale(1.1); }
 
         /* --- BENTO LOCAL --- */
+        /* --- BENTO GRID ASIMÉTRICO (ESTILO REFERENCIA) --- */
         .bento-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 280px); gap: 20px; margin-top: 30px;
+            display: grid;
+            /* Definimos 4 columnas iguales */
+            grid-template-columns: repeat(4, 1fr);
+            /* Fila 1 corta (texto), Fila 2 larga (fotos), Fila 3 corta (stats) */
+            grid-template-rows: 180px 350px 180px; 
+            gap: 20px;
+            margin-top: 30px;
         }
-        .bento-item {
-            border-radius: 25px; padding: 30px; overflow: hidden;
-            display: flex; flex-direction: column; justify-content: flex-end;
-            background-size: cover; background-position: center; 
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative; text-align: left; text-decoration: none;
-        }
-        .bento-item::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5));
-            opacity: 0.7; transition: 0.4s; z-index: 1;
-        }
-        .bento-item:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .bento-item:hover::before { opacity: 0.9; }
 
-        .dark-card { background-color: var(--dark); color: white; }
-        .light-card { background-color: #f4f4f4; color: var(--dark); }
-        .green-card { background-color: var(--primary); color: white; }
-        .image-card-wide { grid-column: 3 / 5; }
-        .image-card-tall { grid-column: 1 / 3; grid-row: 2 / 3; }
-        .stats-card { background: #f4f4f4; grid-column: 3 / 4; }
+        /* Ajuste de posiciones para calcar tu imagen */
+        .dark-card { grid-column: 1 / 2; grid-row: 1 / 2; }
+        .light-card { grid-column: 2 / 3; grid-row: 1 / 2; }
         
-        .bento-item h3, .bento-item p, .bento-item .number { z-index: 2; position: relative; }
-        .number { font-size: 3.5rem; font-weight: bold; color: var(--primary); font-family: 'Montserrat'; }
+        /* Foto de la mano (Derecha superior) */
+        .image-card-hand { grid-column: 3 / 5; grid-row: 1 / 3; } 
+        
+        /* Foto del local (Izquierda inferior) */
+        .image-card-local { grid-column: 1 / 3; grid-row: 2 / 4; }
+
+        .stats-card { grid-column: 3 / 4; grid-row: 3 / 4; }
+        .green-card { grid-column: 4 / 5; grid-row: 3 / 4; }
+
+        /* Estilo de los items */
+        .bento-item {
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Texto arriba como en la foto */
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        /* Tipografía específica del Bento para que se parezca a la foto */
+        .bento-item h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 1.8rem; margin: 0; }
+        .bento-item p { font-size: 0.9rem; margin-top: 5px; opacity: 0.9; }
 
         /* --- INFO & MAPA --- */
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px; }
@@ -212,17 +226,22 @@
             .logo-container { margin-top: -80px; }
 
             /* Bento en 1 sola columna para móvil */
+        @media (max-width: 768px) {
             .bento-grid {
-                grid-template-columns: 1fr; 
-                grid-template-rows: auto;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto; /* Que el contenido defina la altura */
                 gap: 15px;
             }
 
             .bento-item {
-                grid-column: span 1 !important; /* Forzamos a que todas ocupen 1 columna */
+                grid-column: span 1 !important;
                 grid-row: auto !important;
-                height: 250px;
-                padding: 20px;
+                height: 200px; /* Altura estándar para texto */
+            }
+
+            /* Las fotos en móvil sí las dejamos más altas */
+            .image-card-hand, .image-card-local {
+                height: 300px;
             }
 
             .image-card-wide, .image-card-tall {
