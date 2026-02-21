@@ -237,6 +237,19 @@
               ""
             ],
             "recommended": false
+          },
+          {
+            "id": "P077",
+            "name": "Tramontana",
+            "description": "Café con leche, nata montada y chocolate. Delicioso!",
+            "price": {
+              "base": 3.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P077.webp",
+            "allergens": [
+              "LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -709,6 +722,20 @@
               "hu"
             ],
             "recommended": false
+          },
+          {
+            "id": "P079",
+            "name": "Croissant Jamón y Queso",
+            "description": "",
+            "price": {
+              "base": 2.75
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P079.webp",
+            "allergens": [
+              "GL",
+              " LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -883,6 +910,20 @@
               ""
             ],
             "recommended": true
+          },
+          {
+            "id": "P078",
+            "name": "Bocadillos varios",
+            "description": "Elegí pan flautín o pan cereal Avena. 1. Atún; 2. Jamón Serrano; 3. Jamón y Queso; 4. Queso y Tomate. ",
+            "price": {
+              "base": 2.75
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P078.webp",
+            "allergens": [
+              "GL",
+              " LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -1220,6 +1261,19 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P018.webp",
             "allergens": [
               ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P077",
+            "name": "Tramuntana",
+            "description": "Cafè amb llet, nata muntada i xocolata. Deliciós!",
+            "price": {
+              "base": 3.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P077.webp",
+            "allergens": [
+              "LA"
             ],
             "recommended": false
           }
@@ -1694,6 +1748,20 @@
               "hu"
             ],
             "recommended": false
+          },
+          {
+            "id": "P079",
+            "name": "Croissant Pernil i Formatge",
+            "description": "",
+            "price": {
+              "base": 2.75
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P079.webp",
+            "allergens": [
+              "GL",
+              " LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -1868,6 +1936,20 @@
               ""
             ],
             "recommended": true
+          },
+          {
+            "id": "P078",
+            "name": "Entrepans diversos",
+            "description": "Vaig triar pa flautí o pa cereal Civada. 1. Tonyina; 2. Pernil Serrano; 3. Pernil i Formatge; 4. Formatge i Tomàquet. ",
+            "price": {
+              "base": 2.75
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P078.webp",
+            "allergens": [
+              "GL",
+              " LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -2679,6 +2761,20 @@
               "hu"
             ],
             "recommended": false
+          },
+          {
+            "id": "P079",
+            "name": "Ham and Cheese Croissant",
+            "description": "",
+            "price": {
+              "base": 2.75
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P079.webp",
+            "allergens": [
+              "GL",
+              " LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -2853,6 +2949,20 @@
               ""
             ],
             "recommended": true
+          },
+          {
+            "id": "P078",
+            "name": "Various snacks",
+            "description": "Choose baguette or oatmeal bread. 1. Tuna; 2. Serrano ham; 3. Ham and cheese; 4. Cheese and tomato.",
+            "price": {
+              "base": 2.75
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P078.webp",
+            "allergens": [
+              "GL",
+              " LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -2949,6 +3059,24 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
             "allergens": [
               ""
+            ],
+            "recommended": false
+          }
+        ]
+      },
+      "cafes": {
+        "name": "Cafes",
+        "items": [
+          {
+            "id": "P077",
+            "name": "Tramontana",
+            "description": "Coffee with milk, whipped cream, and chocolate. Delicious!",
+            "price": {
+              "base": 3.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P077.webp",
+            "allergens": [
+              "LA"
             ],
             "recommended": false
           }
