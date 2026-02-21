@@ -20,10 +20,28 @@
             margin: 0; 
             color: var(--dark); 
             line-height: 1.6;
-            background-color: var(--white);
-            background-color: #fcfcfc; /* Un blanco roto que descansa la vista */
-            background-image: radial-gradient(#e5e5e5 0.5px, transparent 0.5px); /* Un patrón de puntos finos tipo papel de diseño */
-            background-size: 30px 30px;
+            /* Abackground-color: var(--white);
+        gregamos varias imágenes de fondo */
+            background-image: 
+                url('assets/e1.png'),      /* Dibujo 1 */
+                url('assets/e2.png'), /* Dibujo 2 */
+                url('assets/e3.png');     /* Dibujo 3 */
+        
+            /* Posicionamos cada una de forma independiente */
+            background-position: 
+                left 5% top 20%,    /* El café a la izquierda arriba */
+                right 10% top 45%,  /* El croissant a la derecha media */
+                left 15% bottom 10%; /* El grano a la izquierda abajo */
+        
+            /* Evitamos que se repitan para que no se vea lleno */
+            background-repeat: no-repeat;
+        
+            /* Definimos el tamaño sutil de cada uno */
+            background-size: 150px, 120px, 80px;
+        
+            /* Hacemos que se queden ahí mientras haces scroll (opcional) */
+            background-attachment: fixed;
+            background-blend-mode: soft-light;
         }
 
         /* --- LAYOUT --- */
