@@ -1082,8 +1082,8 @@
         "items": [
           {
             "id": "P075",
-            "name": "CAFÉ + ROLL DE CANELLA",
-            "description": "Elige tu café y acompáñalo con un bocadillo de jamón y queso",
+            "name": "CAFÉ + ROLL DE CANELA",
+            "description": "Elige tu café y acompáñalo con un delicioso roll de canela",
             "price": {
               "base": 6.49
             },
@@ -2236,8 +2236,8 @@
         "items": [
           {
             "id": "P075",
-            "name": "CAFÈ + ROLL DE CANELLA",
-            "description": "Tria el teu cafè i acompanya'l amb un entrepà de pernil i formatge",
+            "name": "CAFÈ + ROLL DE CANELA",
+            "description": "Tria el teu cafè i acompanya'l amb un deliciós roll de canyella",
             "price": {
               "base": 6.49
             },
@@ -3378,7 +3378,7 @@
           {
             "id": "P075",
             "name": "COFFEE + CINNAMON ROLL",
-            "description": "Choose your coffee and pair it with a ham and cheese sandwich",
+            "description": "Choose your coffee and accompany it with a delicious cinnamon roll",
             "price": {
               "base": 6.49
             },
