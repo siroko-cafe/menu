@@ -462,55 +462,57 @@
       }, { threshold: 0.1 });
       document.querySelectorAll('.section').forEach(section => observer.observe(section));
 
-      // 4. Carga de Eventos
-
-        
+     // 4. Carga de Eventos
       function renderEventos(eventos) {
         const seccion = document.getElementById('seccion-eventos');
-        const contenedor = document.getElementById('eventos-container');
+        const contenedor = document.getElementById('grid-eventos'); // <--- CORREGIDO: ahora coincide con el HTML
+        
         if (!eventos || eventos.length === 0) return;
+        
         seccion.style.display = 'block';
+        seccion.classList.add('visible'); // Para que se vea con la animación de scroll
+        
+        contenedor.innerHTML = ""; // Limpiamos por si acaso
+        
         eventos.forEach(ev => {
             contenedor.innerHTML += `
-                <div class="evento-card">
+                <div class="evento-card" style="flex: 0 0 auto;">
                     <img src="${ev.imagen || 'assets/8.webp'}" alt="${ev.titulo}">
                     <div class="evento-info">
-                        <small>📅 ${ev.fecha} | 🕒 ${ev.hora}</small>
-                        <h3>${ev.titulo}</h3>
-                        <p>${ev.descripcion}</p>
+                        <small style="color: var(--primary); font-weight: bold;">📅 ${ev.fecha} | 🕒 ${ev.hora}</small>
+                        <h3 style="font-size: 1.2rem; margin: 8px 0;">${ev.titulo}</h3>
+                        <p style="font-size: 0.9rem; color: #666; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                          ${ev.descripcion}
+                        </p>
                     </div>
                 </div>`;
         });
       }
 
-        // Ejemplo rápido para tu web:
-        function scrollEventos(direccion) {
-          const contenedor = document.getElementById('contenedor-eventos');
-          const scrollAmount = 300; 
-          contenedor.scrollBy({
-            left: direccion === 'derecha' ? scrollAmount : -scrollAmount,
-            behavior: 'smooth'
-          });
-        }
+      // 5. Función de Scroll para Eventos
+      function scrollEventos(direccion) {
+          const contenedor = document.getElementById('grid-eventos');
+          const tarjeta = document.querySelector('.evento-card');
+          
+          if (tarjeta) {
+              // Movemos el ancho de una tarjeta + el gap (25px)
+              const desplazamiento = (tarjeta.offsetWidth + 25) * direccion;
+              contenedor.scrollBy({
+                  left: desplazamiento,
+                  behavior: 'smooth'
+              });
+          }
+      }
 
-        function scrollEventos(direccion) {
-            const contenedor = document.getElementById('grid-eventos');
-            const tarjeta = document.querySelector('.evento-card');
-            
-            if (tarjeta) {
-                // Calculamos cuánto mover: el ancho de una tarjeta + el gap
-                const desplazamiento = (tarjeta.offsetWidth + 25) * direccion;
-                contenedor.scrollBy({
-                    left: desplazamiento,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-      fetch("menu_data.json?v=" + Date.now())
+      // 6. Fetch Inicial
+      fetch("https://raw.githubusercontent.com/siroko-cafe/menu/main/menu_data.json?v=" + Date.now())
         .then(res => res.json())
-        .then(data => { if (data.eventos) renderEventos(data.eventos); })
-        .catch(err => console.log("No hay eventos."));
+        .then(data => { 
+          if (data.eventos && data.eventos.length > 0) { 
+            renderEventos(data.eventos); 
+          } 
+        })
+        .catch(err => console.log("Error cargando eventos:", err));
     </script>
 </body>
 </html>
