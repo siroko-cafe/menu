@@ -161,7 +161,8 @@
             flex-wrap: wrap; 
             justify-content: center; 
             gap: 25px; 
-            padding: 20px; 
+            padding: 20px;
+            overflow-x: auto;
         }
 
         .evento-card { 
@@ -445,6 +446,16 @@
                 </div>`;
         });
       }
+
+        // Ejemplo rápido para tu web:
+        function scrollEventos(direccion) {
+          const contenedor = document.getElementById('contenedor-eventos');
+          const scrollAmount = 300; 
+          contenedor.scrollBy({
+            left: direccion === 'derecha' ? scrollAmount : -scrollAmount,
+            behavior: 'smooth'
+          });
+        }
 
       fetch("menu_data.json?v=" + Date.now())
         .then(res => res.json())
