@@ -2958,20 +2958,22 @@
   },
   "eventos": [
     {
-      "id": "E001",
-      "fecha": "dom, 1 feb",
-      "titulo": "Taller Arteterapia",
-      "descripcion": "Mirada Mirodi. Por María Camelli. Incluye Taller + Brunch de Siroko!",
-      "hora": "12 a 15 hs",
-      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E001.webp"
-    },
-    {
       "id": "E104",
       "fecha": "sáb, 7 mar",
+      "fechaSort": "2026-03-07T03:00:00.000Z",
       "titulo": "Expo Lara Summers",
       "descripcion": "Inauguración de Exposoción fotográfica de Lara Suemmers.",
       "hora": "15.30",
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E104.webp"
+    },
+    {
+      "id": "E001",
+      "fecha": "dom, 1 feb",
+      "fechaSort": "2026-02-01T03:00:00.000Z",
+      "titulo": "Taller Arteterapia",
+      "descripcion": "Mirada Mirodi. Por María Camelli. Incluye Taller + Brunch de Siroko!",
+      "hora": "12 a 15 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E001.webp"
     }
   ]
 }
