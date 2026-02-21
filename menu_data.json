@@ -274,7 +274,7 @@
             "name": "TÉ CHAI",
             "description": "Té negro con especias tradicionales y leche cremosa.",
             "price": {
-              "base": 2.8
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
             "allergens": [
@@ -284,21 +284,21 @@
           },
           {
             "id": "P021",
-            "name": "MATCHA LATTE",
-            "description": "Té verde matcha ceremonial batido con leche.",
+            "name": "TÉ MATCHA",
+            "description": "",
             "price": {
-              "base": 3.5
+              "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
             "allergens": [
-              "LA"
+              ""
             ],
             "recommended": true
           },
           {
             "id": "P046",
-            "name": "TÉ NEGRO/ROJO/VERDE",
-            "description": "Selección de tés premium de origen seleccionado.",
+            "name": "TÉ VERDE",
+            "description": "",
             "price": {
               "base": 2
             },
@@ -326,7 +326,7 @@
             "name": "TÉ ENGLISH BREAKFAST",
             "description": "Mezcla de tés negros con sabor robusto y tradicional.",
             "price": {
-              "base": 2.3
+              "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
             "allergens": [
@@ -365,7 +365,7 @@
             "name": "TE VERMELL PU ERH",
             "description": "Té rojo fermentado con notas terrosas y digestivas.",
             "price": {
-              "base": 2.3
+              "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
             "allergens": [
@@ -378,7 +378,7 @@
             "name": "MATE",
             "description": "Infusión tradicional servida de forma clásica.",
             "price": {
-              "base": 3.5
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
             "allergens": [
@@ -1370,7 +1370,7 @@
             "name": "TE CHAI",
             "description": "Te negre amb espècies tradicionals i llet cremosa.",
             "price": {
-              "base": 2.8
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
             "allergens": [
@@ -1380,20 +1380,20 @@
           },
           {
             "id": "P021",
-            "name": "MATXA LATTE",
-            "description": "Te verd matxa cerimonial batut amb llet.",
+            "name": "TE MATXA",
+            "description": "",
             "price": {
-              "base": 3.5
+              "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
             "allergens": [
-              "LA"
+              ""
             ],
             "recommended": true
           },
           {
             "id": "P046",
-            "name": "TE NEGRE/VERMELL/VERD",
+            "name": "TE VERD",
             "description": "Te negre aromatitzat amb oli de bergamota.",
             "price": {
               "base": 2
@@ -1422,7 +1422,7 @@
             "name": "TE ENGLISH BREAKFAST",
             "description": "Infusió refrescant de menta i poliol natural.",
             "price": {
-              "base": 2.3
+              "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
             "allergens": [
@@ -1461,7 +1461,7 @@
             "name": "ET VERMELL PU ERH",
             "description": "Infusió tradicional servida de manera clàssica.",
             "price": {
-              "base": 2.3
+              "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
             "allergens": [
@@ -1474,7 +1474,7 @@
             "name": "MATEIX",
             "description": "Pastís artesanal farcit de codonyat.",
             "price": {
-              "base": 3.5
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
             "allergens": [
@@ -2453,7 +2453,7 @@
             "name": "CHAI TEA",
             "description": "Black tea with traditional spices and creamy milk.",
             "price": {
-              "base": 2.8
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
             "allergens": [
@@ -2463,20 +2463,20 @@
           },
           {
             "id": "P021",
-            "name": "MATCHA LATTE",
-            "description": "Ceremonial matcha green tea blended with milk.",
+            "name": "MATCHA TEA",
+            "description": "",
             "price": {
-              "base": 3.5
+              "base": 2.8
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
             "allergens": [
-              "LA"
+              ""
             ],
             "recommended": true
           },
           {
             "id": "P046",
-            "name": "BLACK/RED/GREEN TEA",
+            "name": "GREEN TEA",
             "description": "Black tea flavored with bergamot oil.",
             "price": {
               "base": 2
@@ -2505,7 +2505,7 @@
             "name": "ENGLISH BREAKFAST",
             "description": "Refreshing infusion of mint and natural pennyroyal.",
             "price": {
-              "base": 2.3
+              "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
             "allergens": [
@@ -2544,7 +2544,7 @@
             "name": "TE VERMELL PU ERH",
             "description": "Traditional infusion served in the classic way.",
             "price": {
-              "base": 2.3
+              "base": 2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
             "allergens": [
@@ -2557,7 +2557,7 @@
             "name": "MATE",
             "description": "Homemade cake filled with quince paste.",
             "price": {
-              "base": 3.5
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
             "allergens": [
