@@ -2967,6 +2967,15 @@
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E104.webp"
     },
     {
+      "id": "E106",
+      "fecha": "dom, 1 mar",
+      "fechaSort": "2026-03-01T03:00:00.000Z",
+      "titulo": "Exposición Fotografica Studio Lemon-Lens",
+      "descripcion": "Exposición fotográfica de Julia",
+      "hora": "11 a 15 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E106.webp"
+    },
+    {
       "id": "E001",
       "fecha": "dom, 1 feb",
       "fechaSort": "2026-02-01T03:00:00.000Z",
