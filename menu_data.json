@@ -1077,6 +1077,64 @@
           }
         ]
       },
+      "promos": {
+        "name": "Promos",
+        "items": [
+          {
+            "id": "P075",
+            "name": "CAFÉ + ROLL DE CANELLA",
+            "description": "Elige tu café y acompáñalo con un bocadillo de jamón y queso",
+            "price": {
+              "base": 6.49
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P075.webp",
+            "allergens": [
+              "gl",
+              "la"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P085",
+            "name": "CERVEZA + CHIPS",
+            "description": "",
+            "price": {
+              "base": 3.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P085.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P086",
+            "name": "SUBMARINO + CROISSANT",
+            "description": "",
+            "price": {
+              "base": 3.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P086.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P087",
+            "name": "CAFÉ + TARTA MANZANA",
+            "description": "",
+            "price": {
+              "base": 5.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          }
+        ]
+      },
       "sin-tacc": {
         "name": "Sin TACC",
         "items": [
@@ -2173,6 +2231,64 @@
           }
         ]
       },
+      "promos": {
+        "name": "Promos",
+        "items": [
+          {
+            "id": "P075",
+            "name": "CAFÈ + ROLL DE CANELLA",
+            "description": "Tria el teu cafè i acompanya'l amb un entrepà de pernil i formatge",
+            "price": {
+              "base": 6.49
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P075.webp",
+            "allergens": [
+              "gl",
+              "la"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P085",
+            "name": "CERVESA + XIPS",
+            "description": "",
+            "price": {
+              "base": 3.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P085.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P086",
+            "name": "SUBMARÍ + CROISSANT",
+            "description": "",
+            "price": {
+              "base": 3.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P086.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P087",
+            "name": "CAFÈ + PASTÍS POMA",
+            "description": "",
+            "price": {
+              "base": 5.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          }
+        ]
+      },
       "sense-tacc": {
         "name": "Sense TACC",
         "items": [
@@ -3249,6 +3365,64 @@
               "base": 1
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          }
+        ]
+      },
+      "promos": {
+        "name": "Promos",
+        "items": [
+          {
+            "id": "P075",
+            "name": "COFFEE + CINNAMON ROLL",
+            "description": "Choose your coffee and pair it with a ham and cheese sandwich",
+            "price": {
+              "base": 6.49
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P075.webp",
+            "allergens": [
+              "gl",
+              "la"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P085",
+            "name": "BEER + CHIPS",
+            "description": "",
+            "price": {
+              "base": 3.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P085.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P086",
+            "name": "SUBMARINE + CROISSANT",
+            "description": "",
+            "price": {
+              "base": 3.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P086.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P087",
+            "name": "COFFEE + APPLE TART",
+            "description": "",
+            "price": {
+              "base": 5.99
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
             "allergens": [
               ""
             ],
