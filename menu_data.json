@@ -610,11 +610,11 @@
             "name": "TOSTADAS",
             "description": "Pan artesano tostado con aceite de oliva o mermelada.",
             "price": {
-              "base": 2.4
+              "base": 3.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
             "allergens": [
-              ""
+              "GL"
             ],
             "recommended": false
           },
@@ -736,6 +736,19 @@
               " LA"
             ],
             "recommended": false
+          },
+          {
+            "id": "P084",
+            "name": "Croissant Chico",
+            "description": "",
+            "price": {
+              "base": 0.95
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P084.webp",
+            "allergens": [
+              "GL"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -838,7 +851,7 @@
             "name": "YOGURT TOPPING",
             "description": "Agregale tus toppins preferidos: fresa, banana, arándanos, chocolate, mango",
             "price": {
-              "base": 1
+              "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
             "allergens": [
@@ -922,6 +935,32 @@
             "allergens": [
               "GL",
               " LA"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P081",
+            "name": "Focaccias Serrano",
+            "description": "",
+            "price": {
+              "base": 6.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P081.webp",
+            "allergens": [
+              "GL"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P082",
+            "name": "Focaccias Pavo",
+            "description": "",
+            "price": {
+              "base": 6.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P082.webp",
+            "allergens": [
+              "GL"
             ],
             "recommended": false
           }
@@ -1018,6 +1057,37 @@
               "base": 3.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P083",
+            "name": "Copa Vino Rosado",
+            "description": "",
+            "price": {
+              "base": 1
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          }
+        ]
+      },
+      "sin-tacc": {
+        "name": "Sin TACC",
+        "items": [
+          {
+            "id": "P080",
+            "name": "Tarta de Manzana",
+            "description": "Deliciosa tarta de manzana sin TACC",
+            "price": {
+              "base": 4.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P080.webp",
             "allergens": [
               ""
             ],
@@ -1636,11 +1706,11 @@
             "name": "TORRADES",
             "description": "Pa artesà torrat amb oli d'oliva o melmelada.",
             "price": {
-              "base": 2.4
+              "base": 3.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
             "allergens": [
-              ""
+              "GL"
             ],
             "recommended": false
           },
@@ -1762,6 +1832,19 @@
               " LA"
             ],
             "recommended": false
+          },
+          {
+            "id": "P084",
+            "name": "Croissant Noi",
+            "description": "",
+            "price": {
+              "base": 0.95
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P084.webp",
+            "allergens": [
+              "GL"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -1864,7 +1947,7 @@
             "name": "IOGURT TOPPING",
             "description": "Afegeix els teus toppins preferits: maduixa, banana, nabius, xocolata, mango",
             "price": {
-              "base": 1
+              "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
             "allergens": [
@@ -1948,6 +2031,32 @@
             "allergens": [
               "GL",
               " LA"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P081",
+            "name": "Focaccia Serrano",
+            "description": "",
+            "price": {
+              "base": 6.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P081.webp",
+            "allergens": [
+              "GL"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P082",
+            "name": "Focaccias Pavo",
+            "description": "",
+            "price": {
+              "base": 6.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P082.webp",
+            "allergens": [
+              "GL"
             ],
             "recommended": false
           }
@@ -2044,6 +2153,37 @@
               "base": 3.6
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P071.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P083",
+            "name": "Copa Vi Rosat",
+            "description": "",
+            "price": {
+              "base": 1
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
+          }
+        ]
+      },
+      "sense-tacc": {
+        "name": "Sense TACC",
+        "items": [
+          {
+            "id": "P080",
+            "name": "Pastís de Poma",
+            "description": "Deliciosa pastís de poma sense TACC",
+            "price": {
+              "base": 4.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P080.webp",
             "allergens": [
               ""
             ],
@@ -2649,11 +2789,11 @@
             "name": "TOAST",
             "description": "Toasted artisan bread with olive oil or jam.",
             "price": {
-              "base": 2.4
+              "base": 3.7
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
             "allergens": [
-              ""
+              "GL"
             ],
             "recommended": false
           },
@@ -2775,6 +2915,19 @@
               " LA"
             ],
             "recommended": false
+          },
+          {
+            "id": "P084",
+            "name": "Small Croissant",
+            "description": "",
+            "price": {
+              "base": 0.95
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P084.webp",
+            "allergens": [
+              "GL"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -2877,7 +3030,7 @@
             "name": "YOGURT TOPPING",
             "description": "Add your favorite toppings: strawberry, banana, blueberries, chocolate, mango",
             "price": {
-              "base": 1
+              "base": 2.4
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
             "allergens": [
@@ -2961,6 +3114,32 @@
             "allergens": [
               "GL",
               " LA"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P081",
+            "name": "Serrano Focaccias",
+            "description": "",
+            "price": {
+              "base": 6.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P081.webp",
+            "allergens": [
+              "GL"
+            ],
+            "recommended": false
+          },
+          {
+            "id": "P082",
+            "name": "Turkey Focaccias",
+            "description": "",
+            "price": {
+              "base": 6.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P082.webp",
+            "allergens": [
+              "GL"
             ],
             "recommended": false
           }
@@ -3061,6 +3240,19 @@
               ""
             ],
             "recommended": false
+          },
+          {
+            "id": "P083",
+            "name": "Glass of Rosé Wine",
+            "description": "",
+            "price": {
+              "base": 1
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
+            "allergens": [
+              ""
+            ],
+            "recommended": false
           }
         ]
       },
@@ -3077,6 +3269,24 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P077.webp",
             "allergens": [
               "LA"
+            ],
+            "recommended": false
+          }
+        ]
+      },
+      "gluten-free": {
+        "name": "Gluten-free",
+        "items": [
+          {
+            "id": "P080",
+            "name": "Apple cake",
+            "description": "Delicious gluten-free apple pie",
+            "price": {
+              "base": 4.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P080.webp",
+            "allergens": [
+              ""
             ],
             "recommended": false
           }
