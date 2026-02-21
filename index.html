@@ -15,33 +15,26 @@
 
         * { box-sizing: border-box; }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            color: var(--dark); 
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
             line-height: 1.6;
-            /* Abackground-color: var(--white);
-        gregamos varias imágenes de fondo */
+            color: var(--dark);
+            background-color: #fcfcfc; 
             background-image: 
-                url('assets/e1.webp'),      /* Dibujo 1 */
-                url('assets/e2.webp'), /* Dibujo 2 */
-                url('assets/e3.webp');     /* Dibujo 3 */
-        
-            /* Posicionamos cada una de forma independiente */
+                url('assets/e2.webp'),      
+                url('assets/e3.webp'),
+                url('assets/e4.webp');
+            background-size: 450px, 400px, 250px;
             background-position: 
-                left 5% top 20%,    /* El café a la izquierda arriba */
-                right 10% top 45%,  /* El croissant a la derecha media */
-                left 15% bottom 10%; /* El grano a la izquierda abajo */
+                left 2% top 25%,    
+                right 5% top 60%;
         
-            /* Evitamos que se repitan para que no se vea lleno */
             background-repeat: no-repeat;
-        
-            /* Definimos el tamaño sutil de cada uno */
-            background-size: 150px, 120px, 80px;
-        
-            /* Hacemos que se queden ahí mientras haces scroll (opcional) */
+            background-size: 180px, 150px;
             background-attachment: fixed;
             background-blend-mode: soft-light;
+            overflow-x: hidden; /* Evita que los dibujos generen scroll lateral */
         }
 
         /* --- LAYOUT --- */
