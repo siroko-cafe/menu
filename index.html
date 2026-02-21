@@ -21,20 +21,30 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: #fcfcfc; 
+        
+            /* 1. Las 3 imágenes */
             background-image: 
                 url('assets/e2.webp'),      
                 url('assets/e3.webp'),
                 url('assets/e4.webp');
+        
+            /* 2. Los 3 tamaños */
             background-size: 450px, 400px, 500px;
+        
+            /* 3. ¡CORREGIDO! Las 3 posiciones (una para cada imagen) */
             background-position: 
-                left 2% top 25%,    
-                right 5% top 60%;
+                left -50px top 15%,    /* e2: un poco hacia afuera a la izquierda */
+                right -50px top 50%,   /* e3: a la derecha en el medio */
+                left 10% bottom 5%;    /* e4: abajo a la izquierda */
         
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-blend-mode: soft-light;
-            overflow-x: hidden; /* Evita que los dibujos generen scroll lateral */
-        }
+        
+            /* 4. PRUEBA: Si no las ves, quita esta línea o cámbiala a 'multiply' */
+            background-blend-mode: multiply; 
+            
+    overflow-x: hidden; 
+}
 
         /* --- LAYOUT --- */
         .section { 
