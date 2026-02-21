@@ -1514,7 +1514,7 @@
           {
             "id": "P031",
             "name": "CROISSANT GRAN",
-            "description": "Pasta de full artesà cruixent per fora i tendre per dins.",
+            "description": "Pasta de full artesana cruixent per fora i tendre per dins.",
             "price": {
               "base": 1.9
             },
@@ -2966,28 +2966,12 @@
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E001.webp"
     },
     {
-      "id": "E103",
-      "fecha": "2026-02-25T03:00:00.000Z",
-      "titulo": "Taller de prueba",
-      "descripcion": "Descripción de taller de prueba",
-      "hora": "13 hs",
-      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E103.webp"
-    },
-    {
       "id": "E104",
       "fecha": "2026-03-07T03:00:00.000Z",
       "titulo": "Expo Lara Summers",
       "descripcion": "Inauguración de Exposoción fotográfica de Lara Suemmers.",
-      "hora": "1899-12-30T19:46:48.000Z",
+      "hora": 15,
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E104.webp"
-    },
-    {
-      "id": "E105",
-      "fecha": "2026-03-07T03:00:00.000Z",
-      "titulo": "Expo Lara Summers",
-      "descripcion": "Inauguración de Exposoción fotográfica de Lara Suemmers.",
-      "hora": "1899-12-30T19:46:48.000Z",
-      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E105.webp"
     }
   ]
 }
