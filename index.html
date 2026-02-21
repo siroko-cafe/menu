@@ -84,7 +84,7 @@
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 180px 350px 180px; /* Estructura asimétrica */
+            grid-template-rows: minmax(180px, auto) minmax(350px, auto) minmax(180px, auto);
             gap: 20px;
             max-width: 1200px; /* ALINEADO CON EL RESTO DE SECCIONES */
             margin: 40px auto 0 auto;
@@ -128,8 +128,8 @@
         .item-6 { grid-column: 4 / 5; grid-row: 3 / 4; } /* Verde */
 
         /* Tipografía interna */
-        .bento-item h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 1.5rem; margin: 0; }
-        .bento-item p { font-size: 0.9rem; margin-top: 10px; opacity: 0.8; }
+        .bento-item h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 1.3rem; margin: 0; margin-bottom: 8px; }
+        .bento-item p { font-size: 0.9rem; margin-top: 10px; opacity: 0.8; line-height: 1.4;}
         .bento-item .number { font-size: 3rem; font-weight: 800; color: var(--primary); }
         .dark-card .number { color: var(--primary); } /* Resalte en tarjeta oscura */
 
