@@ -21,8 +21,21 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: #fcfcfc; 
-            overflow-x: hidden;
-        }
+        
+            /* 
+            background-image: 
+                url('assets/e1.webp'),      
+                url('assets/e2.webp'),
+                url('assets/e3.webp');        
+            background-size: 800px, 800px, 800px;        
+            background-position: 
+                left -50px top 15%,    
+                right -50px top 80%,   
+                left 10% bottom 5%;            
+        background-repeat: no-repeat;
+        background-attachment: scroll;           
+        overflow-x: hidden; */
+}
 
         /* --- LAYOUT --- */
         .section { 
@@ -57,179 +70,317 @@
             font-size: 2.2rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 300;
         }
 
-        /* --- BENTO GRID --- */
+        /* --- GALERÍA EXPLORA (PRODUCTOS) --- */
+        .menu-gallery {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px; margin-top: 30px;
+        }
+        .gallery-item {
+            position: relative; border-radius: 40px 10px 40px 10px;
+            overflow: hidden; aspect-ratio: 4 / 5; transition: 0.5s;
+            text-decoration: none;
+        }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .gallery-overlay {
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: 0.4s;
+        }
+        .gallery-overlay span { 
+            color: white; text-transform: uppercase; letter-spacing: 2px; 
+            font-family: 'Montserrat'; font-weight: bold; border: 1px solid white; padding: 10px 20px;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* --- BENTO GRID CON COLORES Y ANCHO CONTROLADO --- */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: minmax(180px, auto) minmax(350px, auto) minmax(180px, auto);
             gap: 20px;
-            max-width: 1200px;
+            max-width: 1200px; /* ALINEADO CON EL RESTO DE SECCIONES */
             margin: 40px auto 0 auto;
         }
+
         .bento-item {
-            border-radius: 25px; padding: 30px; text-decoration: none;
-            display: flex; flex-direction: column; justify-content: flex-start;
-            transition: all 0.4s ease; position: relative; overflow: hidden;
-        }
-        .bento-item:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .dark-card { background: var(--dark); color: white; }
-        .light-card { background: #f4f4f4; color: var(--dark); }
-        .green-card { background: var(--primary); color: white; }
-        .image-card { background-size: cover; background-position: center; }
-        
-        .item-1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-        .item-2 { grid-column: 2 / 3; grid-row: 1 / 2; }
-        .item-3 { grid-column: 3 / 5; grid-row: 1 / 3; }
-        .item-4 { grid-column: 1 / 3; grid-row: 2 / 4; }
-        .item-5 { grid-column: 3 / 4; grid-row: 3 / 4; }
-        .item-6 { grid-column: 4 / 5; grid-row: 3 / 4; }
-
-        /* --- NUEVO SPLIT STICKY SLIDER --- */
-        .scroll-wrapper {
-            height: 300vh; /* Controla cuánto scroll hay que hacer para pasar los 3 cafés */
-            position: relative;
-            background-color: #fdfaf6;
-        }
-
-        .sticky-container {
-            position: sticky;
-            top: 0;
-            height: 100vh;
+            border-radius: 25px;
+            padding: 30px;
+            text-decoration: none;
             display: flex;
-            width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
             overflow: hidden;
         }
 
-        .split-side {
-            flex: 1;
+        /* Efectos Hover */
+        .bento-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Estilos de Tarjetas (Colores) */
+        .dark-card { background: var(--dark); color: white; }
+        .light-card { background: #f4f4f4; color: var(--dark); }
+        .green-card { background: var(--primary); color: white; }
+        
+        /* Imágenes */
+        .image-card {
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* POSICIONES ASIMÉTRICAS */
+        .item-1 { grid-column: 1 / 2; grid-row: 1 / 2; } /* Gris Oscura */
+        .item-2 { grid-column: 2 / 3; grid-row: 1 / 2; } /* Gris Clara 1 */
+        .item-3 { grid-column: 3 / 5; grid-row: 1 / 3; } /* FOTO GRANDE DERECHA */
+        .item-4 { grid-column: 1 / 3; grid-row: 2 / 4; } /* FOTO GRANDE IZQUIERDA */
+        .item-5 { grid-column: 3 / 4; grid-row: 3 / 4; } /* Gris Clara 2 */
+        .item-6 { grid-column: 4 / 5; grid-row: 3 / 4; } /* Verde */
+
+        /* Tipografía interna */
+        .bento-item h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 1.3rem; margin: 0; margin-bottom: 8px; }
+        .bento-item p { font-size: 0.9rem; margin-top: 10px; opacity: 0.8; line-height: 1.4;}
+        .bento-item .number { font-size: 3rem; font-weight: 800; color: var(--primary); }
+        .dark-card .number { color: var(--primary); } /* Resalte en tarjeta oscura */
+
+        /* RESPONSIVE MÓVIL */
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                max-width: 95%;
+            }
+            .bento-item { 
+                grid-column: span 1 !important; 
+                grid-row: auto !important; 
+                height: 250px; 
+            }
+        }
+
+        /* --- INFO & MAPA --- */
+
+        .seccion-mapa-completa {
+            background-color: #f4f7f4; /* Un verde muy clarito o el color que prefieras */
+            padding: 60px 0;           /* Espacio arriba y abajo dentro del color */
+            width: 100%;               /* Asegura que ocupe todo el ancho */
+        }
+        .info-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: none; padding-bottom: 40px; }
+        .map-container { margin-top: 40px; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        /* --- EVENTOS CON EFECTO HOVER --- */
+        .grid-eventos { 
+            display: flex; 
+            flex-wrap: nowrap; /* Cambiado: evita que bajen */
+            justify-content: flex-start; /* Cambiado: para que empiecen a la izquierda */
+            gap: 25px; 
+            padding: 20px;
+            overflow-x: auto; /* Permite scroll manual/táctil */
+            scroll-behavior: smooth; /* Desplazamiento suave con las flechas */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Opcional: Ocultar la barra de scroll */
+        .grid-eventos::-webkit-scrollbar {
+            display: none;
+            padding: 20px 50px;
+        }
+
+        .evento-card { 
+            background: #fff; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            width: 100%; 
+            max-width: 350px; 
+            text-align: left;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición suave */
+            cursor: pointer;
+        }
+
+        .evento-card img { 
+            width: 100%; 
+            height: 220px; 
+            object-fit: cover; 
+            transition: transform 0.6s ease; /* Efecto zoom para la foto */
+        }
+
+        .evento-info { 
+            padding: 25px; 
+            background: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- EFECTO AL PASAR EL MOUSE --- */
+        .evento-card:hover {
+            transform: translateY(-10px); /* Se eleva */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* Sombra más profunda */
+        }
+
+        .evento-card:hover img {
+            transform: scale(1.08); /* Zoom sutil en la imagen */
+        }
+
+        .evento-info h3 {
+            margin: 10px 0;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .evento-card:hover h3 {
+            color: var(--primary); /* El título cambia al color de marca */
+        }
+        .btn-scroll {
+            position: absolute;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #eee;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
+            transition: all 0.3s ease;
+            top: 50%; /* Centrado vertical */
+            transform: translateY(-50%);
         }
-
-        .left-side { background: #fdfaf6; }
-        .right-side { background: var(--primary); color: white; padding: 60px; text-align: left; }
-
-        .slide-img {
-            position: absolute;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-            width: 100%;
-            height: 100%; /* Ahora ocupa todo el alto */
-        } 
-                
-        .slide-text {
-            position: absolute;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .slide-img.active, .slide-text.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Esto hace que se estire para llenar el espacio */
-            filter: none; /* Quitamos la sombra si va a ocupar todo el espacio */
-        }
-
-        .right-side h2 { color: white; margin-bottom: 20px; }
-
-        /* --- REVIEWS & EVENTOS --- */
-        /* Contenedor de la cuadrícula de eventos */
-.grid-eventos { 
-    display: flex; 
-    flex-wrap: nowrap; 
-    gap: 25px; 
-    padding: 20px 5px; 
-    overflow-x: auto; 
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* La Tarjeta (Card) */
-.evento-card { 
-    background: #ffffff; /* Fondo blanco para que parezca card */
-    border-radius: 20px; 
-    overflow: hidden; 
-    width: 350px; 
-    flex: 0 0 350px; /* Evita que se encojan */
-    display: flex;
-    flex-direction: column; /* Alinea contenido verticalmente */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra suave */
-    transition: all 0.4s ease;
-    text-align: left;
-    height: 450px; /* Altura fija para que todas sean iguales */
-}
-
-.evento-card:hover { 
-    transform: translateY(-10px); 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* Imagen de la tarjeta */
-.evento-card img { 
-    width: 100%; 
-    height: 200px; /* Altura fija de imagen */
-    object-fit: cover; /* Llena el espacio sin deformar */
-}
-
-/* Contenedor de texto dentro de la card */
-.evento-info { 
-    padding: 20px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1; /* Empuja el contenido para llenar la card */
-}
-
-.evento-info h3 { 
-    font-size: 1.2rem; 
-    margin: 10px 0; 
-    color: var(--dark);
-}
-
-.evento-info p { 
-    font-size: 0.9rem; 
-    color: #666; 
-    line-height: 1.4;
-    /* Corta el texto si es muy largo para no romper la card */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-        .btn-scroll { position: absolute; z-index: 10; background: rgba(255, 255, 255, 0.9); border-radius: 50%; width: 45px; height: 45px; cursor: pointer; color: var(--primary); border: 1px solid #eee; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); }
-        .pos-left { left: -15px; } .pos-right { right: -15px; }
-        .reviews-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; /* Para smooth scroll en iPhone */ }
-        .review-card {
-            flex: 0 0 350px; /* Esto obliga a que cada review mida 350px y no se achiquen */
-            background: var(--light-bg);
-            padding: 40px;
-            border-radius: 25px;
-            text-align: left;
-            scroll-snap-align: center;
+        .btn-scroll:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
         }
         
-        .seccion-mapa-completa { background-color: #f4f7f4; padding: 60px 0; width: 100%; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-        .map-container { margin-top: 40px; border-radius: 20px; overflow: hidden; height: 400px; }
+        /* Posiciones específicas */
+        .pos-left { left: -15px; }
+        .pos-right { right: -15px; }
+    
+    /* En móviles muy pequeños quizá prefieras ocultar las flechas */
+    @media (max-width: 600px) {
+            .btn-scroll { display: none; }
+        }
+
+        /* --- REVIEWS --- */
+        .reviews-container {
+            display: flex; overflow-x: auto; gap: 20px; padding: 20px 10px;
+            scroll-snap-type: x mandatory; scrollbar-width: none;
+        }
+        .reviews-container::-webkit-scrollbar { display: none; }
+        .review-card {
+            min-width: 350px; background: var(--light-bg); padding: 40px;
+            border-radius: 25px; text-align: left; border: 1px solid rgba(139, 186, 139, 0.1);
+            scroll-snap-align: center;
+        }
+        .stars { color: #fbbc04; margin-bottom: 10px; }
+
+        footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; font-size: 0.85rem; }
+
+        /* --- RESPONSIVE ADAPTADO (BENTO + EXPLORA) --- */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+                grid-template-rows: auto;
+            }
+            .image-card-wide, .image-card-tall {
+                grid-column: span 2; /* Ocupan todo el ancho en tablet */
+                height: 300px;
+            }
+        }
 
         @media (max-width: 768px) {
-            .hero { height: 50vh; background-attachment: scroll; }
-            .sticky-container { flex-direction: column; }
-            .left-side { height: 40vh; }
-            .right-side { height: 60vh; padding: 30px; }
-            .scroll-wrapper { height: 250vh; } /* Menos scroll en móvil para no cansar */
+            .hero { 
+                height: 50vh; /* Un poco más bajo para que no ocupe toda la pantalla */
+                background-attachment: scroll; /* ¡Clave! El efecto fixed falla en móviles */
+                background-position: center center;
+            }
+            .logo-container { 
+                margin-top: -60px; /* Ajustamos para que el logo suba un poco hacia la foto */
+            }   
+            .logo-container img { 
+                width: 200px; /* Logo más manejable */
+            }
         }
+
+            /* Bento en 1 sola columna para móvil */
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto; /* Que el contenido defina la altura */
+                gap: 15px;
+            }
+
+            .bento-item {
+                grid-column: span 1 !important;
+                grid-row: auto !important;
+                height: 200px; /* Altura estándar para texto */
+            }
+
+            /* Las fotos en móvil sí las dejamos más altas */
+            .image-card-hand, .image-card-local {
+                height: 300px;
+            }
+
+            .image-card-wide, .image-card-tall {
+                height: 280px; /* Fotos un poco más altas en móvil */
+            }
+
+            .stats-card .number { font-size: 2.8rem; }
+            
+            .nav-btn { display: none; } /* Ocultamos flechas de reviews en móvil */
+            
+            h2 { font-size: 1.8rem; }
+        }
+
+            .split-slider {
+                display: flex;
+                height: 80vh; /* Altura del slider */
+                overflow: hidden;
+                position: relative;
+            }
+
+            .split-side {
+                flex: 1; /* Mitad y mitad */
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .left-side { background-color: #fdfaf6; } /* Fondo claro para el dibujo */
+            .right-side { background-color: var(--primary); color: white; } /* Fondo corporativo */
+            
+            .slide-image, .slide-content {
+                position: absolute;
+                opacity: 0;
+                transition: all 0.8s ease-in-out;
+                transform: translateY(20px);
+            }
+            
+            .slide-image.active, .slide-content.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .slide-image img {
+                max-width: 80%;
+                filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+            }
+            
+            .slider-nav {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                display: flex;
+                gap: 10px;
+            }
     </style>
 </head>
 <body>
@@ -248,62 +399,91 @@
     </section>
 
     <section class="section">
+        <h2>Especialidades</h2>
+        <div class="menu-gallery">
+            <a href="menu.html#cafes" class="gallery-item">
+                <img src="assets/productos/matcha.webp?v=1" alt="Nuestro Café">
+                <div class="gallery-overlay"><span>Café</span></div>
+            </a>
+            <a href="menu.html#reposteria" class="gallery-item">
+                <img src="assets/productos/bread.webp?v=1" alt="Repostería">
+                <div class="gallery-overlay"><span>Pastelería</span></div>
+            </a>
+            <a href="menu.html#brunch" class="gallery-item">
+                <img src="assets/productos/tost1.webp?v=1" alt="Brunch">
+                <div class="gallery-overlay"><span>Brunch</span></div>
+            </a>
+        </div>
+    </section>
+
+  <section class="section">
         <h2>Nuestra Molienda</h2>
         <div class="bento-grid">
             <div class="bento-item dark-card item-1">
                 <h3>TORNADO ROASTERS</h3>
                 <p>Su forma artesanal de tostar aporta flexibilidad creando diferentes aromas y sabores</p>
             </div>
+
             <div class="bento-item light-card item-2">
                 <h3>Umuyaga Ruanda</h3>
-                <p>Origen africano, con notas de cacao, frutos secos y chocolate con leche.</p>
+                <p>Origen africano, con notas de cacao, frutos secos, manzana roja, naranja y chocolate con leche.</p>
             </div>
-            <div class="bento-item image-card item-3" style="background-image: url('assets/espacio/bentor1.webp');"></div>
-            <div class="bento-item image-card item-4" style="background-image: url('assets/espacio/bentor2.webp');"></div>
+
+            <div class="bento-item image-card item-3" style="background-image: url('assets/espacio/bentor1.webp');">
+                </div>
+
+            <div class="bento-item image-card item-4" style="background-image: url('assets/espacio/bentor2.webp');">
+            </div>
+
             <div class="bento-item light-card item-5">
                 <h3>Sirocco Kenia</h3>
-                <p>Notas a melocotón y bayas frescas. Acidez cítrica y refinada.</p>
+                <p>Origen africano, con notas a melocotón y bayas frescas. Acidez cítrica con sensación en boca ligera y refinada.</p>
             </div>
+
             <div class="bento-item green-card item-6">
                 <h3>Brisa Colombia</h3>
-                <p>Descafeinado de alta calidad, con aromas a chocolate y miel.</p>
+                <p>Proveniente de Caldas, descafeinado de alta calidad, con aromas a chocolate y miel</p>
             </div>
         </div>
     </section>
 
-    <div class="scroll-wrapper" id="sticky-trigger">
-        <div class="sticky-container">
-            <div class="split-side left-side">
-                <div class="slide-img active"><img src="assets/productos/matcha.webp" alt="Matcha"></div>
-                <div class="slide-img"><img src="assets/productos/rollc.webp" alt="Roll"></div>
-                <div class="slide-img"><img src="assets/productos/tost1.webp" alt="Tostada"></div>
-            </div>
-            <div class="split-side right-side">
-                <div class="slide-text active">
-                    <h2>Tornado Roasters</h2>
-                    <p>Nuestro grano insignia. Un tueste artesanal en Barcelona que resalta notas dulces y un cuerpo equilibrado perfecto para tu espresso diario.</p>
-                    <a href="menu.html" class="btn-menu" style="background: white; color: var(--primary);">Ver más</a>
-                </div>
-                <div class="slide-text">
-                    <h2>Umuyaga Burundi</h2>
-                    <p>Para los amantes de la acidez brillante. Notas cítricas y un aroma floral que te transporta directamente a las montañas de Burundi.</p>
-                    <a href="menu.html" class="btn-menu" style="background: white; color: var(--primary);">Ver más</a>
-                </div>
-                <div class="slide-text">
-                    <h2>Repostería Artesana</h2>
-                    <p>Cada pieza se hornea diariamente. Desde nuestros rolls de canela hasta las tostadas de temporada, el maridaje perfecto para tu café.</p>
-                    <a href="menu.html" class="btn-menu" style="background: white; color: var(--primary);">Ver menú</a>
-                </div>
-            </div>
+    <div class="split-slider">
+    <div class="split-side left-side">
+        <div class="slide-image active" id="img-1">
+            <img src="assets/productos/matcha.webp" alt="Café 1">
+        </div>
+        <div class="slide-image" id="img-2">
+            <img src="assets/productos/rollc.webp" alt="Café 2">
         </div>
     </div>
 
-    <section id="seccion-eventos" style="display: none; position: relative; max-width: 1200px; margin: 80px auto;">
+    <div class="split-side right-side">
+        <div class="slide-content active" id="content-1">
+            <h1>Tornado Roasters</h1>
+            <p>Notas de chocolate y avellana.</p>
+            <button class="btn-primary">Saber más</button>
+        </div>
+        <div class="slide-content" id="content-2">
+            <h1>Umuyaga Burundi</h1>
+            <p>Cuerpo sedoso y notas cítricas.</p>
+            <button class="btn-primary">Saber más</button>
+        </div>
+        
+        <div class="slider-nav">
+            <button onclick="changeSlide(-1)">❮</button>
+            <button onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+</div>
+
+    
+    <section id="seccion-eventos" style="display: none; position: relative; max-width: 1200px; margin: auto;">
         <h2 style="text-align: center;">Próximos Eventos</h2>        
         <div style="position: relative; display: flex; align-items: center;">            
-            <button onclick="scrollEventos(-1)" class="btn-scroll pos-left">❮</button>    
-            <div id="grid-eventos" class="grid-eventos"></div>    
-            <button onclick="scrollEventos(1)" class="btn-scroll pos-right">❯</button>            
+            <button onclick="scrollEventos(-1)" class="btn-scroll pos-left">&#10094;</button>    
+            <div id="grid-eventos" class="grid-eventos">
+                </div>    
+            <button onclick="scrollEventos(1)" class="btn-scroll pos-right">&#10095;</button>            
         </div>
     </section>
 
@@ -311,17 +491,20 @@
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2>Nuestro día a día</h2>
             <behold-widget feed-id="uuaEZ9QFojO8FajOmZBs"></behold-widget>
+            <div style="margin-top: 40px;">
+                <a href="https://instagram.com/siroko.cafe" target="_blank" class="btn-menu" style="background-color: #E1306C; font-size: 0.9rem;">@siroko.cafe</a>
+            </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="position: relative;">
         <h2>Voces del Viento</h2>
         <div style="position: relative; display: flex; align-items: center;">
             <button class="btn-scroll pos-left" onclick="scrollReviews(-1)">❮</button>
             <div class="reviews-container" id="reviews-slider">
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"El ambiente es tan ligero y agradable como su nombre. El café es de los mejores."</p>
+                    <p>"El ambiente es tan ligero y agradable como su nombre. El café de especialidad es de los mejores."</p>
                     <span style="font-weight:bold; color:var(--primary); font-size:0.8rem;">— CARLA M.</span>
                 </div>
                 <div class="review-card">
@@ -331,104 +514,131 @@
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Me encanta venir a trabajar aquí. La luz y el aroma crean el refugio perfecto."</p>
-                    <span style="font-weight:bold; color:var(--primary); font-size:0.8rem;">— JORDI R.</span>
+                    <p>"Siroko es paz. Los dulces son de otro planeta, sobre todo el roll de canela."</p>
+                    <span style="font-weight:bold; color:var(--primary); font-size:0.8rem;">— ELENA S.</span>
                 </div>
             </div>
             <button class="btn-scroll pos-right" onclick="scrollReviews(1)">❯</button>
         </div>
     </section>
-
+    
     <div class="seccion-mapa-completa">
-        <section class="section">
-            <h2>Ubicación y Contacto</h2>
-            <div class="info-grid">
-                <div class="info-item"><h3>📍 Ubicación</h3><p>Carrer de Girona, 94<br>08009 Barcelona</p></div>
-                <div class="info-item"><h3>🕒 Horarios</h3><p>Lun-Vie: 08:30 - 19:30</p></div>
-                <div class="info-item"><h3>📞 Contacto</h3><p>hola@sirokocafe.com</p></div>
+    <section class="section">
+        <h2>Ubicación y Contacto</h2>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>📍 Ubicación</h3>
+                <p>Carrer de Girona, 94<br>08009 Barcelona</p>
             </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.12345!2d2.170!3d41.394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f2!2sCarrer+de+Girona%2C+94%2C+08009+Barcelona!5e0!3m2!1ses!2ses!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="info-item">
+                <h3>🕒 Horarios</h3>
+                <p>Lun-Vie: 08:30 - 19:30<br>Sáb: 09:00 - 14:00</p>
             </div>
-        </section>
-    </div>
+            <div class="info-item">
+                <h3>📞 Contacto</h3>
+                <p>hola@sirokocafe.com<br>+34 931 234 567</p>
+            </div>
+        </div>
 
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.12345!2d2.170!3d41.394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f2!2sCarrer+de+Girona%2C+94%2C+08009+Barcelona!5e0!3m2!1ses!2ses!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+</div>
+
+    
     <footer><p>© 2026 SIROKO CAFÉ — CULTURA DE CAFÉ & VIENTO</p></footer>
 
     <script>
-        // 1. Instagram
-        (() => {
-            const d=document,s=d.createElement("script");s.type="module";
-            s.src="https://w.behold.so/widget.js";d.head.append(s);
-        })();
+      // 1. Instagram Behold
+      (() => {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";d.head.append(s);
+      })();
 
-        // 2. Sticky Slider Logic
-        window.addEventListener('scroll', () => {
-            const wrapper = document.getElementById('sticky-trigger');
-            if(!wrapper) return;
-            
-            const rect = wrapper.getBoundingClientRect();
-            const viewHeight = window.innerHeight;
-            
-            // Calculamos cuánto del wrapper ha pasado por la pantalla
-            // 0 es el inicio, 1 es el final
-            let progress = -rect.top / (rect.height - viewHeight);
-            progress = Math.max(0, Math.min(progress, 0.99));
-            
-            const totalSlides = 3;
-            const step = Math.floor(progress * totalSlides);
-            
-            const imgs = document.querySelectorAll('.slide-img');
-            const texts = document.querySelectorAll('.slide-text');
-            
-            imgs.forEach((img, i) => img.classList.toggle('active', i === step));
-            texts.forEach((txt, i) => txt.classList.toggle('active', i === step));
+      // 2. Slider Reviews
+      function scrollReviews(direction) {
+        const slider = document.getElementById('reviews-slider');
+        slider.scrollBy({ left: direction * 370, behavior: 'smooth' });
+      }
+
+      // 3. Animaciones Scroll
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+     // 4. Carga de Eventos
+      function renderEventos(eventos) {
+        const seccion = document.getElementById('seccion-eventos');
+        const contenedor = document.getElementById('grid-eventos'); // <--- CORREGIDO: ahora coincide con el HTML
+        
+        if (!eventos || eventos.length === 0) return;
+        
+        seccion.style.display = 'block';
+        seccion.classList.add('visible'); // Para que se vea con la animación de scroll
+        
+        contenedor.innerHTML = ""; // Limpiamos por si acaso
+        
+        eventos.forEach(ev => {
+            contenedor.innerHTML += `
+                <div class="evento-card" style="flex: 0 0 auto;">
+                    <img src="${ev.imagen || 'assets/8.webp'}" alt="${ev.titulo}">
+                    <div class="evento-info">
+                        <small style="color: var(--primary); font-weight: bold;">📅 ${ev.fecha} | 🕒 ${ev.hora}</small>
+                        <h3 style="font-size: 1.2rem; margin: 8px 0;">${ev.titulo}</h3>
+                        <p style="font-size: 0.9rem; color: #666; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                          ${ev.descripcion}
+                        </p>
+                    </div>
+                </div>`;
         });
+      }
 
-        // 3. Animaciones Globales
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+      // 5. Función de Scroll para Eventos
+      function scrollEventos(direccion) {
+          const contenedor = document.getElementById('grid-eventos');
+          const tarjeta = document.querySelector('.evento-card');
+          
+          if (tarjeta) {
+              // Movemos el ancho de una tarjeta + el gap (25px)
+              const desplazamiento = (tarjeta.offsetWidth + 25) * direccion;
+              contenedor.scrollBy({
+                  left: desplazamiento,
+                  behavior: 'smooth'
+              });
+          }
+      }
 
-        // 4. Scroll Functions
-        function scrollReviews(direction) {
-            document.getElementById('reviews-slider').scrollBy({ left: direction * 370, behavior: 'smooth' });
+      // 6. Fetch Inicial
+      fetch("https://raw.githubusercontent.com/siroko-cafe/menu/main/menu_data.json?v=" + Date.now())
+        .then(res => res.json())
+        .then(data => { 
+          if (data.eventos && data.eventos.length > 0) { 
+            renderEventos(data.eventos); 
+          } 
+        })
+        .catch(err => console.log("Error cargando eventos:", err));
+
+        let currentSlide = 0;
+        const images = document.querySelectorAll('.slide-image');
+        const contents = document.querySelectorAll('.slide-content');
+        
+        function changeSlide(direction) {
+            // Quitar clase activa actual
+            images[currentSlide].classList.remove('active');
+            contents[currentSlide].classList.remove('active');
+        
+            // Calcular siguiente slide
+            currentSlide = (currentSlide + direction + images.length) % images.length;
+        
+            // Activar nuevo slide
+            images[currentSlide].classList.add('active');
+            contents[currentSlide].classList.add('active');
         }
-
-        function scrollEventos(direction) {
-            const contenedor = document.getElementById('grid-eventos');
-            const tarjeta = document.querySelector('.evento-card');
-            if (tarjeta) {
-                contenedor.scrollBy({ left: (tarjeta.offsetWidth + 25) * direction, behavior: 'smooth' });
-            }
-        }
-
-        // 5. Fetch Eventos
-        fetch("https://raw.githubusercontent.com/siroko-cafe/menu/main/menu_data.json?v=" + Date.now())
-            .then(res => res.json())
-            .then(data => {
-                if (data.eventos && data.eventos.length > 0) {
-                    const seccion = document.getElementById('seccion-eventos');
-                    const contenedor = document.getElementById('grid-eventos');
-                    seccion.style.display = 'block';
-                    data.eventos.forEach(ev => {
-                        contenedor.innerHTML += `
-                            <div class="evento-card">
-                                <img src="${ev.imagen || 'assets/8.webp'}" alt="${ev.titulo}">
-                                <div class="evento-info">
-                                    <small style="color: var(--primary); font-weight: bold;">
-                                        📅 ${ev.fecha} | 🕒 ${ev.hora || 'Consultar'}
-                                    </small>
-                                    <h3>${ev.titulo}</h3>
-                                    <p>${ev.descripcion}</p>
-                                </div>
-                            </div>`;
-                    });
-                }
-            });
     </script>
 </body>
 </html>
