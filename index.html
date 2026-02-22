@@ -127,7 +127,7 @@
 
         .slide-img img {
             width: 100%;
-            height: auto;
+            height: 100%;
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
         }
 
@@ -135,7 +135,7 @@
 
         /* --- REVIEWS & EVENTOS --- */
         .grid-eventos { display: flex; flex-wrap: nowrap; gap: 25px; padding: 20px; overflow-x: auto; scroll-behavior: smooth; }
-        .grid-eventos::-webkit-scrollbar { display: none; }
+        .grid-eventos::-webkit-scrollbar { display: none; padding: 20px 50px; }
         .evento-card { background: #fff; border-radius: 20px; overflow: hidden; width: 100%; max-width: 350px; transition: all 0.5s ease; flex: 0 0 auto; }
         .evento-card:hover { transform: translateY(-10px); }
         .btn-scroll { position: absolute; z-index: 10; background: rgba(255, 255, 255, 0.9); border-radius: 50%; width: 45px; height: 45px; cursor: pointer; color: var(--primary); border: 1px solid #eee; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); }
