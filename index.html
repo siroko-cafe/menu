@@ -167,7 +167,14 @@
         }
 
         /* --- INFO & MAPA --- */
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px; }
+
+        .seccion-mapa-completa {
+            background-color: #f4f7f4; /* Un verde muy clarito o el color que prefieras */
+            padding: 60px 0;           /* Espacio arriba y abajo dentro del color */
+            width: 100%;               /* Asegura que ocupe todo el ancho */
+            margin: 40px 0;            /* Espacio por fuera para separar de otras secciones */
+        }
+        .info-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; border-top: none; margin-bottom: 40px; }
         .map-container { margin-top: 40px; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
         /* --- EVENTOS CON EFECTO HOVER --- */
@@ -448,7 +455,11 @@
             <button class="btn-scroll pos-right" onclick="scrollReviews(1)">❯</button>
         </div>
     </section>
+    
+    <div class="seccion-mapa-completa">
     <section class="section">
+        <h2>Ubicación y Contacto</h2>
+        
         <div class="info-grid">
             <div class="info-item">
                 <h3>📍 Ubicación</h3>
@@ -460,13 +471,15 @@
             </div>
             <div class="info-item">
                 <h3>📞 Contacto</h3>
-                <p>info@sirokocafe.com<br>+34 931 234 567</p>
+                <p>hola@sirokocafe.com<br>+34 931 234 567</p>
             </div>
         </div>
+
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.12345!2d2.170!3d41.394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f2!2sCarrer+de+Girona%2C+94%2C+08009+Barcelona!5e0!3m2!1ses!2ses!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
+</div>
 
     
     <footer><p>© 2026 SIROKO CAFÉ — CULTURA DE CAFÉ & VIENTO</p></footer>
