@@ -338,6 +338,49 @@
             
             h2 { font-size: 1.8rem; }
         }
+
+            .split-slider {
+                display: flex;
+                height: 80vh; /* Altura del slider */
+                overflow: hidden;
+                position: relative;
+            }
+
+            .split-side {
+                flex: 1; /* Mitad y mitad */
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .left-side { background-color: #fdfaf6; } /* Fondo claro para el dibujo */
+            .right-side { background-color: var(--primary); color: white; } /* Fondo corporativo */
+            
+            .slide-image, .slide-content {
+                position: absolute;
+                opacity: 0;
+                transition: all 0.8s ease-in-out;
+                transform: translateY(20px);
+            }
+            
+            .slide-image.active, .slide-content.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .slide-image img {
+                max-width: 80%;
+                filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+            }
+            
+            .slider-nav {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                display: flex;
+                gap: 10px;
+            }
     </style>
 </head>
 <body>
@@ -403,8 +446,37 @@
             </div>
         </div>
     </section>
-    
 
+    <div class="split-slider">
+    <div class="split-side left-side">
+        <div class="slide-image active" id="img-1">
+            <img src="assets/productos/matcha.webp" alt="Café 1">
+        </div>
+        <div class="slide-image" id="img-2">
+            <img src="assets/productos/rollc.webp" alt="Café 2">
+        </div>
+    </div>
+
+    <div class="split-side right-side">
+        <div class="slide-content active" id="content-1">
+            <h1>Tornado Roasters</h1>
+            <p>Notas de chocolate y avellana.</p>
+            <button class="btn-primary">Saber más</button>
+        </div>
+        <div class="slide-content" id="content-2">
+            <h1>Umuyaga Burundi</h1>
+            <p>Cuerpo sedoso y notas cítricas.</p>
+            <button class="btn-primary">Saber más</button>
+        </div>
+        
+        <div class="slider-nav">
+            <button onclick="changeSlide(-1)">❮</button>
+            <button onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+</div>
+
+    
     <section id="seccion-eventos" style="display: none; position: relative; max-width: 1200px; margin: auto;">
         <h2 style="text-align: center;">Próximos Eventos</h2>        
         <div style="position: relative; display: flex; align-items: center;">            
@@ -550,6 +622,23 @@
           } 
         })
         .catch(err => console.log("Error cargando eventos:", err));
+
+        let currentSlide = 0;
+        const images = document.querySelectorAll('.slide-image');
+        const contents = document.querySelectorAll('.slide-content');
+        
+        function changeSlide(direction) {
+            // Quitar clase activa actual
+            images[currentSlide].classList.remove('active');
+            contents[currentSlide].classList.remove('active');
+        
+            // Calcular siguiente slide
+            currentSlide = (currentSlide + direction + images.length) % images.length;
+        
+            // Activar nuevo slide
+            images[currentSlide].classList.add('active');
+            contents[currentSlide].classList.add('active');
+        }
     </script>
 </body>
 </html>
