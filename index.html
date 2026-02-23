@@ -68,16 +68,6 @@
             height: 100%;
             object-fit: cover;   /* Asegura que el video llene su cajita */
         }
-
-        .logo-container-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centrado perfecto */
-            text-align: center;
-            width: 100%;
-            z-index: 5;
-        }
         .logo-container { text-align: center; margin-top: -130px; position: relative; z-index: 10; }
         .logo-container img { width: 320px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1)); }
         .btn-menu {
@@ -414,7 +404,7 @@
             <source src="assets/hero-video3.mp4" type="video/mp4">
         </video>
         
-        <div class="logo-container-overlay">
+        <div class="logo-container">
             <img src="assets/logo1.png" alt="Logo Siroko Café">
             <br>
             <a href="menu.html" class="btn-menu">Consultar Menú</a>
