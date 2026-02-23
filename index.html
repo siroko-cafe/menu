@@ -89,10 +89,7 @@
     width: 100%;
     max-width: 900px;    /* Un poco más ancho para que luzca más */
     aspect-ratio: 16 / 9;
-    border-radius: 40px; /* Bordes redondeados como en tu captura */
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.1); /* Sombra más suave */
-    background: #000;
 }
 
 .video-wrapper video {
@@ -437,6 +434,12 @@
 
 <section class="hero">
     <div class="hero-container">
+         <div class="video-wrapper">
+            <video autoplay muted loop playsinline>
+                <source src="assets/hero-video3.mp4" type="video/mp4">
+            </video>
+        </div>
+        
         <div class="logo-container">
             <img src="assets/logo1.png" alt="Logo Siroko Café">
             <div class="hero-actions">
@@ -444,11 +447,7 @@
             </div>
         </div>
 
-        <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-                <source src="assets/hero-video3.mp4" type="video/mp4">
-            </video>
-        </div>
+       
     </div>
 </section>
 
