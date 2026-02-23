@@ -50,59 +50,61 @@
         .section.visible { opacity: 1; transform: translateY(0); }
 
         /* --- HERO REESTRUCTURADO --- */
-/* --- HERO --- */
+/* --- HERO CON VIDEO DE FONDO --- */
 .hero {
-    min-height: 100vh;
+    position: relative;
+    height: 100vh; /* Ocupa toda la pantalla */
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alineamos al principio para controlar el aire arriba */
-    background-color: #F8F1E2;
-    padding: 80px 20px; /* Espacio de seguridad arriba y a los lados */
-}
-
-.hero-container {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 1000px;
+    overflow: hidden; /* Importante para que el video no se salga */
+    background-color: #F8F1E2;
 }
 
-/* --- LOGO: Limpiamos el margen negativo --- */
-.logo-container { 
-    text-align: center; 
-    margin-top: 0;      /* IMPORTANTE: Ponemos a 0 para que no se corte arriba */
-    margin-bottom: 50px; /* Espacio respecto al video */
-    position: relative; 
-    z-index: 10; 
-}
-
-.logo-container img { 
-    width: 320px;       /* Tamaño original de tu diseño */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* --- VIDEO: Más grande y elegante --- */
-.video-wrapper {
-    width: 100%;
-    max-width: 900px;    /* Un poco más ancho para que luzca más */
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-}
-
-.video-wrapper video {
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    z-index: 1; /* Al fondo */
 }
 
-/* Ajustes para celular */
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que el video cubra todo como hero.webp */
+}
+
+/* --- LOGO FLOTANTE --- */
+.logo-container-flotante {
+    position: relative;
+    z-index: 10; /* Por encima del video */
+    text-align: center;
+    padding: 20px;
+}
+
+.logo-container-flotante img {
+    width: 320px; /* Tamaño de tu logo */
+    height: auto;
+    max-width: 90vw; /* Para que no se salga en móviles */
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.2)); /* Sombra para resaltar sobre el video */
+}
+
+/* Capa oscura opcional sobre el video para que el logo se lea mejor */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1); /* Oscurece un 10% el video */
+    z-index: 2;
+}
+
+/* Ajuste para móvil */
 @media (max-width: 768px) {
-    .hero { padding: 40px 20px; }
-    .logo-container img { width: 240px; }
-    .video-wrapper { border-radius: 25px; }
+    .hero { height: 70vh; } /* Un poco más bajo en móvil si prefieres */
+    .logo-container-flotante img { width: 220px; }
 }
         .btn-menu {
             background: var(--primary); color: white; padding: 16px 40px;
@@ -432,24 +434,19 @@
 </head>
 <body>
 
-<section class="hero">
-    <div class="hero-container">
-         <div class="video-wrapper">
+    <section class="hero">
+        <div class="video-background">
             <video autoplay muted loop playsinline>
                 <source src="assets/hero-video3.mp4" type="video/mp4">
             </video>
         </div>
-        
-        <div class="logo-container">
+    
+        <div class="logo-container-flotante">
             <img src="assets/logo1.png" alt="Logo Siroko Café">
-            <div class="hero-actions">
-                <a href="menu.html" class="btn-menu">Consultar Menú</a>
-            </div>
+            <br>
+            <a href="menu.html" class="btn-menu">Consultar Menú</a>
         </div>
-
-       
-    </div>
-</section>
+    </section>
 
     <section class="section">
         <h2>Quiénes Somos</h2>
