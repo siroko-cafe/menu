@@ -49,58 +49,59 @@
         }
         .section.visible { opacity: 1; transform: translateY(0); }
 
-        /* --- HERO --- */
-        .hero {
-            min-height: 100vh; /* Permite que crezca según el contenido */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #F8F1E2;
-            padding: 60px 20px; /* Espacio para que no toque los bordes */
-        }
-        
-        .hero-container {
-            display: flex;
-            flex-direction: column; /* Alinea Logo arriba y Video abajo */
-            align-items: center;
-            width: 100%;
-            max-width: 700px;
-        }
-        
-        .logo-container { 
-            text-align: center; 
-            margin-bottom: 40px; /* Espacio entre logo y video */
-            z-index: 10; 
-        }
-        
-        .logo-container img { 
-            width: 280px; /* Tamaño un poco más controlado */
-            height: auto;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.05)); 
-        }
-        
-        .video-wrapper {
-            width: 100%;
-            max-width: 800px; /* Ancho máximo del video */
-            aspect-ratio: 16 / 9; /* Proporción de video */
-            border-radius: 30px; 
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            background: #000; /* Fondo negro mientras carga */
-        }
-        
-        .video-wrapper video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Llena el contenedor sin deformar */
-        }
-        
-        /* Ajuste para móviles */
-        @media (max-width: 768px) {
-            .hero { padding: 40px 15px; }
-            .logo-container img { width: 220px; }
-            .video-wrapper { border-radius: 20px; }
-        }
+        /* --- HERO REESTRUCTURADO --- */
+.hero {
+    min-height: 100vh; /* Permite que crezca según el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F1E2;
+    padding: 60px 20px; /* Espacio para que no toque los bordes */
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column; /* Alinea Logo arriba y Video abajo */
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.logo-container { 
+    text-align: center; 
+    margin-bottom: 40px; /* Espacio entre logo y video */
+    z-index: 10; 
+}
+
+.logo-container img { 
+    width: 280px; /* Tamaño un poco más controlado */
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.05)); 
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 700px; /* Ancho máximo del video */
+    aspect-ratio: 16 / 9; /* Proporción de video */
+    border-radius: 30px; 
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    background: #000; /* Fondo negro mientras carga */
+    margin-top: 20px;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Llena el contenedor sin deformar */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .hero { padding: 40px 15px; }
+    .logo-container img { width: 220px; }
+    .video-wrapper { border-radius: 20px; }
+}
         .btn-menu {
             background: var(--primary); color: white; padding: 16px 40px;
             text-decoration: none; border-radius: 50px; font-weight: bold;
