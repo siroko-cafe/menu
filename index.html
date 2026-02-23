@@ -50,57 +50,62 @@
         .section.visible { opacity: 1; transform: translateY(0); }
 
         /* --- HERO REESTRUCTURADO --- */
+/* --- HERO --- */
 .hero {
-    min-height: 100vh; /* Permite que crezca según el contenido */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Alineamos al principio para controlar el aire arriba */
     background-color: #F8F1E2;
-    padding: 60px 20px; /* Espacio para que no toque los bordes */
+    padding: 80px 20px; /* Espacio de seguridad arriba y a los lados */
 }
 
 .hero-container {
     display: flex;
-    flex-direction: column; /* Alinea Logo arriba y Video abajo */
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
 }
 
+/* --- LOGO: Limpiamos el margen negativo --- */
 .logo-container { 
     text-align: center; 
-    margin-bottom: 40px; /* Espacio entre logo y video */
+    margin-top: 0;      /* IMPORTANTE: Ponemos a 0 para que no se corte arriba */
+    margin-bottom: 50px; /* Espacio respecto al video */
+    position: relative; 
     z-index: 10; 
 }
 
 .logo-container img { 
-    width: 280px; /* Tamaño un poco más controlado */
+    width: 320px;       /* Tamaño original de tu diseño */
     height: auto;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.05)); 
+    display: block;
+    margin: 0 auto;
 }
 
+/* --- VIDEO: Más grande y elegante --- */
 .video-wrapper {
     width: 100%;
-    max-width: 700px; /* Ancho máximo del video */
-    aspect-ratio: 16 / 9; /* Proporción de video */
-    border-radius: 30px; 
+    max-width: 900px;    /* Un poco más ancho para que luzca más */
+    aspect-ratio: 16 / 9;
+    border-radius: 40px; /* Bordes redondeados como en tu captura */
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    background: #000; /* Fondo negro mientras carga */
-    margin-top: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.1); /* Sombra más suave */
+    background: #000;
 }
 
 .video-wrapper video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Llena el contenedor sin deformar */
+    object-fit: cover;
 }
 
-/* Ajuste para móviles */
+/* Ajustes para celular */
 @media (max-width: 768px) {
-    .hero { padding: 40px 15px; }
-    .logo-container img { width: 220px; }
-    .video-wrapper { border-radius: 20px; }
+    .hero { padding: 40px 20px; }
+    .logo-container img { width: 240px; }
+    .video-wrapper { border-radius: 25px; }
 }
         .btn-menu {
             background: var(--primary); color: white; padding: 16px 40px;
@@ -434,8 +439,9 @@
     <div class="hero-container">
         <div class="logo-container">
             <img src="assets/logo1.png" alt="Logo Siroko Café">
-            <br>
-            <a href="menu.html" class="btn-menu">Consultar Menú</a>
+            <div class="hero-actions">
+                <a href="menu.html" class="btn-menu">Consultar Menú</a>
+            </div>
         </div>
 
         <div class="video-wrapper">
