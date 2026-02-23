@@ -53,50 +53,46 @@
 /* --- HERO CONTENEDOR --- */
 .hero {
     position: relative;
-    height: 100vh; /* Ocupa toda la pantalla */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
+    width: 100%;
     overflow: hidden;
     background-color: #F8F1E2;
 }
 
-/* --- VIDEO DE FONDO --- */
 .hero-video {
     position: absolute;
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Al fondo */
+}
+
+/* ESTA ES LA CLAVE */
+.logo-container-flotante {
+    position: absolute; /* Lo sacamos del flujo para que no lo tapen */
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover; /* Se comporta como hero.webp */
-    z-index: 1;
-}
-
-/* --- LOGO FLOTANTE --- */
-.logo-container {
-    position: relative; /* Cambia a relativo para que el z-index funcione */
-    z-index: 10;
+    transform: translateX(-50%); /* Lo centramos horizontalmente */
+    z-index: 100; /* Un número muy alto para que siempre esté al frente */
     text-align: center;
-    /* Ajuste de altura: con esto lo mueves arriba o abajo sobre el video */
-    margin-top: 150px; 
+    width: 100%;
+    
+    /* AJUSTA ESTO PARA BAJARLO */
+    bottom: 10%; /* Con esto el logo "flota" a un 10% de distancia del borde inferior */
 }
 
-.logo-container img {
+.logo-container-flotante img {
     width: 320px;
     height: auto;
-    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3)); /* Sombra para que resalte */
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
 }
 
-/* Oscurece el video un poquito (opcional) para que el logo se vea mejor */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.1); 
-    z-index: 2;
+/* Aseguramos que la siguiente sección no tenga márgenes raros */
+.section {
+    position: relative;
+    z-index: 10; 
+    background-color: #F8F1E2; /* O el color de fondo que uses */
 }
 
 /* RESPONSIVE MÓVIL */
@@ -433,12 +429,12 @@
 </head>
 <body>
 
-   <section class="hero">
+  <section class="hero">
     <video autoplay muted loop playsinline class="hero-video">
         <source src="assets/hero-video3.mp4" type="video/mp4">
     </video>
 
-    <div class="logo-container">
+    <div class="logo-container-flotante">
         <img src="assets/logo1.png" alt="Logo Siroko Café">
         <br>
         <a href="menu.html" class="btn-menu">Consultar Menú</a>
