@@ -55,18 +55,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #fcfcfc; /* El color de tu body para que no haya cortes */
+            background-color: #fcfcfc; 
             position: relative;
             overflow: hidden;
         }
         
         .video-wrapper {
             width: 90%;          /* Ocupa casi todo el ancho en móviles */
-            max-width: 800px;    /* Pero no crece más de 800px en monitores */
+            max-width: 1200px;    /* Pero no crece más de 800px en monitores */
             aspect-ratio: 16 / 9; /* Mantiene la proporción de cine */
-            border-radius: 30px; /* Bordes redondeados elegantes */
-            overflow: hidden;    /* Para que el video respete los bordes redondos */
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1); /* Sombra para darle profundidad */
             z-index: 1;
             position: relative;
         }
@@ -426,12 +423,11 @@
         <video autoplay muted loop playsinline>
             <source src="assets/hero-video.mp4" type="video/mp4">
         </video>
-        
-        <div class="logo-container-overlay">
-            <img src="assets/logo1.png" alt="Logo Siroko Café">
+    </div>
+    <div class="logo-container-overlay">
+        <img src="assets/logo1.png" alt="Logo Siroko Café">
             <br>
-            <a href="menu.html" class="btn-menu">Consultar Menú</a>
-        </div>
+        <a href="menu.html" class="btn-menu">Consultar Menú</a>
     </div>
 </section>
 
