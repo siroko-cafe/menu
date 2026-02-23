@@ -55,32 +55,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #fcfcfc; 
+            background-color: #fcfcfc; /* El color de tu body para que no haya cortes */
             position: relative;
             overflow: hidden;
         }
-        
         .video-wrapper {
-            width: 90%;          /* Ocupa casi todo el ancho en móviles */
-            max-width: 1200px;    /* Pero no crece más de 800px en monitores */
-            aspect-ratio: 16 / 9; /* Mantiene la proporción de cine */
-            z-index: 1;
-            position: relative;
+            position: relative; /* Necesario para que el logo se guíe por esta caja */
+            /* ... tus otros estilos (max-width, border-radius, etc) ... */
         }
-        
         .video-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;   /* Asegura que el video llene su cajita */
         }
 
-        .logo-container {
-            z-index: 10;
+        .logo-container-overlay {
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Centrado perfecto sobre el video */
-            pointer-events: none; /* Permite hacer clic "a través" del logo si fuera necesario */
-        }        
+            transform: translate(-50%, -50%); /* Centrado perfecto */
+            text-align: center;
+            width: 100%;
+            z-index: 5;
+        }
+        .logo-container { text-align: center; margin-top: -130px; position: relative; z-index: 10; }
         .logo-container img { width: 320px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1)); }
         .btn-menu {
             background: var(--primary); color: white; padding: 16px 40px;
@@ -413,13 +411,14 @@
 <section class="hero">
     <div class="video-wrapper">
         <video autoplay muted loop playsinline>
-            <source src="assets/hero-video.mp4" type="video/mp4">
+            <source src="assets/hero-video3.mp4" type="video/mp4">
         </video>
-    </div>
-    <div class="logo-container-overlay">
-        <img src="assets/logo1.png" alt="Logo Siroko Café">
+        
+        <div class="logo-container-overlay">
+            <img src="assets/logo1.png" alt="Logo Siroko Café">
             <br>
-        <a href="menu.html" class="btn-menu">Consultar Menú</a>
+            <a href="menu.html" class="btn-menu">Consultar Menú</a>
+        </div>
     </div>
 </section>
 
