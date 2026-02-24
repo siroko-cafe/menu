@@ -19,12 +19,37 @@
 
     body {
     font-family: 'Inter', sans-serif;
-    background: #F5EDE3 url('assets/paper.jpg') repeat; /* textura papel kraft sutil,*/ 
     opacity 0.1-0.2;
     color: #3C2F2F;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem;    
+  background-color: #f5ede3;          /* beige kraft cálido */
+  background-image:
+    /* fibras diagonales sutiles (papel real) */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(200, 140, 80, 0.04) 2px,   /* marrón muy tenue */
+      rgba(200, 140, 80, 0.04) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(139, 90, 50, 0.03) 2px,
+      rgba(139, 90, 50, 0.03) 4px
+    ),
+    /* ruido muy fino para textura orgánica */
+    radial-gradient(
+      circle at 3% 3%,
+      rgba(0,0,0,0.02) 0%,
+      transparent 2%
+    );
+  background-size: 100% 100%, 100% 100%, 5px 5px;
+  background-blend-mode: multiply;   /* hace que se mezclen bien */
+}
   }
   h1, h2 { font-family: 'Caveat', cursive; color: #C26A4E; }
   h3 { font-family: 'Playfair Display', serif; }
