@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siroko Café | Café de Especialidad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #8bba8b;
@@ -15,27 +17,18 @@
 
         * { box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #F4F4EC; 
-        
-            /* 
-            background-image: 
-                url('assets/e1.webp'),      
-                url('assets/e2.webp'),
-                url('assets/e3.webp');        
-            background-size: 800px, 800px, 800px;        
-            background-position: 
-                left -50px top 15%,    
-                right -50px top 80%,   
-                left 10% bottom 5%;            
-        background-repeat: no-repeat;
-        background-attachment: scroll;           
-        overflow-x: hidden; */
-}
+    body {
+    font-family: 'Inter', sans-serif;
+    background: #F5EDE3 url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') repeat; /* textura papel kraft sutil,*/ 
+    opacity 0.1-0.2;
+    color: #3C2F2F;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1, h2 { font-family: 'Caveat', cursive; color: #C26A4E; }
+  h3 { font-family: 'Playfair Display', serif; }
+  .wind-element { /* para hojas/viento después */ }
 
         /* --- LAYOUT --- */
         .section { 
