@@ -281,7 +281,7 @@
         }
         .stars { color: #fbbc04; margin-bottom: 10px; }
 
-        /* --- SECCIÓN FIDELIDAD --- */
+        /* --- SECCIÓN FIDELIDAD CON QR --- */
 .promo-fidelidad {
     background-color: #ffffff;
     border-radius: 50px;
@@ -294,19 +294,19 @@
 .fidelidad-container {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px; /* Un poco más de espacio */
     text-align: left;
 }
 
 .fidelidad-image { flex: 1; }
 .fidelidad-image img {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     border-radius: 30px;
     filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
 }
 
-.fidelidad-content { flex: 1.2; }
+.fidelidad-content { flex: 1.2; display: flex; flex-direction: column;}
 
 .badge {
     background: #eef5ee;
@@ -317,23 +317,52 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    align-self: flex-start; /* Evita que el badge ocupe todo el ancho */
 }
 
 .fidelidad-content h2 {
-    margin: 20px 0;
-    text-align: left; /* Sobrescribe el centrado general de .section */
+    margin: 15px 0 25px 0;
+    text-align: left;
+}
+
+/* --- ESTILOS PARA EL QR CODE --- */
+.bonus-qr-block {
+    display: flex;
+    align-items: center;
+    background: #fdfaf6;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border: 1px dashed var(--primary);
+    align-self: flex-start; /* Se ajusta a su contenido */
+}
+
+.qr-code {
+    width: 70px; /* Tamaño del QR controlado */
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+.qr-instruction {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--primary);
+    font-weight: 500;
 }
 
 .fidelidad-steps {
     list-style: none;
     padding: 0;
-    margin: 30px 0;
+    margin: 0 0 35px 0;
 }
 
 .fidelidad-steps li {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 500;
 }
 
@@ -359,6 +388,10 @@
     font-weight: bold;
     display: inline-block;
     transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    align-self: flex-start;
 }
 
 .btn-fidelidad:hover {
@@ -375,8 +408,11 @@
     .fidelidad-content h2 { text-align: center; }
     .fidelidad-steps li { justify-content: center; }
     .promo-fidelidad { margin: 20px; padding: 40px 20px !important; }
+    .badge { align-self: center; }
+    .bonus-qr-block { align-self: center; text-align: left;}
+    .btn-fidelidad { align-self: center; }
 }
-
+/* Footer */
         footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; font-size: 0.85rem; }
 
         /* --- RESPONSIVE ADAPTADO (BENTO + EXPLORA) --- */
@@ -621,22 +657,27 @@
     <section class="section promo-fidelidad">
     <div class="fidelidad-container">
         <div class="fidelidad-image">
-             <img src="assets/espacio/bonusqr.png" alt="BonusQR Siroko" onerror="this.src='https://bonusqr.com/fob/95313'">
+             <img src="assets/espacio/mockup.webp" alt="BonusQR Siroko" onerror="this.src='https://img.freepik.com/vector-premium/mano-que sostiene-telefono-inteligente-escaneando-codigo-qr-pago-qr-ilustracion-vectorial-plana_605948-42.jpg'">
         </div>
 
         <div class="fidelidad-content">
             <span class="badge">Programa de Fidelidad</span>
             <h2>Tus cafés tienen premio</h2>
-            <p>Con <strong>BonusQR</strong>, cada visita a Siroko te acerca a un regalo. Escanea tu código en barra, acumula sellos y canjéalos por tus cafés u otros beneficios</p>
+            <p>Con <strong>BonusQR</strong>, cada visita a Siroko te acerca a un regalo. Escanea tu código en barra, acumula puntos y canjéalos por tus cafés o dulces favoritos.</p>
+            
+            <div class="bonus-qr-block">
+                <img src="assets/espacio/bonusqr.png" alt="QR BonusQR Siroko" class="qr-code">
+                <p class="qr-instruction">Escanea aquí para empezar</p>
+            </div>
             
             <ul class="fidelidad-steps">
                 <li><span>1</span> Pide tu café favorito</li>
                 <li><span>2</span> Escanea tu código QR</li>
-                <li><span>3</span> ¡Disfruta de tus beneficios!</li>
+                <li><span>3</span> ¡Disfruta de tus premios!</li>
             </ul>
 
             <a href="https://bonusqr.com/fob/95313" target="_blank" class="btn-fidelidad">
-                Sumar un sello
+                Suma Sellos
             </a>
         </div>
     </div>
