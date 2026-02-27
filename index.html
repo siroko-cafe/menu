@@ -513,6 +513,42 @@
                 display: flex;
                 gap: 10px;
             }
+        .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-wrapper {
+    background-color: #eef5ee; /* Verde muy clarito de fondo */
+    color: var(--primary);     /* Tu verde corporativo */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover .icon-wrapper {
+    transform: scale(1.1);
+    background-color: var(--primary);
+    color: white;
+}
+
+.icon-wrapper i {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5px; /* Controla el grosor de la línea del icono */
+}
+
+.info-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--dark);
+}
     </style>
 </head>
 <body>
@@ -688,27 +724,30 @@
     <section class="section">
         <h2>Ubicación y Contacto</h2>
         
-        <div class="info-grid">
-            <div class="info-item">
-                <h3>📍 Ubicación</h3>
-                <p>Carrer de Girona, 94<br>08009 Barcelona</p>
-            </div>
-            <div class="info-item">
-                <h3>🕒 Horarios</h3>
-                <p>Lun-Vie: 08:30 - 19:30<br>Sáb: 09:00 - 14:00</p>
-            </div>
-            <div class="info-item">
-                <h3>📞 Contacto</h3>
-                <p>hola@sirokocafe.com<br>+34 931 234 567</p>
-            </div>
-        </div>
+        <<div class="info-grid">
+    <div class="info-item">
+        <div class="icon-wrapper"><i data-lucide="map-pin"></i></div>
+        <h3>Ubicación</h3>
+        <p>Carrer de Girona, 94<br>08009 Barcelona</p>
+    </div>
+    <div class="info-item">
+        <div class="icon-wrapper"><i data-lucide="clock"></i></div>
+        <h3>Horarios</h3>
+        <p>Lun-Vie: 08:30 - 19:30<br>Sáb: 09:00 - 14:00</p>
+    </div>
+    <div class="info-item">
+        <div class="icon-wrapper"><i data-lucide="phone"></i></div>
+        <h3>Contacto</h3>
+        <p>hola@sirokocafe.com<br>+34 931 234 567</p>
+    </div>
+</div>
 
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.12345!2d2.170!3d41.394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f2!2sCarrer+de+Girona%2C+94%2C+08009+Barcelona!5e0!3m2!1ses!2ses!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 </div>
-
+    
     
     <footer><p>© 2026 SIROKO CAFÉ — CULTURA DE CAFÉ & VIENTO</p></footer>
 
@@ -802,5 +841,9 @@
             contents[currentSlide].classList.add('active');
         }
     </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 </body>
 </html>
