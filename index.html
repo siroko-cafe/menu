@@ -281,6 +281,102 @@
         }
         .stars { color: #fbbc04; margin-bottom: 10px; }
 
+        /* --- SECCIÓN FIDELIDAD --- */
+.promo-fidelidad {
+    background-color: #ffffff;
+    border-radius: 50px;
+    margin: 40px auto;
+    max-width: 1100px !important;
+    padding: 60px 40px !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+}
+
+.fidelidad-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-align: left;
+}
+
+.fidelidad-image { flex: 1; }
+.fidelidad-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 30px;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+}
+
+.fidelidad-content { flex: 1.2; }
+
+.badge {
+    background: #eef5ee;
+    color: var(--primary);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fidelidad-content h2 {
+    margin: 20px 0;
+    text-align: left; /* Sobrescribe el centrado general de .section */
+}
+
+.fidelidad-steps {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.fidelidad-steps li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.fidelidad-steps li span {
+    background: var(--primary);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+.btn-fidelidad {
+    background: var(--dark);
+    color: white;
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-fidelidad:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .fidelidad-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .fidelidad-content h2 { text-align: center; }
+    .fidelidad-steps li { justify-content: center; }
+    .promo-fidelidad { margin: 20px; padding: 40px 20px !important; }
+}
+
         footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; font-size: 0.85rem; }
 
         /* --- RESPONSIVE ADAPTADO (BENTO + EXPLORA) --- */
@@ -521,6 +617,31 @@
             <button class="btn-scroll pos-right" onclick="scrollReviews(1)">❯</button>
         </div>
     </section>
+    
+    <section class="section promo-fidelidad">
+    <div class="fidelidad-container">
+        <div class="fidelidad-image">
+             <img src="assets/bonus-qr-mockup.webp" alt="BonusQR Siroko" onerror="this.src='https://img.freepik.com/vector-premium/mano-que sostiene-telefono-inteligente-escaneando-codigo-qr-pago-qr-ilustracion-vectorial-plana_605948-42.jpg'">
+        </div>
+
+        <div class="fidelidad-content">
+            <span class="badge">Programa de Fidelidad</span>
+            <h2>Tus cafés tienen premio</h2>
+            <p>Con <strong>BonusQR</strong>, cada visita a Siroko te acerca a un regalo. Escanea tu código en barra, acumula puntos y canjéalos por tus cafés o dulces favoritos.</p>
+            
+            <ul class="fidelidad-steps">
+                <li><span>1</span> Pide tu café favorito</li>
+                <li><span>2</span> Escanea tu código QR</li>
+                <li><span>3</span> ¡Disfruta de tus premios!</li>
+            </ul>
+
+            <a href="https://bonusqr.com/siroko" target="_blank" class="btn-fidelidad">
+                Empezar a sumar
+            </a>
+        </div>
+    </div>
+</section>
+    
     
     <div class="seccion-mapa-completa">
     <section class="section">
