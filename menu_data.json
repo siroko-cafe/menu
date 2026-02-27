@@ -148,19 +148,6 @@
             "recommended": false
           },
           {
-            "id": "P012",
-            "name": "SUBMARINO",
-            "description": "Bebida típica argentina: leche caliente con una barra de chocolate para fundir.",
-            "price": {
-              "base": 2.8
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
-            "allergens": [
-              "LA"
-            ],
-            "recommended": true
-          },
-          {
             "id": "P013",
             "name": "CAFÉ CON HIELO",
             "description": "Tu espresso servido sobre hielo, ideal para refrescarse.",
@@ -257,6 +244,19 @@
         "name": "Bebidas calientes",
         "items": [
           {
+            "id": "P012",
+            "name": "SUBMARINO",
+            "description": "Bebida típica argentina: leche caliente con una barra de chocolate para fundir.",
+            "price": {
+              "base": 2.8
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
+            "allergens": [
+              "LA"
+            ],
+            "recommended": true
+          },
+          {
             "id": "P019",
             "name": "INFUSIÓN MANZANILLA",
             "description": "Infusión natural relajante y digestiva.",
@@ -274,7 +274,7 @@
             "name": "TÉ CHAI",
             "description": "Té negro con especias tradicionales y leche cremosa.",
             "price": {
-              "base": 2.3
+              "base": 3.2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
             "allergens": [
@@ -287,7 +287,7 @@
             "name": "TÉ MATCHA",
             "description": "",
             "price": {
-              "base": 2.8
+              "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
             "allergens": [
@@ -300,7 +300,7 @@
             "name": "TÉ VERDE",
             "description": "",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
             "allergens": [
@@ -326,7 +326,7 @@
             "name": "TÉ ENGLISH BREAKFAST",
             "description": "Mezcla de tés negros con sabor robusto y tradicional.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
             "allergens": [
@@ -365,7 +365,7 @@
             "name": "TE VERMELL PU ERH",
             "description": "Té rojo fermentado con notas terrosas y digestivas.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
             "allergens": [
@@ -378,7 +378,7 @@
             "name": "MATE",
             "description": "Infusión tradicional servida de forma clásica.",
             "price": {
-              "base": 2.3
+              "base": 3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
             "allergens": [
@@ -610,7 +610,7 @@
             "name": "TOSTADAS",
             "description": "Pan artesano tostado con aceite de oliva o mermelada.",
             "price": {
-              "base": 3.7
+              "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
             "allergens": [
@@ -739,7 +739,7 @@
           },
           {
             "id": "P084",
-            "name": "Croissant Chico",
+            "name": "CROINSSANT PEQUEÑO",
             "description": "",
             "price": {
               "base": 0.95
@@ -836,26 +836,13 @@
           {
             "id": "P060",
             "name": "YOGURT GRIEGO Y GRANOLA",
-            "description": "Yogurt griego con granola casera y semillas chía",
+            "description": "Yogurt griego con granola casera y semillas chía. Consulta por toppings.",
             "price": {
               "base": 5.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P060.webp",
             "allergens": [
               "LA"
-            ],
-            "recommended": false
-          },
-          {
-            "id": "P061",
-            "name": "YOGURT TOPPING",
-            "description": "Agregale tus toppins preferidos: fresa, banana, arándanos, chocolate, mango",
-            "price": {
-              "base": 2.4
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
-            "allergens": [
-              ""
             ],
             "recommended": false
           },
@@ -1067,7 +1054,7 @@
             "name": "Copa Vino Rosado",
             "description": "",
             "price": {
-              "base": 1
+              "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
             "allergens": [
@@ -1085,7 +1072,7 @@
             "name": "CAFÉ + ROLL DE CANELA",
             "description": "Elige tu café y acompáñalo con un delicioso roll de canela",
             "price": {
-              "base": 6.49
+              "base": 6.45
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P075.webp",
             "allergens": [
@@ -1099,7 +1086,7 @@
             "name": "CERVEZA + CHIPS",
             "description": "",
             "price": {
-              "base": 3.99
+              "base": 3.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P085.webp",
             "allergens": [
@@ -1112,7 +1099,7 @@
             "name": "SUBMARINO + CROISSANT",
             "description": "",
             "price": {
-              "base": 3.99
+              "base": 3.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P086.webp",
             "allergens": [
@@ -1125,7 +1112,7 @@
             "name": "CAFÉ + TARTA MANZANA",
             "description": "",
             "price": {
-              "base": 5.99
+              "base": 5.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
             "allergens": [
@@ -1141,7 +1128,7 @@
           {
             "id": "P080",
             "name": "Tarta de Manzana",
-            "description": "Deliciosa tarta de manzana sin TACC",
+            "description": "Deliciosa tarta de manzana sin TACC (con traza)",
             "price": {
               "base": 4.5
             },
@@ -1302,19 +1289,6 @@
             "recommended": false
           },
           {
-            "id": "P012",
-            "name": "SUBMARÍ",
-            "description": "Beguda típica argentina: llet calenta amb una barra de xocolata per fondre.",
-            "price": {
-              "base": 2.8
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
-            "allergens": [
-              "LA"
-            ],
-            "recommended": true
-          },
-          {
             "id": "P013",
             "name": "CAFÈ AMB GEL",
             "description": "El teu espresso servit sobre gel, ideal per refrescar-se.",
@@ -1411,6 +1385,19 @@
         "name": "Begudes calentes",
         "items": [
           {
+            "id": "P012",
+            "name": "SUBMARÍ",
+            "description": "Beguda típica argentina: llet calenta amb una barra de xocolata per fondre.",
+            "price": {
+              "base": 2.8
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
+            "allergens": [
+              "LA"
+            ],
+            "recommended": true
+          },
+          {
             "id": "P019",
             "name": "INFUSIÓ CAMAMILLA",
             "description": "Infusió natural relaxant i digestiva.",
@@ -1428,7 +1415,7 @@
             "name": "TE CHAI",
             "description": "Te negre amb espècies tradicionals i llet cremosa.",
             "price": {
-              "base": 2.3
+              "base": 3.2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
             "allergens": [
@@ -1441,7 +1428,7 @@
             "name": "TE MATXA",
             "description": "",
             "price": {
-              "base": 2.8
+              "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
             "allergens": [
@@ -1454,7 +1441,7 @@
             "name": "TE VERD",
             "description": "Te negre aromatitzat amb oli de bergamota.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
             "allergens": [
@@ -1480,7 +1467,7 @@
             "name": "TE ENGLISH BREAKFAST",
             "description": "Infusió refrescant de menta i poliol natural.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
             "allergens": [
@@ -1519,7 +1506,7 @@
             "name": "ET VERMELL PU ERH",
             "description": "Infusió tradicional servida de manera clàssica.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
             "allergens": [
@@ -1532,7 +1519,7 @@
             "name": "MATEIX",
             "description": "Pastís artesanal farcit de codonyat.",
             "price": {
-              "base": 2.3
+              "base": 3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
             "allergens": [
@@ -1764,7 +1751,7 @@
             "name": "TORRADES",
             "description": "Pa artesà torrat amb oli d'oliva o melmelada.",
             "price": {
-              "base": 3.7
+              "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
             "allergens": [
@@ -1893,7 +1880,7 @@
           },
           {
             "id": "P084",
-            "name": "Croissant Noi",
+            "name": "CROINSSANT PETIT",
             "description": "",
             "price": {
               "base": 0.95
@@ -1990,26 +1977,13 @@
           {
             "id": "P060",
             "name": "IOGURT GREC I GRANOLA",
-            "description": "Iogurt grec amb granola casolana i llavors chía",
+            "description": "Iogurt grec amb granola casolana i llavors chía. Consulta per toppings.",
             "price": {
               "base": 5.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P060.webp",
             "allergens": [
               "LA"
-            ],
-            "recommended": false
-          },
-          {
-            "id": "P061",
-            "name": "IOGURT TOPPING",
-            "description": "Afegeix els teus toppins preferits: maduixa, banana, nabius, xocolata, mango",
-            "price": {
-              "base": 2.4
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
-            "allergens": [
-              ""
             ],
             "recommended": false
           },
@@ -2221,7 +2195,7 @@
             "name": "Copa Vi Rosat",
             "description": "",
             "price": {
-              "base": 1
+              "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
             "allergens": [
@@ -2239,7 +2213,7 @@
             "name": "CAFÈ + ROLL DE CANELA",
             "description": "Tria el teu cafè i acompanya'l amb un deliciós roll de canyella",
             "price": {
-              "base": 6.49
+              "base": 6.45
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P075.webp",
             "allergens": [
@@ -2253,7 +2227,7 @@
             "name": "CERVESA + XIPS",
             "description": "",
             "price": {
-              "base": 3.99
+              "base": 3.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P085.webp",
             "allergens": [
@@ -2266,7 +2240,7 @@
             "name": "SUBMARÍ + CROISSANT",
             "description": "",
             "price": {
-              "base": 3.99
+              "base": 3.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P086.webp",
             "allergens": [
@@ -2279,7 +2253,7 @@
             "name": "CAFÈ + PASTÍS POMA",
             "description": "",
             "price": {
-              "base": 5.99
+              "base": 5.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
             "allergens": [
@@ -2295,7 +2269,7 @@
           {
             "id": "P080",
             "name": "Pastís de Poma",
-            "description": "Deliciosa pastís de poma sense TACC",
+            "description": "Deliciosa pastís de poma sense TACC (amb traça)",
             "price": {
               "base": 4.5
             },
@@ -2456,19 +2430,6 @@
             "recommended": false
           },
           {
-            "id": "P012",
-            "name": "SUBMARINE",
-            "description": "Typical Argentine drink: hot milk with a bar of chocolate to melt.",
-            "price": {
-              "base": 2.8
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
-            "allergens": [
-              "LA"
-            ],
-            "recommended": true
-          },
-          {
             "id": "P013",
             "name": "ICED COFFEE",
             "description": "Your espresso served over ice, ideal for cooling down.",
@@ -2552,6 +2513,19 @@
         "name": "Hot drinks",
         "items": [
           {
+            "id": "P012",
+            "name": "SUBMARINE",
+            "description": "Typical Argentine drink: hot milk with a bar of chocolate to melt.",
+            "price": {
+              "base": 2.8
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P012.webp",
+            "allergens": [
+              "LA"
+            ],
+            "recommended": true
+          },
+          {
             "id": "P019",
             "name": "Chamomile Infusion",
             "description": "Relaxing and digestive natural infusion.",
@@ -2569,7 +2543,7 @@
             "name": "CHAI TEA",
             "description": "Black tea with traditional spices and creamy milk.",
             "price": {
-              "base": 2.3
+              "base": 3.2
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P020.webp",
             "allergens": [
@@ -2582,7 +2556,7 @@
             "name": "MATCHA TEA",
             "description": "",
             "price": {
-              "base": 2.8
+              "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P021.webp",
             "allergens": [
@@ -2595,7 +2569,7 @@
             "name": "GREEN TEA",
             "description": "Black tea flavored with bergamot oil.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P046.webp",
             "allergens": [
@@ -2621,7 +2595,7 @@
             "name": "ENGLISH BREAKFAST",
             "description": "Refreshing infusion of mint and natural pennyroyal.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P048.webp",
             "allergens": [
@@ -2660,7 +2634,7 @@
             "name": "TE VERMELL PU ERH",
             "description": "Traditional infusion served in the classic way.",
             "price": {
-              "base": 2
+              "base": 2.3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P051.webp",
             "allergens": [
@@ -2673,7 +2647,7 @@
             "name": "MATE",
             "description": "Homemade cake filled with quince paste.",
             "price": {
-              "base": 2.3
+              "base": 3
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P052.webp",
             "allergens": [
@@ -2793,7 +2767,7 @@
           {
             "id": "P030",
             "name": "COCA-COLA ZERO",
-            "description": "The original taste of Coca-Cola without sugar.",
+            "description": "The original taste of sugar-free Coca-Cola.",
             "price": {
               "base": 2.5
             },
@@ -2905,7 +2879,7 @@
             "name": "TOAST",
             "description": "Toasted artisan bread with olive oil or jam.",
             "price": {
-              "base": 3.7
+              "base": 2.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P036.webp",
             "allergens": [
@@ -3034,7 +3008,7 @@
           },
           {
             "id": "P084",
-            "name": "Small Croissant",
+            "name": "SMALL CROISSANT",
             "description": "",
             "price": {
               "base": 0.95
@@ -3131,26 +3105,13 @@
           {
             "id": "P060",
             "name": "GREEK YOGURT AND GRANOLA",
-            "description": "Greek yogurt with homemade granola and chia seeds",
+            "description": "Greek yogurt with homemade granola and chia seeds. Ask about toppings.",
             "price": {
               "base": 5.75
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P060.webp",
             "allergens": [
               "LA"
-            ],
-            "recommended": false
-          },
-          {
-            "id": "P061",
-            "name": "YOGURT TOPPING",
-            "description": "Add your favorite toppings: strawberry, banana, blueberries, chocolate, mango",
-            "price": {
-              "base": 2.4
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P061.webp",
-            "allergens": [
-              ""
             ],
             "recommended": false
           },
@@ -3279,7 +3240,7 @@
           },
           {
             "id": "P064",
-            "name": "AMBER LEMON BEER",
+            "name": "BEER WITH AMBER LEMON",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
@@ -3362,7 +3323,7 @@
             "name": "Glass of Rosé Wine",
             "description": "",
             "price": {
-              "base": 1
+              "base": 3.5
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P083.webp",
             "allergens": [
@@ -3380,7 +3341,7 @@
             "name": "COFFEE + CINNAMON ROLL",
             "description": "Choose your coffee and accompany it with a delicious cinnamon roll",
             "price": {
-              "base": 6.49
+              "base": 6.45
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P075.webp",
             "allergens": [
@@ -3394,7 +3355,7 @@
             "name": "BEER + CHIPS",
             "description": "",
             "price": {
-              "base": 3.99
+              "base": 3.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P085.webp",
             "allergens": [
@@ -3407,7 +3368,7 @@
             "name": "SUBMARINE + CROISSANT",
             "description": "",
             "price": {
-              "base": 3.99
+              "base": 3.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P086.webp",
             "allergens": [
@@ -3420,7 +3381,7 @@
             "name": "COFFEE + APPLE TART",
             "description": "",
             "price": {
-              "base": 5.99
+              "base": 5.95
             },
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
             "allergens": [
@@ -3454,7 +3415,7 @@
           {
             "id": "P080",
             "name": "Apple cake",
-            "description": "Delicious gluten-free apple pie",
+            "description": "Delicious gluten-free apple pie (with traces)",
             "price": {
               "base": 4.5
             },
