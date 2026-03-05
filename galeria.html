@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Imágenes - Cloudinary</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Imágenes con la etiqueta: "elementos"</h2>
+    <p>Cloud Name: <strong>dpwwkgzmo</strong></p>
+
+    <div id="mensaje">Cargando lista...</div>
+
+    <table id="tabla-imagenes" style="display:none;">
+        <thead>
+            <tr>
+                <th>Nombre de la imagen (Public ID)</th>
+                <th>URL Pública</th>
+                <th>Vista previa</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+            </tbody>
+    </table>
+
+    <script>
+        const cloudName = 'dpwwkgzmo';
+        const tag = 'elementos';
+        const urlJson = `https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`;
+
+        fetch(urlJson)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar el JSON. Asegúrate de haber habilitado "Resource list" en los ajustes de seguridad de Cloudinary.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const cuerpo = document.getElementById('cuerpo-tabla');
+                const mensaje = document.getElementById('mensaje');
+                const tabla = document.getElementById('tabla-imagenes');
+
+                data.resources.forEach(img => {
+                    const publicId = img.public_id;
+                    const formato = img.format;
+                    // Construimos la URL completa
+                    const urlCompleta = `https://res.cloudinary.com/${cloudName}/image/upload/${publicId}.${formato}`;
+
+                    const fila = `
+                        <tr>
+                            <td>${publicId}</td>
+                            <td><a href="${urlCompleta}" target="_blank">${urlCompleta}</a></td>
+                            <td><img src="${urlCompleta}" width="50" style="border-radius:4px;"></td>
+                        </tr>
+                    `;
+                    cuerpo.innerHTML += fila;
+                });
+
+                mensaje.style.display = 'none';
+                tabla.style.display = 'table';
+            })
+            .catch(error => {
+                document.getElementById('mensaje').innerHTML = `<p class="error">Error: ${error.message}</p>`;
+            });
+    </script>
+
+</body>
+</html>
