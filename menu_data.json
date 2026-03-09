@@ -1127,7 +1127,7 @@
         "items": [
           {
             "id": "P080",
-            "name": "Tarta de Manzana",
+            "name": "TARTA DE MANZANA SIN TACC",
             "description": "Deliciosa tarta de manzana sin TACC (con traza)",
             "price": {
               "base": 4.5
@@ -2268,7 +2268,7 @@
         "items": [
           {
             "id": "P080",
-            "name": "Pastís de Poma",
+            "name": "PASTÍS DE POMA SENSE TACC",
             "description": "Deliciosa pastís de poma sense TACC (amb traça)",
             "price": {
               "base": 4.5
@@ -2767,7 +2767,7 @@
           {
             "id": "P030",
             "name": "COCA-COLA ZERO",
-            "description": "The original taste of sugar-free Coca-Cola.",
+            "description": "The original taste of Coca-Cola without sugar.",
             "price": {
               "base": 2.5
             },
@@ -3240,7 +3240,7 @@
           },
           {
             "id": "P064",
-            "name": "BEER WITH AMBER LEMON",
+            "name": "AMBER LEMON BEER",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
@@ -3414,7 +3414,7 @@
         "items": [
           {
             "id": "P080",
-            "name": "Apple cake",
+            "name": "GLUTEN-FREE APPLE TART",
             "description": "Delicious gluten-free apple pie (with traces)",
             "price": {
               "base": 4.5
@@ -3434,7 +3434,7 @@
       "id": "E104",
       "fecha": "sáb, 7 mar",
       "fechaSort": "2026-03-07T03:00:00.000Z",
-      "titulo": "Expo Lara Summers",
+      "titulo": "La Mirada del Samsara",
       "descripcion": "Inauguración de Exposoción fotográfica de Lara Suemmers.",
       "hora": "15.30",
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E104.webp"
