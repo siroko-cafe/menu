@@ -712,13 +712,18 @@ document.addEventListener("DOMContentLoaded", function() {
     searchInput.addEventListener("input", renderProducts);
 
     langButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const lang = btn.getAttribute("data-lang");
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const lang = btn.getAttribute("data-lang");
+        if (lang) {
+            currentCategory = "TOP"; // Volver a TOP al cambiar idioma
             updateUILanguage(lang);
             renderCategories();
             renderProducts();
-        });
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Opcional: volver arriba
+        }
     });
+});
 
     // --- CARGA DE DATOS ---
     fetch(API_URL)
