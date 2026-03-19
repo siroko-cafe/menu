@@ -2506,6 +2506,19 @@
               ""
             ],
             "recommended": false
+          },
+          {
+            "id": "P077",
+            "name": "Tramontana",
+            "description": "Coffee with milk, whipped cream, and chocolate. Delicious!",
+            "price": {
+              "base": 3.5
+            },
+            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P077.webp",
+            "allergens": [
+              "LA"
+            ],
+            "recommended": false
           }
         ]
       },
@@ -3386,24 +3399,6 @@
             "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P087.webp",
             "allergens": [
               ""
-            ],
-            "recommended": false
-          }
-        ]
-      },
-      "cafes": {
-        "name": "Cafes",
-        "items": [
-          {
-            "id": "P077",
-            "name": "Tramontana",
-            "description": "Coffee with milk, whipped cream, and chocolate. Delicious!",
-            "price": {
-              "base": 3.5
-            },
-            "image": "https://raw.githubusercontent.com/siroko-cafe/menu/main/img/P077.webp",
-            "allergens": [
-              "LA"
             ],
             "recommended": false
           }
