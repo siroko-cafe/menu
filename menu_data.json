@@ -3427,10 +3427,10 @@
   "eventos": [
     {
       "id": "E107",
-      "fecha": "sáb, 14 mar",
-      "fechaSort": "2026-03-14T03:00:00.000Z",
+      "fecha": "sáb, 21 mar",
+      "fechaSort": "2026-03-21T03:00:00.000Z",
       "titulo": "Mercat Ropa Segunda Mano",
-      "descripcion": "Venta de ropa y accesorios de segunda mano",
+      "descripcion": "VOLVEMOS! con la venta de ropa y accesorios de segunda mano",
       "hora": "10 a 18 hs",
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E107.webp"
     },
