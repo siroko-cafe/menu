@@ -1935,59 +1935,59 @@
 
     <script>
         // EVENTOS
-        function renderEventos(eventos) {
-            const track = document.getElementById('eventsTrack');
-            if (!track || !eventos || eventos.length === 0) return;
-            track.innerHTML = '';
-            eventos.forEach((ev) => {
-                // ev.fecha es "Sábado 7 Marzo"
-                const parts = ev.fecha.split(' ');
-                const diaSemana = parts[0] || '';
-                const diaNum = parts[1] || '';
-                const mes = parts[2] || '';
+        // EVENTOS
+function renderEventos(eventos) {
+    const track = document.getElementById('eventsTrack');
+    if (!track || !eventos || eventos.length === 0) return;
+    track.innerHTML = '';
+    eventos.forEach((ev) => {
+        // ev.fecha es "Sábado 7 Marzo"
+        const parts = ev.fecha.split(' ');
+        const diaSemana = parts[0] || '';
+        const diaNum = parts[1] || '';
+        const mes = parts[2] || '';
+        
+        const card = document.createElement('article');
+        card.className = 'evento-ticket';
+        card.innerHTML = `
+            <div class="ticket-perforation-top"></div>
+            
+            <div class="ticket-header" style="padding: 1.2rem 0.5rem;">
+                <div class="ticket-date-main" style="font-family: 'Caveat', cursive; font-size: 2.2rem; line-height: 1; font-weight: 700;">
+                    ${diaSemana} ${diaNum}
+                </div>
+                <div class="ticket-date-month" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.9; margin-top: 2px;">
+                    ${mes}
+                </div>
+            </div>
+
+            <div class="ticket-img-wrap">
+                <img src="${ev.imagen || 'https://via.placeholder.com/400x250?text=Siroko+Evento'}" alt="${ev.titulo}" class="ticket-img">
+            </div>
+            
+            <div class="ticket-body">
+                <span class="ticket-type">${ev.tipo || 'Encuentro'}</span>
+                <h3 class="ticket-title">${ev.titulo}</h3>
+                <p class="ticket-description">${ev.descripcion}</p>
                 
-                const card = document.createElement('article');
-                card.className = 'evento-ticket';
-                card.innerHTML = `
-                    <div class="ticket-perforation-top"></div>
-                    
-                    <div class="ticket-header" style="padding: 1.2rem 0.5rem;">
-                        <div class="ticket-date-main" style="font-family: 'Caveat', cursive; font-size: 2.2rem; line-height: 1; font-weight: 700;">
-                            ${diaSemana} ${diaNum}
-                        </div>
-                        <div class="ticket-date-month" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.9; margin-top: 2px;">
-                            ${mes}
-                        </div>
+                <div class="ticket-info-row" style="justify-content: center;">
+                    <div class="ticket-info-item" style="font-size: 0.9rem; color: var(--sage-dark);">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span>${ev.hora || 'Consultar'} HS</span>
                     </div>
-
-                    <div class="ticket-img-wrap">
-                        <img src="${ev.imagen || 'https://via.placeholder.com/400x250?text=Siroko+Evento'}" alt="${ev.titulo}" class="ticket-img">
-                    </div>
-                    
-                    <div class="ticket-body">
-                        <span class="ticket-type">${ev.tipo || 'Encuentro'}</span>
-                        <h3 class="ticket-title">${ev.titulo}</h3>
-                        <p class="ticket-description">${ev.descripcion}</p>
-                        
-                        <div class="ticket-info-row" style="justify-content: center;">
-                            <div class="ticket-info-item" style="font-size: 0.9rem; color: var(--sage-dark);">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                <span>${ev.hora || 'Consultar'} HS</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="ticket-footer">
-                        <div class="ticket-price">${ev.precio || 'Gratis'}</div>
-                        <a href="${ev.link || '#'}" target="_blank" class="ticket-btn">RESERVAR</a>
-                    </div>
-                    
-                    <div class="ticket-perforation-bottom"></div>
-                `;
-                track.appendChild(card);
-            });
-        }
-
+                </div>
+            </div>
+            
+            <div class="ticket-footer">
+                <div class="ticket-price">${ev.precio || 'Gratis'}</div>
+                <a href="mailto:info@sirokocafe.com?subject=Reserva para ${encodeURIComponent(ev.titulo)}&body=Hola,%0D%0A%0D%0AMe gustaría reservar plaza para el evento:%0D%0A%0D%0AEvento: ${encodeURIComponent(ev.titulo)}%0D%0AFecha: ${encodeURIComponent(ev.fecha)}%0D%0AHora: ${encodeURIComponent(ev.hora || 'Consultar')}%0D%0A%0D%0AGracias." class="ticket-btn">RESERVAR</a>
+            </div>
+            
+            <div class="ticket-perforation-bottom"></div>
+        `;
+        track.appendChild(card);
+    });
+}
         fetch("https://raw.githubusercontent.com/siroko-cafe/menu/main/menu_data.json?v=" + Date.now())
             .then(res => res.json())
             .then(data => { if (data.eventos) renderEventos(data.eventos); })
