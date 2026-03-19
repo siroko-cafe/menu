@@ -312,6 +312,32 @@ body {
         display: none;
     }
 }
+    /* Ocultar el selector antiguo de idioma en el header */
+.lang-select {
+    display: none;
+}
+
+/* Mostrar solo el del navbar */
+.nav-lang-select {
+    display: flex;
+    gap: 5px;
+    margin-left: 2rem;
+}
+
+/* En móvil, el selector del navbar se mueve al menú desplegado */
+@media (max-width: 768px) {
+    .nav-lang-select {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+    }
+    .nav-lang-select button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
 </style>
 </head>
 <body>
@@ -410,7 +436,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const errorBox = document.getElementById("error-box");
     const searchInput = document.getElementById("search-bar");
     const promoText = document.getElementById("promo-text");
-    const langButtons = document.querySelectorAll(".lang-select button");
+    const langButtons = document.querySelectorAll(".nav-lang-select button, .lang-select button");
 
     const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
@@ -425,7 +451,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (searchInput) searchInput.placeholder = uiTranslations[lang].search;
         if (loader) loader.querySelector("p").textContent = uiTranslations[lang].loading;
         
-        langButtons.forEach(btn => {
+        // Actualizar ambos selectores (el antiguo y el nuevo)
+            document.querySelectorAll(".nav-lang-select button, .lang-select button").forEach(btn => {
             btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
         });
     }
