@@ -1467,12 +1467,24 @@
 .footer-social .social-link:active {
     transform: translateY(-1px);
 }
+
+.footer-col-first {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-desc {
+    margin-top: 1.5rem;
+    opacity: 0.6;
+    line-height: 1.6;
+}
+
 .footer-logo-img {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .footer-logo-img img {
-    width: 80px;
+    width: 100px;
     height: auto;
     opacity: 0.9;
 }
@@ -1927,15 +1939,16 @@
     </section>
 
     <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-grid">
-        <div>
+        <div class="footer-col-first">
             <span class="footer-logo-text">Siroko Café</span>
-            <p style="margin-top: 1.5rem; opacity: 0.6;">Café de especialidad en el corazón de Barcelona. Cultura de café y viento desde 2021.</p>
-        </div>
-			<div class="footer-logo-img" style="margin-top: 1rem;">
-                <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772374713/logo1_vdvjmq.png" alt="Logo Siroko Café" style="width: 80px; height: auto; opacity: 0.9;">
+            <p class="footer-desc">Café de especialidad en el corazón de Barcelona. Cultura de café y viento desde 2021.</p>
+            <div class="footer-logo-img">
+                <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772374713/logo1_vdvjmq.png" alt="Logo Siroko Café">
             </div>
+        </div>
         <div>
             <h3 style="font-family: 'Caveat', cursive; font-size: 1.8rem;">Enlaces</h3>
             <ul class="footer-links">
