@@ -338,6 +338,137 @@ body {
         padding: 8px 16px;
     }
 }
+    /* ===== FIDELIDAD COMPACTA (Menú) ===== */
+.loyalty-compact {
+    background: linear-gradient(135deg, #f5f3ee 0%, #e8e4dc 100%);
+    padding: 4rem 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px dashed #d4c4a8;
+}
+
+.loyalty-compact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+}
+
+.loyalty-compact-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--sage-dark);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.loyalty-compact-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: var(--forest);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.loyalty-compact-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+}
+
+.loyalty-compact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--forest);
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border-radius: 50px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: 2px solid var(--forest);
+    transition: all 0.3s ease;
+}
+
+.loyalty-compact-btn:hover {
+    background: transparent;
+    color: var(--forest);
+    transform: translateY(-2px);
+}
+
+/* QR Card Mini */
+.loyalty-compact-qr {
+    display: flex;
+    justify-content: center;
+}
+
+.qr-mini-card {
+    background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    transform: rotate(2deg);
+    max-width: 180px;
+}
+
+.qr-mini-tape {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(139, 166, 133, 0.7) 0px,
+        rgba(139, 166, 133, 0.7) 6px,
+        rgba(168, 196, 160, 0.7) 6px,
+        rgba(168, 196, 160, 0.7) 12px
+    );
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.qr-mini-card img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: 4px;
+}
+
+.qr-mini-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--sage-dark);
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .loyalty-compact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .loyalty-compact-text {
+        max-width: 100%;
+    }
+    
+    .qr-mini-card {
+        transform: rotate(1deg);
+    }
+}
 </style>
 </head>
 <body>
@@ -397,6 +528,34 @@ body {
 
 <div class="products" id="products-container"></div>
 
+<!-- FIDELIDAD COMPACTA (Menú) -->
+<section class="loyalty-compact" id="loyalty">
+    <div class="loyalty-compact-container">
+        <div class="loyalty-compact-content">
+            <span class="loyalty-compact-label">BonusQR</span>
+            <h2 class="loyalty-compact-title">Programa de Fidelidad</h2>
+            <p class="loyalty-compact-text">
+                Escanea tu código en cada visita, acumula sellos y canjéalos por cafés gratis y sorpresas.
+            </p>
+            <a href="https://bonusqr.com/fob/95313" target="_blank" rel="noopener" class="loyalty-compact-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Añade a tu Wallet
+            </a>
+        </div>
+        
+        <div class="loyalty-compact-qr">
+            <div class="qr-mini-card">
+                <div class="qr-mini-tape"></div>
+                <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772383544/bonusqr_tqnpyv.png" alt="Código QR Siroko">
+                <p class="qr-mini-text">10 sellos = 1 café gratis</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
 <footer>
     <h4>Siroko Café</h4>
     <p>Carrer de Girona 94, Barcelona</p>
