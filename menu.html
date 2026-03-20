@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&family=Caveat:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
 <style>
     /* --- VARIABLES & RESET --- */
     :root {
@@ -54,7 +53,7 @@
     }
 
     .logo-wrapper { display: flex; align-items: center; gap: 10px; }
-    .logo-wrapper img { height: 40px; width: auto; object-fit: contain; }
+    .logo-wrapper img { height: 30px; width: auto; object-fit: contain; }
     .logo-wrapper h1 { font-size: 1.2rem; margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: -0.5px; }
     h1 a { text-decoration: none; color: inherit; }
 
@@ -174,7 +173,7 @@
         header, .hero-section, .categories-wrapper, footer, .promo-banner { padding-left: calc(50% - 475px); padding-right: calc(50% - 475px); }
         #products-container { max-width: 950px; margin: 0 auto; column-count: 3; }
     }
-    /* ===== NAVBAR ===== */
+/* --- NAVBAR (corregido) --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -219,6 +218,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .nav-link {
@@ -243,9 +243,10 @@
     border: none;
     color: var(--forest);
     padding: 0.5rem;
+    z-index: 1001;
 }
 
-/* Selector de idioma en el nav */
+/* Selector de idioma - VERSIÓN DESKTOP */
 .nav-lang-select {
     display: flex;
     gap: 5px;
@@ -271,7 +272,12 @@
     border-color: var(--forest);
 }
 
+/* --- RESPONSIVE NAVBAR (corregido) --- */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 0;
@@ -280,13 +286,13 @@
         height: 100vh;
         background: var(--white);
         flex-direction: column;
-        justify-content: flex-start; /* Cambiado de center a flex-start */
-        padding-top: 100px; /* Espacio arriba para no tapar el logo */
+        justify-content: flex-start;
+        padding-top: 100px;
         align-items: center;
         transition: 0.4s ease;
-        gap: 2rem; /* Reducido de 3rem */
+        gap: 1.5rem;
         margin: 0;
-        overflow-y: auto; /* Permite scroll si es necesario */
+        overflow-y: auto;
     }
     
     .nav-menu.active { 
@@ -297,13 +303,13 @@
         font-size: 1.2rem; 
     }
     
-    /* Botones de idioma al final, fuera del flujo normal */
+    /* Selector de idioma - VERSIÓN MÓVIL (solo una definición) */
     .nav-lang-select {
-        position: relative; /* Cambiado de absolute */
+        position: relative; /* NO absolute */
         bottom: auto;
         left: auto;
         transform: none;
-        margin-top: 2rem; /* Separación de los links */
+        margin-top: 1rem; /* Espacio después de Contacto */
         margin-left: 0;
     }
     
@@ -312,14 +318,8 @@
         padding: 8px 16px;
     }
     
-    /* Botón cerrar más visible */
-    .nav-toggle {
-        z-index: 1001; /* Por encima del menú */
-    }
-    
-    .nav-toggle svg {
-        width: 30px;
-        height: 30px;
+    header {
+        display: none;
     }
 }
 
@@ -328,37 +328,9 @@ body {
     padding-top: 80px;
 }
 
-/* Eliminar el header anterior en móvil si es necesario */
-@media (max-width: 768px) {
-    header {
-        display: none;
-    }
-}
-    /* Ocultar el selector antiguo de idioma en el header */
+/* Ocultar selector antiguo de idioma */
 .lang-select {
     display: none;
-}
-
-/* Mostrar solo el del navbar */
-.nav-lang-select {
-    display: flex;
-    gap: 5px;
-    margin-left: 2rem;
-}
-
-/* En móvil, el selector del navbar se mueve al menú desplegado */
-@media (max-width: 768px) {
-    .nav-lang-select {
-        position: absolute;
-        bottom: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0;
-    }
-    .nav-lang-select button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
 }
     /* ===== FIDELIDAD COMPACTA (Menú) ===== */
 .loyalty-compact {
