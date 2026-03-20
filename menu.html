@@ -272,16 +272,40 @@
     border-color: var(--forest);
 }
 
-/* --- RESPONSIVE NAVBAR (corregido) --- */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    /* Mostrar idiomas en la barra principal */
+    .nav-lang-select.mobile-visible {
+        display: flex;
+        margin-left: auto; /* Empuja al centro */
+        margin-right: 1rem; /* Espacio antes del toggle */
+        gap: 4px;
+    }
+    
+    .nav-lang-select.mobile-visible button {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        min-width: 36px;
+    }
+    
+    /* Ocultar selector desktop dentro del menú */
+    .nav-menu .nav-lang-select {
+        display: none;
+    }
+    
     .nav-toggle {
         display: block;
     }
+    
     .nav-logo-img {
-        content: url('https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772374712/logo_p4z8n5.png');
         height: 40px;
     }
     
+    /* Menú desplegable sin idiomas */
     .nav-menu {
         position: fixed;
         top: 0;
@@ -307,32 +331,17 @@
         font-size: 1.2rem; 
     }
     
-    /* Selector de idioma - VERSIÓN MÓVIL (solo una definición) */
-    .nav-lang-select {
-        position: relative; /* NO absolute */
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin-top: 1rem; /* Espacio después de Contacto */
-        margin-left: 0;
-    }
-    
-    .nav-lang-select button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-    
     header {
         display: none;
     }
 }
 
-/* Ajuste para el contenido debajo del nav fijo */
+/* Ajuste body para nav fijo */
 body {
     padding-top: 80px;
 }
 
-/* Ocultar selector antiguo de idioma */
+/* Ocultar selector antiguo */
 .lang-select {
     display: none;
 }
@@ -477,6 +486,12 @@ body {
         <a href="https://siroko-cafe.github.io/menu/" class="nav-logo-link">
             <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772375783/logo_jguanr.png" alt="Siroko Café Logo" class="nav-logo-img">
         </a>
+
+        <div class="nav-lang-select mobile-visible">
+            <button data-lang="es" class="active">ES</button>
+            <button data-lang="ca">CA</button>
+            <button data-lang="en">EN</button>
+        </div>
         
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -494,12 +509,6 @@ body {
             <li><a href="#loyalty" class="nav-link">Fidelidad</a></li>
             <li><a href="https://siroko-cafe.github.io/menu/#contacto" class="nav-link">Contacto</a></li>
             
-            <!-- Selector de idioma en móvil -->
-            <li class="nav-lang-select">
-                <button data-lang="es" class="active">ES</button>
-                <button data-lang="ca">CA</button>
-                <button data-lang="en">EN</button>
-            </li>
         </ul>
     </div>
 </nav>
