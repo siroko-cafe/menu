@@ -271,9 +271,7 @@
     border-color: var(--forest);
 }
 
-/* Responsive nav */
 @media (max-width: 768px) {
-    .nav-toggle { display: block; }
     .nav-menu {
         position: fixed;
         top: 0;
@@ -282,23 +280,46 @@
         height: 100vh;
         background: var(--white);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start; /* Cambiado de center a flex-start */
+        padding-top: 100px; /* Espacio arriba para no tapar el logo */
         align-items: center;
         transition: 0.4s ease;
-        gap: 3rem;
-    }
-    .nav-menu.active { right: 0; }
-    .nav-link { font-size: 1.2rem; }
-    .nav-lang-select {
-        position: absolute;
-        bottom: 20%;
-        left: 50%;
-        transform: translateX(-50%);
+        gap: 2rem; /* Reducido de 3rem */
         margin: 0;
+        overflow-y: auto; /* Permite scroll si es necesario */
     }
+    
+    .nav-menu.active { 
+        right: 0; 
+    }
+    
+    .nav-link { 
+        font-size: 1.2rem; 
+    }
+    
+    /* Botones de idioma al final, fuera del flujo normal */
+    .nav-lang-select {
+        position: relative; /* Cambiado de absolute */
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 2rem; /* Separación de los links */
+        margin-left: 0;
+    }
+    
     .nav-lang-select button {
         font-size: 0.9rem;
         padding: 8px 16px;
+    }
+    
+    /* Botón cerrar más visible */
+    .nav-toggle {
+        z-index: 1001; /* Por encima del menú */
+    }
+    
+    .nav-toggle svg {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -478,7 +499,7 @@ body {
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <a href="https://siroko-cafe.github.io/menu/" class="nav-logo-link">
-            <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772374712/logo_p4z8n5.png" alt="Siroko Café Logo" class="nav-logo-img">Siroko Café
+            <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772375783/logo_jguanr.png" alt="Siroko Café Logo" class="nav-logo-img">
         </a>
         
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
@@ -760,14 +781,35 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
 if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
+    // Toggle al hacer clic en el botón hamburguesa
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que se cierre inmediatamente
         navMenu.classList.toggle('active');
+        
+        // Cambiar icono según estado (opcional)
+        const isOpen = navMenu.classList.contains('active');
+        navToggle.innerHTML = isOpen 
+            ? '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' // X
+            : '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>'; // Hamburguesa
     });
 
+    // Cerrar al hacer clic en un link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            // Restaurar icono hamburguesa
+            navToggle.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
         });
+    });
+
+    // Cerrar al hacer clic fuera del menú
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        }
     });
 }
 </script>
