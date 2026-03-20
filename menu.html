@@ -272,12 +272,72 @@
     border-color: var(--forest);
 }
 
+    /* Redes sociales en el menú móvil */
+.nav-social {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.nav-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(139, 166, 133, 0.1);
+    border-radius: 50%;
+    color: var(--forest);
+    transition: all 0.3s ease;
+}
+
+.nav-social a:hover {
+    background: var(--sage);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Horarios en el menú móvil */
+.nav-hours {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.nav-hours svg {
+    color: var(--sage-dark);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Ocultar redes y horarios en desktop */
+@media (min-width: 769px) {
+    .nav-social,
+    .nav-hours {
+        display: none;
+    }
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .nav-container {
         padding: 0 1rem;
     }
-
+    .nav-menu {
+        padding-top: 80px;
+        padding-bottom: 2rem;
+        justify-content: flex-start;
+        gap: 1.2rem;
+    }
     
     /* Mostrar idiomas en la barra principal */
     .nav-lang-select.mobile-visible {
@@ -485,16 +545,19 @@ body {
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
-        <a href="https://siroko-cafe.github.io/menu/" class="nav-logo-link">
-            <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772375783/logo_jguanr.png" alt="Siroko Café Logo" class="nav-logo-img">
+        <!-- Logo -->
+        <a href="../index.html" class="nav-logo-link">
+            <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772374712/logo_p4z8n5.png" alt="Siroko Café Logo" class="nav-logo-img">
         </a>
-
+        
+        <!-- Selector de idioma VISIBLE en móvil -->
         <div class="nav-lang-select mobile-visible">
             <button data-lang="es" class="active">ES</button>
             <button data-lang="ca">CA</button>
             <button data-lang="en">EN</button>
         </div>
         
+        <!-- Toggle menú -->
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -503,14 +566,46 @@ body {
             </svg>
         </button>
 
+        <!-- Menú desplegable con redes y horarios -->
         <ul class="nav-menu" id="navMenu">
-            <li><a href="https://siroko-cafe.github.io/menu/#about" class="nav-link">Historia</a></li>
-            <li><a href="https://siroko-cafe.github.io/menu/#especialidades" class="nav-link">Especialidades</a></li>
-            <li><a href="https://siroko-cafe.github.io/menu/#molienda" class="nav-link">Molienda</a></li>
-            <li><a href="https://siroko-cafe.github.io/menu/#eventos" class="nav-link">Eventos</a></li>
-            <li><a href="#loyalty" class="nav-link">Fidelidad</a></li>
-            <li><a href="https://siroko-cafe.github.io/menu/#contacto" class="nav-link">Contacto</a></li>
+            <li><a href="menu.html" class="nav-link">Menú</a></li>
+            <li><a href="../index.html#about" class="nav-link">Historia</a></li>
+            <li><a href="../index.html#especialidades" class="nav-link">Especialidades</a></li>
+            <li><a href="../index.html#molienda" class="nav-link">Molienda</a></li>
+            <li><a href="../index.html#eventos" class="nav-link">Eventos</a></li>
+            <li><a href="../index.html#loyalty" class="nav-link">Fidelidad</a></li>
+            <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
             
+            <!-- Redes sociales -->
+            <li class="nav-social">
+                <a href="https://instagram.com/siroko.cafe" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="https://facebook.com/siroko.cafe" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="https://g.page/r/CRn3TD2sE1pQEAE" target="_blank" rel="noopener" aria-label="Google Reviews">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                </a>
+            </li>
+            
+            <!-- Horarios -->
+            <li class="nav-hours">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>L-V: 09:00 - 19:00<br>S: 09:00 - 18:00<br>D: 10:00 - 17:00</span>
+            </li>
         </ul>
     </div>
 </nav>
