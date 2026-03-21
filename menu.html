@@ -81,16 +81,16 @@
     @keyframes pulse-banner { 0%, 100% { opacity: 0.95; } 50% { opacity: 1; } }
 
     /* HERO & SEARCH */
-    .hero-section { padding: 1.5rem 1.5rem 0.5rem 1.5rem; background: var(--white); }
+    .hero-section { padding: 1.5rem 1.5rem 0.5rem 1.5rem; }
     #search-bar {
-        width: 100%; padding: 12px 15px; background: #f0f0f0; border: none;
+        width: 100%; padding: 12px 15px; border: none;
         border-radius: 10px; font-size: 1rem; outline: none; font-family: 'Inter', sans-serif;
     }
     #search-bar:focus { background: #fff; box-shadow: 0 0 0 2px var(--primary); }
 
     /* CATEGORIES */
     .categories-wrapper {
-        position: sticky; top: 60px; background: rgba(255,255,255,0.95);
+        position: sticky; top: 60px;
         backdrop-filter: blur(5px); z-index: 900; padding: 10px 0;
         border-bottom: 1px solid #eee;
     }
@@ -109,7 +109,6 @@
 
     /* PRODUCTS CONTAINER */
     #products-container {
-        background-color: var(--light);
         padding: 1.5rem;
         column-count: 1;
         column-gap: 1.5rem;
@@ -207,7 +206,7 @@
 }
 
 .nav-logo-img {
-    height: 45px;
+    height: 35px;
     width: auto;
     display: block;
 }
