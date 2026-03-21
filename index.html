@@ -710,7 +710,7 @@
     width: 800px;
     height: 800px;
     right: -10px;
-    bottom: -100px;
+    bottom: -180px;
 }
 
 /* Responsive */
@@ -745,44 +745,76 @@
 
         /* ===== EVENTOS ===== */
         .eventos { padding: 10rem 0; background: var(--paper); }
-        .eventos-container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
-        .eventos-header { text-align: center; margin-bottom: 5rem; }
-        .eventos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-        .evento-ticket { background: #faf8f3; border-radius: 12px; display: flex; flex-direction: column; min-height: 550px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08)); transition: all 0.4s ease; position: relative; overflow: hidden; }
-        .evento-ticket:hover { transform: translateY(-10px); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12)); }
+        .eventos-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        .ticket-header { background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%); padding: 1rem; text-align: center; color: white; position: relative; z-index: 2; }
-        .ticket-date-day { font-family: 'Caveat', cursive; font-size: 2.5rem; line-height: 1; font-weight: 700; }
-        .ticket-date-month { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.9; }
+        .eventos-header-row, .reviews-header-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .eventos-controls, .reviews-controls {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .evento-ticket { 
+            background: transparent; 
+            border: 1px dashed var(--sage-pale); 
+            border-radius: 4px; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: auto; 
+            filter: none; 
+            transition: all 0.4s ease; 
+            position: relative; 
+            overflow: hidden; 
+            box-shadow: none;
+        }
+        .evento-ticket:hover { transform: translateY(-5px); border-color: var(--sage); }
         
-        .ticket-img-wrap { width: 100%; height: 200px; overflow: hidden; position: relative; border-bottom: 1px dashed var(--sage-pale); }
+        .ticket-header { 
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%); 
+            padding: 1.2rem 0.5rem; 
+            text-align: center; 
+            color: white; 
+            position: relative; 
+            z-index: 2; 
+        }
+        .ticket-date-day { font-family: 'Caveat', cursive; font-size: 2.2rem; line-height: 1; font-weight: 700; }
+        .ticket-date-month { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.9; margin-top: 2px; }
+        
+        .ticket-img-wrap { width: 100%; height: 160px; overflow: hidden; position: relative; border-bottom: 1px dashed var(--sage-pale); }
         .ticket-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .evento-ticket:hover .ticket-img { transform: scale(1.05); }
 
-        .ticket-body { padding: 1.5rem; flex-grow: 1; }
-        .ticket-type { display: inline-block; background: var(--sage-wash); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.6rem; font-weight: 700; color: var(--sage-dark); margin-bottom: 0.8rem; text-transform: uppercase; }
-        .ticket-title { font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--forest); margin-bottom: 0.5rem; line-height: 1.2; }
-        .ticket-description { font-size: 0.8rem; color: #666; line-height: 1.5; margin-bottom: 1rem; }
+        .ticket-body { padding: 1.2rem; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .ticket-type { display: inline-block; background: var(--sage-wash); padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.55rem; font-weight: 700; color: var(--sage-dark); margin-bottom: 0.5rem; text-transform: uppercase; }
+        .ticket-title { font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--forest); margin-bottom: 0.3rem; line-height: 1.2; }
+        .ticket-description { font-size: 0.95rem; color: #777; line-height: 1.4; margin-bottom: 1rem; }
         
-        .ticket-info-row { display: flex; gap: 1rem; font-size: 0.75rem; color: var(--forest); font-weight: 700; margin-top: auto; padding-top: 1rem; border-top: 1px dotted var(--sage-pale); }
+        .ticket-info-row { width: 100%; display: flex; justify-content: center; gap: 1rem; font-size: 0.8rem; color: var(--forest); font-weight: 700; margin-top: auto; padding-top: 0.8rem; border-top: 2px dashed var(--cork); }
         .ticket-info-item { display: flex; align-items: center; gap: 0.4rem; }
 
-        .ticket-footer { padding: 1.2rem 1.5rem; border-top: 2px dashed var(--cork); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.02); }
-        .ticket-price { font-family: 'Caveat', cursive; font-size: 1.5rem; font-weight: 700; color: var(--forest); }
-        .ticket-btn { background: var(--forest); color: white; padding: 0.5rem 1.2rem; border-radius: 25px; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border: 2px solid var(--forest); transition: 0.3s; }
-        .ticket-btn:hover { background: transparent; color: var(--forest); }
-
-        .ticket-perforation-top { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 20px; background: var(--paper); border-radius: 0 0 50% 50%; z-index: 5; }
-        .ticket-perforation-bottom { position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 20px; background: var(--paper); border-radius: 50% 50% 0 0; z-index: 5; }
+        .ticket-perforation-top { 
+            position: absolute; 
+            top: -10px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 60px; 
+            height: 20px; 
+            background: var(--paper); 
+            border-radius: 0 0 50% 50%; 
+            z-index: 5; 
+        }
+        .ticket-perforation-bottom { display: none; }
         .ticket-stamp { position: absolute; top: 15px; right: 15px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Caveat', cursive; font-size: 0.8rem; font-weight: 700; transform: rotate(15deg); border: 2px dashed rgba(255,255,255,0.5); z-index: 10; }
-        .ticket-stamp.sold-out { background: #dc3545; color: white; }
-        .ticket-stamp.new { background: #28a745; color: white; }
-        
-        /* ===== EVENTOS CAROUSEL ===== */
         .eventos-carousel-wrapper {
             position: relative;
-            margin: 0 -1rem;
-            padding: 0 4rem;
         }
         
         .eventos-carousel {
@@ -810,42 +842,6 @@
             max-width: 360px;
         }
         
-        .eventos-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--sage);
-            border: none;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .eventos-nav-btn:hover {
-            background: var(--sage-dark);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .eventos-nav-btn:active {
-            transform: translateY(-50%) scale(0.95);
-        }
-        
-        .eventos-prev { left: -25px; }
-        .eventos-next { right: -25px; }
-        
-        @media (max-width: 1280px) {
-            .eventos-prev { left: 10px; }
-            .eventos-next { right: 10px; }
-        }
-        
         @media (max-width: 1200px) {
             .eventos-carousel .evento-ticket {
                 flex: 0 0 340px;
@@ -861,16 +857,10 @@
         }
         
         @media (max-width: 768px) {
-            .eventos-nav-btn {
-                width: 40px;
-                height: 40px;
-            }
             .eventos-carousel .evento-ticket {
                 flex: 0 0 300px;
                 max-width: 300px;
             }
-            .eventos-prev { left: 5px; }
-            .eventos-next { right: 5px; }
         }
 
         /* ===== FIDELIDAD ===== */
@@ -1230,23 +1220,6 @@
             opacity: 0.2;
             pointer-events: none;
         }
-
-        .reviews-header-row {
-            max-width: 1200px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .reviews-controls {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-        }
         
         .carousel-container { 
             overflow: visible;
@@ -1531,13 +1504,20 @@
             
             .footer-social { justify-content: center; } /* Centrar iconos en móvil */
 
-            .eventos-carousel .evento-ticket {
-                flex: 0 0 280px;
-                max-width: 280px;
+            .eventos-header-row, .reviews-header-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                text-align: center;
             }
+
+            .eventos-controls, .reviews-controls {
+                display: none !important; /* Sacar botones de scroll en móvil para ambas secciones */
+            }
+
             .eventos-carousel-wrapper { padding: 0 1rem; }
-            .eventos-nav-btn { display: none !important; }
-        }
+            }
+
 		/* Estilos para iconos de redes en footer */
 .footer-social .social-link:hover {
     background: var(--sage) !important;
@@ -1802,22 +1782,26 @@
     <!-- EVENTOS -->
     <section class="eventos" id="eventos">
         <div class="eventos-container">
-            <div class="eventos-header">
-                <span class="molienda-label">Arte y Cultura</span>
-                <h2 class="molienda-title">Próximos Eventos</h2>
+            <div class="eventos-header-row">
+                <div class="eventos-title-group">
+                    <span class="molienda-label">Arte y Cultura</span>
+                    <h2 class="molienda-title" style="margin: 0;">Próximos Eventos</h2>
+                </div>
+                <div class="eventos-controls">
+                    <button class="btn-scroll" onclick="scrollEventos(-1)" aria-label="Anterior">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="btn-scroll" onclick="scrollEventos(1)" aria-label="Siguiente">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
             </div>
             <div class="eventos-carousel-wrapper">
-                <button class="eventos-nav-btn eventos-prev" onclick="scrollEventos(-1)" aria-label="Anterior">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
                 <div class="eventos-carousel">
                     <div class="eventos-grid" id="eventsTrack">
                         <!-- Se carga dinámicamente -->
                     </div>
                 </div>
-                <button class="eventos-nav-btn eventos-next" onclick="scrollEventos(1)" aria-label="Siguiente">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
             </div>
         </div>
     </section>
@@ -1914,8 +1898,8 @@
     <!-- REVIEWS (POSTCARDS) -->
     <section class="reviews-section">
         <div class="reviews-header-row">
-            <h2 class="molienda-title" style="margin: 0;">Voces del Viento</h2>
             <span><a class="loyalty-label" target="_blank" href="https://www.google.com/maps/place/Siroko+-+Cafe+de+Especialidad/@41.3963003,2.1668612,17z/data=!4m8!3m7!1s0x12a4a34a29aa31d9:0x505a13ac3d4cf719!8m2!3d41.3963003!4d2.1694415!9m1!1b1!16s%2Fg%2F11s20kmtd0?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D">Google Reviews</a></span>
+            <h2 class="molienda-title" style="margin: 0;">Voces del Viento</h2>
             <div class="reviews-controls">
                 <button class="btn-scroll" onclick="scrollReviews(-1)" aria-label="Anterior">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" /></svg>
@@ -2101,12 +2085,11 @@ function renderEventos(eventos) {
         card.className = 'evento-ticket';
         card.innerHTML = `
             <div class="ticket-perforation-top"></div>
-            
-            <div class="ticket-header" style="padding: 1.2rem 0.5rem;">
-                <div class="ticket-date-main" style="font-family: 'Caveat', cursive; font-size: 2.2rem; line-height: 1; font-weight: 700;">
+            <div class="ticket-header">
+                <div class="ticket-date-day">
                     ${diaSemana} ${diaNum}
                 </div>
-                <div class="ticket-date-month" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.9; margin-top: 2px;">
+                <div class="ticket-date-month">
                     ${mes}
                 </div>
             </div>
@@ -2116,24 +2099,16 @@ function renderEventos(eventos) {
             </div>
             
             <div class="ticket-body">
-                <span class="ticket-type">${ev.tipo || 'Encuentro'}</span>
                 <h3 class="ticket-title">${ev.titulo}</h3>
                 <p class="ticket-description">${ev.descripcion}</p>
                 
-                <div class="ticket-info-row" style="justify-content: center;">
-                    <div class="ticket-info-item" style="font-size: 0.9rem; color: var(--sage-dark);">
+                <div class="ticket-info-row">
+                    <div class="ticket-info-item" style="color: var(--sage-dark);">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>${ev.hora || 'Consultar'} HS</span>
+                        <span style="font-size: 0.95rem;">${ev.hora || 'Consultar'} HS</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="ticket-footer">
-                <div class="ticket-price">${ev.precio || 'Gratis'}</div>
-                <a href="mailto:info@sirokocafe.com?subject=Reserva para ${encodeURIComponent(ev.titulo)}&body=Hola,%0D%0A%0D%0AMe gustaría reservar plaza para el evento:%0D%0A%0D%0AEvento: ${encodeURIComponent(ev.titulo)}%0D%0AFecha: ${encodeURIComponent(ev.fecha)}%0D%0AHora: ${encodeURIComponent(ev.hora || 'Consultar')}%0D%0A%0D%0AGracias." class="ticket-btn">RESERVAR</a>
-            </div>
-            
-            <div class="ticket-perforation-bottom"></div>
         `;
         track.appendChild(card);
     });
@@ -2198,4 +2173,5 @@ function renderEventos(eventos) {
     </script>
 </body>
 </html>
+
 
