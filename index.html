@@ -29,13 +29,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-			max-width: 100%;
         }
 
         html {
             scroll-behavior: smooth;
-			overflow-x: hidden;
-    		max-width: 100vw;
         }
 
         body {
@@ -43,7 +40,6 @@
             color: var(--forest);
             background-color: var(--paper);
             overflow-x: hidden;
-    		max-width: 100vw;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -54,119 +50,103 @@
         a {
             text-decoration: none;
         }
-		img {
-    max-width: 100%;
-    height: auto;
-}
 
-       /* ===== NAVIGATION ===== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    z-index: 1000;
-    transition: all 0.4s ease;
-    background: transparent;
-}
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
 
-.navbar.scrolled {
-    background: var(--paper);
-    padding: 0.8rem 0;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
+        .navbar.scrolled {
+            background: var(--paper); /* Fondo sólido al bajar */
+            padding: 0.8rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem; /* Reducido para móvil */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.nav-logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    z-index: 1002; /* Por encima del menú */
-}
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+        }
 
-.nav-logo-img {
-    height: 40px; /* Más pequeño en móvil */
-    width: auto;
-    display: block;
-}
+        .navbar.scrolled .nav-logo-link {
+            transform: scale(0.95);
+        }
 
-.nav-menu {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        .nav-logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
 
-.nav-link {
-    text-decoration: none;
-    color: var(--forest);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: color 0.3s ease;
-}
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-.nav-link:hover {
-    color: var(--sage-dark);
-}
+        .nav-link {
+            text-decoration: none;
+            color: var(--forest);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
 
-.nav-toggle {
-    display: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--forest);
-    padding: 0.5rem;
-    z-index: 1002; /* Por encima del menú */
-}
+        .nav-link:hover {
+            color: var(--sage-dark);
+        }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .nav-toggle { 
-        display: block; 
-    }
-    
-    .nav-logo-img {
-        height: 35px;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--paper);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 80px; /* Espacio para el logo */
-        align-items: center;
-        transition: 0.3s ease;
-        gap: 1.5rem;
-        margin: 0;
-        overflow-y: auto;
-    }
-    
-    .nav-menu.active { 
-        right: 0; 
-    }
-    
-    .nav-link { 
-        font-size: 1.1rem; 
-    }
-}
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--forest);
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu { gap: 1.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--paper);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s ease;
+                gap: 3rem;
+            }
+            .nav-menu.active { right: 0; }
+            .nav-link { font-size: 1.2rem; }
+        }
 
         /* ===== HERO ===== */
         .hero {
@@ -718,47 +698,19 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .deco-arte,
-    .deco-planta,
-    .deco-receta 
-	.cork-board {
-        display: none !important;
+    .deco-arte {
+        width: 280px;
+        height: 280px;
+        right: -40px;
+        bottom: -60px;
+        opacity: 0.7;
     }
-}
 }
 
         /* ===== MOMENTOS (SCRAPBOOK GALLERY) ===== */
         .moments-gallery { padding: 10rem 0; background: var(--paper); position: relative; overflow: visible; }
-/* Móvil: 1 columna */
-.gallery-grid { 
-    grid-template-columns: 1fr; 
-    grid-auto-rows: auto;
-    gap: 1.5rem;
-    padding: 0 1rem;
-}
-
-/* Tablet: 2 columnas */
-@media (min-width: 480px) {
-    .gallery-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-/* Desktop: 4 columnas */
-@media (min-width: 900px) {
-    .gallery-grid { 
-        grid-template-columns: repeat(4, 1fr); 
-        grid-auto-rows: 250px;
-    }
-}
-
-/* Reset de items grandes en móvil */
-@media (max-width: 768px) {
-    .item-lg, .item-tall {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-}        .gallery-item { position: relative; transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 5; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .gallery-item { position: relative; transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 5; }
         .gallery-item:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 50; }
         .gallery-polaroid { background: #fff; padding: 12px 12px 45px 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); height: 100%; width: 100%; display: flex; flex-direction: column; border-radius: 2px; }
         .gallery-polaroid img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #eee; }
@@ -1454,14 +1406,11 @@
 
         @media (max-width: 768px) {
             .review-card {
-                min-width: 280px;
-                flex: 0 0 280px;
+                min-width: 320px;
+                flex: 0 0 320px;
                 height: auto;
                 padding: 8px;
             }
-			.carousel-track {
-        padding: 2rem 1rem 4rem;
-    }
             .postcard-inner { 
                 grid-template-columns: 1fr; 
                 padding: 1.5rem;
@@ -2142,39 +2091,22 @@ function renderEventos(eventos) {
         });
 
         // MOBILE MENU TOGGLE
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-
-if (navToggle && navMenu) {
-    // Toggle al hacer clic en el botón
-    navToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = navMenu.classList.toggle('active');
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
         
-        // Cambiar icono: hamburguesa ↔ X
-        navToggle.innerHTML = isOpen 
-            ? '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
-            : '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-    });
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
 
-    // Cerrar al hacer clic en un link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-        });
-    });
-
-    // Cerrar al hacer clic fuera del menú
-    document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('active') && 
-            !navMenu.contains(e.target) && 
-            !navToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-            navToggle.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
         }
-    });
-}
     </script>
 </body>
 </html>
+
