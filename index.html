@@ -57,22 +57,22 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             z-index: 1000;
             transition: all 0.4s ease;
             background: transparent;
         }
 
         .navbar.scrolled {
-            background: var(--paper); /* Fondo sólido al bajar */
-            padding: 0.8rem 0;
+            background: var(--paper);
+            padding: 0.6rem 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -82,19 +82,18 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            opacity: 1;
-            transform: translateY(0);
+
             transition: all 0.4s ease;
         }
 
-        .navbar.scrolled .nav-logo-link {
-            transform: scale(0.95);
-        }
-
         .nav-logo-img {
-            height: 50px;
+            height: 35px; /* Reducido de 50px */
             width: auto;
             display: block;
+        }
+
+        .navbar.scrolled .nav-logo-img {
+            height: 30px;
         }
 
         .nav-menu {
@@ -123,6 +122,20 @@
             background: none;
             border: none;
             color: var(--forest);
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .nav-toggle .icon-close {
+            display: none;
+        }
+
+        .nav-toggle.active .icon-menu {
+            display: none;
+        }
+
+        .nav-toggle.active .icon-close {
+            display: block;
         }
 
         @media (max-width: 992px) {
@@ -141,11 +154,12 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                transition: 0.4s ease;
-                gap: 3rem;
+                transition: 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
+                gap: 2.5rem;
+                z-index: 1000;
             }
             .nav-menu.active { right: 0; }
-            .nav-link { font-size: 1.2rem; }
+            .nav-link { font-size: 1.4rem; }
         }
 
         /* ===== HERO ===== */
@@ -155,6 +169,9 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, var(--sage-wash) 0%, var(--sage-pale) 50%, var(--sage-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
 
@@ -1441,18 +1458,78 @@
         .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
 
         @media (max-width: 768px) {
-            .about-container, .location-grid, .footer-grid, .menu-grid, .coffee-grid, .gallery-grid { grid-template-columns: 1fr; text-align: center; }
-            .logo-container { width: 350px; height: 350px; }
-            .bottom-elements { bottom: 25%; }
-            .bottom-element { width: 120px; height: 120px; }
-            .side-element, .molienda-deco, .deco-ticket, .deco-receta { display: none; }
-            .about-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-            .about-image { min-height: auto; order: -1; }
-            .julieta-img { width: 100%; max-width: 400px; transform: rotate(2deg); }
-            .footer-bottom { flex-direction: column; gap: 1rem; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+            html, body {
+                width: 100%;
+                overflow-x: hidden;
+                position: relative;
+            }
+
+            .about-container, .location-grid, .footer-grid, .menu-grid, .coffee-grid, .gallery-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+            }
+            
+            /* Clean Hero Section for Mobile */
+            .hero { 
+                height: 100vh;
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-items: center; 
+                padding: 0 1rem;
+            }
+            
+            .logo-container { 
+                width: 95%; 
+                max-width: 450px;
+                height: auto;
+                aspect-ratio: 1/1;
+                position: relative; 
+                top: 0; 
+                left: 0; 
+                transform: none; 
+                margin: 0 auto; 
+                animation: none; 
+            }
+            
+            .logo-container img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .side-element, .bottom-elements, .molienda-deco, .deco-ticket, .deco-receta, .especialidades-deco { 
+                display: none !important; 
+            }
+            
+            .hero-cta { 
+                position: relative; 
+                bottom: 0; 
+                left: 0; 
+                transform: none; 
+                margin-top: 2rem; 
+                z-index: 100;
+            }
+            .coffee-bag-wrap { margin-top: 0 !important; } 
+
+            .about-container { gap: 2rem; }
+            .about-image { margin-top: 0; order: -1; }
+            .julieta-img { width: 100%; max-width: 300px; transform: rotate(2deg); }
+            .about-text { max-width: 100%; padding: 0 1rem; }
+            .quote-text { font-size: 1.8rem; white-space: normal; padding: 1.5rem 1rem; width: 90%; margin: 0 auto; }
+            
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 1rem; }
             .item-lg { grid-column: span 2; grid-row: span 1; }
             .item-tall { grid-row: span 1; }
+            .board-container { padding: 0 1rem; }
+            .cork-board { padding: 2rem 1rem 1rem; }
+            .menu-grid { gap: 1.5rem; }
+            
+            .eventos-carousel .evento-ticket {
+                flex: 0 0 280px;
+                max-width: 280px;
+            }
+            .eventos-carousel-wrapper { padding: 0 2.5rem; }
         }
 		/* Estilos para iconos de redes en footer */
 .footer-social .social-link:hover {
@@ -1499,10 +1576,14 @@
             </a>
             
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="icon-menu" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="icon-close" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
 
@@ -1532,7 +1613,7 @@
             <div class="bottom-element element-taza"><img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772572207/taza_og6t2b.webp" alt="Taza"></div>
             <div class="bottom-element element-carnet"><img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772572205/cartel_cg1e3u.webp" alt="Cartel"></div>
         </div>
-        <div class="hero-cta"><a href="https://siroko-cafe.github.io/menu/menu.html" class="btn">Descubre Nuestro Menú</a></div>
+        <div class="hero-cta"><a href="https://siroko-cafe.github.io/menu/menu.html" class="btn">Menú</a></div>
     </section>
 
     <div class="tear-separator-kraft"></div>
@@ -1998,7 +2079,6 @@
 
     <script>
         // EVENTOS
-        // EVENTOS
 function renderEventos(eventos) {
     const track = document.getElementById('eventsTrack');
     if (!track || !eventos || eventos.length === 0) return;
@@ -2097,16 +2177,17 @@ function renderEventos(eventos) {
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
             });
 
             // Close menu when clicking a link
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
                 });
             });
         }
     </script>
 </body>
 </html>
-
