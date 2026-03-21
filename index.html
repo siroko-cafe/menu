@@ -23,6 +23,7 @@
             --cork-dark: #b8a88a;
             --cardboard: #e8dcc8;
             --vintage-paper: #f4f1ea;
+            --white: #ffffff;
         }
 
         * {
@@ -51,7 +52,7 @@
             text-decoration: none;
         }
 
-        /* ===== NAVIGATION ===== */
+        /* ===== NAVIGATION (Matching menu-3.html) ===== */
         .navbar {
             position: fixed;
             top: 0;
@@ -61,10 +62,11 @@
             z-index: 1000;
             transition: all 0.4s ease;
             background: transparent;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .navbar.scrolled {
-            background: var(--paper);
+            background: var(--white);
             padding: 0.6rem 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
@@ -72,7 +74,7 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -82,24 +84,21 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-
-            transition: all 0.4s ease;
         }
 
         .nav-logo-img {
-            height: 35px; /* Reducido de 50px */
+            height: 35px;
             width: auto;
             display: block;
-        }
-
-        .navbar.scrolled .nav-logo-img {
-            height: 30px;
         }
 
         .nav-menu {
             display: flex;
             gap: 2rem;
             list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
         }
 
         .nav-link {
@@ -110,6 +109,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             transition: color 0.3s ease;
+            font-family: 'Space Mono', monospace;
         }
 
         .nav-link:hover {
@@ -122,45 +122,100 @@
             background: none;
             border: none;
             color: var(--forest);
+            padding: 0.5rem;
             z-index: 1001;
-            padding: 5px;
         }
 
-        .nav-toggle .icon-close {
-            display: none;
+        /* Redes sociales en el menú móvil */
+        .nav-social {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
         }
 
-        .nav-toggle.active .icon-menu {
-            display: none;
+        .nav-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(139, 166, 133, 0.1);
+            border-radius: 50%;
+            color: var(--forest);
+            transition: all 0.3s ease;
         }
 
-        .nav-toggle.active .icon-close {
-            display: block;
+        .nav-social a:hover {
+            background: var(--sage);
+            color: white;
+            transform: translateY(-2px);
         }
 
-        @media (max-width: 992px) {
-            .nav-menu { gap: 1.2rem; }
+        /* Horarios en el menú móvil */
+        .nav-hours {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: #191818;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .nav-hours svg {
+            color: var(--dark);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Ocultar redes y horarios en desktop */
+        @media (min-width: 769px) {
+            .nav-social,
+            .nav-hours {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-toggle { display: block; }
+            .nav-container {
+                padding: 0 1rem;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-logo-img {
+                height: 40px;
+                content: url('https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772374712/logo_p4z8n5.png');
+            }
             .nav-menu {
                 position: fixed;
                 top: 0;
                 right: -100%;
                 width: 100%;
                 height: 100vh;
-                background: var(--paper);
+                background: var(--white);
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
+                padding-top: 100px;
                 align-items: center;
-                transition: 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
-                gap: 2.5rem;
-                z-index: 1000;
+                transition: 0.4s ease;
+                gap: 1.5rem;
+                margin: 0;
+                overflow-y: auto;
             }
-            .nav-menu.active { right: 0; }
-            .nav-link { font-size: 1.4rem; }
+            .nav-menu.active { 
+                right: 0;
+                background-color: var(--sage);
+            }
+            .nav-link { 
+                font-size: 1.2rem; 
+            }
         }
+
 
         /* ===== HERO ===== */
         .hero {
@@ -1558,22 +1613,21 @@
     <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+            <!-- Logo -->
             <a href="#" class="nav-logo-link">
                 <img src="https://res.cloudinary.com/dpwwkgzmo/image/upload/v1772375783/logo_jguanr.png" alt="Siroko Café Logo" class="nav-logo-img">
             </a>
             
+            <!-- Toggle menú -->
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-                <svg class="icon-menu" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
-                <svg class="icon-close" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
             </button>
 
+            <!-- Menú desplegable con redes y horarios -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="https://siroko-cafe.github.io/menu/menu.html" class="nav-link">Menú</a></li>
                 <li><a href="#about" class="nav-link">Historia</a></li>
@@ -1582,6 +1636,37 @@
                 <li><a href="#eventos" class="nav-link">Eventos</a></li>
                 <li><a href="#loyalty" class="nav-link">Fidelidad</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                
+                <!-- Redes sociales (Visible solo en móvil) -->
+                <li class="nav-social">
+                    <a href="https://instagram.com/siroko.cafe" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/share/1FxkapvSkV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://g.page/r/CRn3TD2sE1pQEAE" target="_blank" rel="noopener" aria-label="Google Reviews">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </a>
+                </li>
+                
+                <!-- Horarios (Visible solo en móvil) -->
+                <li class="nav-hours">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span>L-V: 09:00 - 19:00<br>S: 09:00 - 18:00<br>D: 10:00 - 17:00</span>
+                </li>
             </ul>
         </div>
     </nav>
@@ -2152,26 +2237,45 @@ function renderEventos(eventos) {
             }
         });
 
-        // MOBILE MENU TOGGLE
+        // MOBILE MENU TOGGLE (Matching menu-3.html)
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
         
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
+            // Toggle al hacer clic en el botón hamburguesa
+            navToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que se cierre inmediatamente
                 navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
+                
+                // Cambiar icono según estado
+                const isOpen = navMenu.classList.contains('active');
+                navToggle.innerHTML = isOpen 
+                    ? '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' // X
+                    : '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>'; // Hamburguesa
             });
 
-            // Close menu when clicking a link
+            // Cerrar al hacer clic en un link
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
-                    navToggle.classList.remove('active');
+                    // Restaurar icono hamburguesa
+                    navToggle.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
                 });
+            });
+
+            // Cerrar al hacer clic fuera del menú
+            document.addEventListener('click', (e) => {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+                }
             });
         }
     </script>
 </body>
 </html>
+
 
 
