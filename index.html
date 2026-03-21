@@ -1457,6 +1457,10 @@
         .footer-links a:hover { color: var(--sage-wash); padding-left: 0.5rem; }
         .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
 
+        @media (max-width: 992px) {
+            .moments-gallery { display: none !important; }
+        }
+
         @media (max-width: 768px) {
             html, body {
                 width: 100%;
@@ -1525,11 +1529,14 @@
             .cork-board { padding: 2rem 1rem 1rem; }
             .menu-grid { gap: 1.5rem; }
             
+            .footer-social { justify-content: center; } /* Centrar iconos en móvil */
+
             .eventos-carousel .evento-ticket {
                 flex: 0 0 280px;
                 max-width: 280px;
             }
-            .eventos-carousel-wrapper { padding: 0 2.5rem; }
+            .eventos-carousel-wrapper { padding: 0 1rem; }
+            .eventos-nav-btn { display: none !important; }
         }
 		/* Estilos para iconos de redes en footer */
 .footer-social .social-link:hover {
@@ -2144,9 +2151,9 @@ function renderEventos(eventos) {
         
         // REVIEWS
         function scrollReviews(direction) {
-            const container = document.getElementById('reviews-container');
-            if (container) {
-                container.scrollBy({ left: direction * 350, behavior: 'smooth' });
+            const track = document.querySelector('.carousel-track');
+            if (track) {
+                track.scrollBy({ left: direction * 350, behavior: 'smooth' });
             }
         }
         
