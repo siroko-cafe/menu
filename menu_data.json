@@ -2780,7 +2780,7 @@
           {
             "id": "P030",
             "name": "COCA-COLA ZERO",
-            "description": "The original taste of sugar-free Coca-Cola.",
+            "description": "The original taste of Coca-Cola without sugar.",
             "price": {
               "base": 2.5
             },
@@ -3253,7 +3253,7 @@
           },
           {
             "id": "P064",
-            "name": "BEER WITH AMBER LEMON",
+            "name": "AMBER LEMON BEER",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
