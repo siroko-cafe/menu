@@ -227,7 +227,7 @@
           },
           {
             "id": "P077",
-            "name": "Tramontana",
+            "name": "TRAMONTANA",
             "description": "Café con leche, nata montada y chocolate. Delicioso!",
             "price": {
               "base": 3.5
@@ -725,7 +725,7 @@
           },
           {
             "id": "P079",
-            "name": "Croissant Jamón y Queso",
+            "name": "CROISSANT JAMÓN Y QUESO",
             "description": "",
             "price": {
               "base": 2.75
@@ -739,7 +739,7 @@
           },
           {
             "id": "P084",
-            "name": "CROINSSANT PEQUEÑO",
+            "name": "CROISSANT PEQUEÑO",
             "description": "",
             "price": {
               "base": 0.95
@@ -823,7 +823,7 @@
           {
             "id": "P056",
             "name": "BOCADILLO ATÚN",
-            "description": "Pan cristal, mayonesa, atún, pepinillo, queso crema, pimineto, cilantro",
+            "description": "Pan cristal, mayonesa, atún, pepinillo, queso crema, pimiento, cilantro",
             "price": {
               "base": 8
             },
@@ -913,7 +913,7 @@
           },
           {
             "id": "P078",
-            "name": "Bocadillos varios",
+            "name": "BOCADILLOS VARIOS",
             "description": "Elegí pan flautín o pan cereal Avena. 1. Atún; 2. Jamón Serrano; 3. Jamón y Queso; 4. Queso y Tomate. ",
             "price": {
               "base": 2.75
@@ -927,7 +927,7 @@
           },
           {
             "id": "P081",
-            "name": "Focaccias Serrano",
+            "name": "FOCACCIAS SERRANO",
             "description": "",
             "price": {
               "base": 6.5
@@ -940,7 +940,7 @@
           },
           {
             "id": "P082",
-            "name": "Focaccias Pavo",
+            "name": "FOCCACIAS PAVO",
             "description": "",
             "price": {
               "base": 6.5
@@ -1051,7 +1051,7 @@
           },
           {
             "id": "P083",
-            "name": "Copa Vino Rosado",
+            "name": "COPA VINO ROSA",
             "description": "",
             "price": {
               "base": 3.5
@@ -1368,7 +1368,7 @@
           },
           {
             "id": "P077",
-            "name": "Tramuntana",
+            "name": "TRAMONTANA",
             "description": "Cafè amb llet, nata muntada i xocolata. Deliciós!",
             "price": {
               "base": 3.5
@@ -1866,7 +1866,7 @@
           },
           {
             "id": "P079",
-            "name": "Croissant Pernil i Formatge",
+            "name": "CROISSANT PERNIL I FORMATGE",
             "description": "",
             "price": {
               "base": 2.75
@@ -1880,7 +1880,7 @@
           },
           {
             "id": "P084",
-            "name": "CROINSSANT PETIT",
+            "name": "CROISSANT PETIT",
             "description": "",
             "price": {
               "base": 0.95
@@ -1964,7 +1964,7 @@
           {
             "id": "P056",
             "name": "entrepà tonyina",
-            "description": "Pa vidre, maionesa, tonyina, cogombret, formatge crema, piminet, coriandre",
+            "description": "Pa vidre, maionesa, tonyina, cogombret, formatge crema, pebrot, coriandre",
             "price": {
               "base": 8
             },
@@ -2054,7 +2054,7 @@
           },
           {
             "id": "P078",
-            "name": "Entrepans diversos",
+            "name": "entrepans diversos",
             "description": "Vaig triar pa flautí o pa cereal Civada. 1. Tonyina; 2. Pernil Serrano; 3. Pernil i Formatge; 4. Formatge i Tomàquet. ",
             "price": {
               "base": 2.75
@@ -2068,7 +2068,7 @@
           },
           {
             "id": "P081",
-            "name": "Focaccia Serrano",
+            "name": "FOCACCIES SERRANO",
             "description": "",
             "price": {
               "base": 6.5
@@ -2081,7 +2081,7 @@
           },
           {
             "id": "P082",
-            "name": "Focaccias Pavo",
+            "name": "FOCCÀCIES gall dindi",
             "description": "",
             "price": {
               "base": 6.5
@@ -2192,7 +2192,7 @@
           },
           {
             "id": "P083",
-            "name": "Copa Vi Rosat",
+            "name": "COPA VI ROSA",
             "description": "",
             "price": {
               "base": 3.5
@@ -2509,7 +2509,7 @@
           },
           {
             "id": "P077",
-            "name": "Tramontana",
+            "name": "TRAMONTANA",
             "description": "Coffee with milk, whipped cream, and chocolate. Delicious!",
             "price": {
               "base": 3.5
@@ -3105,7 +3105,7 @@
           {
             "id": "P056",
             "name": "TUNA SANDWICH",
-            "description": "Crystal bread, mayonnaise, tuna, pickle, cream cheese, bell pepper, cilantro",
+            "description": "Crystal bread, mayonnaise, tuna, pickle, cream cheese, pepper, cilantro",
             "price": {
               "base": 8
             },
@@ -3195,7 +3195,7 @@
           },
           {
             "id": "P078",
-            "name": "Various snacks",
+            "name": "VARIOUS SNACKS",
             "description": "Choose baguette or oatmeal bread. 1. Tuna; 2. Serrano ham; 3. Ham and cheese; 4. Cheese and tomato.",
             "price": {
               "base": 2.75
@@ -3222,7 +3222,7 @@
           },
           {
             "id": "P082",
-            "name": "Turkey Focaccias",
+            "name": "Turkey Foccas",
             "description": "",
             "price": {
               "base": 6.5
@@ -3253,7 +3253,7 @@
           },
           {
             "id": "P064",
-            "name": "AMBER LEMON BEER",
+            "name": "BEER WITH AMBER LEMON",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
@@ -3333,7 +3333,7 @@
           },
           {
             "id": "P083",
-            "name": "Glass of Rosé Wine",
+            "name": "PINK WINE GLASS",
             "description": "",
             "price": {
               "base": 3.5
