@@ -1683,7 +1683,7 @@
           {
             "id": "P031",
             "name": "CROISSANT GRAN",
-            "description": "Pasta de full artesà cruixent per fora i tendre per dins.",
+            "description": "Pasta de full artesana cruixent per fora i tendre per dins.",
             "price": {
               "base": 1.9
             },
@@ -3253,7 +3253,7 @@
           },
           {
             "id": "P064",
-            "name": "BEER WITH AMBER LEMON",
+            "name": "AMBER LEMON BEER",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
@@ -3425,6 +3425,15 @@
     }
   },
   "eventos": [
+    {
+      "id": "E108",
+      "fecha": "mié, 29 abr",
+      "fechaSort": "2026-04-29T03:00:00.000Z",
+      "titulo": "Encuentros fotográficos",
+      "descripcion": "Exposiciónes De Lara Summers y Julia Margeth Theuer",
+      "hora": "15 a 18 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E108.webp"
+    },
     {
       "id": "E107",
       "fecha": "sáb, 21 mar",
