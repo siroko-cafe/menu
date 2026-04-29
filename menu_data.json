@@ -1683,7 +1683,7 @@
           {
             "id": "P031",
             "name": "CROISSANT GRAN",
-            "description": "Pasta de full artesana cruixent per fora i tendre per dins.",
+            "description": "Pasta de full artesà cruixent per fora i tendre per dins.",
             "price": {
               "base": 1.9
             },
@@ -3427,8 +3427,8 @@
   "eventos": [
     {
       "id": "E108",
-      "fecha": "mié, 29 abr",
-      "fechaSort": "2026-04-29T03:00:00.000Z",
+      "fecha": "sáb, 2 may",
+      "fechaSort": "2026-05-02T03:00:00.000Z",
       "titulo": "Encuentros fotográficos",
       "descripcion": "Exposiciones De Lara Summers y Julia Margeth Theuer",
       "hora": "15 a 18 hs",
