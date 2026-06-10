@@ -1570,8 +1570,48 @@
                 display: none !important; /* Sacar botones de scroll en móvil para ambas secciones */
             }
 
-            .eventos-carousel-wrapper { padding: 0 1rem; }
+            .eventos-container { padding: 0; }
+            .eventos-header-row { padding: 0 1.5rem; }
+            .eventos-carousel-wrapper { padding: 0; }
+            .eventos-carousel .eventos-grid { padding: 0 1.5rem; gap: 1.2rem; }
+            .eventos-carousel .evento-ticket {
+                flex: 0 0 280px;
+                max-width: 280px;
             }
+            .scroll-hint { display: flex; }
+
+            /* Fix for reviews too */
+            .carousel-track {
+                padding: 2rem 1.5rem 4rem !important;
+                gap: 1.5rem !important;
+            }
+            .review-card {
+                min-width: 280px !important;
+                flex: 0 0 280px !important;
+            }
+        }
+
+        .scroll-hint {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            color: var(--sage-dark);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .scroll-hint svg {
+            animation: slideHint 1.5s infinite;
+        }
+        
+        @keyframes slideHint {
+            0% { transform: translateX(0); opacity: 0.3; }
+            50% { transform: translateX(10px); opacity: 1; }
+            100% { transform: translateX(0); opacity: 0.3; }
+        }
 
 		/* Estilos para iconos de redes en footer */
 .footer-social .social-link:hover {
@@ -1884,8 +1924,12 @@
             <div class="eventos-carousel-wrapper">
                 <div class="eventos-carousel">
                     <div class="eventos-grid" id="eventsTrack">
-                        <!-- Se carga dinámicamente -->
+                        <!-- Se llena con JS -->
                     </div>
+                </div>
+                <div class="scroll-hint">
+                    <span>Desliza para ver más</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
             </div>
         </div>
@@ -2065,6 +2109,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="scroll-hint">
+                <span>Desliza para ver más</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
         </div>
          <div class="instagram-cta reveal">
