@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Siroko Café - Tarjeta Virtual</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #ffffff;
+        }
+        /* Diseño idéntico a una tarjeta de Apple Wallet */
+        .wallet-card {
+            width: 100%;
+            max-width: 350px;
+            background-color: rgb(43, 24, 16); /* Color Café Siroko */
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.3);
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+        .logo-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .convenio-tag {
+            font-size: 11px;
+            background: rgba(210, 180, 140, 0.2);
+            color: rgb(210, 180, 140);
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .field-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .label {
+            font-size: 10px;
+            color: rgb(210, 180, 140);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .value {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .value.highlight {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 800;
+        }
+        .qr-container {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px auto 5px auto;
+            width: 150px;
+            height: 150px;
+        }
+        .instructions {
+            margin-top: 25px;
+            text-align: center;
+            max-width: 300px;
+            font-size: 13px;
+            color: #aaaaaa;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wallet-card">
+        <div class="card-header">
+            <span class="logo-text">☕ Siroko Café</span>
+            <span class="convenio-tag">eDreams Staff</span>
+        </div>
+        <div class="card-body">
+            <div class="field-group">
+                <span class="label">Beneficio</span>
+                <span class="value highlight">20% OFF FIJO</span>
+            </div>
+            <div class="field-group">
+                <span class="label">Empleado/a</span>
+                <span class="value" id="employee-name">Cargando...</span>
+            </div>
+            <div class="field-group">
+                <span class="label">Válido en</span>
+                <span class="value">Toda la carta</span>
+            </div>
+            
+            <div class="qr-container" id="qrcode"></div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <p><b>Tip:</b> Para tenerla siempre a mano, tocá el botón de compartir de tu navegador y elegí <b>"Añadir a la pantalla de inicio"</b>.</p>
+    </div>
+
+    <script>
+        // Función para leer los parámetros de la URL (?nombre=Camila_Frontini)
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Leer datos dinámicos
+        const nombreRaw = getQueryParam('nombre') || 'Invitado Especial';
+        const nombreFormateado = nombreRaw.replace(/_/g, ' ');
+        const codigoDescuento = "EDREAMS20"; // El código exacto configurado en tu Square POS
+
+        // Asignar el nombre al elemento de la tarjeta
+        document.getElementById('employee-name').innerText = nombreFormateado;
+
+        // Generar el código QR de forma automática
+        new QRCode(document.getElementById("qrcode"), {
+            text: codigoDescuento,
+            width: 150,
+            height: 150,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
