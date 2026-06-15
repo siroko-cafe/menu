@@ -88,6 +88,18 @@
             width: 150px;
             height: 150px;
         }
+        /* Contenedor del botón de Apple Wallet */
+        .wallet-btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .wallet-btn-container img {
+            width: 180px;
+            transition: transform 0.2s;
+        }
+        .wallet-btn-container img:active {
+            transform: scale(0.95);
+        }
         .instructions {
             margin-top: 25px;
             text-align: center;
@@ -108,7 +120,7 @@
         <div class="card-body">
             <div class="field-group">
                 <span class="label">Beneficio</span>
-                <span class="value highlight">20% DESCUENTO</span>
+                <span class="value highlight">20% OFF FIJO</span>
             </div>
             <div class="field-group">
                 <span class="label">Empleado/a</span>
@@ -120,40 +132,35 @@
             </div>
             
             <div class="qr-container" id="qrcode"></div>
+            
+            <div class="wallet-btn-container">
+                <a id="apple-wallet-btn" href="#" target="_blank">
+                    <img src="https://walletcdn.com/assets/en/add-to-apple-wallet.svg" alt="Add to Apple Wallet">
+                </a>
+            </div>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-    <a id="apple-wallet-btn" href="#" target="_blank">
-        <img src="https://walletcdn.com/assets/en/add-to-apple-wallet.svg" alt="Add to Apple Wallet" style="width: 180px;">
-    </a>
-</div>
 
     <div class="instructions">
-        <p><b>Tip:</b> Para tenerla siempre a mano, tocá el botón de compartir de tu navegador y elegí <b>"Añadir a la pantalla de inicio"</b>.</p>
+        <p><b>Tip:</b> Si no usas Apple Wallet, podés añadir esta web directamente a tu pantalla de inicio desde el botón compartir de tu navegador.</p>
     </div>
 
     <script>
-        // Generamos el link para que el iPhone lo descargue firmado y directo a la Wallet
-const apiGratuita = "https://v1.api.walletapp.cloud/sign"; // O el microservicio que elijas
-const urlAppleWallet = `${apiGratuita}?format=pkpass&barcode=${codigoDescuento}&title=Siroko%20Cafe&text1=${nombreCodificado}&color=2b1810`;
-
-document.getElementById('apple-wallet-btn').href = urlAppleWallet;
-        
         // Función para leer los parámetros de la URL (?nombre=Camila_Frontini)
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Leer datos dinámicos
-        const nombreRaw = getQueryParam('nombre') || 'Invitado Especial';
+        // Leer datos dinámicos de la URL
+        const nombreRaw = getQueryParam('nombre') || 'Invitado_Especial';
         const nombreFormateado = nombreRaw.replace(/_/g, ' ');
-        const codigoDescuento = "EDREAMS20"; // El código exacto configurado en tu Square POS
+        const codigoDescuento = "EDREAMS20"; // Código de Square
 
         // Asignar el nombre al elemento de la tarjeta
         document.getElementById('employee-name').innerText = nombreFormateado;
 
-        // Generar el código QR de forma automática
+        // Generar el código QR dinámico para Square
         new QRCode(document.getElementById("qrcode"), {
             text: codigoDescuento,
             width: 150,
@@ -162,6 +169,13 @@ document.getElementById('apple-wallet-btn').href = urlAppleWallet;
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
         });
+
+        // ASIGNAR ENLACE DINÁMICO AL BOTÓN DE APPLE WALLET
+        // Usamos una API abierta para empaquetar el pase firmado con el QR y los datos
+        const apiGratuita = "https://v1.api.walletapp.cloud/sign"; 
+        const urlAppleWallet = `${apiGratuita}?format=pkpass&barcode=${codigoDescuento}&title=Siroko%20Cafe&text1=${encodeURIComponent(nombreFormateado)}&color=2b1810`;
+
+        document.getElementById('apple-wallet-btn').href = urlAppleWallet;
     </script>
 </body>
 </html>
