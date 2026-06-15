@@ -19,7 +19,7 @@
             box-sizing: border-box;
             color: #ffffff;
         }
-        /* Diseño idéntico a una tarjeta de Apple Wallet */
+        /* Diseño de la tarjeta */
         .wallet-card {
             width: 100%;
             max-width: 350px;
@@ -88,18 +88,41 @@
             width: 150px;
             height: 150px;
         }
-        /* Contenedor del botón de Apple Wallet */
+        
+        /* ESTILO NUEVO DEL BOTÓN CSS PURO (No se rompe nunca) */
         .wallet-btn-container {
             text-align: center;
             margin-top: 20px;
         }
-        .wallet-btn-container img {
-            width: 180px;
-            transition: transform 0.2s;
+        .apple-wallet-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #333333;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: -0.2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: background-color 0.2s;
+            width: 100%;
+            max-width: 200px;
+            box-sizing: border-box;
         }
-        .wallet-btn-container img:active {
-            transform: scale(0.95);
+        .apple-wallet-button:active {
+            background-color: #1a1a1a;
         }
+        .apple-wallet-button svg {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+        
         .instructions {
             margin-top: 25px;
             text-align: center;
@@ -134,8 +157,11 @@
             <div class="qr-container" id="qrcode"></div>
             
             <div class="wallet-btn-container">
-                <a id="apple-wallet-btn" href="#" target="_blank">
-                    <img src="https://walletcdn.com/assets/en/add-to-apple-wallet.svg" alt="Add to Apple Wallet">
+                <a id="apple-wallet-btn" class="apple-wallet-button" href="#" target="_blank">
+                    <svg viewBox="0 0 170 170">
+                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.13-1.92-14.38-6.16-3.42-2.74-7.38-7.44-11.87-14.1-5.13-7.67-9.37-16.81-12.73-27.42-3.36-10.62-5.05-21.08-5.05-31.39 0-14.75 3.73-26.6 11.19-35.54 7.46-8.94 16.63-13.41 27.53-13.41 5.7 0 11.91 1.67 18.63 5 6.72 3.33 11.14 5 13.26 5 2.12 0 6.69-1.78 13.72-5.34 7.02-3.56 13.06-5.23 18.11-5 13.06.4 23.32 5.08 30.79 14.04-10.24 6.26-15.28 14.93-15.14 26 0 8.44 3.09 15.53 9.27 21.28 6.18 5.75 13.7 8.94 22.54 9.56-2.5 7.15-5.71 14.22-9.63 21.22zM119.22 35.61c0-7.33 2.61-14.12 7.82-20.36 5.22-6.24 11.66-9.74 19.34-10.5 0 .61.04 1.41.04 2.39 0 7.12-2.7 13.91-8.1 20.36-5.4 6.45-12.01 10.03-19.83 10.74a16.8 16.8 0 0 1-.31-2.63z"/>
+                    </svg>
+                    Añadir a Apple Wallet
                 </a>
             </div>
         </div>
@@ -146,21 +172,17 @@
     </div>
 
     <script>
-        // Función para leer los parámetros de la URL (?nombre=Camila_Frontini)
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Leer datos dinámicos de la URL
         const nombreRaw = getQueryParam('nombre') || 'Invitado_Especial';
         const nombreFormateado = nombreRaw.replace(/_/g, ' ');
-        const codigoDescuento = "EDREAMS20"; // Código de Square
+        const codigoDescuento = "EDREAMS20";
 
-        // Asignar el nombre al elemento de la tarjeta
         document.getElementById('employee-name').innerText = nombreFormateado;
 
-        // Generar el código QR dinámico para Square
         new QRCode(document.getElementById("qrcode"), {
             text: codigoDescuento,
             width: 150,
@@ -170,8 +192,7 @@
             correctLevel : QRCode.CorrectLevel.H
         });
 
-        // ASIGNAR ENLACE DINÁMICO AL BOTÓN DE APPLE WALLET
-        // Usamos una API abierta para empaquetar el pase firmado con el QR y los datos
+        // Enlace de la API para armar el pase firmado
         const apiGratuita = "https://v1.api.walletapp.cloud/sign"; 
         const urlAppleWallet = `${apiGratuita}?format=pkpass&barcode=${codigoDescuento}&title=Siroko%20Cafe&text1=${encodeURIComponent(nombreFormateado)}&color=2b1810`;
 
