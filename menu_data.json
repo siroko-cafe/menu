@@ -740,7 +740,7 @@
           {
             "id": "P084",
             "name": "CROISSANT PEQUEÑO",
-            "description": "",
+            "description": "Mini croissant de masa hojaldrada",
             "price": {
               "base": 0.95
             },
@@ -928,7 +928,7 @@
           {
             "id": "P081",
             "name": "FOCACCIAS SERRANO",
-            "description": "",
+            "description": "Relleno con finas fetas de jamón serrano de primera calidad. Un clásico mediterráneo irresistible.",
             "price": {
               "base": 6.5
             },
@@ -941,7 +941,7 @@
           {
             "id": "P082",
             "name": "FOCCACIAS PAVO",
-            "description": "",
+            "description": "Nuestra deliciosa focaccia casera rellena con tiernas rebanadas de pechuga de pavo.",
             "price": {
               "base": 6.5
             },
@@ -1052,7 +1052,7 @@
           {
             "id": "P083",
             "name": "COPA VINO ROSA",
-            "description": "",
+            "description": "Una copa de vino rosado, fresco, frutado y con la temperatura justa.",
             "price": {
               "base": 3.5
             },
@@ -1084,7 +1084,7 @@
           {
             "id": "P085",
             "name": "CERVEZA + CHIPS",
-            "description": "",
+            "description": "El combo ideal para el copetín.",
             "price": {
               "base": 3.95
             },
@@ -1097,7 +1097,7 @@
           {
             "id": "P086",
             "name": "SUBMARINO + CROISSANT",
-            "description": "",
+            "description": "Un vaso de leche caliente con una barra de auténtico chocolate para que la derritas a tu gusto, acompañado de un croissant tierno y hojaldrado",
             "price": {
               "base": 3.95
             },
@@ -1110,7 +1110,7 @@
           {
             "id": "P087",
             "name": "CAFÉ + TARTA MANZANA",
-            "description": "",
+            "description": "El dúo clásico que nunca falla.",
             "price": {
               "base": 5.95
             },
@@ -1881,7 +1881,7 @@
           {
             "id": "P084",
             "name": "CROISSANT PETIT",
-            "description": "",
+            "description": "Mini croissant de massa pasta de full",
             "price": {
               "base": 0.95
             },
@@ -2069,7 +2069,7 @@
           {
             "id": "P081",
             "name": "FOCACCIES SERRANO",
-            "description": "",
+            "description": "Farcit amb fines fetes de pernil serrà de primera qualitat. Un clàssic mediterrani irresistible.",
             "price": {
               "base": 6.5
             },
@@ -2082,7 +2082,7 @@
           {
             "id": "P082",
             "name": "FOCCÀCIES gall dindi",
-            "description": "",
+            "description": "La nostra deliciosa focaccia casolana farcida amb tendres llesques de pit de gall dindi.",
             "price": {
               "base": 6.5
             },
@@ -2193,7 +2193,7 @@
           {
             "id": "P083",
             "name": "COPA VI ROSA",
-            "description": "",
+            "description": "Una copa de vi rosat, fresc, afruitat i amb la temperatura justa.",
             "price": {
               "base": 3.5
             },
@@ -2225,7 +2225,7 @@
           {
             "id": "P085",
             "name": "CERVESA + XIPS",
-            "description": "",
+            "description": "El combo ideal per al copet.",
             "price": {
               "base": 3.95
             },
@@ -2238,7 +2238,7 @@
           {
             "id": "P086",
             "name": "SUBMARÍ + CROISSANT",
-            "description": "",
+            "description": "Un got de llet calenta amb una barra d'autèntica xocolata perquè la fonguis al teu gust, acompanyat d'un croissant tendre i pasta de full",
             "price": {
               "base": 3.95
             },
@@ -2251,7 +2251,7 @@
           {
             "id": "P087",
             "name": "CAFÈ + PASTÍS POMA",
-            "description": "",
+            "description": "El duet clàssic que mai no falla.",
             "price": {
               "base": 5.95
             },
@@ -3022,7 +3022,7 @@
           {
             "id": "P084",
             "name": "SMALL CROISSANT",
-            "description": "",
+            "description": "Mini croissant made with puff pastry dough",
             "price": {
               "base": 0.95
             },
@@ -3210,7 +3210,7 @@
           {
             "id": "P081",
             "name": "Serrano Focaccias",
-            "description": "",
+            "description": "Filled with thin slices of premium Serrano ham. An irresistible Mediterranean classic.",
             "price": {
               "base": 6.5
             },
@@ -3223,7 +3223,7 @@
           {
             "id": "P082",
             "name": "Turkey Foccas",
-            "description": "",
+            "description": "Our delicious homemade focaccia filled with tender slices of turkey breast.",
             "price": {
               "base": 6.5
             },
@@ -3334,7 +3334,7 @@
           {
             "id": "P083",
             "name": "PINK WINE GLASS",
-            "description": "",
+            "description": "A glass of rosé wine, fresh, fruity and at the perfect temperature.",
             "price": {
               "base": 3.5
             },
@@ -3366,7 +3366,7 @@
           {
             "id": "P085",
             "name": "BEER + CHIPS",
-            "description": "",
+            "description": "The ideal combo for appetizers.",
             "price": {
               "base": 3.95
             },
@@ -3379,7 +3379,7 @@
           {
             "id": "P086",
             "name": "SUBMARINE + CROISSANT",
-            "description": "",
+            "description": "A glass of hot milk with a bar of real chocolate for you to melt to your liking, accompanied by a soft, flaky croissant.",
             "price": {
               "base": 3.95
             },
@@ -3392,7 +3392,7 @@
           {
             "id": "P087",
             "name": "COFFEE + APPLE TART",
-            "description": "",
+            "description": "The classic duo that never fails.",
             "price": {
               "base": 5.95
             },
@@ -3425,6 +3425,15 @@
     }
   },
   "eventos": [
+    {
+      "id": "E109",
+      "fecha": "mié, 1 jul",
+      "fechaSort": "2026-07-01T03:00:00.000Z",
+      "titulo": "Taller de Lettering",
+      "descripcion": "Primera Parte del Taller: LETRA DE MOLDE\nCupos Limitados. Actividad Arancelada.\npor Silvia Santandrea",
+      "hora": "15:30 a 18:30 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E109.webp"
+    },
     {
       "id": "E108",
       "fecha": "sáb, 2 may",
