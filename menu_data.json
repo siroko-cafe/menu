@@ -3435,6 +3435,15 @@
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E109.webp"
     },
     {
+      "id": "E110",
+      "fecha": "lun, 22 jun",
+      "fechaSort": "2026-06-22T03:00:00.000Z",
+      "titulo": "Espacios vacíos",
+      "descripcion": "¿Cómo representar el vacío en una ilustración?\nExposición de Daniel Majà",
+      "hora": "18:00 hs",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E110.webp"
+    },
+    {
       "id": "E108",
       "fecha": "sáb, 2 may",
       "fechaSort": "2026-05-02T03:00:00.000Z",
