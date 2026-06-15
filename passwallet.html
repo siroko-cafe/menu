@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Siroko Café - Tarjeta Virtual</title>
-    <!-- Librería nativa para el QR -->
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Siroko Tarjeta">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
     <style>
         body {
             background-color: #121212;
@@ -89,26 +94,21 @@
             height: 150px;
         }
         
-        /* BOTÓN RE-DISEÑADO CON TEXTO PURO (Carga en 0 segundos) */
-        .wallet-btn-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .apple-wallet-button {
+        /* BOTÓN EXPLICATIVO SEGURO Y ELEGANTE */
+        .action-button {
             display: block;
-            background-color: #000000;
-            color: #ffffff;
-            border: 1px solid #444444;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
             padding: 14px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
+            text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            transition: background-color 0.2s;
-        }
-        .apple-wallet-button:active {
-            background-color: #222222;
+            cursor: pointer;
+            margin-top: 15px;
         }
         
         .instructions {
@@ -118,6 +118,28 @@
             font-size: 13px;
             color: #aaaaaa;
             line-height: 1.4;
+        }
+        
+        /* Alerta emergente nativa simulada */
+        .popup-instruction {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            background: #222222;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 320px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            border: 1px solid #444;
+            font-size: 13px;
+            text-align: center;
+            animation: slideUp 0.4s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -142,20 +164,16 @@
                 <span class="value">Toda la carta</span>
             </div>
             
-            <!-- QR -->
             <div class="qr-container" id="qrcode"></div>
             
-            <!-- BOTÓN CORREGIDO SIN DEPENDENCIAS EXTERNAS -->
-            <div class="wallet-btn-container">
-                <a id="apple-wallet-btn" class="apple-wallet-button" href="#">
-                     Añadir a Apple Wallet
-                </a>
-            </div>
+            <button class="action-button" onclick="mostrarGuia()">
+                Guardar en mi Teléfono
+            </button>
         </div>
     </div>
 
-    <div class="instructions">
-        <p><b>Tip:</b> Si preferís no usar Wallet, podés añadir esta página a tu pantalla de inicio desde el menú de compartir de tu navegador.</p>
+    <div id="guia-popup" class="popup-instruction">
+        Para llevarla siempre con vos: tocá el botón de <b>Compartir</b> abajo en tu navegador y elegí <b>"Añadir a la pantalla de inicio"</b>. 📲
     </div>
 
     <script>
@@ -170,7 +188,7 @@
 
         document.getElementById('employee-name').innerText = nombreFormateado;
 
-        // Generar el código QR
+        // Generar QR nativo
         new QRCode(document.getElementById("qrcode"), {
             text: codigoDescuento,
             width: 150,
@@ -180,13 +198,5 @@
             correctLevel : QRCode.CorrectLevel.H
         });
 
-        // --- ENLACE DE CONFIANZA Y ULTRA ESTABLE ---
-        // Generamos el pase usando el formateador directo de la herramienta Passkit abierta
-        const nombreCodificadoPass = encodeURIComponent(nombreFormateado);
-        const urlAppleWallet = `https://v1.api.walletapp.cloud/sign?format=pkpass&barcode=${codigoDescuento}&title=Siroko%20Cafe&text1=${nombreCodificadoPass}&color=2b1810`;
-        
-        // Asignamos la URL definitiva al botón negro
-        document.getElementById('apple-wallet-btn').href = urlAppleWallet;
-    </script>
-</body>
-</html>
+        function mostrarGuia() {
+            var popup = document.getElementById("guia-popup
