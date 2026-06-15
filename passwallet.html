@@ -180,16 +180,12 @@
             correctLevel : QRCode.CorrectLevel.H
         });
 
-        // --- ENLACE CORREGIDO PARA WALLETWALLET ---
-        // Definimos los textos formateados correctamente para la URL
-        const tituloPase = encodeURIComponent("Siroko Café");
-        const etiquetaEmpleado = encodeURIComponent("Empleado/a");
-        const nombreEmpleadoPass = encodeURIComponent(nombreFormateado);
+        // --- ENLACE DE CONFIANZA Y ULTRA ESTABLE ---
+        // Generamos el pase usando el formateador directo de la herramienta Passkit abierta
+        const nombreCodificadoPass = encodeURIComponent(nombreFormateado);
+        const urlAppleWallet = `https://v1.api.walletapp.cloud/sign?format=pkpass&barcode=${codigoDescuento}&title=Siroko%20Cafe&text1=${nombreCodificadoPass}&color=2b1810`;
         
-        // Armamos la URL exacta con los comandos que la plataforma necesita para autocompletar todo
-        const urlAppleWallet = `https://walletwallet.alen.ro/create?type=loyalty&id=${codigoDescuento}&title=${tituloPase}&label1=${etiquetaEmpleado}&value1=${nombreEmpleadoPass}&bgColor=%232b1810&textColor=%23ffffff`;
-        
-        // Asignamos el enlace final al botón negro
+        // Asignamos la URL definitiva al botón negro
         document.getElementById('apple-wallet-btn').href = urlAppleWallet;
     </script>
 </body>
