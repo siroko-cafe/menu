@@ -122,12 +122,23 @@
             <div class="qr-container" id="qrcode"></div>
         </div>
     </div>
+    <div style="text-align: center; margin-top: 20px;">
+    <a id="apple-wallet-btn" href="#" target="_blank">
+        <img src="https://walletcdn.com/assets/en/add-to-apple-wallet.svg" alt="Add to Apple Wallet" style="width: 180px;">
+    </a>
+</div>
 
     <div class="instructions">
         <p><b>Tip:</b> Para tenerla siempre a mano, tocá el botón de compartir de tu navegador y elegí <b>"Añadir a la pantalla de inicio"</b>.</p>
     </div>
 
     <script>
+        // Generamos el link para que el iPhone lo descargue firmado y directo a la Wallet
+const apiGratuita = "https://v1.api.walletapp.cloud/sign"; // O el microservicio que elijas
+const urlAppleWallet = `${apiGratuita}?format=pkpass&barcode=${codigoDescuento}&title=Siroko%20Cafe&text1=${nombreCodificado}&color=2b1810`;
+
+document.getElementById('apple-wallet-btn').href = urlAppleWallet;
+        
         // Función para leer los parámetros de la URL (?nombre=Camila_Frontini)
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
