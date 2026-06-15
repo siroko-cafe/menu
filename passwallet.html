@@ -199,4 +199,12 @@
         });
 
         function mostrarGuia() {
-            var popup = document.getElementById("guia-popup
+            var popup = document.getElementById("guia-popup");
+            popup.style.display = "block";
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 8000);
+        }
+    </script>
+</body>
+</html>
