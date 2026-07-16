@@ -3253,7 +3253,7 @@
           },
           {
             "id": "P064",
-            "name": "BEER WITH AMBER LEMON",
+            "name": "AMBER LEMON BEER",
             "description": "Refreshing: quality beer with the citrusy and natural touch of lemon.",
             "price": {
               "base": 2.8
@@ -3430,7 +3430,7 @@
       "fecha": "jue, 23 jul",
       "fechaSort": "2026-07-23T03:00:00.000Z",
       "titulo": "Taller de Libreta Tapa Dura con Costura francesa",
-      "descripcion": "En este taller vas a crear un cuaderno desde cero:\n* Tapa Dura\n* Costura francesa (elegís tela y papel)\n* Consumisión en Siroko cafe\n\nMás información y reservas por instagram @siroko.cafe",
+      "descripcion": "Crea tu cuaderno desde cero: Tapa Dura-Costura francesa + Consumisión\nReservas por ig",
       "hora": "17:30 hs",
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E111.webp"
     },
