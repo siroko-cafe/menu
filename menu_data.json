@@ -3426,6 +3426,15 @@
   },
   "eventos": [
     {
+      "id": "E115",
+      "fecha": "dom, 23 ago",
+      "fechaSort": "2026-08-23T03:00:00.000Z",
+      "titulo": "Taller Postales en Acuarela ",
+      "descripcion": "",
+      "hora": "1899-12-30T17:46:48.000Z",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E115.webp"
+    },
+    {
       "id": "E112",
       "fecha": "vie, 21 ago",
       "fechaSort": "2026-08-21T03:00:00.000Z",
