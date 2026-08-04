@@ -3426,6 +3426,33 @@
   },
   "eventos": [
     {
+      "id": "E112",
+      "fecha": "vie, 21 ago",
+      "fechaSort": "2026-08-21T03:00:00.000Z",
+      "titulo": "Taller de Punch Needle",
+      "descripcion": "Que veremos:\n* Qué es el Punch Needle.\n* Materiales y herramientas.\n* Cómo utilizar correctamente la aguja.\n* Tipos de puntadas y cómo lograr diferentes texturas.\n* Cómo finalizar una pieza.\n",
+      "hora": "1899-12-30T20:46:48.000Z",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E112.webp"
+    },
+    {
+      "id": "E113",
+      "fecha": "vie, 21 ago",
+      "fechaSort": "2026-08-21T03:00:00.000Z",
+      "titulo": "Taller de Punch Needle",
+      "descripcion": "Que veremos:\n* Qué es el Punch Needle.\n* Materiales y herramientas.\n* Cómo utilizar correctamente la aguja.\n* Tipos de puntadas y cómo lograr diferentes texturas.\n* Cómo finalizar una pieza.\n",
+      "hora": "1899-12-30T20:46:48.000Z",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E113.webp"
+    },
+    {
+      "id": "E114",
+      "fecha": "vie, 21 ago",
+      "fechaSort": "2026-08-21T03:00:00.000Z",
+      "titulo": "Taller de Punch Needle",
+      "descripcion": "Que veremos:\n* Qué es el Punch Needle.\n* Materiales y herramientas.\n* Cómo utilizar correctamente la aguja.\n* Tipos de puntadas y cómo lograr diferentes texturas.\n* Cómo finalizar una pieza.\n",
+      "hora": "1899-12-30T20:46:48.000Z",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E114.webp"
+    },
+    {
       "id": "E111",
       "fecha": "jue, 23 jul",
       "fechaSort": "2026-07-23T03:00:00.000Z",
