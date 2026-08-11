@@ -3444,6 +3444,15 @@
       "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E112.webp"
     },
     {
+      "id": "E116",
+      "fecha": "vie, 14 ago",
+      "fechaSort": "2026-08-14T03:00:00.000Z",
+      "titulo": "Conversaciones Creativas",
+      "descripcion": "Por Estéreo Club. Invitada: @JUVEGA.ART. Un encuentro sobre procesos, inspiración, vida creativa",
+      "hora": "1899-12-30T21:16:48.000Z",
+      "imagen": "https://raw.githubusercontent.com/siroko-cafe/menu/main/eventos/E116.webp"
+    },
+    {
       "id": "E111",
       "fecha": "jue, 23 jul",
       "fechaSort": "2026-07-23T03:00:00.000Z",
