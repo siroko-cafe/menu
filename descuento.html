@@ -2,185 +2,160 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Siroko Café - Tarjeta Virtual</title>
-    
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Siroko Tarjeta">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siroko Café x eDreams | Descuento Corporativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        :root {
+            --primary: #3B5A45;      /* Verde corporativo de Siroko */
+            --bg-color: #F8F1E2;     /* Fondo crema de Siroko */
+            --dark: #222222;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
         body {
-            background-color: #121212;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
             padding: 20px;
-            box-sizing: border-box;
-            color: #ffffff;
         }
-        .wallet-card {
+
+        .card-container {
+            background-color: var(--white);
+            max-width: 500px;
             width: 100%;
-            max-width: 350px;
-            background-color: rgb(43, 24, 16); /* Café Siroko */
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            box-sizing: border-box;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 45px 30px;
+            border-radius: 35px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(210, 180, 140, 0.3);
-            padding-bottom: 12px;
-            margin-bottom: 15px;
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 25px;
         }
-        .logo-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-        .convenio-tag {
-            font-size: 11px;
-            background: rgba(210, 180, 140, 0.2);
-            color: rgb(210, 180, 140);
-            padding: 4px 8px;
+
+        .badge-convenio {
+            display: inline-block;
+            background-color: #EEF5EE;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 8px 18px;
             border-radius: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .field-group {
-            display: flex;
-            flex-direction: column;
-        }
-        .label {
-            font-size: 10px;
-            color: rgb(210, 180, 140);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 2px;
+            margin-bottom: 20px;
         }
-        .value {
-            font-size: 16px;
-            font-weight: 600;
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            line-height: 1.2;
         }
-        .value.highlight {
-            font-size: 24px;
-            color: #ffffff;
-            font-weight: 800;
+
+        .discount-highlight {
+            color: var(--primary);
         }
-        .qr-container {
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
+
+        p.description {
+            font-size: 0.98rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-wallet {
+            display: inline-flex;
             align-items: center;
-            margin: 15px auto 5px auto;
-            width: 150px;
-            height: 150px;
-        }
-        
-        /* BOTÓN EXPLICATIVO SEGURO Y ELEGANTE */
-        .action-button {
-            display: block;
-            background-color: #ffffff;
-            color: #000000;
-            border: none;
-            padding: 14px;
-            border-radius: 10px;
+            justify-content: center;
+            gap: 12px;
+            background-color: var(--dark);
+            color: var(--white);
             text-decoration: none;
+            padding: 18px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
             font-weight: 600;
-            font-size: 14px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            cursor: pointer;
-            margin-top: 15px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
-        
-        .instructions {
+
+        .btn-wallet:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(59, 90, 69, 0.25);
+        }
+
+        .btn-wallet i {
+            width: 22px;
+            height: 22px;
+        }
+
+        .terms {
             margin-top: 25px;
-            text-align: center;
-            max-width: 300px;
-            font-size: 13px;
-            color: #aaaaaa;
+            font-size: 0.8rem;
+            color: #999;
             line-height: 1.4;
         }
-        
-        /* Alerta emergente nativa simulada */
-        .popup-instruction {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            background: #222222;
-            color: white;
-            padding: 15px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 320px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
-            border: 1px solid #444;
-            font-size: 13px;
-            text-align: center;
-            animation: slideUp 0.4s ease-out;
-        }
-        @keyframes slideUp {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+
+        @media (max-width: 480px) {
+            .card-container {
+                padding: 35px 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="wallet-card">
-        <!-- Botón para añadir la tarjeta de eDreams a Apple/Google Wallet -->
-<a href="AQUÍ_PEGA_TU_ENLACE_DE_SHARE" target="_blank" class="btn-fidelidad">
-    Añadir a Apple / Google Wallet
-</a>
+    <div class="card-container">
+        <!-- Logo de Siroko -->
+        <img src="assets/logo1.png" alt="Siroko Café Logo" class="logo">
+
+        <br>
+        <span class="badge-convenio">Convenio Corporativo</span>
+
+        <h1>Tu café con <span class="discount-highlight">15% de Descuento</span></h1>
+
+        <p class="description">
+            ¡Bienvenido/a! Por formar parte del equipo de <strong>eDreams</strong>, disfruta de un 15% de descuento fijo en todos tus consumos en Siroko Café.
+        </p>
+
+        <!-- Botón directo a tu link de WalletWallet -->
+        <a href="https://api.walletwallet.dev/p/10cd2944-26ba-494f-849f-58e126134b5a" target="_blank" class="btn-wallet">
+            <i data-lucide="wallet"></i>
+            Añadir a mi Wallet
+        </a>
+
+        <p class="terms">
+            * Muestra tu pase en Wallet al realizar tu pedido en barra. Válido exclusivamente en Siroko Café (Carrer de Girona, 94, Barcelona).
+        </p>
     </div>
 
     <script>
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        const nombreRaw = getQueryParam('nombre') || 'Invitado_Especial';
-        const nombreFormateado = nombreRaw.replace(/_/g, ' ');
-        const codigoDescuento = "EDREAMS20";
-
-        document.getElementById('employee-name').innerText = nombreFormateado;
-
-        // Generar QR nativo
-        new QRCode(document.getElementById("qrcode"), {
-            text: codigoDescuento,
-            width: 150,
-            height: 150,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
-
-        function mostrarGuia() {
-            var popup = document.getElementById("guia-popup");
-            popup.style.display = "block";
-            setTimeout(function() {
-                popup.style.display = "none";
-            }, 8000);
-        }
+        // Inicializa el icono de billetera de Lucide
+        lucide.createIcons();
     </script>
 </body>
 </html>
